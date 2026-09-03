@@ -1,4 +1,4 @@
-package com.coop.backend.model;
+﻿package com.coop.backend.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,6 +14,8 @@ public class PettyCashRecord {
     private Long id;
 
     private LocalDate date;
+    
+    private String name;
 
     private String description;
 
