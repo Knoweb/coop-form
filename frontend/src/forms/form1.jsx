@@ -3,6 +3,7 @@ import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList
 
 const INITIAL_FORM_STATE = {
   date: '',
+  name: '',
   description: '',
   voucherNo: '',
   amountReceived: '',
@@ -76,6 +77,7 @@ export default function Form1() {
     
     const payload = {
       date: formData.date,
+      name: formData.name,
       description: formData.description,
       voucherNo: formData.voucherNo,
       amountReceived: formData.amountReceived ? parseFloat(formData.amountReceived) : null,
