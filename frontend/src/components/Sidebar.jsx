@@ -90,6 +90,24 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
+          onClick={() => { setCurrentForm('form24'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form24' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5 shrink-0" />
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">Form 24</span>
+            <span>Form 24</span>
+          </div>
+        </button>
+        <button 
+          onClick={() => { setCurrentForm('form25'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form25' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5 shrink-0" />
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">Form 25</span>
+            <span>Form 25</span>
+          </div>
+        </button>
+        <button 
           onClick={() => { setCurrentForm('schedule2'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'schedule2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
@@ -189,21 +207,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
             <span>Multi-Column Ledger</span>
           </div>
         </button>
-        <button 
-          onClick={() => { setCurrentForm('form24'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form24' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">Form 24</span>
-            <span>Form 24</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('form25'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form25' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
-          <FileText className="w-5 h-5" />
-          <span>Form 25</span>
-        </button>
+
       </div>
       
       <div className="p-4 border-t border-slate-800">
