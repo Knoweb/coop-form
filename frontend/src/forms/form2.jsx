@@ -286,16 +286,37 @@ export default function Form2() {
             <table className="w-full min-w-[1200px] text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300 w-24">Received (ලැබුණු මුදල) (රු.)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300 w-24">Date (දිනය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Description (විස්තරය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300 w-20">Voucher No (වවුචර අංකය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300 w-24">Amount Paid (ගෙවූ මුදල) (රු.)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300 w-24">Balance (අත ඉතිරි) (රු.)</th>
+                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
+                    ලැබුණු මුදල<br/><span className="text-[10px] text-slate-500 font-normal">රු. ශ.</span>
+                  </th>
+                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
+                    දිනය
+                  </th>
+                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 text-center align-top">
+                    විස්තරය
+                  </th>
+                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-20 text-center align-top">
+                    වවුචර අංකය
+                  </th>
+                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
+                    ගෙවූ මුදල<br/><span className="text-[10px] text-slate-500 font-normal">රු. ශ.</span>
+                  </th>
+                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
+                    දින අවසානයේ<br/>අත ඉතිරි<br/><span className="text-[10px] text-slate-500 font-normal">රු. ශ.</span>
+                  </th>
+                  <th colSpan={ANALYSIS_CATEGORIES.length} className="px-2 py-2 text-xs md:text-sm font-bold text-slate-700 bg-slate-100 border border-slate-300 text-center uppercase tracking-wide">
+                    ගෙවීම් විග්‍රහය
+                  </th>
+                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-32 text-center align-top">
+                    සටහන
+                  </th>
+                </tr>
+                <tr>
                   {ANALYSIS_CATEGORIES.map(category => (
-                    <th key={category} className="px-1 py-2 text-[10px] leading-tight font-bold text-slate-400 uppercase break-words border border-slate-300 w-20">{category}</th>
+                    <th key={category} className="px-1 py-2 text-[10px] leading-tight font-bold text-slate-600 uppercase break-words border border-slate-300 w-20 bg-slate-50 text-center">
+                      {category}
+                    </th>
                   ))}
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300 w-32">Note (සටහන)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
