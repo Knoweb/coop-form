@@ -94,7 +94,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form24' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
           <div className="flex flex-col">
-            <span className="text-xs text-slate-400">Form 24</span>
+            <span className="text-xs text-slate-400">සැපයිය යුතු බඩු ලැයිස්තුව</span>
             <span>Form 24</span>
           </div>
         </button>
@@ -103,7 +103,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form25' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
           <div className="flex flex-col">
-            <span className="text-xs text-slate-400">Form 25</span>
+            <span className="text-xs text-slate-400">බඩු නිකුත් කිරීමේ නිවේදනය</span>
             <span>Form 25</span>
           </div>
         </button>
