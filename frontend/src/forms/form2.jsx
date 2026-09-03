@@ -360,7 +360,7 @@ export default function Form2() {
             </div>
             <div className="mt-8 md:mt-0 text-center">
               <div className="w-48 border-b border-slate-400 mb-2"></div>
-              <p className="text-sm font-semibold text-slate-700">සේවා කළමනාකරු</p>
+              <p className="text-sm font-semibold text-slate-700">ගබඩා කළමනාකරු</p>
               <div className="w-48 border-b border-slate-400 mb-2 mt-6"></div>
               <p className="text-sm font-semibold text-slate-700">දිනය</p>
             </div>
