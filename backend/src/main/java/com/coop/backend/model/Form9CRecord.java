@@ -23,10 +23,10 @@ public class Form9CRecord {
     
     private Double totalAmount;
     private Double goodsAmount;
-    private Double aPaKoAmount;
-    private Double teaPoAmount;
-    private Double emptySacksAmount;
-    private Double otherAmount;
+    private Double aPaHaalAmount;
+    private Double patawumAmount;
+    private Double hisBhajanaAmount;
+    private Double prawahanaAmount;
 
     // Default constructor
     public Form9CRecord() {
@@ -57,15 +57,15 @@ public class Form9CRecord {
     public Double getGoodsAmount() { return goodsAmount; }
     public void setGoodsAmount(Double goodsAmount) { this.goodsAmount = goodsAmount; }
 
-    public Double getAPaKoAmount() { return aPaKoAmount; }
-    public void setAPaKoAmount(Double aPaKoAmount) { this.aPaKoAmount = aPaKoAmount; }
+    public Double getAPaHaalAmount() { return aPaHaalAmount; }
+    public void setAPaHaalAmount(Double aPaHaalAmount) { this.aPaHaalAmount = aPaHaalAmount; }
 
-    public Double getTeaPoAmount() { return teaPoAmount; }
-    public void setTeaPoAmount(Double teaPoAmount) { this.teaPoAmount = teaPoAmount; }
+    public Double getPatawumAmount() { return patawumAmount; }
+    public void setPatawumAmount(Double patawumAmount) { this.patawumAmount = patawumAmount; }
 
-    public Double getEmptySacksAmount() { return emptySacksAmount; }
-    public void setEmptySacksAmount(Double emptySacksAmount) { this.emptySacksAmount = emptySacksAmount; }
+    public Double getHisBhajanaAmount() { return hisBhajanaAmount; }
+    public void setHisBhajanaAmount(Double hisBhajanaAmount) { this.hisBhajanaAmount = hisBhajanaAmount; }
 
-    public Double getOtherAmount() { return otherAmount; }
-    public void setOtherAmount(Double otherAmount) { this.otherAmount = otherAmount; }
+    public Double getPrawahanaAmount() { return prawahanaAmount; }
+    public void setPrawahanaAmount(Double prawahanaAmount) { this.prawahanaAmount = prawahanaAmount; }
 }

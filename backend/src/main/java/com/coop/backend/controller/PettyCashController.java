@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/records")
-@CrossOrigin(origins = "*") // Allow React frontend
 public class PettyCashController {
 
     @Autowired
