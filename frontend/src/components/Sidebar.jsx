@@ -45,7 +45,6 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-        <button 
           onClick={() => { setCurrentForm('form4'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form4' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
@@ -200,8 +199,8 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => { setActiveForm('form25'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${activeForm === 'form25' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
+          onClick={() => { setCurrentForm('form25'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form25' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5" />
           <span>Form 25</span>
         </button>
