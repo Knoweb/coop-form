@@ -1,27 +1,27 @@
 package com.coop.backend.controller;
 
-import com.coop.backend.model.PettyCashRecord;
-import com.coop.backend.repository.PettyCashRecordRepository;
+import com.coop.backend.model.Form9CRecord;
+import com.coop.backend.repository.Form9CRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/records")
+@RequestMapping("/api/form9c-records")
 @CrossOrigin(origins = "*") // Allow React frontend
-public class PettyCashController {
+public class Form9CController {
 
     @Autowired
-    private PettyCashRecordRepository repository;
+    private Form9CRecordRepository repository;
 
     @GetMapping
-    public List<PettyCashRecord> getAllRecords() {
+    public List<Form9CRecord> getAllRecords() {
         return repository.findAll();
     }
 
     @PostMapping
-    public PettyCashRecord createRecord(@RequestBody PettyCashRecord record) {
+    public Form9CRecord createRecord(@RequestBody Form9CRecord record) {
         return repository.save(record);
     }
 }
