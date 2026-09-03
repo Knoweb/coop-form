@@ -376,7 +376,9 @@ export default function Form2() {
                   <td className="px-1 py-3 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{totals.received.toFixed(2).split('.')[0]}</td>
                   <td className="px-1 py-3 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{totals.received.toFixed(2).split('.')[1]}</td>
                   
-                  <td colSpan="3" className="px-1 py-3 text-xs font-bold text-slate-800 text-right border border-slate-300 pr-4">මුලු :</td>
+                  <td className="border border-slate-300"></td>
+                  <td className="border border-slate-300"></td>
+                  <td className="border border-slate-300"></td>
                   
                   <td className="px-1 py-3 text-xs font-bold text-rose-600 border border-slate-300 text-right">{totals.paid.toFixed(2).split('.')[0]}</td>
                   <td className="px-1 py-3 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{totals.paid.toFixed(2).split('.')[1]}</td>
