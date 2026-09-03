@@ -3,6 +3,7 @@ import { Menu } from 'lucide-react';
 import Form1 from './forms/form1';
 import Form2 from './forms/form2';
 import Form3 from './forms/form3';
+import Form4 from './forms/form4';
 import Form9C from './forms/form9c';
 import Form23A from './forms/form23a';
 import Form24 from './forms/form24';
@@ -27,6 +28,7 @@ function App() {
            {activeForm === 'form1' && <Form1 />}
            {activeForm === 'form2' && <Form2 />}
            {activeForm === 'form3' && <Form3 />}
+           {activeForm === 'form4' && <Form4 />}
            {activeForm === 'form9c' && <Form9C />}
            {activeForm === 'form23a' && <Form23A />}
            {activeForm === 'form24' && <Form24 />}
