@@ -3,6 +3,14 @@ import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList
 
 const ANALYSIS_CATEGORIES = ['Transport', 'Stationery', 'Postage', 'Meals', 'Other'];
 
+const ANALYSIS_LABELS = {
+  'Transport': 'Transport (ගමන් වියදම්)',
+  'Stationery': 'Stationery (ලිපි ද්‍රව්‍ය)',
+  'Postage': 'Postage (තැපැල් ගාස්තු)',
+  'Meals': 'Meals (ආහාර)',
+  'Other': 'Other (වෙනත්)'
+};
+
 const INITIAL_FORM_STATE = {
   storeName: '',
   fromDate: '',
@@ -252,7 +260,7 @@ export default function Form2() {
                   {ANALYSIS_CATEGORIES.map(category => (
                     <div key={category} className="space-y-1.5">
                       <label className="text-xs font-semibold text-slate-500">
-                        {category}
+                        {ANALYSIS_LABELS[category]}
                       </label>
                       <input type="number" step="0.01" value={formData.analysis[category]} onChange={(e) => handleAnalysisChange(category, e.target.value)} placeholder="0.00"
                         className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors shadow-sm text-sm" />
@@ -327,7 +335,7 @@ export default function Form2() {
                   {/* Analysis Categories */}
                   {ANALYSIS_CATEGORIES.map(category => (
                     <th key={category} className="px-1 py-1 text-[10px] leading-tight font-bold text-slate-600 uppercase break-words border border-slate-300 w-20 bg-slate-50 text-center align-middle">
-                      {category}
+                      {ANALYSIS_LABELS[category]}
                     </th>
                   ))}
                 </tr>
