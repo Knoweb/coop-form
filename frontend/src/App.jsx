@@ -11,6 +11,9 @@ import RentIncomeJournal from './forms/RentIncomeJournal';
 import GeneralLedgerForm from './forms/GeneralLedgerForm';
 import TransferRegisterForm from './forms/TransferRegisterForm';
 import MultiColumnLedgerForm from './forms/MultiColumnLedgerForm';
+import Form2 from './forms/form2';
+import Form9C from './forms/form9c';
+import Form23A from './forms/form23a';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -21,6 +24,12 @@ function App() {
     switch (currentForm) {
       case 'form1':
         return <Form1 />;
+      case 'form2':
+        return <Form2 />;
+      case 'form9c':
+        return <Form9C />;
+      case 'form23a':
+        return <Form23A />;
       case 'schedule2':
         return <Schedule2 />;
       case 'rentJournal':
@@ -50,6 +59,12 @@ function App() {
     switch (currentForm) {
       case 'form1':
         return 'Petty Cash System';
+      case 'form2':
+        return 'Form 2';
+      case 'form9c':
+        return 'Form 9 C';
+      case 'form23a':
+        return 'Form 23 A';
       case 'schedule2':
         return 'Schedule No. 2';
       case 'rentJournal':

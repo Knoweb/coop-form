@@ -14,6 +14,8 @@ public class PettyCashRecord {
     private Long id;
 
     private LocalDate date;
+    
+    private String name;
 
     private String description;
 

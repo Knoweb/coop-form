@@ -18,14 +18,35 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
       
       <div className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
         <button 
-          onClick={() => setCurrentForm('form1')}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form1' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
+          onClick={() => { setCurrentForm('form1'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form1' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
           <span>Form 1</span>
         </button>
         <button 
-          onClick={() => setCurrentForm('schedule2')}
+          onClick={() => { setCurrentForm('form2'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
+        >
+          <FileText className="w-5 h-5 shrink-0" />
+          <span>Form 2</span>
+        </button>
+        <button 
+          onClick={() => { setCurrentForm('form9c'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
+        >
+          <FileText className="w-5 h-5 shrink-0" />
+          <span>Form 9 C</span>
+        </button>
+        <button 
+          onClick={() => { setCurrentForm('form23a'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form23a' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
+        >
+          <FileText className="w-5 h-5 shrink-0" />
+          <span>Form 23 A</span>
+        </button>
+        <button 
+          onClick={() => { setCurrentForm('schedule2'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'schedule2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -35,7 +56,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('rentJournal')}
+          onClick={() => { setCurrentForm('rentJournal'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'rentJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -45,7 +66,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('stationeryJournal')}
+          onClick={() => { setCurrentForm('stationeryJournal'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'stationeryJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -55,7 +76,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('annualInsuredJournal')}
+          onClick={() => { setCurrentForm('annualInsuredJournal'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'annualInsuredJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -65,7 +86,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('monthlyDepreciationJournal')}
+          onClick={() => { setCurrentForm('monthlyDepreciationJournal'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'monthlyDepreciationJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -75,7 +96,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('investmentInterestJournal')}
+          onClick={() => { setCurrentForm('investmentInterestJournal'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'investmentInterestJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -85,7 +106,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('rentIncomeJournal')}
+          onClick={() => { setCurrentForm('rentIncomeJournal'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'rentIncomeJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -95,7 +116,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('generalLedgerForm')}
+          onClick={() => { setCurrentForm('generalLedgerForm'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'generalLedgerForm' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -105,7 +126,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('transferRegisterForm')}
+          onClick={() => { setCurrentForm('transferRegisterForm'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'transferRegisterForm' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
@@ -115,7 +136,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
-          onClick={() => setCurrentForm('multiColumnLedgerForm')}
+          onClick={() => { setCurrentForm('multiColumnLedgerForm'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'multiColumnLedgerForm' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
           <FileText className="w-5 h-5 shrink-0" />
