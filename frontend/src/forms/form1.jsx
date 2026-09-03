@@ -1,9 +1,8 @@
-﻿import React, { useState, useEffect } from 'react';
-import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList, User , User } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList, User } from 'lucide-react';
 
 const INITIAL_FORM_STATE = {
   date: '',
-  name: '',
   description: '',
   voucherNo: '',
   amountReceived: '',
@@ -77,7 +76,6 @@ export default function Form1() {
     
     const payload = {
       date: formData.date,
-      name: formData.name,
       description: formData.description,
       voucherNo: formData.voucherNo,
       amountReceived: formData.amountReceived ? parseFloat(formData.amountReceived) : null,
@@ -161,13 +159,13 @@ export default function Form1() {
                     <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
                   </label>
                   <input required type="date" name="date" value={formData.date} onChange={handleInputChange}
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <User className="w-4 h-4 text-slate-400" /> Name (කාටද දුන්නේ)
                   </label>
                   <input required type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="E.g., Kamal"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
                 </div>
 
@@ -259,7 +257,7 @@ export default function Form1() {
             <table className="w-full min-w-[1000px] text-left border-collapse table-fixed border border-slate-300">
               <thead>
                 <tr className="bg-slate-50">
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Date (දිනය)</th>`r`n                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Name (කාටද දුන්නේ)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Date (දිනය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Name (කාටද දුන්නේ)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Description / Details (විස්තරය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Voucher No (වවුචර අංකය)</th>
@@ -285,7 +283,7 @@ export default function Form1() {
                 ) : (
                   processedRecords.map((record, idx) => (
                     <tr key={record.id} className="hover:bg-slate-50/50 transition-colors group">
-                      <td className="px-1 py-2 text-xs leading-tight font-medium text-slate-900 break-words bg-white group-hover:bg-slate-50 transition-colors border border-slate-300">{record.date}</td>`r`n                      <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.name}</td>
+                      <td className="px-1 py-2 text-xs leading-tight font-medium text-slate-900 break-words bg-white group-hover:bg-slate-50 transition-colors border border-slate-300">{record.date}</td>
                       <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.name}</td>
                       <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.description}</td>
                       <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300">{record.voucherNo || '-'}</td>
@@ -326,7 +324,5 @@ export default function Form1() {
     </div>
   );
 }
-
-
 
 
