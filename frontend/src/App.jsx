@@ -20,6 +20,7 @@ import Form9E from './forms/form9e';
 import Form23A from './forms/form23a';
 import Form24 from './forms/form24';
 import Form25 from './forms/form25';
+import Form27 from './forms/form27';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -66,6 +67,8 @@ function App() {
         return <MultiColumnLedgerForm />;
       case 'form25':
         return <Form25 />;
+      case 'form27':
+        return <Form27 />;
       default:
         return <Form1 />;
     }
@@ -111,6 +114,8 @@ function App() {
         return 'Multi-Column Ledger';
       case 'form25':
         return 'Form 25';
+      case 'form27':
+        return 'Form 27';
       default:
         return 'COOP Forms';
     }

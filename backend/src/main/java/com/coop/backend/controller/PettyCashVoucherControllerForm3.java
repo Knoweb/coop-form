@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/form3/vouchers")
-@CrossOrigin(origins = "*") // In production, replace with specific origins
+
 public class PettyCashVoucherControllerForm3 {
 
     @Autowired

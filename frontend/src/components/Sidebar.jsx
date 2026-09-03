@@ -108,6 +108,15 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           </div>
         </button>
         <button 
+          onClick={() => { setCurrentForm('form27'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form27' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5 shrink-0" />
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">දෛනික මුදල් වාර්තාව</span>
+            <span>Form 27</span>
+          </div>
+        </button>
+        <button 
           onClick={() => { setCurrentForm('schedule2'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'schedule2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
         >
