@@ -372,22 +372,67 @@ export default function Form2() {
                 })}
               </tbody>
               <tfoot className="bg-slate-50 border-t-2 border-slate-200">
+                {/* Row 1: This page total */}
                 <tr>
-                  <td className="px-1 py-3 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{totals.received.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-3 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{totals.received.toFixed(2).split('.')[1]}</td>
+                  <td className="px-1 py-2 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{totals.received.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{totals.received.toFixed(2).split('.')[1]}</td>
                   
                   <td className="border border-slate-300"></td>
-                  <td className="border border-slate-300"></td>
+                  <td className="px-2 py-2 text-[10px] md:text-xs font-bold text-slate-800 border border-slate-300 text-right whitespace-nowrap">මෙම පිටුවේ : එකතුව</td>
                   <td className="border border-slate-300"></td>
                   
-                  <td className="px-1 py-3 text-xs font-bold text-rose-600 border border-slate-300 text-right">{totals.paid.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-3 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{totals.paid.toFixed(2).split('.')[1]}</td>
+                  <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">{totals.paid.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{totals.paid.toFixed(2).split('.')[1]}</td>
                   
-                  <td className="px-1 py-3 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{currentBalance.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-3 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{currentBalance.toFixed(2).split('.')[1]}</td>
+                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{currentBalance.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{currentBalance.toFixed(2).split('.')[1]}</td>
                   
                   {ANALYSIS_CATEGORIES.map(cat => (
-                    <td key={cat} className="px-1 py-3 text-xs font-bold text-slate-700 border border-slate-300 text-right">
+                    <td key={cat} className="px-1 py-2 text-xs font-bold text-slate-700 border border-slate-300 text-right">
+                      {totals.analysis[cat] ? totals.analysis[cat].toFixed(2) : ''}
+                    </td>
+                  ))}
+                  <td className="border border-slate-300"></td>
+                </tr>
+
+                {/* Row 2: Previous page total */}
+                <tr>
+                  <td className="px-1 py-2 text-xs font-bold text-emerald-600 border border-slate-300 text-right">0</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">00</td>
+                  
+                  <td className="border border-slate-300"></td>
+                  <td className="px-2 py-2 text-[10px] md:text-xs font-bold text-slate-800 border border-slate-300 text-right whitespace-nowrap">පෙර පිටුවේ : එකතුව</td>
+                  <td className="border border-slate-300"></td>
+                  
+                  <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">0</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">00</td>
+                  
+                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">0</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">00</td>
+                  
+                  {ANALYSIS_CATEGORIES.map(cat => (
+                    <td key={cat} className="px-1 py-2 text-xs font-bold text-slate-700 border border-slate-300 text-right"></td>
+                  ))}
+                  <td className="border border-slate-300"></td>
+                </tr>
+
+                {/* Row 3: Grand total */}
+                <tr>
+                  <td className="px-1 py-2 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{totals.received.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{totals.received.toFixed(2).split('.')[1]}</td>
+                  
+                  <td className="border border-slate-300"></td>
+                  <td className="px-2 py-2 text-[10px] md:text-xs font-bold text-slate-800 border border-slate-300 text-right whitespace-nowrap">මුලු එකතුව</td>
+                  <td className="border border-slate-300"></td>
+                  
+                  <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">{totals.paid.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{totals.paid.toFixed(2).split('.')[1]}</td>
+                  
+                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{currentBalance.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{currentBalance.toFixed(2).split('.')[1]}</td>
+                  
+                  {ANALYSIS_CATEGORIES.map(cat => (
+                    <td key={cat} className="px-1 py-2 text-xs font-bold text-slate-700 border border-slate-300 text-right">
                       {totals.analysis[cat] ? totals.analysis[cat].toFixed(2) : ''}
                     </td>
                   ))}
