@@ -19,31 +19,39 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
       <div className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
         <button 
           onClick={() => { setCurrentForm('form1'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form1' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
-        >
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form1' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
-          <span>Form 1</span>
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">සුළු මුදල් පොත</span>
+            <span>Form 1</span>
+          </div>
         </button>
         <button 
           onClick={() => { setCurrentForm('form2'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
-        >
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
-          <span>Form 2</span>
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">සුළු මුදල් පොත</span>
+            <span>Form 2</span>
+          </div>
         </button>
         <button 
           onClick={() => { setCurrentForm('form9c'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
-        >
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
-          <span>Form 9 C</span>
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">මුදලට / ශාඛා / ණය වෙළඳාම</span>
+            <span>Form 9 C</span>
+          </div>
         </button>
         <button 
           onClick={() => { setCurrentForm('form23a'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${currentForm === 'form23a' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
-        >
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form23a' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
-          <span>Form 23 A</span>
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">බඩු ගැනුම්කරුගේ ඉල්ලීම</span>
+            <span>Form 23 A</span>
+          </div>
         </button>
         <button 
           onClick={() => { setCurrentForm('schedule2'); setIsOpen(false); }}
