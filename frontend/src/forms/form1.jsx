@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList } from 'lucide-react';
+import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList, User } from 'lucide-react';
 
 const INITIAL_FORM_STATE = {
   date: '',
@@ -161,6 +161,13 @@ export default function Form1() {
                   <input required type="date" name="date" value={formData.date} onChange={handleInputChange}
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
                 </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
+                    <User className="w-4 h-4 text-slate-400" /> Name (කාටද දුන්නේ)
+                  </label>
+                  <input required type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="E.g., Kamal"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                </div>
 
                 <div className="space-y-2 xl:col-span-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
@@ -251,6 +258,7 @@ export default function Form1() {
               <thead>
                 <tr className="bg-slate-50">
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Date (දිනය)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Name (කාටද දුන්නේ)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Description / Details (විස්තරය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Voucher No (වවුචර අංකය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-emerald-600 uppercase break-words bg-emerald-50/50 border border-slate-300">Amount Received (ලැබුණු මුදල) (Rs)</th>
@@ -265,7 +273,7 @@ export default function Form1() {
               <tbody>
                 {processedRecords.length === 0 ? (
                   <tr>
-                    <td colSpan={7 + ANALYSIS_CATEGORIES.length} className="px-2 py-12 text-center text-slate-400 border border-slate-300">
+                    <td colSpan={8 + ANALYSIS_CATEGORIES.length} className="px-2 py-12 text-center text-slate-400 border border-slate-300">
                       <div className="flex flex-col items-center justify-center">
                         <FileText className="w-12 h-12 mb-3 text-slate-200" />
                         <p className="text-xs">No records found. Add an entry above to get started.</p>
@@ -276,6 +284,7 @@ export default function Form1() {
                   processedRecords.map((record, idx) => (
                     <tr key={record.id} className="hover:bg-slate-50/50 transition-colors group">
                       <td className="px-1 py-2 text-xs leading-tight font-medium text-slate-900 break-words bg-white group-hover:bg-slate-50 transition-colors border border-slate-300">{record.date}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.name}</td>
                       <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.description}</td>
                       <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300">{record.voucherNo || '-'}</td>
                       <td className="px-1 py-2 text-xs leading-tight font-semibold text-emerald-600 bg-emerald-50/10 break-words border border-slate-300">{record.received > 0 ? record.received.toFixed(2) : '-'}</td>
@@ -294,7 +303,7 @@ export default function Form1() {
                 {/* Total Row */}
                 {processedRecords.length > 0 && (
                   <tr className="bg-slate-100/80 font-bold">
-                    <td colSpan="3" className="px-1 py-3 text-xs leading-tight text-slate-800 text-right uppercase break-words bg-slate-100/80 border border-slate-300">Totals:</td>
+                    <td colSpan="4" className="px-1 py-3 text-xs leading-tight text-slate-800 text-right uppercase break-words bg-slate-100/80 border border-slate-300">Totals:</td>
                     <td className="px-1 py-3 text-xs leading-tight text-emerald-700 break-words border border-slate-300">{totals.received.toFixed(2)}</td>
                     <td className="px-1 py-3 text-xs leading-tight text-rose-700 break-words border border-slate-300">{totals.paid.toFixed(2)}</td>
                     <td className="px-1 py-3 text-xs leading-tight text-indigo-800 break-words border border-slate-300">{currentBalance.toFixed(2)}</td>
