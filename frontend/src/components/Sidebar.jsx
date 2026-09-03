@@ -30,6 +30,12 @@ export default function Sidebar({ isOpen, setIsOpen, activeForm, setActiveForm }
           <span>Form 2</span>
         </button>
         <button 
+          onClick={() => { setActiveForm('form3'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${activeForm === 'form3' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5" />
+          <span>Form 3</span>
+        </button>
+        <button 
           onClick={() => { setActiveForm('form9c'); setIsOpen(false); }}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${activeForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5" />
