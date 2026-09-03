@@ -112,19 +112,9 @@ function App() {
            </button>
            <h2 className="ml-4 font-bold text-slate-800">{getFormTitle()}</h2>
         </div>
-<<<<<<< HEAD
-        <div className="p-4 md:p-8">
-           {activeForm === 'form1' && <Form1 />}
-           {activeForm === 'form2' && <Form2 />}
-           {activeForm === 'form3' && <Form3 />}
-           {activeForm === 'form4' && <Form4 />}
-           {activeForm === 'form9c' && <Form9C />}
-           {activeForm === 'form23a' && <Form23A />}
-           {activeForm === 'form24' && <Form24 />}
-=======
         <div className="p-4 md:p-8 overflow-x-auto">
            {renderForm()}
->>>>>>> 5fed46dd844a000801349a4b4ca2d0cfd1a2eca7
+
         </div>
       </div>
     </div>
