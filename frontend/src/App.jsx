@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
 import Form1 from './forms/form1';
+import Form2 from './forms/form2';
 import Form9C from './forms/form9c';
 import Sidebar from './components/Sidebar';
 
@@ -21,6 +22,7 @@ function App() {
         </div>
         <div className="p-4 md:p-8">
            {activeForm === 'form1' && <Form1 />}
+           {activeForm === 'form2' && <Form2 />}
            {activeForm === 'form9c' && <Form9C />}
         </div>
       </div>

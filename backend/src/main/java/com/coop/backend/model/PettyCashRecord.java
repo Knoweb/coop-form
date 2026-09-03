@@ -1,4 +1,4 @@
-﻿package com.coop.backend.model;
+package com.coop.backend.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
