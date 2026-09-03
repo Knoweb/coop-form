@@ -3,6 +3,7 @@ import { Menu } from 'lucide-react';
 import Form1 from './forms/form1';
 import Form2 from './forms/form2';
 import Form9C from './forms/form9c';
+import Form23A from './forms/form23a';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
            {activeForm === 'form1' && <Form1 />}
            {activeForm === 'form2' && <Form2 />}
            {activeForm === 'form9c' && <Form9C />}
+           {activeForm === 'form23a' && <Form23A />}
         </div>
       </div>
     </div>
