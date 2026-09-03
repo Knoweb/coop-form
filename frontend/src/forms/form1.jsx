@@ -163,9 +163,9 @@ export default function Form1() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <User className="w-4 h-4 text-slate-400" /> Name (කාටද දුන්නේ)
+                    <User className="w-4 h-4 text-slate-400" /> Signature (කෙටි අත්සන)
                   </label>
-                  <input required type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="E.g., Kamal"
+                  <input required type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="E.g., A.B.C."
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
                 </div>
 
@@ -258,7 +258,7 @@ export default function Form1() {
               <thead>
                 <tr className="bg-slate-50">
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Date (දිනය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Name (කාටද දුන්නේ)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Signature (කෙටි අත්සන)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Description / Details (විස්තරය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Voucher No (වවුචර අංකය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-emerald-600 uppercase break-words bg-emerald-50/50 border border-slate-300">Amount Received (ලැබුණු මුදල) (Rs)</th>
