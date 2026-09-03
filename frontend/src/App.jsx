@@ -13,6 +13,7 @@ import TransferRegisterForm from './forms/TransferRegisterForm';
 import MultiColumnLedgerForm from './forms/MultiColumnLedgerForm';
 import Form2 from './forms/form2';
 import Form3 from './forms/form3';
+import Form4 from './forms/form4';
 import Form9C from './forms/form9c';
 import Form9D from './forms/form9d';
 import Form9E from './forms/form9e';
@@ -123,6 +124,7 @@ function App() {
         </div>
         <div className="p-4 md:p-8 overflow-x-auto">
            {renderForm()}
+
         </div>
       </div>
     </div>
