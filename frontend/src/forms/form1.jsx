@@ -190,7 +190,7 @@ export default function Form1() {
                     <DollarSign className="w-4 h-4 text-emerald-500" /> Amount Received (ලැබුණු මුදල)
                   </label>
                   <div className="relative">
-                    <span className="absolute left-4 top-3 text-slate-400">Rs</span>
+                    <span className="absolute left-4 top-3 text-slate-400">රු.</span>
                     <input type="number" step="0.01" name="amountReceived" value={formData.amountReceived} onChange={handleInputChange} placeholder="0.00"
                       className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50/30 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 shadow-sm text-emerald-900 font-semibold" />
                   </div>
@@ -201,7 +201,7 @@ export default function Form1() {
                     <DollarSign className="w-4 h-4 text-rose-400" /> Amount Paid (ගෙවූ මුදල)
                   </label>
                   <div className="relative">
-                    <span className="absolute left-4 top-3 text-slate-400">Rs</span>
+                    <span className="absolute left-4 top-3 text-slate-400">රු.</span>
                     <input type="number" step="0.01" name="amountPaid" value={formData.amountPaid} onChange={handleInputChange} placeholder="0.00"
                       className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-rose-200 bg-rose-50/30 focus:bg-white focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors duration-200 shadow-sm text-rose-900 font-semibold" />
                   </div>
@@ -249,7 +249,7 @@ export default function Form1() {
                 <h2 className="text-xl font-bold text-slate-800">Petty Cash Register</h2>
              </div>
              <div className="bg-indigo-50 px-4 py-2 rounded-lg">
-                <span className="text-sm font-bold text-indigo-900">Current Balance: Rs {currentBalance.toFixed(2)}</span>
+                <span className="text-sm font-bold text-indigo-900">Current Balance: රු. {currentBalance.toFixed(2)}</span>
              </div>
           </div>
           
@@ -261,9 +261,9 @@ export default function Form1() {
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Signature (කෙටි අත්සන)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Description / Details (විස්තරය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Voucher No (වවුචර අංකය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-emerald-600 uppercase break-words bg-emerald-50/50 border border-slate-300">Amount Received (ලැබුණු මුදල) (Rs)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-rose-600 uppercase break-words bg-rose-50/50 border border-slate-300">Amount Paid (ගෙවූ මුදල) (Rs)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-indigo-600 uppercase break-words bg-indigo-50/50 border border-slate-300">Balance (ශේෂය) (Rs)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-emerald-600 uppercase break-words bg-emerald-50/50 border border-slate-300">Amount Received (ලැබුණු මුදල) (රු.)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-rose-600 uppercase break-words bg-rose-50/50 border border-slate-300">Amount Paid (ගෙවූ මුදල) (රු.)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-indigo-600 uppercase break-words bg-indigo-50/50 border border-slate-300">Balance (ශේෂය) (රු.)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Ledger Folio (ලෙජර පිටුව)</th>
                   {ANALYSIS_CATEGORIES.map(cat => (
                     <th key={cat.key} className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-400 uppercase break-words bg-slate-50/50 border border-slate-300">{cat.label}</th>
