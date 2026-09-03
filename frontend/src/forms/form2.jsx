@@ -286,66 +286,99 @@ export default function Form2() {
             <table className="w-full min-w-[1200px] text-left border-collapse">
               <thead>
                 <tr>
-                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
-                    ලැබුණු මුදල<br/><span className="text-[10px] text-slate-500 font-normal">රු. ශ.</span>
+                  <th colSpan="2" className="px-2 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-middle">
+                    ලැබුණු මුදල
                   </th>
-                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
+                  <th rowSpan="2" className="px-2 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-middle">
                     දිනය
                   </th>
-                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 text-center align-top">
+                  <th rowSpan="2" className="px-2 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 text-center align-middle">
                     විස්තරය
                   </th>
-                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-20 text-center align-top">
-                    වවුචර අංකය
+                  <th rowSpan="2" className="px-2 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-20 text-center align-middle">
+                    වවුචර<br/>අංකය
                   </th>
-                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
-                    ගෙවූ මුදල<br/><span className="text-[10px] text-slate-500 font-normal">රු. ශ.</span>
+                  <th colSpan="2" className="px-2 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-middle">
+                    ගෙවූ මුදල
                   </th>
-                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-top">
-                    දින අවසානයේ<br/>අත ඉතිරි<br/><span className="text-[10px] text-slate-500 font-normal">රු. ශ.</span>
+                  <th colSpan="2" className="px-2 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-24 text-center align-middle">
+                    දින අවසානයේ<br/>අත ඉතිරි
                   </th>
-                  <th colSpan={ANALYSIS_CATEGORIES.length} className="px-2 py-2 text-xs md:text-sm font-bold text-slate-700 bg-slate-100 border border-slate-300 text-center uppercase tracking-wide">
+                  <th colSpan={ANALYSIS_CATEGORIES.length} className="px-2 py-2 text-xs md:text-sm font-bold text-slate-700 bg-slate-100 border border-slate-300 text-center uppercase tracking-wide align-middle">
                     ගෙවීම් විග්‍රහය
                   </th>
-                  <th rowSpan="2" className="px-2 py-3 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-32 text-center align-top">
+                  <th rowSpan="2" className="px-2 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-700 break-words bg-slate-100 border border-slate-300 w-32 text-center align-middle">
                     සටහන
                   </th>
                 </tr>
                 <tr>
+                  {/* Received Rs/Cts */}
+                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
+                  
+                  {/* Paid Rs/Cts */}
+                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
+                  
+                  {/* Balance Rs/Cts */}
+                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
+
+                  {/* Analysis Categories */}
                   {ANALYSIS_CATEGORIES.map(category => (
-                    <th key={category} className="px-1 py-2 text-[10px] leading-tight font-bold text-slate-600 uppercase break-words border border-slate-300 w-20 bg-slate-50 text-center">
+                    <th key={category} className="px-1 py-1 text-[10px] leading-tight font-bold text-slate-600 uppercase break-words border border-slate-300 w-20 bg-slate-50 text-center align-middle">
                       {category}
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {processedRecords.map((record, index) => (
-                  <tr key={index} className="hover:bg-slate-50/80 transition-colors group">
-                    <td className="px-1 py-2 text-xs leading-tight font-medium text-emerald-600 break-words border border-slate-300">{record.received > 0 ? record.received.toFixed(2) : ''}</td>
-                    <td className="px-1 py-2 text-xs leading-tight font-medium text-slate-900 break-words bg-white group-hover:bg-slate-50 transition-colors border border-slate-300">{record.date}</td>
-                    <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.description}</td>
-                    <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.voucherNo}</td>
-                    <td className="px-1 py-2 text-xs leading-tight font-medium text-rose-600 break-words border border-slate-300">{record.paid > 0 ? record.paid.toFixed(2) : ''}</td>
-                    <td className="px-1 py-2 text-xs leading-tight font-bold text-indigo-600 break-words border border-slate-300">{record.balance.toFixed(2)}</td>
-                    {ANALYSIS_CATEGORIES.map(cat => (
-                      <td key={cat} className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300">
-                        {record.analysis && record.analysis[cat] ? parseFloat(record.analysis[cat]).toFixed(2) : ''}
-                      </td>
-                    ))}
-                    <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.note}</td>
-                  </tr>
-                ))}
+                {processedRecords.map((record, index) => {
+                  const rParts = record.received > 0 ? record.received.toFixed(2).split('.') : ['', ''];
+                  const pParts = record.paid > 0 ? record.paid.toFixed(2).split('.') : ['', ''];
+                  const bParts = record.balance.toFixed(2).split('.');
+                  
+                  return (
+                    <tr key={index} className="hover:bg-slate-50/80 transition-colors group">
+                      <td className="px-1 py-2 text-xs leading-tight font-medium text-emerald-600 border border-slate-300 text-right">{rParts[0]}</td>
+                      <td className="px-1 py-2 text-[10px] leading-tight font-medium text-emerald-600 border border-slate-300 text-center">{rParts[1]}</td>
+                      
+                      <td className="px-1 py-2 text-xs leading-tight font-medium text-slate-900 break-words bg-white group-hover:bg-slate-50 transition-colors border border-slate-300 text-center">{record.date}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.description}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300 text-center">{record.voucherNo}</td>
+                      
+                      <td className="px-1 py-2 text-xs leading-tight font-medium text-rose-600 border border-slate-300 text-right">{pParts[0]}</td>
+                      <td className="px-1 py-2 text-[10px] leading-tight font-medium text-rose-600 border border-slate-300 text-center">{pParts[1]}</td>
+                      
+                      <td className="px-1 py-2 text-xs leading-tight font-bold text-indigo-600 border border-slate-300 text-right">{bParts[0]}</td>
+                      <td className="px-1 py-2 text-[10px] leading-tight font-bold text-indigo-600 border border-slate-300 text-center">{bParts[1]}</td>
+                      
+                      {ANALYSIS_CATEGORIES.map(cat => (
+                        <td key={cat} className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300 text-right">
+                          {record.analysis && record.analysis[cat] ? parseFloat(record.analysis[cat]).toFixed(2) : ''}
+                        </td>
+                      ))}
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.note}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
               <tfoot className="bg-slate-50 border-t-2 border-slate-200">
                 <tr>
-                  <td className="px-1 py-3 text-xs font-bold text-emerald-600 border border-slate-300">{totals.received.toFixed(2)}</td>
-                  <td colSpan="3" className="px-1 py-3 text-xs font-bold text-slate-800 text-right border border-slate-300">TOTALS:</td>
-                  <td className="px-1 py-3 text-xs font-bold text-rose-600 border border-slate-300">{totals.paid.toFixed(2)}</td>
-                  <td className="px-1 py-3 text-xs font-bold text-indigo-600 border border-slate-300">{currentBalance.toFixed(2)}</td>
+                  <td className="px-1 py-3 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{totals.received.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-3 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{totals.received.toFixed(2).split('.')[1]}</td>
+                  
+                  <td colSpan="3" className="px-1 py-3 text-xs font-bold text-slate-800 text-right border border-slate-300 pr-4">TOTALS:</td>
+                  
+                  <td className="px-1 py-3 text-xs font-bold text-rose-600 border border-slate-300 text-right">{totals.paid.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-3 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{totals.paid.toFixed(2).split('.')[1]}</td>
+                  
+                  <td className="px-1 py-3 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{currentBalance.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-3 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{currentBalance.toFixed(2).split('.')[1]}</td>
+                  
                   {ANALYSIS_CATEGORIES.map(cat => (
-                    <td key={cat} className="px-1 py-3 text-xs font-bold text-slate-700 border border-slate-300">
-                      {totals.analysis[cat] ? totals.analysis[cat].toFixed(2) : '0.00'}
+                    <td key={cat} className="px-1 py-3 text-xs font-bold text-slate-700 border border-slate-300 text-right">
+                      {totals.analysis[cat] ? totals.analysis[cat].toFixed(2) : ''}
                     </td>
                   ))}
                   <td className="border border-slate-300"></td>
