@@ -120,6 +120,39 @@ export default function Form2() {
   };
 
   // Calculate Balance dynamically
+  const [prevPageTotals, setPrevPageTotals] = useState({
+    received: '5000.00',
+    paid: '2000.00',
+    analysis: {
+      Transport: '500.00',
+      Stationery: '300.00',
+      Postage: '200.00',
+      Meals: '800.00',
+      Other: '200.00'
+    }
+  });
+
+  const handlePrevPageTotalChange = (field, category, value) => {
+    if (category) {
+      setPrevPageTotals(prev => ({
+        ...prev,
+        analysis: {
+          ...prev.analysis,
+          [category]: value
+        }
+      }));
+    } else {
+      setPrevPageTotals(prev => ({
+        ...prev,
+        [field]: value
+      }));
+    }
+  };
+
+  const prevReceived = parseFloat(prevPageTotals.received) || 0;
+  const prevPaid = ANALYSIS_CATEGORIES.reduce((sum, cat) => sum + (parseFloat(prevPageTotals.analysis[cat]) || 0), 0);
+  const prevBalance = prevReceived - prevPaid;
+
   let currentBalance = 0;
   const processedRecords = records.map(record => {
     const received = parseFloat(record.amountReceived) || 0;
@@ -137,6 +170,10 @@ export default function Form2() {
     });
     return acc;
   }, { received: 0, paid: 0, analysis: {} });
+
+  const grandTotalReceived = totals.received + prevReceived;
+  const grandTotalPaid = totals.paid + prevPaid;
+  const grandTotalBalance = grandTotalReceived - grandTotalPaid;
 
   return (
     <div className="flex-1 bg-slate-50 min-h-screen p-4 md:p-8 font-sans overflow-x-hidden">
@@ -286,7 +323,7 @@ export default function Form2() {
               Petty Cash Register
             </h2>
             <div className="bg-indigo-50 px-4 py-2 rounded-lg">
-              <span className="text-sm font-bold text-indigo-900">Current Balance: රු. {currentBalance.toFixed(2)}</span>
+              <span className="text-sm font-bold text-indigo-900">Current Balance: රු. {grandTotalBalance.toFixed(2)}</span>
             </div>
           </div>
           
@@ -396,46 +433,52 @@ export default function Form2() {
                 </tr>
 
                 {/* Row 2: Previous page total */}
-                <tr>
-                  <td className="px-1 py-2 text-xs font-bold text-emerald-600 border border-slate-300 text-right">0</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">00</td>
+                <tr className="bg-amber-50/30">
+                  <td colSpan="2" className="px-1 py-1 border border-slate-300">
+                    <input type="number" step="0.01" value={prevPageTotals.received} onChange={(e) => handlePrevPageTotalChange('received', null, e.target.value)} className="w-full text-right text-xs font-bold text-emerald-600 bg-transparent outline-none" placeholder="0.00" />
+                  </td>
                   
                   <td className="border border-slate-300"></td>
                   <td className="px-2 py-2 text-[10px] md:text-xs font-bold text-slate-800 border border-slate-300 text-right whitespace-nowrap">පෙර පිටුවේ : එකතුව</td>
                   <td className="border border-slate-300"></td>
                   
-                  <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">0</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">00</td>
+                  <td colSpan="2" className="px-1 py-1 border border-slate-300">
+                    <input type="number" step="0.01" value={prevPaid > 0 ? prevPaid.toFixed(2) : ''} readOnly className="w-full text-right text-xs font-bold text-rose-600 bg-transparent outline-none" placeholder="0.00" />
+                  </td>
                   
-                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">0</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">00</td>
+                  <td colSpan="2" className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right bg-transparent">{prevBalance !== 0 ? prevBalance.toFixed(2) : ''}</td>
                   
                   {ANALYSIS_CATEGORIES.map(cat => (
-                    <td key={cat} className="px-1 py-2 text-xs font-bold text-slate-700 border border-slate-300 text-right"></td>
+                    <td key={cat} className="px-1 py-1 border border-slate-300">
+                      <input type="number" step="0.01" value={prevPageTotals.analysis[cat]} onChange={(e) => handlePrevPageTotalChange('analysis', cat, e.target.value)} className="w-full text-right text-xs font-bold text-slate-700 bg-transparent outline-none" placeholder="" />
+                    </td>
                   ))}
                   <td className="border border-slate-300"></td>
                 </tr>
 
                 {/* Row 3: Grand total */}
-                <tr>
-                  <td className="px-1 py-2 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{totals.received.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{totals.received.toFixed(2).split('.')[1]}</td>
+                <tr className="bg-indigo-50/30">
+                  <td className="px-1 py-2 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{grandTotalReceived.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{grandTotalReceived.toFixed(2).split('.')[1]}</td>
                   
                   <td className="border border-slate-300"></td>
                   <td className="px-2 py-2 text-[10px] md:text-xs font-bold text-slate-800 border border-slate-300 text-right whitespace-nowrap">මුලු එකතුව</td>
                   <td className="border border-slate-300"></td>
                   
-                  <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">{totals.paid.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{totals.paid.toFixed(2).split('.')[1]}</td>
+                  <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">{grandTotalPaid.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{grandTotalPaid.toFixed(2).split('.')[1]}</td>
                   
-                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{currentBalance.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{currentBalance.toFixed(2).split('.')[1]}</td>
+                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{grandTotalBalance.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{grandTotalBalance.toFixed(2).split('.')[1]}</td>
                   
-                  {ANALYSIS_CATEGORIES.map(cat => (
-                    <td key={cat} className="px-1 py-2 text-xs font-bold text-slate-700 border border-slate-300 text-right">
-                      {totals.analysis[cat] ? totals.analysis[cat].toFixed(2) : ''}
-                    </td>
-                  ))}
+                  {ANALYSIS_CATEGORIES.map(cat => {
+                    const grandCatTotal = (totals.analysis[cat] || 0) + (parseFloat(prevPageTotals.analysis[cat]) || 0);
+                    return (
+                      <td key={cat} className="px-1 py-2 text-xs font-bold text-slate-900 border border-slate-300 text-right">
+                        {grandCatTotal > 0 ? grandCatTotal.toFixed(2) : ''}
+                      </td>
+                    );
+                  })}
                   <td className="border border-slate-300"></td>
                 </tr>
               </tfoot>

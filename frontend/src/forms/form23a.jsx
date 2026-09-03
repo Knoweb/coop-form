@@ -203,9 +203,9 @@ export default function Form23A() {
           <div className="p-8 md:p-12 print:p-0">
              
              {/* Paper Form Header */}
-             <div className="text-center mb-10">
+             <div className="relative mb-8 text-center pt-8">
+                <div className="absolute right-0 top-0 text-sm font-semibold text-slate-600">Form 23 A</div>
                 <h2 className="text-xl font-bold text-slate-800">බඩු ගැනුම්කරුගේ ඉල්ලීම</h2>
-                <p className="text-sm font-semibold text-slate-600">Form 23 A</p>
              </div>
 
              <div className="flex flex-col md:flex-row justify-between mb-8 gap-4 md:gap-8 font-medium text-slate-800 text-sm md:text-base border-b border-slate-200 pb-6">

@@ -37,11 +37,20 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         </button>
         <button 
           onClick={() => { setCurrentForm('form9c'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5 shrink-0" />
           <div className="flex flex-col">
             <span className="text-xs text-slate-400">මුදලට / ශාඛා / ණය වෙළඳාම</span>
             <span>Form 9 C</span>
+          </div>
+        </button>
+        <button 
+          onClick={() => { setCurrentForm('form3'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form3' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5 shrink-0" />
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">Petty Cash Voucher</span>
+            <span>Form 3</span>
           </div>
         </button>
         <button 
@@ -151,6 +160,15 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           <div className="flex flex-col">
             <span className="text-xs text-slate-400">විස්තරාත්මක බෙදාහැරීමේ ජර්නලය</span>
             <span>Multi-Column Ledger</span>
+          </div>
+        </button>
+        <button 
+          onClick={() => { setCurrentForm('form24'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form24' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5 shrink-0" />
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">Form 24</span>
+            <span>Form 24</span>
           </div>
         </button>
       </div>
