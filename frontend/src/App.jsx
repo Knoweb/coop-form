@@ -31,6 +31,8 @@ function App() {
         return <Form2 />;
       case 'form3':
         return <Form3 />;
+      case 'form4':
+        return <Form4 />;
       case 'form9c':
         return <Form9C />;
       case 'form23a':
@@ -70,6 +72,8 @@ function App() {
         return 'Form 2';
       case 'form3':
         return 'Form 3';
+      case 'form4':
+        return 'Form 4';
       case 'form9c':
         return 'Form 9 C';
       case 'form23a':
