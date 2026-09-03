@@ -22,6 +22,7 @@ import Form24 from './forms/form24';
 import Form25 from './forms/form25';
 import Form27 from './forms/form27';
 import Form29 from './forms/form29';
+import F29 from './forms/f29';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -72,6 +73,8 @@ function App() {
         return <Form27 />;
       case 'form29':
         return <Form29 />;
+      case 'f29':
+        return <F29 />;
       default:
         return <Form1 />;
     }
@@ -116,11 +119,13 @@ function App() {
       case 'multiColumnLedgerForm':
         return 'Multi-Column Ledger';
       case 'form25':
-        return 'Form 25 (බඩු නිකුත් කිරීමේ නිවේදනය)';
+        return 'Form 25';
       case 'form27':
-        return 'Form 27 (දෛනික මුදල් වාර්තාව - බැංකු ශේෂයෙන්)';
+        return 'Form 27';
       case 'form29':
-        return 'Form 29 (රථ වාහන වැඩ සටහන)';
+        return 'Form 29';
+      case 'f29':
+        return 'F 29';
       default:
         return 'COOP Forms';
     }
