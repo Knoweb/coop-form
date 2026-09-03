@@ -305,6 +305,7 @@ export default function Form9C() {
                 )}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
         
