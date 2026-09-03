@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import Form1 from './forms/form1';
 import Form9C from './forms/form9c';
+import Form9D from './forms/form9d';
+import Form9E from './forms/form9e';
 import Sidebar from './components/Sidebar';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [activeForm, setActiveForm] = useState('form1');
+  const [activeForm, setActiveForm] = useState(() => {
+    return localStorage.getItem('activeForm') || 'form1';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('activeForm', activeForm);
+  }, [activeForm]);
 
   return (
     <div className="flex bg-slate-50 min-h-screen">
@@ -22,6 +30,8 @@ function App() {
         <div className="p-4 md:p-8">
            {activeForm === 'form1' && <Form1 />}
            {activeForm === 'form9c' && <Form9C />}
+           {activeForm === 'form9d' && <Form9D />}
+           {activeForm === 'form9e' && <Form9E />}
         </div>
       </div>
     </div>

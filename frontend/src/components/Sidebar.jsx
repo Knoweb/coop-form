@@ -18,16 +18,28 @@ export default function Sidebar({ isOpen, setIsOpen, activeForm, setActiveForm }
       
       <div className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
         <button 
-          onClick={() => { setActiveForm('form1'); setIsOpen(false); }}
+          onClick={() => setActiveForm('form1')}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${activeForm === 'form1' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5" />
           <span>Form 1</span>
         </button>
         <button 
-          onClick={() => { setActiveForm('form9c'); setIsOpen(false); }}
+          onClick={() => setActiveForm('form9c')}
           className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${activeForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
           <FileText className="w-5 h-5" />
           <span>Form 9 C</span>
+        </button>
+        <button 
+          onClick={() => setActiveForm('form9d')}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${activeForm === 'form9d' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5" />
+          <span>Form 9 D</span>
+        </button>
+        <button 
+          onClick={() => setActiveForm('form9e')}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${activeForm === 'form9e' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
+          <FileText className="w-5 h-5" />
+          <span>Form 9 E</span>
         </button>
       </div>
       

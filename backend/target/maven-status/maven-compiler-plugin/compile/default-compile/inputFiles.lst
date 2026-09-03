@@ -1,4 +1,10 @@
 C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\BackendApplication.java
+C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\controller\Form9CController.java
+C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\controller\Form9DController.java
 C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\controller\PettyCashController.java
+C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\model\Form9CRecord.java
+C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\model\Form9DRecord.java
 C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\model\PettyCashRecord.java
+C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\repository\Form9CRecordRepository.java
+C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\repository\Form9DRecordRepository.java
 C:\Projects\Coop forms\backend\src\main\java\com\coop\backend\repository\PettyCashRecordRepository.java

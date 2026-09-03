@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PlusCircle, FileText, Calendar, List, Tag, Save, LayoutList, Building2 } from 'lucide-react';
+import { PlusCircle, FileText, Calendar, List, Tag, Save, LayoutList, Building2, Plus, Check, X } from 'lucide-react';
 
 const INITIAL_FORM_STATE = {
   date: '',
@@ -9,10 +9,10 @@ const INITIAL_FORM_STATE = {
   folio: '',
   totalAmount: '',
   goodsAmount: '',
-  aPaKoAmount: '',
-  teaPoAmount: '',
-  emptySacksAmount: '',
-  otherAmount: ''
+  aPaHaalAmount: '',
+  patawumAmount: '',
+  hisBhajanaAmount: '',
+  prawahanaAmount: ''
 };
 
 export default function Form9C() {
@@ -20,6 +20,14 @@ export default function Form9C() {
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
   const [globalStoreName, setGlobalStoreName] = useState('');
   const [globalDate, setGlobalDate] = useState('');
+  
+  // State for Brought Forward totals (පෙර සටහනේ)
+  const [peraSatahane, setPeraSatahane] = useState({
+    totalAmount: '', goodsAmount: '', aPaHaalAmount: '',
+    patawumAmount: '', hisBhajanaAmount: '', prawahanaAmount: ''
+  });
+  const [showManualRow, setShowManualRow] = useState(false);
+  const [manualRowData, setManualRowData] = useState(INITIAL_FORM_STATE);
 
   const fetchRecords = async () => {
     try {
@@ -60,10 +68,10 @@ export default function Form9C() {
       folio: formData.folio,
       totalAmount: formData.totalAmount ? parseFloat(formData.totalAmount) : 0,
       goodsAmount: formData.goodsAmount ? parseFloat(formData.goodsAmount) : 0,
-      aPaKoAmount: formData.aPaKoAmount ? parseFloat(formData.aPaKoAmount) : 0,
-      teaPoAmount: formData.teaPoAmount ? parseFloat(formData.teaPoAmount) : 0,
-      emptySacksAmount: formData.emptySacksAmount ? parseFloat(formData.emptySacksAmount) : 0,
-      otherAmount: formData.otherAmount ? parseFloat(formData.otherAmount) : 0
+      aPaHaalAmount: formData.aPaHaalAmount ? parseFloat(formData.aPaHaalAmount) : 0,
+      patawumAmount: formData.patawumAmount ? parseFloat(formData.patawumAmount) : 0,
+      hisBhajanaAmount: formData.hisBhajanaAmount ? parseFloat(formData.hisBhajanaAmount) : 0,
+      prawahanaAmount: formData.prawahanaAmount ? parseFloat(formData.prawahanaAmount) : 0
     };
 
     try {
@@ -80,9 +88,52 @@ export default function Form9C() {
           date: prev.date,
           storeName: prev.storeName
         }));
+      } else {
+        const errorText = await response.text();
+        alert("දත්ත ඇතුළත් කිරීම අසාර්ථකයි! (Backend Error: " + response.status + ")\nකරුණාකර Backend එක Restart කරන්න.");
+        console.error("Backend Error:", errorText);
       }
     } catch (error) {
+      alert("දත්ත ඇතුළත් කිරීම අසාර්ථකයි! Network Error එකක් වෙන්න පුළුවන්.");
       console.error("Failed to submit record:", error);
+    }
+  };
+
+  const handleSaveManualRow = async () => {
+    if (!globalStoreName || !globalDate) {
+      alert("කරුණාකර ඉහළින්ම Store Name සහ Date තෝරන්න!");
+      return;
+    }
+    
+    const payload = {
+      date: globalDate,
+      storeName: globalStoreName,
+      billNo: manualRowData.billNo,
+      name: manualRowData.name,
+      folio: manualRowData.folio,
+      totalAmount: manualRowData.totalAmount ? parseFloat(manualRowData.totalAmount) : 0,
+      goodsAmount: manualRowData.goodsAmount ? parseFloat(manualRowData.goodsAmount) : 0,
+      aPaHaalAmount: manualRowData.aPaHaalAmount ? parseFloat(manualRowData.aPaHaalAmount) : 0,
+      patawumAmount: manualRowData.patawumAmount ? parseFloat(manualRowData.patawumAmount) : 0,
+      hisBhajanaAmount: manualRowData.hisBhajanaAmount ? parseFloat(manualRowData.hisBhajanaAmount) : 0,
+      prawahanaAmount: manualRowData.prawahanaAmount ? parseFloat(manualRowData.prawahanaAmount) : 0
+    };
+
+    try {
+      const response = await fetch('http://localhost:8080/api/form9c-records', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (response.ok) {
+        fetchRecords();
+        setShowManualRow(false);
+      } else {
+        const errorText = await response.text();
+        alert("දත්ත ඇතුළත් කිරීම අසාර්ථකයි! (Backend Error: " + response.status + ")");
+      }
+    } catch (error) {
+      alert("දත්ත ඇතුළත් කිරීම අසාර්ථකයි! Network Error.");
     }
   };
 
@@ -90,14 +141,14 @@ export default function Form9C() {
   const totals = records.reduce((acc, curr) => {
     acc.totalAmount += (curr.totalAmount || 0);
     acc.goodsAmount += (curr.goodsAmount || 0);
-    acc.aPaKoAmount += (curr.aPaKoAmount || 0);
-    acc.teaPoAmount += (curr.teaPoAmount || 0);
-    acc.emptySacksAmount += (curr.emptySacksAmount || 0);
-    acc.otherAmount += (curr.otherAmount || 0);
+    acc.aPaHaalAmount += (curr.aPaHaalAmount || 0);
+    acc.patawumAmount += (curr.patawumAmount || 0);
+    acc.hisBhajanaAmount += (curr.hisBhajanaAmount || 0);
+    acc.prawahanaAmount += (curr.prawahanaAmount || 0);
     return acc;
   }, { 
-    totalAmount: 0, goodsAmount: 0, aPaKoAmount: 0, 
-    teaPoAmount: 0, emptySacksAmount: 0, otherAmount: 0 
+    totalAmount: 0, goodsAmount: 0, aPaHaalAmount: 0, 
+    patawumAmount: 0, hisBhajanaAmount: 0, prawahanaAmount: 0 
   });
 
   return (
@@ -171,7 +222,7 @@ export default function Form9C() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <List className="w-4 h-4 text-slate-400" /> Folio (පත්‍රය)
+                    <List className="w-4 h-4 text-slate-400" /> Folio (පිටුව)
                   </label>
                   <input type="text" name="folio" value={formData.folio} onChange={handleInputChange} placeholder="L.F."
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
@@ -197,26 +248,26 @@ export default function Form9C() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-500">A.Pa.Ko (ඇ. පා. කෝ.)</label>
-                    <input type="number" step="0.01" name="aPaKoAmount" value={formData.aPaKoAmount} onChange={handleInputChange} placeholder="0.00"
+                    <label className="text-xs font-semibold text-slate-500">A.Pa.Haal (ඇ. පා. හාල්)</label>
+                    <input type="number" step="0.01" name="aPaHaalAmount" value={formData.aPaHaalAmount} onChange={handleInputChange} placeholder="0.00"
                       className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 text-sm" />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-500">Tea/Po (තේ / පො.)</label>
-                    <input type="number" step="0.01" name="teaPoAmount" value={formData.teaPoAmount} onChange={handleInputChange} placeholder="0.00"
+                    <label className="text-xs font-semibold text-slate-500">Patawum (පැටවුම්)</label>
+                    <input type="number" step="0.01" name="patawumAmount" value={formData.patawumAmount} onChange={handleInputChange} placeholder="0.00"
                       className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 text-sm" />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-500">Empty Sacks (හිස් ගෝනි)</label>
-                    <input type="number" step="0.01" name="emptySacksAmount" value={formData.emptySacksAmount} onChange={handleInputChange} placeholder="0.00"
+                    <label className="text-xs font-semibold text-slate-500">His Bhajana (හිස් භාජන)</label>
+                    <input type="number" step="0.01" name="hisBhajanaAmount" value={formData.hisBhajanaAmount} onChange={handleInputChange} placeholder="0.00"
                       className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 text-sm" />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-500">Other (වෙනත්)</label>
-                    <input type="number" step="0.01" name="otherAmount" value={formData.otherAmount} onChange={handleInputChange} placeholder="0.00"
+                    <label className="text-xs font-semibold text-slate-500">Prawahana (ප්‍රවාහන)</label>
+                    <input type="number" step="0.01" name="prawahanaAmount" value={formData.prawahanaAmount} onChange={handleInputChange} placeholder="0.00"
                       className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 text-sm" />
                   </div>
 
@@ -241,6 +292,17 @@ export default function Form9C() {
                 <List className="w-5 h-5 text-indigo-500" />
                 <h2 className="text-xl font-bold text-slate-800">Form 9 C Register</h2>
              </div>
+             <button
+                onClick={() => {
+                  setManualRowData(INITIAL_FORM_STATE);
+                  setShowManualRow(true);
+                }}
+                className="flex items-center space-x-1 px-3 py-1.5 bg-indigo-100 text-indigo-700 font-semibold rounded-lg hover:bg-indigo-200 transition-colors"
+                title="Add manual entry"
+             >
+                <Plus className="w-4 h-4" />
+                <span className="text-sm">Add Row</span>
+             </button>
           </div>
           
           <div className="p-4 md:p-6">
@@ -252,18 +314,38 @@ export default function Form9C() {
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Store (ගබඩාව)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Bill No (බිල් අංකය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Name (නම)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Folio (පත්‍රය)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Folio (පිටුව)</th>
                   
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-indigo-700 uppercase break-words bg-indigo-50/50 border border-slate-300">Total (මුළු මුදල)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">Goods (බඩු)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">A.Pa.Ko (ඇ.පා.කෝ)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">Tea/Po (තේ/පො)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">Sacks (හිස් ගෝනි)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">Other (වෙනත්)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">A.Pa.Haal (ඇ.පා.හාල්)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">Patawum (පැටවුම්)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">His Bhajana (හිස් භාජන)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">Prawahana (ප්‍රවාහන)</th>
                 </tr>
               </thead>
               <tbody>
-                {records.length === 0 ? (
+                {showManualRow && (
+                  <tr className="bg-yellow-50/50">
+                    <td className="px-1 py-1 border border-slate-300"><input type="date" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.date || ""} onChange={(e) => setManualRowData({...manualRowData, date: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="text" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.billNo} onChange={(e) => setManualRowData({...manualRowData, billNo: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="text" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.name} onChange={(e) => setManualRowData({...manualRowData, name: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="text" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.folio} onChange={(e) => setManualRowData({...manualRowData, folio: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="number" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.totalAmount} onChange={(e) => setManualRowData({...manualRowData, totalAmount: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="number" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.goodsAmount} onChange={(e) => setManualRowData({...manualRowData, goodsAmount: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="number" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.aPaHaalAmount} onChange={(e) => setManualRowData({...manualRowData, aPaHaalAmount: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="number" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.patawumAmount} onChange={(e) => setManualRowData({...manualRowData, patawumAmount: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300"><input type="number" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.hisBhajanaAmount} onChange={(e) => setManualRowData({...manualRowData, hisBhajanaAmount: e.target.value})} /></td>
+                    <td className="px-1 py-1 border border-slate-300">
+                      <div className="flex items-center space-x-1">
+                        <input type="number" className="w-full text-xs px-1 py-1 border rounded" value={manualRowData.prawahanaAmount} onChange={(e) => setManualRowData({...manualRowData, prawahanaAmount: e.target.value})} />
+                        <button onClick={handleSaveManualRow} className="text-green-600 hover:text-green-800 p-1 bg-green-50 rounded hover:bg-green-100 flex-shrink-0 border border-green-200" title="Save Row"><Check className="w-4 h-4"/></button>
+                      </div>
+                    </td>
+                  </tr>
+                )}
+                {records.length === 0 && !showManualRow ? (
                   <tr>
                     <td colSpan="11" className="px-2 py-12 text-center text-slate-400 border border-slate-300">
                       <div className="flex flex-col items-center justify-center">
@@ -283,26 +365,61 @@ export default function Form9C() {
                       
                       <td className="px-1 py-2 text-xs leading-tight font-bold text-indigo-700 bg-indigo-50/10 break-words border border-slate-300">{record.totalAmount?.toFixed(2) || '-'}</td>
                       <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.goodsAmount?.toFixed(2) || '-'}</td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.aPaKoAmount?.toFixed(2) || '-'}</td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.teaPoAmount?.toFixed(2) || '-'}</td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.emptySacksAmount?.toFixed(2) || '-'}</td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.otherAmount?.toFixed(2) || '-'}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.aPaHaalAmount?.toFixed(2) || '-'}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.patawumAmount?.toFixed(2) || '-'}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.hisBhajanaAmount?.toFixed(2) || '-'}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">{record.prawahanaAmount?.toFixed(2) || '-'}</td>
                     </tr>
                   ))
                 )}
                 
-                {/* Total Row */}
-                {records.length > 0 && (
-                  <tr className="bg-slate-100/80 font-bold">
-                    <td colSpan="5" className="px-1 py-3 text-xs leading-tight text-slate-800 text-right uppercase break-words bg-slate-100/80 border border-slate-300">Totals (එකතුව):</td>
-                    <td className="px-1 py-3 text-xs leading-tight text-indigo-800 break-words border border-slate-300 bg-indigo-100/50">{totals.totalAmount.toFixed(2)}</td>
-                    <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.goodsAmount.toFixed(2)}</td>
-                    <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.aPaKoAmount.toFixed(2)}</td>
-                    <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.teaPoAmount.toFixed(2)}</td>
-                    <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.emptySacksAmount.toFixed(2)}</td>
-                    <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.otherAmount.toFixed(2)}</td>
-                  </tr>
-                )}
+                {/* 1. Mema Satahane (This record) */}
+                <tr className="bg-slate-50/80 font-bold">
+                  <td colSpan="5" className="px-2 py-3 text-sm leading-tight text-slate-800 text-right break-words border border-slate-300">මෙම සටහනේ.......................</td>
+                  <td className="px-1 py-3 text-xs leading-tight text-indigo-800 break-words border border-slate-300 bg-indigo-50/50">{totals.totalAmount.toFixed(2)}</td>
+                  <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.goodsAmount.toFixed(2)}</td>
+                  <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.aPaHaalAmount.toFixed(2)}</td>
+                  <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.patawumAmount.toFixed(2)}</td>
+                  <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.hisBhajanaAmount.toFixed(2)}</td>
+                  <td className="px-1 py-3 text-xs leading-tight text-slate-800 break-words border border-slate-300">{totals.prawahanaAmount.toFixed(2)}</td>
+                  <td className="px-1 py-3 border border-slate-300"></td>
+                </tr>
+                
+                {/* 2. Pera Satahane (Previous record inputs) */}
+                <tr className="bg-slate-50/80 font-bold group">
+                  <td colSpan="5" className="px-2 py-3 text-sm leading-tight text-slate-800 text-right break-words border border-slate-300 transition-colors group-hover:bg-indigo-50/30">පෙර සටහනේ.......................</td>
+                  <td className="px-1 py-1 border border-slate-300 bg-indigo-50/30">
+                    <input type="number" step="0.01" className="w-full h-full bg-white border border-slate-300 rounded focus:ring-2 focus:ring-indigo-400 text-xs px-2 py-1.5 text-indigo-800 font-bold outline-none" placeholder="0.00" value={peraSatahane.totalAmount} onChange={(e) => setPeraSatahane({...peraSatahane, totalAmount: e.target.value})} />
+                  </td>
+                  <td className="px-1 py-1 border border-slate-300 bg-indigo-50/30">
+                    <input type="number" step="0.01" className="w-full h-full bg-white border border-slate-300 rounded focus:ring-2 focus:ring-indigo-400 text-xs px-2 py-1.5 outline-none" placeholder="0.00" value={peraSatahane.goodsAmount} onChange={(e) => setPeraSatahane({...peraSatahane, goodsAmount: e.target.value})} />
+                  </td>
+                  <td className="px-1 py-1 border border-slate-300 bg-indigo-50/30">
+                    <input type="number" step="0.01" className="w-full h-full bg-white border border-slate-300 rounded focus:ring-2 focus:ring-indigo-400 text-xs px-2 py-1.5 outline-none" placeholder="0.00" value={peraSatahane.aPaHaalAmount} onChange={(e) => setPeraSatahane({...peraSatahane, aPaHaalAmount: e.target.value})} />
+                  </td>
+                  <td className="px-1 py-1 border border-slate-300 bg-indigo-50/30">
+                    <input type="number" step="0.01" className="w-full h-full bg-white border border-slate-300 rounded focus:ring-2 focus:ring-indigo-400 text-xs px-2 py-1.5 outline-none" placeholder="0.00" value={peraSatahane.patawumAmount} onChange={(e) => setPeraSatahane({...peraSatahane, patawumAmount: e.target.value})} />
+                  </td>
+                  <td className="px-1 py-1 border border-slate-300 bg-indigo-50/30">
+                    <input type="number" step="0.01" className="w-full h-full bg-white border border-slate-300 rounded focus:ring-2 focus:ring-indigo-400 text-xs px-2 py-1.5 outline-none" placeholder="0.00" value={peraSatahane.hisBhajanaAmount} onChange={(e) => setPeraSatahane({...peraSatahane, hisBhajanaAmount: e.target.value})} />
+                  </td>
+                  <td className="px-1 py-1 border border-slate-300 bg-indigo-50/30">
+                    <input type="number" step="0.01" className="w-full h-full bg-white border border-slate-300 rounded focus:ring-2 focus:ring-indigo-400 text-xs px-2 py-1.5 outline-none" placeholder="0.00" value={peraSatahane.prawahanaAmount} onChange={(e) => setPeraSatahane({...peraSatahane, prawahanaAmount: e.target.value})} />
+                  </td>
+                  <td className="px-1 py-3 border border-slate-300 bg-slate-50/80"></td>
+                </tr>
+                
+                {/* 3. Ekathuwa (Grand Total) */}
+                <tr className="bg-indigo-100/60 font-extrabold text-indigo-900 border-t-2 border-indigo-300 shadow-sm">
+                  <td colSpan="5" className="px-2 py-4 text-[15px] leading-tight text-right break-words border border-slate-300">එකතුව.......................</td>
+                  <td className="px-2 py-4 text-sm leading-tight break-words border border-slate-300 bg-indigo-200/50">{(totals.totalAmount + (parseFloat(peraSatahane.totalAmount) || 0)).toFixed(2)}</td>
+                  <td className="px-2 py-4 text-sm leading-tight break-words border border-slate-300">{(totals.goodsAmount + (parseFloat(peraSatahane.goodsAmount) || 0)).toFixed(2)}</td>
+                  <td className="px-2 py-4 text-sm leading-tight break-words border border-slate-300">{(totals.aPaHaalAmount + (parseFloat(peraSatahane.aPaHaalAmount) || 0)).toFixed(2)}</td>
+                  <td className="px-2 py-4 text-sm leading-tight break-words border border-slate-300">{(totals.patawumAmount + (parseFloat(peraSatahane.patawumAmount) || 0)).toFixed(2)}</td>
+                  <td className="px-2 py-4 text-sm leading-tight break-words border border-slate-300">{(totals.hisBhajanaAmount + (parseFloat(peraSatahane.hisBhajanaAmount) || 0)).toFixed(2)}</td>
+                  <td className="px-2 py-4 text-sm leading-tight break-words border border-slate-300">{(totals.prawahanaAmount + (parseFloat(peraSatahane.prawahanaAmount) || 0)).toFixed(2)}</td>
+                  <td className="px-1 py-3 border border-slate-300"></td>
+                </tr>
               </tbody>
             </table>
             </div>
