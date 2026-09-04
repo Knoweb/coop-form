@@ -23,6 +23,7 @@ import Form25 from './forms/form25';
 import Form27 from './forms/form27';
 import Form29 from './forms/form29';
 import F29 from './forms/f29';
+import BranchProfitLossForm from './forms/BranchProfitLossForm';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -75,6 +76,8 @@ function App() {
         return <Form29 />;
       case 'f29':
         return <F29 />;
+      case 'branchProfitLoss':
+        return <BranchProfitLossForm />;
       default:
         return <Form1 />;
     }
@@ -126,6 +129,8 @@ function App() {
         return 'Form 29';
       case 'f29':
         return 'F 29';
+      case 'branchProfitLoss':
+        return 'Branch Profit & Loss';
       default:
         return 'COOP Forms';
     }
