@@ -47,10 +47,10 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('storeTransfer', 'Form 18', 'ගබඩාවෙන් ගබඩාවට මාරු කිරීම')}
         {btn('form19', 'Form 19', 'බඩු ආපසු යැවීම/එවීම')}
         {btn('form20', 'Form 20', 'තොග ගබඩාවේ බඩු විග්‍රහ කිරීම')}
-        {btn('form21', 'Form F-21', 'බින් කාඩ්පත')}
+        {btn('form21', 'Form 21', 'බින් කාඩ්පත')}
         {btn('form21a', 'Form 21 A', 'ලිපිද්‍රව්‍ය පාලනය')}
         {btn('form21b', 'Form 21 B', 'ප්‍රාදේශිකයේ / අංශයේ නම')}
-        {btn('form21c', 'Form F 21 C', 'දිනකට ඉදිරි බඩු තොග වාර්තාව')}
+        {btn('form21c', 'Form 21 C', 'දිනකට ඉදිරි බඩු තොග වාර්තාව')}
         {btn('form22', 'Form 22', 'ඉතිරි බඩු ගණන් ගැනීමේ ලැයිස්තුව')}
         {btn('form23', 'Form 23', 'මාසික මූල්‍ය බඩු ලැයිස්තුව')}
         {btn('form23a', 'Form 23 A', 'ශේෂ ගෙවීමේ ලේඛනය')}

@@ -23,22 +23,27 @@ public class FormF21CEntity {
     private String refNo;
 
     private String item1Name;
+    private String item1Capacity;
     private Double item1Qty;
     private Double item1Value;
 
     private String item2Name;
+    private String item2Capacity;
     private Double item2Qty;
     private Double item2Value;
 
     private String item3Name;
+    private String item3Capacity;
     private Double item3Qty;
     private Double item3Value;
 
     private String item4Name;
+    private String item4Capacity;
     private Double item4Qty;
     private Double item4Value;
 
     private String item5Name;
+    private String item5Capacity;
     private Double item5Qty;
     private Double item5Value;
 

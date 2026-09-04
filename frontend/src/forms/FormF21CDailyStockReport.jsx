@@ -41,11 +41,11 @@ export default function FormF21CDailyStockReport() {
     rowCategory: 'ලැබීම්',
     rowDescription: '1. මුලින්',
     refNo: '',
-    item1Qty: 0, item1Value: 0,
-    item2Qty: 0, item2Value: 0,
-    item3Qty: 0, item3Value: 0,
-    item4Qty: 0, item4Value: 0,
-    item5Qty: 0, item5Value: 0,
+    item1Qty: 0, item1Value: 0, item1Capacity: '',
+    item2Qty: 0, item2Value: 0, item2Capacity: '',
+    item3Qty: 0, item3Value: 0, item3Capacity: '',
+    item4Qty: 0, item4Value: 0, item4Capacity: '',
+    item5Qty: 0, item5Value: 0, item5Capacity: '',
   });
 
   const fetchRecords = async () => {
@@ -159,6 +159,19 @@ export default function FormF21CDailyStockReport() {
 
         <form onSubmit={handleAddEntry} className="p-6 space-y-6">
           
+          {/* Tank Configuration Group */}
+          <div className="bg-amber-50 p-5 rounded-xl border border-amber-200 shadow-sm">
+            <h4 className="text-sm font-bold text-amber-800 mb-4 border-b border-amber-200 pb-2">Tank Configuration / ටැංකියේ ධාරිතාව</h4>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              {[1, 2, 3, 4, 5].map(num => (
+                <div key={`cap-${num}`}>
+                  <label className="block text-xs font-semibold text-amber-700 mb-1">{headers[`item${num}Name`]} Capacity</label>
+                  <input type="text" name={`item${num}Capacity`} value={formData[`item${num}Capacity`]} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-amber-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none" placeholder="ධාරිතාව" />
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Top Form Controls */}
           <div className="grid grid-cols-1 md:grid-cols-6 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
              <div className="md:col-span-2 space-y-4">
@@ -227,11 +240,26 @@ export default function FormF21CDailyStockReport() {
               <tr className="bg-slate-100 border-b border-slate-200">
                 <th className="px-3 py-2 border-r border-slate-200 align-bottom" rowSpan="2">විස්තර<br/>(Description)</th>
                 <th className="px-3 py-2 border-r border-slate-200 align-bottom" rowSpan="2">අදාල අංකය<br/>(Ref No)</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">{headers.item1Name}</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">{headers.item2Name}</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">{headers.item3Name}</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">{headers.item4Name}</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">{headers.item5Name}</th>
+                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">
+                  {headers.item1Name} <br/> 
+                  <span className="text-xs text-gray-500 font-normal">ධාරිතාව: {formData.item1Capacity || '-'}</span>
+                </th>
+                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">
+                  {headers.item2Name} <br/> 
+                  <span className="text-xs text-gray-500 font-normal">ධාරිතාව: {formData.item2Capacity || '-'}</span>
+                </th>
+                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">
+                  {headers.item3Name} <br/> 
+                  <span className="text-xs text-gray-500 font-normal">ධාරිතාව: {formData.item3Capacity || '-'}</span>
+                </th>
+                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">
+                  {headers.item4Name} <br/> 
+                  <span className="text-xs text-gray-500 font-normal">ධාරිතාව: {formData.item4Capacity || '-'}</span>
+                </th>
+                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 text-center bg-indigo-50/50">
+                  {headers.item5Name} <br/> 
+                  <span className="text-xs text-gray-500 font-normal">ධාරිතාව: {formData.item5Capacity || '-'}</span>
+                </th>
                 <th className="px-3 py-2 align-bottom text-right font-bold text-emerald-700" rowSpan="2">මුළු එකතුව වටිනාකම<br/>(Grand Total)</th>
               </tr>
               <tr className="bg-slate-50 border-b border-slate-200">
