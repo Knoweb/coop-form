@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "form_f21c_stock_report")
+@Table(name = "form_f21c_stock_report_v2")
 @NoArgsConstructor
 public class FormF21CEntity {
     @Id
@@ -18,30 +18,24 @@ public class FormF21CEntity {
     private Long id;
 
     private String reportDate;
-    private String category;
-    private String description;
+    private String sectionCategory;
+    private String rowName;
     private String refNo;
 
-    private String item1Name;
-    private String item2Name;
-    private String item3Name;
-    private String item4Name;
-    private String item5Name;
+    private Double prevDayQty;
+    private Double prevDayVal;
 
-    private Double item1Qty;
-    private Double item1Value;
-    
-    private Double item2Qty;
-    private Double item2Value;
-    
-    private Double item3Qty;
-    private Double item3Value;
-    
-    private Double item4Qty;
-    private Double item4Value;
-    
-    private Double item5Qty;
-    private Double item5Value;
-    
-    private Double grandTotalValue;
+    private Double dailyQty;
+    private Double dailyVal;
+
+    private Double totalQty;
+    private Double totalVal;
+
+    private Double salesQty;
+    private Double salesVal;
+
+    private Double varianceQty;
+    private Double varianceVal;
+
+    private Double grandTotalVal;
 }

@@ -1,33 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText } from 'lucide-react';
 
+const PRESET_ROWS = {
+  'ලැබීම්': [
+    'සුදු ඩීසල්',
+    'මෝටර් පෙට්‍රල්',
+    'භූමිතෙල් (රූටා)',
+    'ආපසු ලැබෙන බඩු (මිල අඩුයි)',
+    'අළුත් මුදල් එකතුව'
+  ],
+  'නිකුත් කිරීම': [
+    'ද්‍රව්‍ය විකුණූ',
+    'ද්‍රව්‍ය මාරු',
+    'ද්‍රව්‍ය සම්පත් ආපසුයැවීම',
+    'එකතු වූ අඩුම',
+    'බහාලුම් ද්‍රව්‍ය',
+    'වෙනකුත්'
+  ],
+  'අවසාන ශේෂය': [
+    'ද්‍රව්‍ය අවසාන මෝටර් ශේෂය',
+    'ද්‍රව්‍ය ආරක්ෂක මෝටර් ශේෂය',
+    'ද්‍රව්‍ය ටියුබ් කපන ද්‍රව්‍ය'
+  ]
+};
+
 export default function FormF21CDailyStockReport() {
   const [records, setRecords] = useState([]);
-  
   const [formData, setFormData] = useState({
     reportDate: '',
-    category: 'ලැබීම්',
-    description: '',
+    sectionCategory: 'ලැබීම්',
+    rowName: PRESET_ROWS['ලැබීම්'][0],
     refNo: '',
     
-    item1Name: '',
-    item2Name: '',
-    item3Name: '',
-    item4Name: '',
-    item5Name: '',
-    
-    item1Qty: 0,
-    item1Value: 0,
-    item2Qty: 0,
-    item2Value: 0,
-    item3Qty: 0,
-    item3Value: 0,
-    item4Qty: 0,
-    item4Value: 0,
-    item5Qty: 0,
-    item5Value: 0,
-    
-    grandTotalValue: 0
+    prevDayQty: 0,
+    prevDayVal: 0,
+    dailyQty: 0,
+    dailyVal: 0,
+    totalQty: 0,
+    totalVal: 0,
+    salesQty: 0,
+    salesVal: 0,
+    varianceQty: 0,
+    varianceVal: 0,
+    grandTotalVal: 0
   });
 
   const fetchRecords = async () => {
@@ -48,27 +63,24 @@ export default function FormF21CDailyStockReport() {
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === 'number' ? Number(value) : value,
-    }));
+    
+    // When section changes, reset the row name to the first option of the new section
+    if (name === 'sectionCategory') {
+      setFormData((prev) => ({
+        ...prev,
+        sectionCategory: value,
+        rowName: PRESET_ROWS[value][0]
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === 'number' ? Number(value) : value,
+      }));
+    }
   };
 
   const handleAddEntry = async (e) => {
     e.preventDefault();
-
-    // AUTO-CALCULATE GRAND TOTAL BEFORE POSTING
-    const grandTotalValue = 
-      (formData.item1Value || 0) + 
-      (formData.item2Value || 0) + 
-      (formData.item3Value || 0) + 
-      (formData.item4Value || 0) + 
-      (formData.item5Value || 0);
-
-    const payload = { 
-      ...formData,
-      grandTotalValue
-    };
 
     try {
       const res = await fetch('http://localhost:8080/api/form-f21c', {
@@ -76,36 +88,27 @@ export default function FormF21CDailyStockReport() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(formData),
       });
 
       if (res.ok) {
         fetchRecords();
-        // Carry over header info to save time
         setFormData({
           reportDate: formData.reportDate,
-          category: formData.category,
-          description: '',
+          sectionCategory: formData.sectionCategory,
+          rowName: formData.rowName,
           refNo: '',
-          
-          item1Name: formData.item1Name,
-          item2Name: formData.item2Name,
-          item3Name: formData.item3Name,
-          item4Name: formData.item4Name,
-          item5Name: formData.item5Name,
-          
-          item1Qty: 0,
-          item1Value: 0,
-          item2Qty: 0,
-          item2Value: 0,
-          item3Qty: 0,
-          item3Value: 0,
-          item4Qty: 0,
-          item4Value: 0,
-          item5Qty: 0,
-          item5Value: 0,
-          
-          grandTotalValue: 0
+          prevDayQty: 0,
+          prevDayVal: 0,
+          dailyQty: 0,
+          dailyVal: 0,
+          totalQty: 0,
+          totalVal: 0,
+          salesQty: 0,
+          salesVal: 0,
+          varianceQty: 0,
+          varianceVal: 0,
+          grandTotalVal: 0
         });
       } else {
         alert('Failed to save record.');
@@ -116,10 +119,18 @@ export default function FormF21CDailyStockReport() {
     }
   };
 
-  const lastRecord = records.length > 0 ? records[records.length - 1] : formData;
+  // Group records by Date and then by Section
+  const groupedRecords = records.reduce((acc, record) => {
+    if (!acc[record.reportDate]) acc[record.reportDate] = {};
+    if (!acc[record.reportDate][record.sectionCategory]) {
+      acc[record.reportDate][record.sectionCategory] = [];
+    }
+    acc[record.reportDate][record.sectionCategory].push(record);
+    return acc;
+  }, {});
 
   return (
-    <div className="max-w-[100rem] mx-auto space-y-6">
+    <div className="max-w-[110rem] mx-auto space-y-6">
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
           <div className="flex items-center space-x-3">
@@ -134,25 +145,29 @@ export default function FormF21CDailyStockReport() {
         </div>
 
         <form onSubmit={handleAddEntry} className="p-6">
-          <div className="space-y-8">
+          <div className="space-y-6">
             
-            {/* Row Identity */}
+            {/* Identity Group */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">දිනය (Date)</label>
                   <input type="date" name="reportDate" value={formData.reportDate} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
                </div>
                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">වර්ගය (Category)</label>
-                  <select name="category" value={formData.category} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required>
-                    <option value="ලැබීම්">ලැබීම් (Receipts)</option>
-                    <option value="නිකුත් කිරීම">නිකුත් කිරීම (Issues)</option>
-                    <option value="අවසාන ශේෂය">අවසාන ශේෂය (Closing Balance)</option>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">අංශය (Section)</label>
+                  <select name="sectionCategory" value={formData.sectionCategory} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required>
+                    {Object.keys(PRESET_ROWS).map(sec => (
+                        <option key={sec} value={sec}>{sec}</option>
+                    ))}
                   </select>
                </div>
                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">විස්තර (Description)</label>
-                  <input type="text" name="description" value={formData.description} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="e.g. මුලින්" />
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">අයිතමය (Row Name)</label>
+                  <select name="rowName" value={formData.rowName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required>
+                    {PRESET_ROWS[formData.sectionCategory].map(item => (
+                        <option key={item} value={item}>{item}</option>
+                    ))}
+                  </select>
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">අදාල අංකය (Ref No)</label>
@@ -160,102 +175,82 @@ export default function FormF21CDailyStockReport() {
                </div>
             </div>
 
-            {/* Item Names Header Definition */}
-            <div className="bg-indigo-50 p-5 rounded-xl border border-indigo-200">
-                <h3 className="text-md font-bold text-indigo-800 border-b border-indigo-200 pb-2 mb-4">භාණ්ඩ නම් (Item Names)</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    <div>
-                        <input type="text" name="item1Name" value={formData.item1Name} onChange={handleChange} placeholder="Item 1" className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
-                    </div>
-                    <div>
-                        <input type="text" name="item2Name" value={formData.item2Name} onChange={handleChange} placeholder="Item 2" className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
-                    </div>
-                    <div>
-                        <input type="text" name="item3Name" value={formData.item3Name} onChange={handleChange} placeholder="Item 3" className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
-                    </div>
-                    <div>
-                        <input type="text" name="item4Name" value={formData.item4Name} onChange={handleChange} placeholder="Item 4" className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
-                    </div>
-                    <div>
-                        <input type="text" name="item5Name" value={formData.item5Name} onChange={handleChange} placeholder="Item 5" className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
-                    </div>
-                </div>
-            </div>
-
-            {/* Item Values */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {/* Item 1 */}
+            {/* Metrics Group */}
+            <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                 <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                    <h4 className="text-sm font-bold text-blue-800 mb-3 truncate">{formData.item1Name || 'Item 1'}</h4>
+                    <h4 className="text-sm font-bold text-blue-800 mb-3 text-center">මුල් දිනේ ඉදිරිපත්<br/>(Previous Day)</h4>
                     <div className="space-y-3">
                         <div>
                             <label className="block text-xs font-medium text-blue-700 mb-1">ප්‍රමාණය (Qty)</label>
-                            <input type="number" step="0.01" name="item1Qty" value={formData.item1Qty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+                            <input type="number" step="0.01" name="prevDayQty" value={formData.prevDayQty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
                         </div>
                         <div>
-                            <label className="block text-xs font-medium text-blue-700 mb-1">වටිනාකම (Value)</label>
-                            <input type="number" step="0.01" name="item1Value" value={formData.item1Value} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+                            <label className="block text-xs font-medium text-blue-700 mb-1">වටිනාකම (Val)</label>
+                            <input type="number" step="0.01" name="prevDayVal" value={formData.prevDayVal} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+                    <h4 className="text-sm font-bold text-emerald-800 mb-3 text-center">දිනකදී<br/>(Daily)</h4>
+                    <div className="space-y-3">
+                        <div>
+                            <label className="block text-xs font-medium text-emerald-700 mb-1">ප්‍රමාණය (Qty)</label>
+                            <input type="number" step="0.01" name="dailyQty" value={formData.dailyQty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-emerald-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none" />
+                        </div>
+                        <div>
+                            <label className="block text-xs font-medium text-emerald-700 mb-1">වටිනාකම (Val)</label>
+                            <input type="number" step="0.01" name="dailyVal" value={formData.dailyVal} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-emerald-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                    <h4 className="text-sm font-bold text-amber-800 mb-3 text-center">එකතුව<br/>(Total)</h4>
+                    <div className="space-y-3">
+                        <div>
+                            <label className="block text-xs font-medium text-amber-700 mb-1">ප්‍රමාණය (Qty)</label>
+                            <input type="number" step="0.01" name="totalQty" value={formData.totalQty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-amber-200 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none" />
+                        </div>
+                        <div>
+                            <label className="block text-xs font-medium text-amber-700 mb-1">වටිනාකම (Val)</label>
+                            <input type="number" step="0.01" name="totalVal" value={formData.totalVal} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-amber-200 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="bg-purple-50 p-4 rounded-xl border border-purple-200">
+                    <h4 className="text-sm font-bold text-purple-800 mb-3 text-center">විකුණුම්<br/>(Sales)</h4>
+                    <div className="space-y-3">
+                        <div>
+                            <label className="block text-xs font-medium text-purple-700 mb-1">ප්‍රමාණය (Qty)</label>
+                            <input type="number" step="0.01" name="salesQty" value={formData.salesQty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-purple-200 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
+                        </div>
+                        <div>
+                            <label className="block text-xs font-medium text-purple-700 mb-1">වටිනාකම (Val)</label>
+                            <input type="number" step="0.01" name="salesVal" value={formData.salesVal} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-purple-200 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="bg-rose-50 p-4 rounded-xl border border-rose-200">
+                    <h4 className="text-sm font-bold text-rose-800 mb-3 text-center">වෙනස්වීම්<br/>(Variance)</h4>
+                    <div className="space-y-3">
+                        <div>
+                            <label className="block text-xs font-medium text-rose-700 mb-1">ප්‍රමාණය (Qty)</label>
+                            <input type="number" step="0.01" name="varianceQty" value={formData.varianceQty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-rose-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500 outline-none" />
+                        </div>
+                        <div>
+                            <label className="block text-xs font-medium text-rose-700 mb-1">වටිනාකම (Val)</label>
+                            <input type="number" step="0.01" name="varianceVal" value={formData.varianceVal} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-rose-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500 outline-none" />
                         </div>
                     </div>
                 </div>
                 
-                {/* Item 2 */}
-                <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
-                    <h4 className="text-sm font-bold text-emerald-800 mb-3 truncate">{formData.item2Name || 'Item 2'}</h4>
-                    <div className="space-y-3">
-                        <div>
-                            <label className="block text-xs font-medium text-emerald-700 mb-1">ප්‍රමාණය (Qty)</label>
-                            <input type="number" step="0.01" name="item2Qty" value={formData.item2Qty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-emerald-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none" />
-                        </div>
-                        <div>
-                            <label className="block text-xs font-medium text-emerald-700 mb-1">වටිනාකම (Value)</label>
-                            <input type="number" step="0.01" name="item2Value" value={formData.item2Value} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-emerald-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none" />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Item 3 */}
-                <div className="bg-amber-50 p-4 rounded-xl border border-amber-200">
-                    <h4 className="text-sm font-bold text-amber-800 mb-3 truncate">{formData.item3Name || 'Item 3'}</h4>
-                    <div className="space-y-3">
-                        <div>
-                            <label className="block text-xs font-medium text-amber-700 mb-1">ප්‍රමාණය (Qty)</label>
-                            <input type="number" step="0.01" name="item3Qty" value={formData.item3Qty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-amber-200 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none" />
-                        </div>
-                        <div>
-                            <label className="block text-xs font-medium text-amber-700 mb-1">වටිනාකම (Value)</label>
-                            <input type="number" step="0.01" name="item3Value" value={formData.item3Value} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-amber-200 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none" />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Item 4 */}
-                <div className="bg-purple-50 p-4 rounded-xl border border-purple-200">
-                    <h4 className="text-sm font-bold text-purple-800 mb-3 truncate">{formData.item4Name || 'Item 4'}</h4>
-                    <div className="space-y-3">
-                        <div>
-                            <label className="block text-xs font-medium text-purple-700 mb-1">ප්‍රමාණය (Qty)</label>
-                            <input type="number" step="0.01" name="item4Qty" value={formData.item4Qty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-purple-200 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
-                        </div>
-                        <div>
-                            <label className="block text-xs font-medium text-purple-700 mb-1">වටිනාකම (Value)</label>
-                            <input type="number" step="0.01" name="item4Value" value={formData.item4Value} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-purple-200 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 outline-none" />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Item 5 */}
-                <div className="bg-rose-50 p-4 rounded-xl border border-rose-200">
-                    <h4 className="text-sm font-bold text-rose-800 mb-3 truncate">{formData.item5Name || 'Item 5'}</h4>
-                    <div className="space-y-3">
-                        <div>
-                            <label className="block text-xs font-medium text-rose-700 mb-1">ප්‍රමාණය (Qty)</label>
-                            <input type="number" step="0.01" name="item5Qty" value={formData.item5Qty} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-rose-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500 outline-none" />
-                        </div>
-                        <div>
-                            <label className="block text-xs font-medium text-rose-700 mb-1">වටිනාකම (Value)</label>
-                            <input type="number" step="0.01" name="item5Value" value={formData.item5Value} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-rose-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500 outline-none" />
-                        </div>
+                <div className="bg-indigo-50 p-4 rounded-xl border border-indigo-200 flex flex-col justify-center">
+                    <h4 className="text-sm font-bold text-indigo-800 mb-3 text-center">මුළු එකතුව<br/>(Grand Total)</h4>
+                    <div>
+                        <input type="number" step="0.01" name="grandTotalVal" value={formData.grandTotalVal} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg text-base font-bold text-indigo-700 focus:ring-2 focus:ring-indigo-500 outline-none text-center" />
                     </div>
                 </div>
             </div>
@@ -279,79 +274,87 @@ export default function FormF21CDailyStockReport() {
           <table className="w-full text-xs text-left whitespace-nowrap">
             <thead className="text-slate-600 font-medium">
               <tr className="bg-slate-100 border-b border-slate-200">
-                <th className="px-3 py-2 border-r border-slate-200 align-bottom" rowSpan="2">වර්ගය<br/>(Category)</th>
-                <th className="px-3 py-2 border-r border-slate-200 align-bottom" rowSpan="2">විස්තර<br/>(Description)</th>
+                <th className="px-3 py-2 border-r border-slate-200 align-bottom" rowSpan="2">Section / Row Name<br/>(අංශය / අයිතමය)</th>
                 <th className="px-3 py-2 border-r-2 border-gray-400 align-bottom" rowSpan="2">අදාල අංකය<br/>(Ref No)</th>
                 
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 bg-blue-50 text-blue-800 text-center border-b border-blue-200">{lastRecord.item1Name || 'Item 1'}</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 bg-emerald-50 text-emerald-800 text-center border-b border-emerald-200">{lastRecord.item2Name || 'Item 2'}</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 bg-amber-50 text-amber-800 text-center border-b border-amber-200">{lastRecord.item3Name || 'Item 3'}</th>
-                <th colSpan="2" className="px-3 py-2 border-r border-slate-200 bg-purple-50 text-purple-800 text-center border-b border-purple-200">{lastRecord.item4Name || 'Item 4'}</th>
-                <th colSpan="2" className="px-3 py-2 border-r-2 border-gray-400 bg-rose-50 text-rose-800 text-center border-b border-rose-200">{lastRecord.item5Name || 'Item 5'}</th>
+                <th colSpan="2" className="px-2 py-2 border-r border-slate-200 bg-blue-50 text-blue-800 text-center border-b border-blue-200">මුල් දිනේ ඉදිරිපත්<br/>(Previous Day)</th>
+                <th colSpan="2" className="px-2 py-2 border-r border-slate-200 bg-emerald-50 text-emerald-800 text-center border-b border-emerald-200">දිනකදී<br/>(Daily)</th>
+                <th colSpan="2" className="px-2 py-2 border-r border-slate-200 bg-amber-50 text-amber-800 text-center border-b border-amber-200">එකතුව<br/>(Total)</th>
+                <th colSpan="2" className="px-2 py-2 border-r border-slate-200 bg-purple-50 text-purple-800 text-center border-b border-purple-200">විකුණුම්<br/>(Sales)</th>
+                <th colSpan="2" className="px-2 py-2 border-r-2 border-gray-400 bg-rose-50 text-rose-800 text-center border-b border-rose-200">වෙනස්වීම්<br/>(Variance)</th>
                 
                 <th className="px-3 py-2 align-bottom text-center bg-slate-100 font-bold" rowSpan="2">මුළු එකතුව<br/>(Grand Total)</th>
               </tr>
               <tr className="bg-slate-50 border-b border-slate-200">
-                {/* 1 */}
-                <th className="px-2 py-2 border-r border-slate-200 text-center">ප්‍රමාණය (Qty)</th>
-                <th className="px-2 py-2 border-r border-slate-200 text-center">වටිනාකම (Value)</th>
-                {/* 2 */}
-                <th className="px-2 py-2 border-r border-slate-200 text-center">ප්‍රමාණය (Qty)</th>
-                <th className="px-2 py-2 border-r border-slate-200 text-center">වටිනාකම (Value)</th>
-                {/* 3 */}
-                <th className="px-2 py-2 border-r border-slate-200 text-center">ප්‍රමාණය (Qty)</th>
-                <th className="px-2 py-2 border-r border-slate-200 text-center">වටිනාකම (Value)</th>
-                {/* 4 */}
-                <th className="px-2 py-2 border-r border-slate-200 text-center">ප්‍රමාණය (Qty)</th>
-                <th className="px-2 py-2 border-r border-slate-200 text-center">වටිනාකම (Value)</th>
-                {/* 5 */}
-                <th className="px-2 py-2 border-r border-slate-200 text-center">ප්‍රමාණය (Qty)</th>
-                <th className="px-2 py-2 border-r-2 border-gray-400 text-center">වටිනාකම (Value)</th>
+                {/* Previous */}
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-blue-700">Qty</th>
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-blue-700">Val</th>
+                {/* Daily */}
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-emerald-700">Qty</th>
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-emerald-700">Val</th>
+                {/* Total */}
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-amber-700">Qty</th>
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-amber-700">Val</th>
+                {/* Sales */}
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-purple-700">Qty</th>
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-purple-700">Val</th>
+                {/* Variance */}
+                <th className="px-2 py-2 border-r border-slate-200 text-center text-rose-700">Qty</th>
+                <th className="px-2 py-2 border-r-2 border-gray-400 text-center text-rose-700">Val</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
-              {records.map((record, index) => (
-                <React.Fragment key={record.id || index}>
-                  {/* To show date grouping nicely since it's a daily report */}
-                  {(index === 0 || records[index - 1].reportDate !== record.reportDate) && (
-                    <tr className="bg-indigo-50/50 border-b border-slate-200 text-xs font-bold text-indigo-900">
-                      <td colSpan="14" className="px-3 py-2">
-                        දිනය (Date): {record.reportDate}
-                      </td>
-                    </tr>
-                  )}
-                  <tr className="even:bg-gray-50 hover:bg-slate-100 transition-colors">
-                    <td className="px-3 py-2 text-slate-800 border-r border-slate-100 font-semibold">{record.category}</td>
-                    <td className="px-3 py-2 text-slate-800 border-r border-slate-100">{record.description}</td>
-                    <td className="px-3 py-2 text-slate-800 border-r-2 border-gray-400">{record.refNo}</td>
-
-                    {/* Item 1 */}
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item1Qty?.toFixed(2) || '0.00'}</td>
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item1Value?.toFixed(2) || '0.00'}</td>
-                    
-                    {/* Item 2 */}
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item2Qty?.toFixed(2) || '0.00'}</td>
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item2Value?.toFixed(2) || '0.00'}</td>
-                    
-                    {/* Item 3 */}
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item3Qty?.toFixed(2) || '0.00'}</td>
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item3Value?.toFixed(2) || '0.00'}</td>
-                    
-                    {/* Item 4 */}
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item4Qty?.toFixed(2) || '0.00'}</td>
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item4Value?.toFixed(2) || '0.00'}</td>
-                    
-                    {/* Item 5 */}
-                    <td className="px-2 py-2 text-slate-800 border-r border-slate-100 text-right">{record.item5Qty?.toFixed(2) || '0.00'}</td>
-                    <td className="px-2 py-2 text-slate-800 border-r-2 border-gray-400 text-right">{record.item5Value?.toFixed(2) || '0.00'}</td>
-                    
-                    <td className="px-3 py-2 text-slate-800 text-right font-bold bg-slate-100/50">{record.grandTotalValue?.toFixed(2) || '0.00'}</td>
+              {Object.keys(groupedRecords).map(date => (
+                <React.Fragment key={date}>
+                  {/* Date Header */}
+                  <tr className="bg-indigo-100 border-b border-slate-200 text-sm font-bold text-indigo-900">
+                    <td colSpan="13" className="px-4 py-3">
+                      දිනය (Date): {date}
+                    </td>
                   </tr>
+                  
+                  {/* Map through sections inside this date */}
+                  {['ලැබීම්', 'නිකුත් කිරීම', 'අවසාන ශේෂය'].map(section => (
+                     groupedRecords[date][section] && (
+                        <React.Fragment key={`${date}-${section}`}>
+                          {/* Section Header */}
+                          <tr className="bg-slate-100/80 border-b border-slate-200 text-xs font-bold text-slate-700">
+                            <td colSpan="13" className="px-6 py-2 border-r-2 border-gray-400">
+                              {section}
+                            </td>
+                          </tr>
+                          
+                          {groupedRecords[date][section].map(record => (
+                              <tr key={record.id} className="even:bg-gray-50 hover:bg-slate-100 transition-colors text-slate-800">
+                                <td className="px-6 py-2 border-r border-slate-200 font-medium">{record.rowName}</td>
+                                <td className="px-2 py-2 border-r-2 border-gray-400 text-center">{record.refNo}</td>
+                                
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.prevDayQty?.toFixed(2) || '0.00'}</td>
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.prevDayVal?.toFixed(2) || '0.00'}</td>
+                                
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.dailyQty?.toFixed(2) || '0.00'}</td>
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.dailyVal?.toFixed(2) || '0.00'}</td>
+                                
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.totalQty?.toFixed(2) || '0.00'}</td>
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.totalVal?.toFixed(2) || '0.00'}</td>
+                                
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.salesQty?.toFixed(2) || '0.00'}</td>
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.salesVal?.toFixed(2) || '0.00'}</td>
+                                
+                                <td className="px-2 py-2 border-r border-slate-200 text-right">{record.varianceQty?.toFixed(2) || '0.00'}</td>
+                                <td className="px-2 py-2 border-r-2 border-gray-400 text-right">{record.varianceVal?.toFixed(2) || '0.00'}</td>
+                                
+                                <td className="px-2 py-2 text-right font-bold bg-slate-100/50">{record.grandTotalVal?.toFixed(2) || '0.00'}</td>
+                              </tr>
+                          ))}
+                        </React.Fragment>
+                     )
+                  ))}
                 </React.Fragment>
               ))}
               {records.length === 0 && (
                 <tr>
-                  <td colSpan="14" className="px-4 py-8 text-center text-slate-500">
+                  <td colSpan="13" className="px-4 py-8 text-center text-slate-500">
                     No records found. Add a record to see it here.
                   </td>
                 </tr>
