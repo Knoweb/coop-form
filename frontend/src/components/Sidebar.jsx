@@ -51,6 +51,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form21a', 'Form 21 A', 'ලිපිද්‍රව්‍ය පාලනය')}
         {btn('form21c', 'Form F 21 C', 'දිනකට ඉදිරි බඩු තොග වාර්තාව')}
         {btn('form22', 'Form 22', 'ඉතිරි බඩු ගණන් ගැනීමේ ලැයිස්තුව')}
+        {btn('form23', 'Form 23', 'මාසික මූල්‍ය බඩු ලැයිස්තුව')}
         {btn('form23a', 'Form 23 A', 'ශේෂ ගෙවීමේ ලේඛනය')}
         {btn('form24', 'Form 24', 'ස්ථාවර වත්කම් ලේඛනය')}
         {btn('form25', 'Form 25', 'ශේෂ ගෙවීම් ලේඛනය')}
