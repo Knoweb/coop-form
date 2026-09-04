@@ -1,33 +1,32 @@
 ﻿import React, { useState } from "react";
 import { Save, Plus, Check, FileText, List, X } from "lucide-react";
 
-// Row definitions matching the physical form exactly
 const ROW_DEFS = [
-  { key: "uparama",     label: "උපරිම",                                 type: "normal"   },
-  { key: "awama",       label: "අවම",                                    type: "normal"   },
-  { key: "saruwa",      label: "සෘජුව මිලට ගත් බඩුවල ප්‍රමාණය",         type: "normal"   },
-  { key: "thogaMove",   label: "තොග ශාලාවලින් මාරු කළ බඩුවල ප්‍රමාණය",  type: "normal"   },
-  { key: "shakhaTrans", label: "ශාඛාවලින් මාරු කිරීම් ප්‍රමාණය",         type: "normal"   },
-  { key: "initGoods",   label: "ආරම්භක බඩුවල ප්‍රමාණය",                 type: "normal"   },
-  { key: "sub1",        label: "එකතුව",                                  type: "subtotal" },
-  { key: "heading",     label: "අඩුකිරීම්",                              type: "heading"  },
-  { key: "cashSales",   label: "අත්පිට විකුණුම් ප්‍රමාණය",               type: "normal"   },
-  { key: "creditSales", label: "ණයට විකුණුම් ප්‍රමාණය",                 type: "normal"   },
-  { key: "returned",    label: "ආපසු යැවූ ප්‍රමාණය",                     type: "normal"   },
-  { key: "damaged",     label: "නරක්වූ බඩු ප්‍රමාණය",                    type: "normal"   },
-  { key: "transfer",    label: "මාරු කිරීම්",                            type: "normal"   },
-  { key: "sub2",        label: "උප එකතුව",                              type: "subtotal" },
-  { key: "remaining",   label: "අවසානයට ඉතිරි බඩු ප්‍රමාණය",             type: "normal"   },
-  { key: "grand",       label: "එකතුව",                                  type: "subtotal" },
+  { key: "uparama", label: "උපරිම", type: "normal" },
+  { key: "awama", label: "අවම", type: "normal" },
+  { key: "saruwa", label: "සෘජුව මිලට ගත් බඩුවල ප්‍රමාණය", type: "normal" },
+  { key: "thogaMove", label: "තොග ශාලාවලින් මාරු කළ බඩුවල ප්‍රමාණය", type: "normal" },
+  { key: "shakhaTrans", label: "ශාඛාවලින් මාරු කිරීම් ප්‍රමාණය", type: "normal" },
+  { key: "initGoods", label: "ආරම්භක බඩුවල ප්‍රමාණය", type: "normal" },
+  { key: "sub1", label: "එකතුව", type: "subtotal" },
+  { key: "heading", label: "අඩුකිරීම්", type: "heading" },
+  { key: "cashSales", label: "අත්පිට විකුණුම් ප්‍රමාණය", type: "normal" },
+  { key: "creditSales", label: "ණයට විකුණුම් ප්‍රමාණය", type: "normal" },
+  { key: "returned", label: "ආපසු යැවූ ප්‍රමාණය", type: "normal" },
+  { key: "damaged", label: "නරක්වූ බඩු ප්‍රමාණය", type: "normal" },
+  { key: "transfer", label: "මාරු කිරීම්", type: "normal" },
+  { key: "sub2", label: "උප එකතුව", type: "subtotal" },
+  { key: "remaining", label: "අවසානයට ඉතිරි බඩු ප්‍රමාණය", type: "normal" },
+  { key: "grand", label: "එකතුව", type: "subtotal" },
 ];
 
-const SECTION1_KEYS = ["uparama","awama","saruwa","thogaMove","shakhaTrans","initGoods"];
-const SECTION2_KEYS = ["cashSales","creditSales","returned","damaged","transfer"];
-const DATA_KEYS     = [...SECTION1_KEYS, ...SECTION2_KEYS, "remaining"];
+const SECTION1_KEYS = ["uparama", "awama", "saruwa", "thogaMove", "shakhaTrans", "initGoods"];
+const SECTION2_KEYS = ["cashSales", "creditSales", "returned", "damaged", "transfer"];
+const DATA_KEYS = [...SECTION1_KEYS, ...SECTION2_KEYS, "remaining"];
 
 const DEFAULT_COLS = [
   { key: "shal", label: "සහල්", sub: "කි. ග්‍රෑ." },
-  { key: "piti", label: "පිටි",  sub: "කි. ග්‍රෑ." },
+  { key: "piti", label: "පිටි", sub: "කි. ග්‍රෑ." },
   { key: "sini", label: "සීනි", sub: "කි. ග්‍රෑ." },
 ];
 
@@ -41,27 +40,27 @@ const buildBlank = (cols) => {
 
 const DUMMY = {
   id: 1, date: "2026-08-15", branch: "මධ්‍යම ශාඛාව", society: "කොළඹ සීමාසහිත", adala: "15C-001",
-  uparama_shal:"850", uparama_piti:"420", uparama_sini:"310",
-  awama_shal:"200", awama_piti:"100", awama_sini:"80",
-  saruwa_shal:"1200", saruwa_piti:"600", saruwa_sini:"450",
-  thogaMove_shal:"500", thogaMove_piti:"250", thogaMove_sini:"180",
-  shakhaTrans_shal:"300", shakhaTrans_piti:"150", shakhaTrans_sini:"120",
-  initGoods_shal:"400", initGoods_piti:"200", initGoods_sini:"160",
-  cashSales_shal:"1800", cashSales_piti:"900", cashSales_sini:"680",
-  creditSales_shal:"600", creditSales_piti:"300", creditSales_sini:"220",
-  returned_shal:"50", returned_piti:"25", returned_sini:"20",
-  damaged_shal:"30", damaged_piti:"15", damaged_sini:"12",
-  transfer_shal:"200", transfer_piti:"100", transfer_sini:"80",
-  remaining_shal:"570", remaining_piti:"280", remaining_sini:"208",
+  uparama_shal: "850", uparama_piti: "420", uparama_sini: "310",
+  awama_shal: "200", awama_piti: "100", awama_sini: "80",
+  saruwa_shal: "1200", saruwa_piti: "600", saruwa_sini: "450",
+  thogaMove_shal: "500", thogaMove_piti: "250", thogaMove_sini: "180",
+  shakhaTrans_shal: "300", shakhaTrans_piti: "150", shakhaTrans_sini: "120",
+  initGoods_shal: "400", initGoods_piti: "200", initGoods_sini: "160",
+  cashSales_shal: "1800", cashSales_piti: "900", cashSales_sini: "680",
+  creditSales_shal: "600", creditSales_piti: "300", creditSales_sini: "220",
+  returned_shal: "50", returned_piti: "25", returned_sini: "20",
+  damaged_shal: "30", damaged_piti: "15", damaged_sini: "12",
+  transfer_shal: "200", transfer_piti: "100", transfer_sini: "80",
+  remaining_shal: "570", remaining_piti: "280", remaining_sini: "208",
 };
 
 export default function Form15C() {
   const [society, setSociety] = useState("");
-  const [branch,  setBranch]  = useState("");
-  const [date,    setDate]    = useState("");
+  const [branch, setBranch] = useState("");
+  const [date, setDate] = useState("");
 
   // ── Dynamic columns state ──
-  const [cols, setCols]           = useState(DEFAULT_COLS);
+  const [cols, setCols] = useState(DEFAULT_COLS);
   const [addingCol, setAddingCol] = useState(false);
   const [newColLabel, setNewColLabel] = useState("");
 
@@ -69,11 +68,11 @@ export default function Form15C() {
   const [vals, setVals] = useState(buildBlank(DEFAULT_COLS));
 
   // ── Records ──
-  const [records, setRecords]     = useState([DUMMY]);
-  const [nextId,  setNextId]      = useState(2);
+  const [records, setRecords] = useState([DUMMY]);
+  const [nextId, setNextId] = useState(2);
   const [showManual, setShowManual] = useState(false);
-  const [manVals, setManVals]     = useState(buildBlank(DEFAULT_COLS));
-  const [manDate, setManDate]     = useState("");
+  const [manVals, setManVals] = useState(buildBlank(DEFAULT_COLS));
+  const [manDate, setManDate] = useState("");
   const [manBranch, setManBranch] = useState("");
 
   // ── Add a new column ──
@@ -110,7 +109,7 @@ export default function Form15C() {
   };
 
   // ── Auto totals ──
-  const colSum  = (keys, colKey) => keys.reduce((s, k) => s + pv(vals[`${k}_${colKey}`]), 0);
+  const colSum = (keys, colKey) => keys.reduce((s, k) => s + pv(vals[`${k}_${colKey}`]), 0);
   const sub1Val = c => colSum(SECTION1_KEYS, c);
   const sub2Val = c => colSum(SECTION2_KEYS, c);
   const grandVal = c => sub1Val(c);
@@ -250,8 +249,8 @@ export default function Form15C() {
                 // ── Subtotal row ──
                 if (row.type === "subtotal") {
                   const getVal = colKey => {
-                    if (row.key === "sub1")  return sub1Val(colKey).toFixed(2);
-                    if (row.key === "sub2")  return sub2Val(colKey).toFixed(2);
+                    if (row.key === "sub1") return sub1Val(colKey).toFixed(2);
+                    if (row.key === "sub2") return sub2Val(colKey).toFixed(2);
                     if (row.key === "grand") return grandVal(colKey).toFixed(2);
                     return "";
                   };
