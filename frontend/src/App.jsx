@@ -27,6 +27,7 @@ import BranchProfitLossForm from './forms/BranchProfitLossForm';
 import TelephoneRegisterForm from './forms/TelephoneRegisterForm';
 import Form32ASummary from './forms/Form32ASummary';
 import MilkCollectionSummary from './forms/MilkCollectionSummary';
+import Form16AStoreLedger from './forms/Form16AStoreLedger';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -87,6 +88,8 @@ function App() {
         return <Form32ASummary />;
       case 'form15mMilk':
         return <MilkCollectionSummary />;
+      case 'form16a':
+        return <Form16AStoreLedger />;
       default:
         return <Form1 />;
     }
@@ -146,6 +149,8 @@ function App() {
         return 'Form 32 A Summary';
       case 'form15mMilk':
         return 'Milk Center Daily Summary';
+      case 'form16a':
+        return 'Stock Ledger (Form 16 A)';
       default:
         return 'COOP Forms';
     }
