@@ -47,6 +47,11 @@ export default function Form23A() {
       alert("Please add at least one item to the form.");
       return;
     }
+    
+    if (!globalName || !globalStoreName || !globalDate) {
+      alert("Please fill in the Form Details (Name, Store, and Date).");
+      return;
+    }
 
     setIsSubmitting(true);
     
@@ -261,6 +266,16 @@ export default function Form23A() {
                   ))
                 )}
               </tbody>
+              {currentItems.length > 0 && (
+                <tfoot>
+                  <tr className="bg-slate-100">
+                    <td colSpan="2" className="px-3 py-3 text-sm font-bold text-slate-800 border border-slate-800 print:border-black text-right">එකතුව (Total)</td>
+                    <td className="px-3 py-3 text-sm font-bold text-slate-800 border border-slate-800 print:border-black text-right">{totals.requestedQuantity > 0 ? totals.requestedQuantity.toFixed(2) : ''}</td>
+                    <td className="px-3 py-3 text-sm font-bold text-slate-800 border border-slate-800 print:border-black text-right">{totals.issuedQuantity > 0 ? totals.issuedQuantity.toFixed(2) : ''}</td>
+                    <td className="px-3 py-3 text-sm text-slate-800 border border-slate-800 print:border-black"></td>
+                  </tr>
+                </tfoot>
+              )}
             </table>
             </div>
             
