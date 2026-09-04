@@ -28,6 +28,7 @@ import TelephoneRegisterForm from './forms/TelephoneRegisterForm';
 import Form32ASummary from './forms/Form32ASummary';
 import MilkCollectionSummary from './forms/MilkCollectionSummary';
 import Form16AStoreLedger from './forms/Form16AStoreLedger';
+import Form16BGoodsReceipt from './forms/Form16BGoodsReceipt';
 import Form15C from './forms/Form15C';
 import Sidebar from './components/Sidebar';
 
@@ -93,6 +94,8 @@ function App() {
         return <MilkCollectionSummary />;
       case 'form16a':
         return <Form16AStoreLedger />;
+      case 'form16b':
+        return <Form16BGoodsReceipt />;
       default:
         return <Form1 />;
     }
@@ -156,6 +159,8 @@ function App() {
         return 'Milk Center Daily Summary';
       case 'form16a':
         return 'Stock Ledger (Form 16 A)';
+      case 'form16b':
+        return 'Goods Receipt (Form 16 B)';
       default:
         return 'COOP Forms';
     }

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { FileText, Settings, LayoutDashboard, X } from 'lucide-react';
 
 export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm }) {
@@ -40,6 +40,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form15c', 'Form 15 C', 'දිනට ප්‍රමාණය — ඉතිරි බඩු සටහන')}
         {btn('form15mMilk', 'Form 15 M', 'කිරි සංග්‍රහය')}
         {btn('form16a', 'Form 16 A', 'බඩු ලේජරය')}
+        {btn('form16b', 'Form 16 B', 'බඩු භාර ගැනීමේ සටහන')}
         {btn('form23a', 'Form 23 A', 'ශේෂ ගෙවීමේ ලේඛනය')}
         {btn('form24',  'Form 24',   'ස්ථාවර වත්කම් ලේඛනය')}
         {btn('form25',  'Form 25',   'ශේෂ ගෙවීම් ලේඛනය')}
