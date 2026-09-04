@@ -33,6 +33,9 @@ import Form16DDailyPurchases from './forms/Form16DDailyPurchases';
 import Form17SpoilagePriceChange from './forms/Form17SpoilagePriceChange';
 import StoreTransferForm from './forms/StoreTransferForm';
 import Form19GoodsReturn from './forms/Form19GoodsReturn';
+import Form20WholesaleAnalysis from './forms/Form20WholesaleAnalysis';
+import Form21BinCard from './forms/Form21BinCard';
+import Form21AStationeryControl from './forms/Form21AStationeryControl';
 import Form15C from './forms/Form15C';
 import Form30 from './forms/form30';
 import Form31 from './forms/form31';
@@ -119,6 +122,12 @@ function App() {
         return <StoreTransferForm />;
       case 'form19':
         return <Form19GoodsReturn />;
+      case 'form20':
+        return <Form20WholesaleAnalysis />;
+      case 'form21':
+        return <Form21BinCard />;
+      case 'form21a':
+        return <Form21AStationeryControl />;
       default:
         return <Form1 />;
     }
@@ -200,6 +209,12 @@ function App() {
         return 'Store Transfer Form';
       case 'form19':
         return 'Goods Return/Dispatch (Form 19)';
+      case 'form20':
+        return 'Wholesale Goods Analysis (Form 20)';
+      case 'form21':
+        return 'Bin Card / Stock Ledger (Form F-21)';
+      case 'form21a':
+        return 'Stationery Control (Form 21 A)';
       default:
         return 'COOP Forms';
     }
