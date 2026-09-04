@@ -115,12 +115,12 @@ export default function F29() {
                   // Special handling for pre-defined label rows
                   if (showLabelCol && ((c === labelColName) || (c === 'විස්තර' && !field))) {
                     return (
-                      <td key={i} className="border border-slate-800 p-0 text-xs font-semibold text-slate-800 w-1/3">
+                      <td key={i} className="border border-slate-800 p-0 text-xs font-semibold text-slate-900 w-1/3">
                         <input
                           type="text"
                           value={row.label}
                           onChange={(e) => updateRow(setter, row.id, 'label', e.target.value)}
-                          className="w-full h-7 px-2 bg-transparent focus:outline-none focus:bg-indigo-50/50 text-slate-800"
+                          className="w-full h-7 px-2 bg-transparent focus:outline-none focus:bg-slate-100 hover:bg-slate-50 transition-colors text-slate-900"
                           placeholder={index >= (title === 'වියදම්' ? 11 : title === 'ආදායම්' ? 5 : 0) ? 'විස්තර...' : ''}
                           readOnly={index < (title === 'වියදම්' ? 11 : title === 'ආදායම්' ? 5 : title === 'අතිකාල දීමනා පැය' ? 2 : 0)}
                         />
@@ -134,7 +134,7 @@ export default function F29() {
                         type="text"
                         value={row[field]}
                         onChange={(e) => updateRow(setter, row.id, field, e.target.value)}
-                        className="w-full h-full px-1 text-xs text-center focus:outline-none focus:bg-indigo-50/50 text-blue-700 font-semibold print:bg-transparent print:text-slate-900 bg-transparent"
+                        className="w-full h-full px-1 text-xs text-center focus:outline-none focus:bg-slate-100 hover:bg-slate-50 transition-colors text-slate-900 font-semibold print:bg-transparent"
                       />
                     </td>
                   );
@@ -155,9 +155,9 @@ export default function F29() {
       </div>
       <button
         onClick={() => addRow(setter)}
-        className="print:hidden w-full py-1 text-[10px] font-semibold text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 flex items-center justify-center gap-1 transition-colors border-t border-slate-800 bg-white"
+        className="print:hidden w-full py-1.5 text-xs font-semibold text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 flex items-center justify-center gap-1 transition-colors border-t-2 border-dashed border-slate-300 bg-slate-50/50"
       >
-        <Plus className="w-3 h-3" /> Add Row
+        <Plus className="w-4 h-4" /> Add Row
       </button>
     </div>
   );
@@ -201,17 +201,17 @@ export default function F29() {
         <div ref={printRef} className="min-w-[1000px] print:w-[1000px] mx-auto text-slate-900 bg-white p-8">
 
           {/* Top Info */}
-          <div className="flex justify-between items-center mb-4 font-bold text-sm">
-            <div>කාර්යාලයේ ප්‍රයෝජනය පිණිස</div>
+          <div className="flex justify-between items-center mb-4 font-bold text-[15px]">
+            <div className="tracking-wide text-slate-900">කාර්යාලයේ ප්‍රයෝජනය පිණිස</div>
             <div className="flex items-end gap-2">
-              <span>දිනය:</span>
-              <input type="text" name="date" value={globalData.date} onChange={handleGlobalChange} className="border-b border-dotted border-slate-800 w-32 focus:outline-none text-center text-blue-700" />
+              <span className="text-slate-900">දිනය:</span>
+              <input type="text" name="date" value={globalData.date} onChange={handleGlobalChange} className="border-b border-dotted border-slate-800 w-32 focus:outline-none text-center text-slate-900 focus:bg-slate-50 hover:bg-slate-50/50 transition-colors" />
             </div>
             <div className="flex items-end gap-2">
-              <span>වාහන අංකය:</span>
-              <input type="text" name="vehicleNo" value={globalData.vehicleNo} onChange={handleGlobalChange} className="border-b border-dotted border-slate-800 w-32 focus:outline-none text-center text-blue-700" />
+              <span className="text-slate-900">වාහන අංකය:</span>
+              <input type="text" name="vehicleNo" value={globalData.vehicleNo} onChange={handleGlobalChange} className="border-b border-dotted border-slate-800 w-32 focus:outline-none text-center text-slate-900 focus:bg-slate-50 hover:bg-slate-50/50 transition-colors" />
             </div>
-            <div className="text-lg">F 29</div>
+            <div className="text-lg text-slate-900">F 29</div>
           </div>
 
           <div className="flex border border-slate-800">
@@ -232,17 +232,17 @@ export default function F29() {
                     මීටර අංක<br />සට:
                   </div>
                   <div className="w-[70%] flex flex-col border-slate-800">
-                    <div className="flex border-b border-slate-800 flex-1">
-                      <div className="w-[60%] border-r border-slate-800 p-1 flex items-center">දවස අවසාන</div>
-                      <input type="text" name="meterEndOfDay" value={globalData.meterEndOfDay} onChange={handleGlobalChange} className="w-[40%] focus:outline-none text-center text-blue-700 font-semibold" />
+                    <div className="flex border-b border-slate-800 flex-1 group/input">
+                      <div className="w-[60%] border-r border-slate-800 p-1 flex items-center group-hover/input:bg-slate-50 transition-colors">දවස අවසාන</div>
+                      <input type="text" name="meterEndOfDay" value={globalData.meterEndOfDay} onChange={handleGlobalChange} className="w-[40%] focus:outline-none text-center text-slate-900 font-semibold focus:bg-slate-100 hover:bg-slate-50 transition-colors" />
                     </div>
-                    <div className="flex border-b border-slate-800 flex-1">
-                      <div className="w-[60%] border-r border-slate-800 p-1 flex items-center">පෙර දින අ:</div>
-                      <input type="text" name="meterPrevDay" value={globalData.meterPrevDay} onChange={handleGlobalChange} className="w-[40%] focus:outline-none text-center text-blue-700 font-semibold" />
+                    <div className="flex border-b border-slate-800 flex-1 group/input">
+                      <div className="w-[60%] border-r border-slate-800 p-1 flex items-center group-hover/input:bg-slate-50 transition-colors">පෙර දින අ:</div>
+                      <input type="text" name="meterPrevDay" value={globalData.meterPrevDay} onChange={handleGlobalChange} className="w-[40%] focus:outline-none text-center text-slate-900 font-semibold focus:bg-slate-100 hover:bg-slate-50 transition-colors" />
                     </div>
-                    <div className="flex flex-1">
-                      <div className="w-[60%] border-r border-slate-800 p-1 flex items-center text-[10px] leading-tight">වැ: කළ: සැ: ග:</div>
-                      <input type="text" name="meterWorkedMiles" value={globalData.meterWorkedMiles} onChange={handleGlobalChange} className="w-[40%] focus:outline-none text-center text-blue-700 font-semibold" />
+                    <div className="flex flex-1 group/input">
+                      <div className="w-[60%] border-r border-slate-800 p-1 flex items-center text-[10px] leading-tight group-hover/input:bg-slate-50 transition-colors">වැ: කළ: සැ: ග:</div>
+                      <input type="text" name="meterWorkedMiles" value={globalData.meterWorkedMiles} onChange={handleGlobalChange} className="w-[40%] focus:outline-none text-center text-slate-900 font-semibold focus:bg-slate-100 hover:bg-slate-50 transition-colors" />
                     </div>
                   </div>
                 </div>
@@ -284,17 +284,17 @@ export default function F29() {
                     <tbody>
                       {overtime.map((row, idx) => (
                         <tr key={row.id} className="relative group/row hover:bg-slate-50 transition-colors print:hover:bg-transparent">
-                          <td className="border-b border-r border-slate-800 p-0 text-xs font-semibold">
-                            <input type="text" value={row.label} onChange={(e) => updateRow(setOvertime, row.id, 'label', e.target.value)} className="w-full h-7 px-2 bg-transparent focus:outline-none focus:bg-indigo-50/50 text-slate-800" readOnly={idx < 2} />
+                          <td className="border-b border-r border-slate-800 p-0 text-xs font-semibold text-slate-900">
+                            <input type="text" value={row.label} onChange={(e) => updateRow(setOvertime, row.id, 'label', e.target.value)} className="w-full h-7 px-2 bg-transparent focus:outline-none focus:bg-slate-100 hover:bg-slate-50 transition-colors text-slate-900" readOnly={idx < 2} />
                           </td>
                           <td className="border-b border-r border-slate-800 p-0 h-7">
-                            <input type="text" value={row.col1} onChange={(e) => updateRow(setOvertime, row.id, 'col1', e.target.value)} className="w-full h-full text-center focus:outline-none focus:bg-indigo-50/50 text-blue-700 font-semibold text-xs bg-transparent print:text-slate-900" />
+                            <input type="text" value={row.col1} onChange={(e) => updateRow(setOvertime, row.id, 'col1', e.target.value)} className="w-full h-full text-center focus:outline-none focus:bg-slate-100 hover:bg-slate-50 transition-colors text-slate-900 font-semibold text-xs bg-transparent print:bg-transparent" />
                           </td>
                           <td className="border-b border-r border-slate-800 p-0 h-7">
-                            <input type="text" value={row.col3} onChange={(e) => updateRow(setOvertime, row.id, 'col3', e.target.value)} className="w-full h-full text-center focus:outline-none focus:bg-indigo-50/50 text-blue-700 font-semibold text-xs bg-transparent print:text-slate-900" />
+                            <input type="text" value={row.col3} onChange={(e) => updateRow(setOvertime, row.id, 'col3', e.target.value)} className="w-full h-full text-center focus:outline-none focus:bg-slate-100 hover:bg-slate-50 transition-colors text-slate-900 font-semibold text-xs bg-transparent print:bg-transparent" />
                           </td>
                           <td className="border-b border-slate-800 p-0 h-7">
-                            <input type="text" value={row.col4} onChange={(e) => updateRow(setOvertime, row.id, 'col4', e.target.value)} className="w-full h-full text-center focus:outline-none focus:bg-indigo-50/50 text-blue-700 font-semibold text-xs bg-transparent print:text-slate-900" />
+                            <input type="text" value={row.col4} onChange={(e) => updateRow(setOvertime, row.id, 'col4', e.target.value)} className="w-full h-full text-center focus:outline-none focus:bg-slate-100 hover:bg-slate-50 transition-colors text-slate-900 font-semibold text-xs bg-transparent print:bg-transparent" />
                           </td>
                           <td className="w-5 p-0 print:hidden text-center align-middle border-b border-slate-800">
                             <button onClick={() => removeRow(setOvertime, row.id)} className="text-red-400 hover:text-red-600 opacity-0 group-hover/row:opacity-100 transition-opacity p-0.5 mx-auto" title="Remove Row">
@@ -306,24 +306,24 @@ export default function F29() {
                     </tbody>
                   </table>
                 </div>
-                <button onClick={() => addRow(setOvertime)} className="print:hidden w-full py-1 text-[10px] font-semibold text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 flex items-center justify-center gap-1 transition-colors bg-white">
-                  <Plus className="w-3 h-3" /> Add Row
+                <button onClick={() => addRow(setOvertime)} className="print:hidden w-full py-1.5 text-xs font-semibold text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 flex items-center justify-center gap-1 transition-colors border-t-2 border-dashed border-slate-300 bg-slate-50/50">
+                  <Plus className="w-4 h-4" /> Add Row
                 </button>
               </div>
 
               {/* Signatures */}
-              <div className="p-4 pt-6 text-xs space-y-4">
-                <div className="flex items-end">
-                  <span className="w-20 font-semibold">පිළියෙල කළේ:</span>
-                  <input type="text" name="preparedBy" value={globalData.preparedBy} onChange={handleGlobalChange} className="flex-1 border-b border-slate-800 focus:outline-none text-blue-700 font-semibold px-1" />
+              <div className="p-4 pt-8 text-xs space-y-5">
+                <div className="flex items-end group/input">
+                  <span className="w-20 font-semibold text-slate-900">පිළියෙල කළේ:</span>
+                  <input type="text" name="preparedBy" value={globalData.preparedBy} onChange={handleGlobalChange} className="flex-1 border-b border-slate-800 focus:outline-none text-slate-900 font-semibold px-2 pb-0.5 focus:bg-slate-100 hover:bg-slate-50 transition-colors" />
                 </div>
-                <div className="flex items-end">
-                  <span className="w-20 font-semibold">පරීක්ෂා කළේ:</span>
-                  <input type="text" name="checkedBy" value={globalData.checkedBy} onChange={handleGlobalChange} className="flex-1 border-b border-slate-800 focus:outline-none text-blue-700 font-semibold px-1" />
+                <div className="flex items-end group/input">
+                  <span className="w-20 font-semibold text-slate-900">පරීක්ෂා කළේ:</span>
+                  <input type="text" name="checkedBy" value={globalData.checkedBy} onChange={handleGlobalChange} className="flex-1 border-b border-slate-800 focus:outline-none text-slate-900 font-semibold px-2 pb-0.5 focus:bg-slate-100 hover:bg-slate-50 transition-colors" />
                 </div>
-                <div className="flex items-end">
-                  <span className="w-20 font-semibold">දිනය:</span>
-                  <input type="text" name="signDate" value={globalData.signDate} onChange={handleGlobalChange} className="flex-1 border-b border-slate-800 focus:outline-none text-blue-700 font-semibold px-1" />
+                <div className="flex items-end group/input">
+                  <span className="w-20 font-semibold text-slate-900">දිනය:</span>
+                  <input type="text" name="signDate" value={globalData.signDate} onChange={handleGlobalChange} className="flex-1 border-b border-slate-800 focus:outline-none text-slate-900 font-semibold px-2 pb-0.5 focus:bg-slate-100 hover:bg-slate-50 transition-colors" />
                 </div>
               </div>
             </div>

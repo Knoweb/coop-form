@@ -29,6 +29,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         </button>
       </div>
 
+
       <div className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
         {btn('form1',   'Form 1',   'කුඩා මුදල් පොත')}
         {btn('form2',   'Form 2',   'ගෙවීම් ලේඛනය')}
@@ -49,6 +50,8 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form27',  'Form 27',   'ලේඛන ගෙවීම් ලේඛනය')}
         {btn('form29',  'Form 29',   'ශේෂ ගෙවීම් ලේඛනය')}
         {btn('f29',     'F 29',      'නිළවරයේ ළිය-ලේඛන')}
+        {btn('form30',  'F 30',      'ගබඩාවල ප්‍රවාහන ගාස්තු')}
+        {btn('form31',  'Form 31',   'රථවාහන අළුත්වැඩියා විස්තර')}
         {btn('form32a', 'Form 32 A Summary', 'ශේෂ 32 A')}
         {btn('branchProfitLoss', 'Form 33', 'ශාඛා ලාභ-ලා ලේඛනය')}
         {btn('telephoneRegister', 'Form 34', 'දූරකථන ලේඛනය')}

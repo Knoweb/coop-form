@@ -32,6 +32,8 @@ import Form16BGoodsReceipt from './forms/Form16BGoodsReceipt';
 import Form16DDailyPurchases from './forms/Form16DDailyPurchases';
 import Form17SpoilagePriceChange from './forms/Form17SpoilagePriceChange';
 import Form15C from './forms/Form15C';
+import Form30 from './forms/form30';
+import Form31 from './forms/form31';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -102,6 +104,10 @@ function App() {
         return <Form16DDailyPurchases />;
       case 'form17':
         return <Form17SpoilagePriceChange />;
+      case 'form30':
+        return <Form30 />;
+      case 'form31':
+        return <Form31 />;
       default:
         return <Form1 />;
     }
@@ -171,6 +177,10 @@ function App() {
         return 'Daily Purchases (Form 16 D)';
       case 'form17':
         return 'Spoilages & Price Changes (Form 17)';
+      case 'form30':
+        return 'F 30';
+      case 'form31':
+        return 'Form 31';
       default:
         return 'COOP Forms';
     }
@@ -179,16 +189,16 @@ function App() {
   return (
     <div className="flex bg-slate-50 min-h-screen">
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} currentForm={currentForm} setCurrentForm={setCurrentForm} />
-      
+
       <div className={`flex-1 transition-all duration-300 overflow-x-hidden ${isSidebarOpen ? 'ml-64' : 'ml-0'}`}>
         <div className="p-4 flex items-center bg-white shadow-sm border-b border-slate-200 sticky top-0 z-40">
-           <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
-              <Menu className="w-5 h-5 text-slate-700" />
-           </button>
-           <h2 className="ml-4 font-bold text-slate-800">{getFormTitle()}</h2>
+          <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+            <Menu className="w-5 h-5 text-slate-700" />
+          </button>
+          <h2 className="ml-4 font-bold text-slate-800">{getFormTitle()}</h2>
         </div>
         <div className="p-4 md:p-8 overflow-x-auto">
-           {renderForm()}
+          {renderForm()}
         </div>
       </div>
     </div>
