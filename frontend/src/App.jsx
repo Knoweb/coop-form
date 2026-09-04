@@ -37,6 +37,7 @@ import Form20WholesaleAnalysis from './forms/Form20WholesaleAnalysis';
 import Form21BinCard from './forms/Form21BinCard';
 import Form21AStationeryControl from './forms/Form21AStationeryControl';
 import FormF21CDailyStockReport from './forms/FormF21CDailyStockReport';
+import Form22StockTaking from './forms/Form22StockTaking';
 import Form15C from './forms/Form15C';
 import Form30 from './forms/form30';
 import Form31 from './forms/form31';
@@ -131,6 +132,8 @@ function App() {
         return <Form21AStationeryControl />;
       case 'form21c':
         return <FormF21CDailyStockReport />;
+      case 'form22':
+        return <Form22StockTaking />;
       default:
         return <Form1 />;
     }
@@ -220,6 +223,8 @@ function App() {
         return 'Stationery Control (Form 21 A)';
       case 'form21c':
         return 'Daily Forward Stock Report (Form F 21 C)';
+      case 'form22':
+        return 'Stock Taking / Inventory Count List (Form 22)';
       default:
         return 'COOP Forms';
     }
