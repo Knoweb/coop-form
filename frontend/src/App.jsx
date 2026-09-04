@@ -35,6 +35,7 @@ import StoreTransferForm from './forms/StoreTransferForm';
 import Form19GoodsReturn from './forms/Form19GoodsReturn';
 import Form20WholesaleAnalysis from './forms/Form20WholesaleAnalysis';
 import Form21BinCard from './forms/Form21BinCard';
+import Form21BBranchRegister from './forms/Form21BBranchRegister';
 import Form21AStationeryControl from './forms/Form21AStationeryControl';
 import FormF21CDailyStockReport from './forms/FormF21CDailyStockReport';
 import Form22StockTaking from './forms/Form22StockTaking';
@@ -129,6 +130,8 @@ function App() {
         return <Form20WholesaleAnalysis />;
       case 'form21':
         return <Form21BinCard />;
+      case 'form21b':
+        return <Form21BBranchRegister />;
       case 'form21a':
         return <Form21AStationeryControl />;
       case 'form21c':
@@ -222,6 +225,8 @@ function App() {
         return 'Wholesale Goods Analysis (Form 20)';
       case 'form21':
         return 'Bin Card / Stock Ledger (Form F-21)';
+      case 'form21b':
+        return 'Regional / Branch Register (Form 21 B)';
       case 'form21a':
         return 'Stationery Control (Form 21 A)';
       case 'form21c':
