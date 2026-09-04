@@ -31,27 +31,29 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
 
 
       <div className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
-        {btn('form1',   'Form 1',   'කුඩා මුදල් පොත')}
-        {btn('form2',   'Form 2',   'ගෙවීම් ලේඛනය')}
-        {btn('form3',   'Form 3',   'Petty Cash Voucher')}
-        {btn('form4',   'Form 4',   'Form 4')}
-        {btn('form9c',  'Form 9 C', 'ශාඛා / ගබඩා / දිය සත්ත්ව')}
-        {btn('form9d',  'Form 9 D', 'ගොඩනැගිලිවලට ගෙවීම් ලේඛනය')}
-        {btn('form9e',  'Form 9 E', 'ශේෂය ගෙවීම් ශේෂ ලේඛනය')}
+        {btn('form1', 'Form 1', 'කුඩා මුදල් පොත')}
+        {btn('form2', 'Form 2', 'ගෙවීම් ලේඛනය')}
+        {btn('form3', 'Form 3', 'Petty Cash Voucher')}
+        {btn('form4', 'Form 4', 'Form 4')}
+        {btn('form9c', 'Form 9 C', 'ශාඛා / ගබඩා / දිය සත්ත්ව')}
+        {btn('form9d', 'Form 9 D', 'ගොඩනැගිලිවලට ගෙවීම් ලේඛනය')}
+        {btn('form9e', 'Form 9 E', 'ශේෂය ගෙවීම් ශේෂ ලේඛනය')}
         {btn('form15c', 'Form 15 C', 'දිනට ප්‍රමාණය — ඉතිරි බඩු සටහන')}
         {btn('form15mMilk', 'Form 15 M', 'කිරි සංග්‍රහය')}
         {btn('form16a', 'Form 16 A', 'බඩු ලේජරය')}
         {btn('form16b', 'Form 16 B', 'බඩු භාර ගැනීමේ සටහන')}
         {btn('form16d', 'Form 16 D', 'දෛනික ගැනුම් සටහන')}
         {btn('form17', 'Form 17', 'නරක්වීම්/මිල වෙනස්වීම්')}
+        {btn('storeTransfer', 'Form 18', 'ගබඩාවෙන් ගබඩාවට මාරු කිරීම')}
+        {btn('form19', 'Form 19', 'බඩු ආපසු යැවීම/එවීම')}
         {btn('form23a', 'Form 23 A', 'ශේෂ ගෙවීමේ ලේඛනය')}
-        {btn('form24',  'Form 24',   'ස්ථාවර වත්කම් ලේඛනය')}
-        {btn('form25',  'Form 25',   'ශේෂ ගෙවීම් ලේඛනය')}
-        {btn('form27',  'Form 27',   'ලේඛන ගෙවීම් ලේඛනය')}
-        {btn('form29',  'Form 29',   'ශේෂ ගෙවීම් ලේඛනය')}
-        {btn('f29',     'F 29',      'නිළවරයේ ළිය-ලේඛන')}
-        {btn('form30',  'F 30',      'ගබඩාවල ප්‍රවාහන ගාස්තු')}
-        {btn('form31',  'Form 31',   'රථවාහන අළුත්වැඩියා විස්තර')}
+        {btn('form24', 'Form 24', 'ස්ථාවර වත්කම් ලේඛනය')}
+        {btn('form25', 'Form 25', 'ශේෂ ගෙවීම් ලේඛනය')}
+        {btn('form27', 'Form 27', 'ලේඛන ගෙවීම් ලේඛනය')}
+        {btn('form29', 'Form 29', 'ශේෂ ගෙවීම් ලේඛනය')}
+        {btn('f29', 'F 29', 'නිළවරයේ ළිය-ලේඛන')}
+        {btn('form30', 'F 30', 'ගබඩාවල ප්‍රවාහන ගාස්තු')}
+        {btn('form31', 'Form 31', 'රථවාහන අළුත්වැඩියා විස්තර')}
         {btn('form32a', 'Form 32 A Summary', 'ශේෂ 32 A')}
         {btn('branchProfitLoss', 'Form 33', 'ශාඛා ලාභ-ලා ලේඛනය')}
         {btn('telephoneRegister', 'Form 34', 'දූරකථන ලේඛනය')}
@@ -62,9 +64,10 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('monthlyDepreciationJournal', 'Monthly Depreciation Journal (Schedule No. 6)', 'සේවාය ඇකිළුම් ජර්නලය')}
         {btn('investmentInterestJournal', 'Investment Interest Journal (Schedule No. 07)', 'ලාභදායී ලේඛන සෘජු ජර්නලය')}
         {btn('rentIncomeJournal', 'Rent Income Journal (Schedule No. 08)', 'ගෙවල් කුලී ආදායම් ලේඛනය')}
-        {btn('generalLedgerForm',  'General Ledger', 'සම ලේජරය')}
+        {btn('generalLedgerForm', 'General Ledger', 'සම ලේජරය')}
         {btn('transferRegisterForm', 'Transfer Register', 'පැවරැම් ලේඛනය')}
         {btn('multiColumnLedgerForm', 'Multi-Column Ledger', 'විස්තරාත්මක බෙදාහැරීමේ ජර්නලය')}
+
       </div>
 
       <div className="p-4 border-t border-slate-800">
