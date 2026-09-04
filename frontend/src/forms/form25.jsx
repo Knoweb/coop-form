@@ -126,18 +126,19 @@ export default function Form25() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 text-slate-800 p-4 md:p-6 font-sans pb-24">
       <div className="w-full mx-auto space-y-8 max-w-7xl">
 
-        <header className="flex items-center space-x-3 mb-8">
-          <div className="p-3 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-200">
-            <LayoutList className="w-8 h-8 text-white" />
-          </div>
-          <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">Form 25 (බඩු නිකුත් කිරීමේ නිවේදනය)</h1>
-            <p className="text-sm text-slate-500 font-medium mt-1">Goods Issue Notice</p>
-          </div>
-        </header>
-
         {/* Form Construction Area */}
         <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+          <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
+            <div className="flex items-center space-x-3">
+              <div className="bg-fuchsia-500/20 p-2 rounded-lg">
+                <LayoutList className="w-6 h-6 text-fuchsia-400" />
+              </div>
+              <div>
+                 <h2 className="text-lg font-bold text-white">බඩු නිකුත් කිරීමේ නිවේදනය</h2>
+                 <p className="text-slate-400 text-sm">Form 25 (Goods Issue Notice)</p>
+              </div>
+           </div>
+          </div>
 
           {/* Document Headers */}
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">

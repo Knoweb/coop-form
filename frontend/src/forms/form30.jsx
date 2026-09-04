@@ -190,19 +190,6 @@ export default function Form30() {
 
   return (
     <div className="max-w-7xl mx-auto pb-12 p-4 md:p-6 font-sans">
-      
-      {/* Header */}
-      <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
-        <div className="flex items-center space-x-4">
-          <div className="p-3 bg-indigo-600 rounded-2xl shadow-lg shadow-indigo-200">
-            <LayoutList className="w-8 h-8 text-white" />
-          </div>
-          <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">Form 30</h1>
-            <p className="text-sm text-slate-500 font-medium mt-1">ගබඩාවල ප්‍රවාහන ගාස්තු (Store Transport Charges)</p>
-          </div>
-        </div>
-      </header>
 
       {submitStatus && (
         <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 ${
@@ -215,6 +202,17 @@ export default function Form30() {
 
       {/* Data Entry Section */}
       <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
+          <div className="flex items-center space-x-3">
+            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
+              <LayoutList className="w-6 h-6 text-fuchsia-400" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-white">ගබඩාවල ප්‍රවාහන ගාස්තු</h2>
+              <p className="text-slate-400 text-sm">Form 30 (Store Transport Charges)</p>
+            </div>
+          </div>
+        </div>
         <div className="p-6 md:p-8 border-b border-slate-200">
           <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center"><FileText className="w-5 h-5 mr-2 text-indigo-500" /> Form Details</h3>
           

@@ -110,20 +110,19 @@ export default function Form27() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 text-slate-800 p-4 md:p-6 font-sans pb-24">
       <div className="w-full mx-auto space-y-8 max-w-7xl">
         
-        <header className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-          <div className="flex items-center space-x-3">
-            <div className="p-3 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-200">
-              <FileText className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-black tracking-tight text-slate-900">Form 27 (දෛනික මුදල් වාර්තාව - බැංකු ශේෂයෙන්)</h1>
-              <p className="text-slate-500 font-medium mt-1">Daily Cash Report - Bank Balance</p>
-            </div>
-          </div>
-        </header>
-
         {/* Global Details */}
         <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+          <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
+            <div className="flex items-center space-x-3">
+              <div className="bg-fuchsia-500/20 p-2 rounded-lg">
+                <FileText className="w-6 h-6 text-fuchsia-400" />
+              </div>
+              <div>
+                <h2 className="text-lg font-bold text-white">ලේඛන ගෙවීම් ලේඛනය</h2>
+                <p className="text-slate-400 text-sm">Form 27 (Daily Cash Report - Bank Balance)</p>
+              </div>
+            </div>
+          </div>
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 

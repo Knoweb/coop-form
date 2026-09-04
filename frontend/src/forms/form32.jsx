@@ -152,28 +152,37 @@ export default function Form32() {
     <div className="max-w-[95vw] mx-auto p-4 md:p-8 space-y-6">
       
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl shadow-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-700">
-        <div className="flex items-center gap-5">
-          <div className="p-4 bg-indigo-500/20 rounded-2xl border border-indigo-400/30 shadow-inner">
-            <LayoutList className="w-8 h-8 text-indigo-300" />
+      <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden">
+        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div className="flex items-center space-x-3">
+            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
+              <LayoutList className="w-6 h-6 text-fuchsia-400" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-white">ශාඛා වෙළඳ ගිණුම්</h2>
+              <p className="text-slate-400 text-sm">Form 32 (Branch Trading Accounts)</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">ශාඛා වෙළඳ ගිණුම්</h1>
-            <p className="text-indigo-200 font-medium mt-1 flex items-center gap-2">
-              <span className="px-2 py-0.5 bg-indigo-500/30 rounded text-xs">Form No. 32</span>
-              Branch Trading Accounts
-            </p>
+
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 bg-slate-700/60 px-3 py-2 rounded-xl border border-slate-600">
+              <span className="text-slate-300 text-sm font-semibold">දිනය:</span>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="bg-transparent border-0 text-white font-medium focus:ring-0 outline-none text-sm"
+              />
+            </div>
+            <button
+              onClick={handleSave}
+              disabled={isSubmitting}
+              className="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold rounded-2xl shadow-md shadow-indigo-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              <Save className="w-5 h-5" />
+              <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
+            </button>
           </div>
-        </div>
-        
-        <div className="flex items-center gap-4 bg-slate-950/40 p-2 pl-4 rounded-2xl border border-slate-700/50 backdrop-blur-sm">
-          <span className="text-slate-300 font-semibold text-sm">දිනය:</span>
-          <input 
-            type="date" 
-            value={date} 
-            onChange={(e) => setDate(e.target.value)} 
-            className="bg-slate-800/80 border border-slate-600 text-white font-medium rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 px-4 py-2 outline-none transition-all" 
-          />
         </div>
       </div>
 
@@ -188,18 +197,6 @@ export default function Form32() {
       <div className="space-y-6">
         {renderTableSection('තොග (Wholesale)', wholesaleRows, 'WHOLESALE')}
         {renderTableSection('සිල්ලර (Retail)', retailRows, 'RETAIL')}
-      </div>
-
-      {/* Footer Action */}
-      <div className="flex justify-end pt-4 pb-12">
-        <button
-          onClick={handleSave}
-          disabled={isSubmitting}
-          className="flex items-center gap-2 px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold rounded-2xl shadow-lg shadow-indigo-200 hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none focus:ring-4 focus:ring-indigo-500/30"
-        >
-          <Save className="w-5 h-5" />
-          <span className="tracking-wide">{isSubmitting ? 'Saving...' : 'Save Record'}</span>
-        </button>
       </div>
       
     </div>

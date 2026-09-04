@@ -98,26 +98,27 @@ export default function Form31() {
   return (
     <div className="max-w-7xl mx-auto pb-12 p-4 md:p-8">
       {/* Header */}
-      <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-        <div className="flex items-center space-x-4">
-          <div className="p-3 bg-indigo-600 rounded-2xl shadow-lg shadow-indigo-200">
-            <LayoutList className="w-8 h-8 text-white" />
+      <header className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
+          <div className="flex items-center space-x-3">
+            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
+              <LayoutList className="w-6 h-6 text-fuchsia-400" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-white">රථවාහන අළුත්වැඩියා විස්තර</h2>
+              <p className="text-slate-400 text-sm">Form 31 (Vehicle Repair Details)</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">Form 31</h1>
-            <p className="text-sm text-slate-500 font-medium mt-1">රථවාහන අළුත්වැඩියා කිරීමේ විස්තර පත්‍රය (Vehicle Repair Details)</p>
+          <div className="w-full md:w-auto">
+            <button
+              onClick={handleSaveForm}
+              disabled={isSubmitting}
+              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <Save className="w-5 h-5" />
+              <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
+            </button>
           </div>
-        </div>
-        
-        <div className="w-full md:w-auto flex flex-col md:flex-row gap-3">
-          <button
-            onClick={handleSaveForm}
-            disabled={isSubmitting}
-            className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-          >
-            <Save className="w-5 h-5" />
-            <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
-          </button>
         </div>
       </header>
 
