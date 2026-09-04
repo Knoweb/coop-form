@@ -54,26 +54,25 @@ export default function Form22StockTaking() {
     e.preventDefault();
 
     // AUTO-CALCULATE DISCREPANCIES BEFORE POSTING
-    const ledgerBalance = formData.ledgerBalance || 0;
-    const countedQtyPhysical = formData.countedQtyPhysical || 0;
-    const unitPrice = formData.unitPrice || 0;
-
-    const differenceQty = countedQtyPhysical - ledgerBalance;
+    const ledger = parseFloat(formData.ledgerBalance) || 0;
+    const counted = parseFloat(formData.countedQtyPhysical) || 0;
+    const price = parseFloat(formData.unitPrice) || 0;
     
-    let excessValue = 0;
-    let shortageValue = 0;
+    const diff = counted - ledger;
+    let excessVal = 0;
+    let shortageVal = 0;
 
-    if (differenceQty > 0) {
-      excessValue = differenceQty * unitPrice;
-    } else if (differenceQty < 0) {
-      shortageValue = Math.abs(differenceQty) * unitPrice;
+    if (diff > 0) {
+      excessVal = diff * price;
+    } else if (diff < 0) {
+      shortageVal = Math.abs(diff) * price;
     }
 
     const payload = { 
       ...formData,
-      differenceQty,
-      excessValue,
-      shortageValue
+      differenceQty: diff,
+      excessValue: excessVal,
+      shortageValue: shortageVal
     };
 
     try {
