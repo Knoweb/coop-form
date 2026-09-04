@@ -18,6 +18,7 @@ public class Form32AEntity {
     private Long id;
 
     private String serialNo;
+    private String recordCategory;
     private String ref1;
     private String ref2;
     private Double val1;

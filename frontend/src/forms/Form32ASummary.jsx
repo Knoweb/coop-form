@@ -4,6 +4,7 @@ import { PlusCircle, FileText } from 'lucide-react';
 export default function Form32ASummary() {
   const [records, setRecords] = useState([]);
   const [formData, setFormData] = useState({
+    recordCategory: 'WHOLESALE',
     serialNo: '',
     ref1: '',
     ref2: '',
@@ -69,6 +70,7 @@ export default function Form32ASummary() {
       if (res.ok) {
         fetchRecords();
         setFormData({
+          recordCategory: 'WHOLESALE',
           serialNo: '',
           ref1: '',
           ref2: '',
@@ -102,14 +104,28 @@ export default function Form32ASummary() {
               <FileText className="w-6 h-6 text-indigo-400" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">Form 32 A</h2>
-              <p className="text-slate-400 text-sm">Summary Matrix</p>
+              <h2 className="text-lg font-bold text-white">මාසික ශාඛා බඩු අඩුවීම් ගිණුම</h2>
+              <p className="text-slate-400 text-sm">Monthly Branch Goods Shortage Account - Form 32 A</p>
             </div>
           </div>
         </div>
 
         <form onSubmit={handleAddEntry} className="p-6">
           <div className="space-y-6">
+            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+              <h3 className="text-sm font-semibold text-slate-700 border-b border-slate-200 pb-2 mb-4">Category Selection</h3>
+              <div className="flex space-x-6">
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input type="radio" name="recordCategory" value="WHOLESALE" checked={formData.recordCategory === 'WHOLESALE'} onChange={handleChange} className="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" />
+                  <span className="text-sm font-medium text-slate-700">තොග (Wholesale)</span>
+                </label>
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input type="radio" name="recordCategory" value="RETAIL" checked={formData.recordCategory === 'RETAIL'} onChange={handleChange} className="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" />
+                  <span className="text-sm font-medium text-slate-700">සිල්ලර (Retail)</span>
+                </label>
+              </div>
+            </div>
+
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <h3 className="text-sm font-semibold text-slate-700 border-b border-slate-200 pb-2 mb-4">References</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -176,14 +192,17 @@ export default function Form32ASummary() {
         </form>
       </div>
 
+      {/* WHOLESALE TABLE */}
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="px-6 py-4 border-b border-slate-200 bg-slate-50">
-          <h3 className="font-bold text-slate-800">Ledger View</h3>
+        <div className="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center space-x-2">
+           <div className="w-3 h-3 rounded-full bg-indigo-500"></div>
+           <h3 className="font-bold text-slate-800">තොග (Wholesale) Records</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm text-left">
             <thead className="bg-slate-100 text-slate-600 font-medium border-b border-slate-200">
               <tr>
+                <th className="px-4 py-3 whitespace-nowrap">#</th>
                 <th className="px-4 py-3 whitespace-nowrap">Serial No.</th>
                 <th className="px-4 py-3 whitespace-nowrap">අනුමත කල ද.අ. (Approved Ref)</th>
                 <th className="px-4 py-3 whitespace-nowrap">ගිණුම් ද.අ. (Account Ref)</th>
@@ -206,8 +225,9 @@ export default function Form32ASummary() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
-              {records.map((record, index) => (
+              {records.filter(r => r.recordCategory === 'WHOLESALE').map((record, index) => (
                 <tr key={record.id || index} className="even:bg-gray-50 hover:bg-slate-100 transition-colors">
+                  <td className="px-4 py-3 text-slate-500 whitespace-nowrap">{index + 1}</td>
                   <td className="px-4 py-3 font-medium text-slate-800 whitespace-nowrap">{record.serialNo}</td>
                   <td className="px-4 py-3 text-slate-700 whitespace-nowrap">{record.ref1}</td>
                   <td className="px-4 py-3 text-slate-700 whitespace-nowrap">{record.ref2}</td>
@@ -224,10 +244,74 @@ export default function Form32ASummary() {
                   <td className="px-4 py-3 text-slate-600 whitespace-nowrap">{record.remarks}</td>
                 </tr>
               ))}
-              {records.length === 0 && (
+              {records.filter(r => r.recordCategory === 'WHOLESALE').length === 0 && (
                 <tr>
-                  <td colSpan="15" className="px-4 py-8 text-center text-slate-500">
-                    No records found. Add a record to see it here.
+                  <td colSpan="16" className="px-4 py-8 text-center text-slate-500">
+                    No Wholesale records found. Add a record to see it here.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* RETAIL TABLE */}
+      <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div className="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center space-x-2">
+           <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+           <h3 className="font-bold text-slate-800">සිල්ලර (Retail) Records</h3>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm text-left">
+            <thead className="bg-slate-100 text-slate-600 font-medium border-b border-slate-200">
+              <tr>
+                <th className="px-4 py-3 whitespace-nowrap">#</th>
+                <th className="px-4 py-3 whitespace-nowrap">Serial No.</th>
+                <th className="px-4 py-3 whitespace-nowrap">අනුමත කල ද.අ. (Approved Ref)</th>
+                <th className="px-4 py-3 whitespace-nowrap">ගිණුම් ද.අ. (Account Ref)</th>
+                {[
+                  "භාණ්ඩ ලැබුම් පත (Goods Receipt)",
+                  "මාරු ව.අ. (Transfer V.No)",
+                  "වෙනත් (Other)",
+                  "වවුචර (Voucher)",
+                  "විකුණුම් මුදල (Sales Amount)",
+                  "විකුණුම් නැවත (Sales Return)",
+                  "විකුණුම් 14 B (Sales 14 B)",
+                  "මාරු වීම් (Transfers)",
+                  "ආපසු යැවීම් (Returns)",
+                  "මිල අඩුවීම (Price Decrease)"
+                ].map((label, index) => (
+                  <th key={`th-val-${index + 1}`} className="px-4 py-3 whitespace-nowrap bg-indigo-50/50">{label}</th>
+                ))}
+                <th className="px-4 py-3 text-indigo-700 bg-indigo-100 font-bold whitespace-nowrap">Total</th>
+                <th className="px-4 py-3">Remarks</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              {records.filter(r => r.recordCategory === 'RETAIL').map((record, index) => (
+                <tr key={record.id || index} className="even:bg-gray-50 hover:bg-slate-100 transition-colors">
+                  <td className="px-4 py-3 text-slate-500 whitespace-nowrap">{index + 1}</td>
+                  <td className="px-4 py-3 font-medium text-slate-800 whitespace-nowrap">{record.serialNo}</td>
+                  <td className="px-4 py-3 text-slate-700 whitespace-nowrap">{record.ref1}</td>
+                  <td className="px-4 py-3 text-slate-700 whitespace-nowrap">{record.ref2}</td>
+                  
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+                    <td key={`td-val-${num}`} className="px-4 py-3 text-slate-600 bg-indigo-50/10 text-right">
+                      {record[`val${num}`]?.toFixed(2) || '0.00'}
+                    </td>
+                  ))}
+                  
+                  <td className="px-4 py-3 font-bold text-indigo-600 bg-indigo-50 text-right whitespace-nowrap">
+                    {record.total?.toFixed(2) || '0.00'}
+                  </td>
+                  <td className="px-4 py-3 text-slate-600 whitespace-nowrap">{record.remarks}</td>
+                </tr>
+              ))}
+              {records.filter(r => r.recordCategory === 'RETAIL').length === 0 && (
+                <tr>
+                  <td colSpan="16" className="px-4 py-8 text-center text-slate-500">
+                    No Retail records found. Add a record to see it here.
                   </td>
                 </tr>
               )}
