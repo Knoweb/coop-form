@@ -65,6 +65,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('generalLedgerForm',  'General Ledger', 'සම ලේජරය')}
         {btn('transferRegisterForm', 'Transfer Register', 'පැවරැම් ලේඛනය')}
         {btn('multiColumnLedgerForm', 'Multi-Column Ledger', 'විස්තරාත්මක බෙදාහැරීමේ ජර්නලය')}
+        {btn('storeTransfer', 'Store Transfer Form', 'ගබඩාවෙන් ගබඩාවට මාරු කිරීම')}
       </div>
 
       <div className="p-4 border-t border-slate-800">

@@ -31,6 +31,7 @@ import Form16AStoreLedger from './forms/Form16AStoreLedger';
 import Form16BGoodsReceipt from './forms/Form16BGoodsReceipt';
 import Form16DDailyPurchases from './forms/Form16DDailyPurchases';
 import Form17SpoilagePriceChange from './forms/Form17SpoilagePriceChange';
+import StoreTransferForm from './forms/StoreTransferForm';
 import Form15C from './forms/Form15C';
 import Form30 from './forms/form30';
 import Form31 from './forms/form31';
@@ -108,6 +109,8 @@ function App() {
         return <Form30 />;
       case 'form31':
         return <Form31 />;
+      case 'storeTransfer':
+        return <StoreTransferForm />;
       default:
         return <Form1 />;
     }
@@ -181,6 +184,8 @@ function App() {
         return 'F 30';
       case 'form31':
         return 'Form 31';
+      case 'storeTransfer':
+        return 'Store Transfer Form';
       default:
         return 'COOP Forms';
     }
