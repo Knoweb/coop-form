@@ -19,17 +19,19 @@ public class Form16AEntity {
 
     private String date;
     private String itemDescription;
-    private String referenceNo;
+    private String receiptNo;
+
+    private Double buyingPriceUnit;
+    private Double buyingPriceTotal;
 
     private Double qtyReceived;
     private Double qtyIssued;
     private Double qtyBalance;
 
-    private Double unitPrice;
-    private Double valueReceived;
-    private Double valueIssued;
-    private Double valueBalance;
+    private Double sellingPriceUnit;
+    private Double sellingPriceTotal;
 
+    private String handedOverNo;
     private String remarks;
     private String signature;
 }

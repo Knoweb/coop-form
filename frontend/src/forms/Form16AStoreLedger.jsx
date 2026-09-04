@@ -6,10 +6,12 @@ export default function Form16AStoreLedger() {
   const [formData, setFormData] = useState({
     date: '',
     itemDescription: '',
-    referenceNo: '',
+    receiptNo: '',
+    buyingPriceUnit: 0,
     qtyReceived: 0,
     qtyIssued: 0,
-    unitPrice: 0,
+    sellingPriceUnit: 0,
+    handedOverNo: '',
     remarks: '',
     signature: ''
   });
@@ -43,20 +45,18 @@ export default function Form16AStoreLedger() {
 
     const qtyReceived = formData.qtyReceived || 0;
     const qtyIssued = formData.qtyIssued || 0;
-    const unitPrice = formData.unitPrice || 0;
+    const buyingPriceUnit = formData.buyingPriceUnit || 0;
+    const sellingPriceUnit = formData.sellingPriceUnit || 0;
 
     const qtyBalance = qtyReceived - qtyIssued;
-    
-    const valueReceived = qtyReceived * unitPrice;
-    const valueIssued = qtyIssued * unitPrice;
-    const valueBalance = qtyBalance * unitPrice;
+    const buyingPriceTotal = qtyReceived * buyingPriceUnit;
+    const sellingPriceTotal = qtyBalance * sellingPriceUnit;
 
     const newRecord = {
       ...formData,
       qtyBalance,
-      valueReceived,
-      valueIssued,
-      valueBalance
+      buyingPriceTotal,
+      sellingPriceTotal
     };
 
     try {
@@ -73,10 +73,12 @@ export default function Form16AStoreLedger() {
         setFormData({
           date: '',
           itemDescription: '',
-          referenceNo: '',
+          receiptNo: '',
+          buyingPriceUnit: 0,
           qtyReceived: 0,
           qtyIssued: 0,
-          unitPrice: 0,
+          sellingPriceUnit: 0,
+          handedOverNo: '',
           remarks: '',
           signature: ''
         });
@@ -112,46 +114,72 @@ export default function Form16AStoreLedger() {
                   <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
                </div>
                <div className="md:col-span-1">
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">ද්රව්ය (Item Description)</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">විස්තරය (Description)</label>
                   <input type="text" name="itemDescription" value={formData.itemDescription} onChange={handleChange} className="w-full px-4 py-2 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
                </div>
                <div className="md:col-span-1">
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">බිල්පත් අංකය (Ref No)</label>
-                  <input type="text" name="referenceNo" value={formData.referenceNo} onChange={handleChange} className="w-full px-4 py-2 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">රිසිට්පත් අංකය (Receipt No)</label>
+                  <input type="text" name="receiptNo" value={formData.receiptNo} onChange={handleChange} className="w-full px-4 py-2 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
                </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Quantities */}
-                <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 col-span-1 md:col-span-2">
-                    <h3 className="text-md font-bold text-slate-800 border-b border-slate-200 pb-2 mb-4">ප්‍රමාණය (Quantity) & මිල (Pricing)</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Buying Price */}
+                <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                    <h3 className="text-md font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">ගැනුම් මිල (Buying Price)</h3>
+                    <div className="grid grid-cols-1 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-emerald-700 mb-1">ලැබුණු (Qty Received)</label>
-                            <input type="number" step="0.01" name="qtyReceived" value={formData.qtyReceived} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
+                            <label className="block text-sm font-medium text-blue-700 mb-1">එකක් රු. (Unit Price)</label>
+                            <input type="number" step="0.01" name="buyingPriceUnit" value={formData.buyingPriceUnit} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Selling Price */}
+                <div className="bg-green-50 p-5 rounded-xl border border-green-100">
+                    <h3 className="text-md font-bold text-green-800 border-b border-green-200 pb-2 mb-4">විකුණුම් මිල (Selling Price)</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div>
+                            <label className="block text-sm font-medium text-green-700 mb-1">එකක් රු. (Unit Price)</label>
+                            <input type="number" step="0.01" name="sellingPriceUnit" value={formData.sellingPriceUnit} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {/* Quantity & Balance */}
+                 <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h3 className="text-md font-bold text-slate-800 border-b border-slate-200 pb-2 mb-4">ප්‍රමාණය සහ ශේෂය (Quantity & Balance)</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-1">වැඩි (Qty Received)</label>
+                            <input type="number" step="0.01" name="qtyReceived" value={formData.qtyReceived} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-orange-700 mb-1">නිකුත් කළ (Qty Issued)</label>
-                            <input type="number" step="0.01" name="qtyIssued" value={formData.qtyIssued} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-indigo-700 mb-1">ඒකක මිල (Unit Price)</label>
-                            <input type="number" step="0.01" name="unitPrice" value={formData.unitPrice} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <label className="block text-sm font-medium text-slate-700 mb-1">අඩු (Qty Issued)</label>
+                            <input type="number" step="0.01" name="qtyIssued" value={formData.qtyIssued} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
                         </div>
                     </div>
                 </div>
 
                 {/* Extras */}
-                <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 col-span-1">
+                <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
                     <h3 className="text-md font-bold text-slate-800 border-b border-slate-200 pb-2 mb-4">අමතර (Extras)</h3>
                     <div className="space-y-4">
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-1">සටහන් (Remarks)</label>
-                            <input type="text" name="remarks" value={formData.remarks} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <label className="block text-sm font-medium text-slate-700 mb-1">භාරදුන් අංකය (Handed Over Ref)</label>
+                            <input type="text" name="handedOverNo" value={formData.handedOverNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
                         </div>
-                        <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-1">අත්සන (Signature)</label>
-                            <input type="text" name="signature" value={formData.signature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-slate-700 mb-1">සටහන් (Remarks)</label>
+                                <input type="text" name="remarks" value={formData.remarks} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-slate-700 mb-1">අත්සන (Signature)</label>
+                                <input type="text" name="signature" value={formData.signature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,16 +204,21 @@ export default function Form16AStoreLedger() {
             <thead className="bg-slate-100 text-slate-600 font-medium border-b border-slate-200">
               <tr>
                 <th className="px-4 py-3 whitespace-nowrap">දිනය (Date)</th>
-                <th className="px-4 py-3 whitespace-nowrap">Item Description</th>
-                <th className="px-4 py-3 whitespace-nowrap">Ref No</th>
-                <th className="px-4 py-3 whitespace-nowrap text-right bg-emerald-50/50">Qty Rec.</th>
-                <th className="px-4 py-3 whitespace-nowrap text-right bg-orange-50/50">Qty Iss.</th>
-                <th className="px-4 py-3 whitespace-nowrap text-right bg-indigo-50/50 font-bold">Qty Bal.</th>
-                <th className="px-4 py-3 whitespace-nowrap text-right bg-slate-50/50">Unit Price</th>
-                <th className="px-4 py-3 whitespace-nowrap text-right bg-emerald-50/50">Val Rec.</th>
-                <th className="px-4 py-3 whitespace-nowrap text-right bg-orange-50/50">Val Iss.</th>
-                <th className="px-4 py-3 whitespace-nowrap text-right bg-indigo-50/50 font-bold">Val Bal.</th>
-                <th className="px-4 py-3 whitespace-nowrap">Remarks</th>
+                <th className="px-4 py-3 whitespace-nowrap">විස්තරය (Description)</th>
+                <th className="px-4 py-3 whitespace-nowrap">රිසිට්පත් අංකය (Receipt No)</th>
+                
+                <th className="px-4 py-3 whitespace-nowrap text-right bg-blue-50/50 text-blue-800 border-l border-blue-200">එකක් රු. (Buy Unit)</th>
+                <th className="px-4 py-3 whitespace-nowrap text-right bg-blue-50/50 text-blue-800 font-bold">තොගයට රු. (Buy Total)</th>
+                
+                <th className="px-4 py-3 whitespace-nowrap text-right border-l border-slate-200">වැඩි (Qty In)</th>
+                <th className="px-4 py-3 whitespace-nowrap text-right">අඩු (Qty Out)</th>
+                <th className="px-4 py-3 whitespace-nowrap text-right font-bold">ශේෂය (Balance)</th>
+                
+                <th className="px-4 py-3 whitespace-nowrap text-right bg-green-50/50 text-green-800 border-l border-green-200">එකක් රු. (Sell Unit)</th>
+                <th className="px-4 py-3 whitespace-nowrap text-right bg-green-50/50 text-green-800 font-bold">තොගයට රු. (Sell Total)</th>
+                
+                <th className="px-4 py-3 whitespace-nowrap border-l border-slate-200">භාරදුන් අංකය (Ref No)</th>
+                <th className="px-4 py-3 whitespace-nowrap">සටහන් (Remarks)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
@@ -193,24 +226,25 @@ export default function Form16AStoreLedger() {
                 <tr key={record.id || index} className="even:bg-gray-50 hover:bg-slate-100 transition-colors">
                   <td className="px-4 py-3 font-medium text-slate-800 whitespace-nowrap">{record.date}</td>
                   <td className="px-4 py-3 text-slate-800">{record.itemDescription}</td>
-                  <td className="px-4 py-3 text-slate-800">{record.referenceNo}</td>
+                  <td className="px-4 py-3 text-slate-800">{record.receiptNo}</td>
                   
-                  <td className="px-4 py-3 text-emerald-600 bg-emerald-50/10 text-right">{record.qtyReceived?.toFixed(2) || '0.00'}</td>
-                  <td className="px-4 py-3 text-orange-600 bg-orange-50/10 text-right">{record.qtyIssued?.toFixed(2) || '0.00'}</td>
-                  <td className="px-4 py-3 font-bold text-indigo-600 bg-indigo-50/10 text-right">{record.qtyBalance?.toFixed(2) || '0.00'}</td>
+                  <td className="px-4 py-3 text-blue-700 bg-blue-50/10 text-right border-l border-blue-100">{record.buyingPriceUnit?.toFixed(2) || '0.00'}</td>
+                  <td className="px-4 py-3 font-bold text-blue-800 bg-blue-50/10 text-right">{record.buyingPriceTotal?.toFixed(2) || '0.00'}</td>
                   
-                  <td className="px-4 py-3 text-slate-600 bg-slate-50/10 text-right">{record.unitPrice?.toFixed(2) || '0.00'}</td>
+                  <td className="px-4 py-3 text-slate-700 text-right border-l border-slate-100">{record.qtyReceived?.toFixed(2) || '0.00'}</td>
+                  <td className="px-4 py-3 text-slate-700 text-right">{record.qtyIssued?.toFixed(2) || '0.00'}</td>
+                  <td className="px-4 py-3 font-bold text-indigo-700 text-right">{record.qtyBalance?.toFixed(2) || '0.00'}</td>
                   
-                  <td className="px-4 py-3 text-emerald-600 bg-emerald-50/10 text-right">{record.valueReceived?.toFixed(2) || '0.00'}</td>
-                  <td className="px-4 py-3 text-orange-600 bg-orange-50/10 text-right">{record.valueIssued?.toFixed(2) || '0.00'}</td>
-                  <td className="px-4 py-3 font-bold text-indigo-600 bg-indigo-50/10 text-right whitespace-nowrap">{record.valueBalance?.toFixed(2) || '0.00'}</td>
+                  <td className="px-4 py-3 text-green-700 bg-green-50/10 text-right border-l border-green-100">{record.sellingPriceUnit?.toFixed(2) || '0.00'}</td>
+                  <td className="px-4 py-3 font-bold text-green-800 bg-green-50/10 text-right">{record.sellingPriceTotal?.toFixed(2) || '0.00'}</td>
                   
+                  <td className="px-4 py-3 text-slate-600 border-l border-slate-100">{record.handedOverNo}</td>
                   <td className="px-4 py-3 text-slate-600">{record.remarks}</td>
                 </tr>
               ))}
               {records.length === 0 && (
                 <tr>
-                  <td colSpan="11" className="px-4 py-8 text-center text-slate-500">
+                  <td colSpan="12" className="px-4 py-8 text-center text-slate-500">
                     No records found. Add a record to see it here.
                   </td>
                 </tr>
