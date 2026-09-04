@@ -48,8 +48,8 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form19', 'Form 19', 'බඩු ආපසු යැවීම/එවීම')}
         {btn('form20', 'Form 20', 'තොග ගබඩාවේ බඩු විග්‍රහ කිරීම')}
         {btn('form21', 'Form F-21', 'බින් කාඩ්පත')}
-        {btn('form21b', 'Form 21 B', 'ප්‍රාදේශිකයේ / අංශයේ නම')}
         {btn('form21a', 'Form 21 A', 'ලිපිද්‍රව්‍ය පාලනය')}
+        {btn('form21b', 'Form 21 B', 'ප්‍රාදේශිකයේ / අංශයේ නම')}
         {btn('form21c', 'Form F 21 C', 'දිනකට ඉදිරි බඩු තොග වාර්තාව')}
         {btn('form22', 'Form 22', 'ඉතිරි බඩු ගණන් ගැනීමේ ලැයිස්තුව')}
         {btn('form23', 'Form 23', 'මාසික මූල්‍ය බඩු ලැයිස්තුව')}
@@ -58,8 +58,8 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form25', 'Form 25', 'ශේෂ ගෙවීම් ලේඛනය')}
         {btn('form27', 'Form 27', 'ලේඛන ගෙවීම් ලේඛනය')}
         {btn('form29', 'Form 29', 'ශේෂ ගෙවීම් ලේඛනය')}
-        {btn('f29', 'F 29', 'නිළවරයේ ළිය-ලේඛන')}
-        {btn('form30', 'F 30', 'ගබඩාවල ප්‍රවාහන ගාස්තු')}
+        {btn('f29', 'Form 29', 'නිළවරයේ ළිය-ලේඛන')}
+        {btn('form30', 'Form 30', 'ගබඩාවල ප්‍රවාහන ගාස්තු')}
         {btn('form31', 'Form 31', 'රථවාහන අළුත්වැඩියා විස්තර')}
         {btn('form32', 'Form 32', 'ශාඛා වෙළඳ ගිණුම්')}
         {btn('form32a', 'Form 32 A Summary', 'ශේෂ 32 A')}
