@@ -36,6 +36,7 @@ import Form19GoodsReturn from './forms/Form19GoodsReturn';
 import Form15C from './forms/Form15C';
 import Form30 from './forms/form30';
 import Form31 from './forms/form31';
+import Form32 from './forms/form32';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -112,6 +113,8 @@ function App() {
         return <Form30 />;
       case 'form31':
         return <Form31 />;
+      case 'form32':
+        return <Form32 />;
       case 'storeTransfer':
         return <StoreTransferForm />;
       case 'form19':
@@ -191,6 +194,8 @@ function App() {
         return 'F 30';
       case 'form31':
         return 'Form 31';
+      case 'form32':
+        return 'Form 32';
       case 'storeTransfer':
         return 'Store Transfer Form';
       case 'form19':

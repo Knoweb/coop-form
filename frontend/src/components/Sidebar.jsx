@@ -4,7 +4,7 @@ import { FileText, Settings, LayoutDashboard, X } from 'lucide-react';
 export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm }) {
   const btn = (key, label, sub = '') => (
     <button
-      onClick={() => { setCurrentForm(key); setIsOpen(false); }}
+      onClick={() => setCurrentForm(key)}
       className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === key ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
     >
       <FileText className="w-5 h-5 shrink-0" />
@@ -54,6 +54,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('f29', 'F 29', 'නිළවරයේ ළිය-ලේඛන')}
         {btn('form30', 'F 30', 'ගබඩාවල ප්‍රවාහන ගාස්තු')}
         {btn('form31', 'Form 31', 'රථවාහන අළුත්වැඩියා විස්තර')}
+        {btn('form32', 'Form 32', 'ශාඛා වෙළඳ ගිණුම්')}
         {btn('form32a', 'Form 32 A Summary', 'ශේෂ 32 A')}
         {btn('branchProfitLoss', 'Form 33', 'ශාඛා ලාභ-ලා ලේඛනය')}
         {btn('telephoneRegister', 'Form 34', 'දූරකථන ලේඛනය')}
