@@ -19,6 +19,7 @@ import Form9D from './forms/form9d';
 import Form9E from './forms/form9e';
 import Form23A from './forms/form23a';
 import Form24 from './forms/form24';
+import Form15C from './forms/Form15C';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
         return <Form23A />;
       case 'form24':
         return <Form24 />;
+      case 'form15c':
+        return <Form15C />;
       case 'schedule2':
         return <Schedule2 />;
       case 'rentJournal':
@@ -86,6 +89,8 @@ function App() {
         return 'Form 23 A';
       case 'form24':
         return 'Form 24';
+      case 'form15c':
+        return 'ශාඛා ගිණුම් ලේඛනය — 15 C';
       case 'schedule2':
         return 'Schedule No. 2';
       case 'rentJournal':
