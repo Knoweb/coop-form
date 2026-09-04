@@ -264,6 +264,16 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
             <span>Form 32 A Summary</span>
           </div>
         </button>
+        <button 
+          onClick={() => { setCurrentForm('form15mMilk'); setIsOpen(false); }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form15mMilk' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
+        >
+          <FileText className="w-5 h-5 shrink-0" />
+          <div className="flex flex-col">
+            <span className="text-xs text-slate-400">කිරි මධ්යස්ථානය</span>
+            <span>Form 15 M (Milk Center Summary)</span>
+          </div>
+        </button>
 
       </div>
       
