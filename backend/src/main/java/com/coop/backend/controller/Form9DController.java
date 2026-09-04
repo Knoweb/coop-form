@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/form9d-records")
-@CrossOrigin(origins = "http://localhost:5174")
+
 public class Form9DController {
 
     @Autowired

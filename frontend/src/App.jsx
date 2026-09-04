@@ -19,6 +19,15 @@ import Form9D from './forms/form9d';
 import Form9E from './forms/form9e';
 import Form23A from './forms/form23a';
 import Form24 from './forms/form24';
+import Form25 from './forms/form25';
+import Form27 from './forms/form27';
+import Form29 from './forms/form29';
+import F29 from './forms/f29';
+import BranchProfitLossForm from './forms/BranchProfitLossForm';
+import TelephoneRegisterForm from './forms/TelephoneRegisterForm';
+import Form32ASummary from './forms/Form32ASummary';
+import MilkCollectionSummary from './forms/MilkCollectionSummary';
+import Form16AStoreLedger from './forms/Form16AStoreLedger';
 import Form15C from './forms/Form15C';
 import Sidebar from './components/Sidebar';
 
@@ -66,6 +75,24 @@ function App() {
         return <TransferRegisterForm />;
       case 'multiColumnLedgerForm':
         return <MultiColumnLedgerForm />;
+      case 'form25':
+        return <Form25 />;
+      case 'form27':
+        return <Form27 />;
+      case 'form29':
+        return <Form29 />;
+      case 'f29':
+        return <F29 />;
+      case 'branchProfitLoss':
+        return <BranchProfitLossForm />;
+      case 'telephoneRegister':
+        return <TelephoneRegisterForm />;
+      case 'form32a':
+        return <Form32ASummary />;
+      case 'form15mMilk':
+        return <MilkCollectionSummary />;
+      case 'form16a':
+        return <Form16AStoreLedger />;
       default:
         return <Form1 />;
     }
@@ -111,6 +138,24 @@ function App() {
         return 'Transfer Register';
       case 'multiColumnLedgerForm':
         return 'Multi-Column Ledger';
+      case 'form25':
+        return 'Form 25';
+      case 'form27':
+        return 'Form 27';
+      case 'form29':
+        return 'Form 29';
+      case 'f29':
+        return 'F 29';
+      case 'branchProfitLoss':
+        return 'Branch Profit & Loss';
+      case 'telephoneRegister':
+        return 'Telephone Register';
+      case 'form32a':
+        return 'Form 32 A Summary';
+      case 'form15mMilk':
+        return 'Milk Center Daily Summary';
+      case 'form16a':
+        return 'Stock Ledger (Form 16 A)';
       default:
         return 'COOP Forms';
     }
@@ -129,7 +174,6 @@ function App() {
         </div>
         <div className="p-4 md:p-8 overflow-x-auto">
            {renderForm()}
-
         </div>
       </div>
     </div>

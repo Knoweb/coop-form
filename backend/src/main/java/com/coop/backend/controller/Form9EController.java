@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/form9e-records")
-@CrossOrigin(origins = "*") // In production, replace with specific origins
+
 public class Form9EController {
 
     @Autowired
