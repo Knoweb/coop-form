@@ -118,11 +118,11 @@ export default function Form32ASummary() {
                   <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Ref 1</label>
+                  <label className="block text-xs font-medium text-slate-600 mb-1">අනුමත කල ද.අ. (Approved Ref)</label>
                   <input type="text" name="ref1" value={formData.ref1} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Ref 2</label>
+                  <label className="block text-xs font-medium text-slate-600 mb-1">ගිණුම් ද.අ. (Account Ref)</label>
                   <input type="text" name="ref2" value={formData.ref2} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
                 </div>
               </div>
@@ -131,19 +131,33 @@ export default function Form32ASummary() {
             <div className="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
               <h3 className="text-sm font-semibold text-indigo-800 border-b border-indigo-200 pb-2 mb-4">Values</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
-                  <div key={`val-${num}`}>
-                    <label className="block text-xs font-medium text-indigo-800 mb-1">Value {num}</label>
-                    <input
-                      type="number"
-                      step="0.01"
-                      name={`val${num}`}
-                      value={formData[`val${num}`]}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
-                    />
-                  </div>
-                ))}
+                {[
+                  "භාණ්ඩ ලැබුම් පත (Goods Receipt)",
+                  "මාරු ව.අ. (Transfer V.No)",
+                  "වෙනත් (Other)",
+                  "වවුචර (Voucher)",
+                  "විකුණුම් මුදල (Sales Amount)",
+                  "විකුණුම් නැවත (Sales Return)",
+                  "විකුණුම් 14 B (Sales 14 B)",
+                  "මාරු වීම් (Transfers)",
+                  "ආපසු යැවීම් (Returns)",
+                  "මිල අඩුවීම (Price Decrease)"
+                ].map((label, index) => {
+                  const num = index + 1;
+                  return (
+                    <div key={`val-${num}`}>
+                      <label className="block text-xs font-medium text-indigo-800 mb-1">{label}</label>
+                      <input
+                        type="number"
+                        step="0.01"
+                        name={`val${num}`}
+                        value={formData[`val${num}`]}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             
@@ -171,10 +185,21 @@ export default function Form32ASummary() {
             <thead className="bg-slate-100 text-slate-600 font-medium border-b border-slate-200">
               <tr>
                 <th className="px-4 py-3 whitespace-nowrap">Serial No.</th>
-                <th className="px-4 py-3 whitespace-nowrap">Ref 1</th>
-                <th className="px-4 py-3 whitespace-nowrap">Ref 2</th>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
-                  <th key={`th-val-${num}`} className="px-4 py-3 whitespace-nowrap bg-indigo-50/50">Val {num}</th>
+                <th className="px-4 py-3 whitespace-nowrap">අනුමත කල ද.අ. (Approved Ref)</th>
+                <th className="px-4 py-3 whitespace-nowrap">ගිණුම් ද.අ. (Account Ref)</th>
+                {[
+                  "භාණ්ඩ ලැබුම් පත (Goods Receipt)",
+                  "මාරු ව.අ. (Transfer V.No)",
+                  "වෙනත් (Other)",
+                  "වවුචර (Voucher)",
+                  "විකුණුම් මුදල (Sales Amount)",
+                  "විකුණුම් නැවත (Sales Return)",
+                  "විකුණුම් 14 B (Sales 14 B)",
+                  "මාරු වීම් (Transfers)",
+                  "ආපසු යැවීම් (Returns)",
+                  "මිල අඩුවීම (Price Decrease)"
+                ].map((label, index) => (
+                  <th key={`th-val-${index + 1}`} className="px-4 py-3 whitespace-nowrap bg-indigo-50/50">{label}</th>
                 ))}
                 <th className="px-4 py-3 text-indigo-700 bg-indigo-100 font-bold whitespace-nowrap">Total</th>
                 <th className="px-4 py-3">Remarks</th>
