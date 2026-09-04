@@ -30,6 +30,7 @@ import MilkCollectionSummary from './forms/MilkCollectionSummary';
 import Form16AStoreLedger from './forms/Form16AStoreLedger';
 import Form16BGoodsReceipt from './forms/Form16BGoodsReceipt';
 import Form16DDailyPurchases from './forms/Form16DDailyPurchases';
+import Form17SpoilagePriceChange from './forms/Form17SpoilagePriceChange';
 import Form15C from './forms/Form15C';
 import Sidebar from './components/Sidebar';
 
@@ -99,6 +100,8 @@ function App() {
         return <Form16BGoodsReceipt />;
       case 'form16d':
         return <Form16DDailyPurchases />;
+      case 'form17':
+        return <Form17SpoilagePriceChange />;
       default:
         return <Form1 />;
     }
@@ -166,6 +169,8 @@ function App() {
         return 'Goods Receipt (Form 16 B)';
       case 'form16d':
         return 'Daily Purchases (Form 16 D)';
+      case 'form17':
+        return 'Spoilages & Price Changes (Form 17)';
       default:
         return 'COOP Forms';
     }

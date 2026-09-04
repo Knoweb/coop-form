@@ -42,6 +42,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form16a', 'Form 16 A', 'බඩු ලේජරය')}
         {btn('form16b', 'Form 16 B', 'බඩු භාර ගැනීමේ සටහන')}
         {btn('form16d', 'Form 16 D', 'දෛනික ගැනුම් සටහන')}
+        {btn('form17', 'Form 17', 'නරක්වීම්/මිල වෙනස්වීම්')}
         {btn('form23a', 'Form 23 A', 'ශේෂ ගෙවීමේ ලේඛනය')}
         {btn('form24',  'Form 24',   'ස්ථාවර වත්කම් ලේඛනය')}
         {btn('form25',  'Form 25',   'ශේෂ ගෙවීම් ලේඛනය')}
