@@ -24,6 +24,7 @@ import Form27 from './forms/form27';
 import Form29 from './forms/form29';
 import F29 from './forms/f29';
 import BranchProfitLossForm from './forms/BranchProfitLossForm';
+import TelephoneRegisterForm from './forms/TelephoneRegisterForm';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -78,6 +79,8 @@ function App() {
         return <F29 />;
       case 'branchProfitLoss':
         return <BranchProfitLossForm />;
+      case 'telephoneRegister':
+        return <TelephoneRegisterForm />;
       default:
         return <Form1 />;
     }
@@ -131,6 +134,8 @@ function App() {
         return 'F 29';
       case 'branchProfitLoss':
         return 'Branch Profit & Loss';
+      case 'telephoneRegister':
+        return 'Telephone Register';
       default:
         return 'COOP Forms';
     }
