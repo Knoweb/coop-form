@@ -20,7 +20,7 @@ public class FormF21CController {
     }
 
     @PostMapping
-    public FormF21CEntity createRecord(@RequestBody FormF21CEntity record) {
-        return repository.save(record);
+    public List<FormF21CEntity> createRecords(@RequestBody List<FormF21CEntity> records) {
+        return repository.saveAll(records);
     }
 }
