@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import Form1 from './forms/form1';
 import Schedule2 from './forms/Schedule2';
@@ -17,13 +17,34 @@ import Form4 from './forms/form4';
 import Form9C from './forms/form9c';
 import Form9D from './forms/form9d';
 import Form9E from './forms/form9e';
+import Form9M from './forms/form9m';
+import Form10 from './forms/form10';
+import Form10B from './forms/form10b';
+import Form11 from './forms/form11';
+import Form11A from './forms/form11a';
+import Form12 from './forms/form12';
+import Form14 from './forms/form14';
+import Form14A from './forms/form14a';
+import Form14B from './forms/form14b';
+import Form14C from './forms/form14c';
+import Form14D from './forms/form14d';
+import Form14E from './forms/form14e';
+import Form15 from './forms/form15';
+import Form15A from './forms/form15a';
+import Form15B from './forms/form15b';
 import Form23A from './forms/form23a';
 import Form24 from './forms/form24';
 import Sidebar from './components/Sidebar';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [currentForm, setCurrentForm] = useState('form1');
+  const [currentForm, setCurrentForm] = useState(() => {
+    return localStorage.getItem('currentForm') || 'form1';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('currentForm', currentForm);
+  }, [currentForm]);
 
   const renderForm = () => {
     switch (currentForm) {
@@ -39,6 +60,36 @@ function App() {
         return <Form9D />;
       case 'form9e':
         return <Form9E />;
+      case 'form9m':
+        return <Form9M />;
+      case 'form10':
+        return <Form10 />;
+      case 'form10b':
+        return <Form10B />;
+      case 'form11':
+        return <Form11 />;
+      case 'form11a':
+        return <Form11A />;
+      case 'form12':
+        return <Form12 />;
+      case 'form14':
+        return <Form14 />;
+      case 'form14a':
+        return <Form14A />;
+      case 'form14b':
+        return <Form14B />;
+      case 'form14c':
+        return <Form14C />;
+      case 'form14d':
+        return <Form14D />;
+      case 'form14e':
+        return <Form14E />;
+      case 'form15':
+        return <Form15 />;
+      case 'form15a':
+        return <Form15A />;
+      case 'form15b':
+        return <Form15B />;
       case 'form23a':
         return <Form23A />;
       case 'form24':
@@ -82,6 +133,36 @@ function App() {
         return 'Form 9 D';
       case 'form9e':
         return 'Form 9 E';
+      case 'form9m':
+        return 'Form 9 M';
+      case 'form10':
+        return 'Form 10';
+      case 'form10b':
+        return 'Form 10 B';
+      case 'form11':
+        return 'Form 11';
+      case 'form11a':
+        return 'Form 11 A';
+      case 'form12':
+        return 'Form 12';
+      case 'form14':
+        return 'Form 14';
+      case 'form14a':
+        return 'Form 14 A';
+      case 'form14b':
+        return 'Form 14 B';
+      case 'form14c':
+        return 'Form 14 C';
+      case 'form14d':
+        return 'Form 14 D';
+      case 'form14e':
+        return 'Form 14 E';
+      case 'form15':
+        return 'Form 15';
+      case 'form15a':
+        return 'Form 15 A';
+      case 'form15b':
+        return 'Form 15 B';
       case 'form23a':
         return 'Form 23 A';
       case 'form24':
