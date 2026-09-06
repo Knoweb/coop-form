@@ -16,6 +16,7 @@ public class Form9ERecord {
 
     private String date;
     private String societyName;
+    private String remainingBalance;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "record_id")

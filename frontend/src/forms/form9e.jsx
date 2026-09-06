@@ -2,51 +2,54 @@ import React, { useState, useEffect } from 'react';
 import { Save, Building2, Calendar, FileText, CheckCircle2 } from 'lucide-react';
 
 const RECEIPT_DESCRIPTIONS = [
-  "ණය අයකිරීම",
-  "පාරි: අයකිරීම ගෙනයාම",
-  "උකස් බඩු ඇප අයකිරීම",
-  "ළමා අරමුදල් අයකිරීම",
-  "සාමාජික ඉතුරුම්/රක්ෂණ",
+  "ණය අයවීම",
+  "පොලී අයවීම කො.ණය",
+  "උකස් බඩු ණය බේරීම",
+  "එම පොලී අයවීම",
+  "සාමාජික ඉතුරුම් තැන්පතු",
   "එම ස්ථිර තැන්පතු",
   "සාමාජික තැන්පතු",
-  "ඉතුරු තැන්පතු",
+  "ඉතුරුම් තැන්පතු",
   "එම ස්ථිර තැන්පතු",
-  "නිවාස ණය/සුළු ණය",
-  "කාන්තා/ගෘහ මූලික",
-  "අගනුවර ණය ගෙවීම",
+  "මහජන බැංකුවෙන්",
+  "කාර්යාලයෙන් අත්ති:",
+  "අයකළ තැ: ගාස්තු",
   "එම ලිපි ද්‍රව්‍ය",
-  "අතිවිශේෂ ණය/අත්:",
-  "පොලිය (මූල්‍ය)",
-  "මිලට ගත් ද්‍රව්‍ය",
+  "අවිනිශ්චිත ගිණුම් අය",
+  "කොමිස් (මිශ්‍ර)",
+  "මිලට ගත් බිල්පත්",
   "වෙනත් ලැබීම්",
   "වෙනත් ලැබීම්",
   "වෙනත් ලැබීම්",
   "පෙර දිනට ශේෂය",
+  "",
+  "",
   "මුළු එකතුව"
 ];
 
 const PAYMENT_DESCRIPTIONS = [
-  "තැන්පතු ගෙවීම්/ගෙනයාම",
-  "සාමාජික ඉතුරුම් අ/ග",
+  "ණයදීම් කෙටිකාලීන",
+  "සාමාජික ඉතුරු තැ/",
   "එම ස්ථිර තැන්පතු",
-  "සාමාජික ගෙවීම්",
-  "ඉතුරුම් / තැන්පත්",
+  "සාමාජික නොවන",
+  "ඉතුරු/ තැන්පත්",
   "එම ස්ථිර තැන්පත්",
   "උකස් බඩු අත්තිකාරම්",
-  "බැංකු/ව්‍යාපාරික/ගිණුම්",
-  "රක්ෂණ ගෙවීම් ස්ථිර හා",
-  "ණය ගිණුම් අ/ග",
-  "එම ලිපි ද්‍රව්‍ය",
-  "කාන්තා ගමන් වියදම් හා",
-  "ප්‍රවාහන",
-  "එම ගමන් වියදම්",
-  "මුද්දර ගාස්තු",
-  "ලිපිද්‍රව්‍ය අත්තිකාරම්",
-  "අ/ව: ගිණුම් අ/ග ලැබීම්",
-  "යැවී චෙක්",
+  "බැංකුවට/ කාර්යාලයට",
+  "පොලී ගෙවීම් ස්ථිර තැ",
+  "වැය ගිණුම් තැ/හා",
+  "එම ලිපි ද්රව්ය",
+  "එම ගමන් වියදම් හා ප්රවාහන",
+  "එම මිශ්ර වියදම්",
+  "මුද්දර ගිණුම",
+  "ලිපිද්රව්ය අවිනිශ්චිත",
+  "අව: ගිණුම් අය ලැබීම්",
+  "යැවි චෙක්",
   "වෙනත් ගෙවීම්",
-  "මිලට ගත් ද්‍රව්‍ය",
+  "මිලට ගත් බිල්පත්",
   "අද දිනට ශේෂය",
+  "",
+  "",
   "මුළු එකතුව"
 ];
 
@@ -69,15 +72,59 @@ const createEmptyItem = (side, description) => ({
 export default function Form9E() {
   const [societyName, setSocietyName] = useState('');
   const [date, setDate] = useState('');
+  const [remainingBalance, setRemainingBalance] = useState('');
   const [receipts, setReceipts] = useState([]);
   const [payments, setPayments] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
 
   useEffect(() => {
-    // Initialize state
-    const initialReceipts = Array(MAX_ROWS).fill(null).map((_, i) => createEmptyItem('RECEIPT', RECEIPT_DESCRIPTIONS[i] || ''));
-    const initialPayments = Array(MAX_ROWS).fill(null).map((_, i) => createEmptyItem('PAYMENT', PAYMENT_DESCRIPTIONS[i] || ''));
+    // Initialize state with dummy data
+    const generateRandomAmount = (max) => (Math.random() * max).toFixed(2);
+    
+    const initialReceipts = Array(MAX_ROWS).fill(null).map((_, i) => {
+      const desc = RECEIPT_DESCRIPTIONS[i] || '';
+      if (!desc || desc === '' || desc === 'මුළු එකතුව' || desc === 'පෙර දිනට ශේෂය') {
+         return createEmptyItem('RECEIPT', desc);
+      }
+      return {
+        side: 'RECEIPT',
+        description: desc,
+        folio: `R${i + 1}`,
+        itemDate: '10/15',
+        refNo: `RC-${1000 + i}`,
+        broughtForwardTransfers: generateRandomAmount(1000),
+        broughtForwardCash: generateRandomAmount(500),
+        todayTransfers: generateRandomAmount(200),
+        todayCash: generateRandomAmount(100),
+        totalTransfers: generateRandomAmount(1200),
+        totalCash: generateRandomAmount(600)
+      };
+    });
+
+    const initialPayments = Array(MAX_ROWS).fill(null).map((_, i) => {
+      const desc = PAYMENT_DESCRIPTIONS[i] || '';
+      if (!desc || desc === '' || desc === 'මුළු එකතුව' || desc === 'අද දිනට ශේෂය') {
+         return createEmptyItem('PAYMENT', desc);
+      }
+      return {
+        side: 'PAYMENT',
+        description: desc,
+        folio: `P${i + 1}`,
+        itemDate: '10/15',
+        refNo: `PV-${2000 + i}`,
+        broughtForwardTransfers: generateRandomAmount(1000),
+        broughtForwardCash: generateRandomAmount(500),
+        todayTransfers: generateRandomAmount(200),
+        todayCash: generateRandomAmount(100),
+        totalTransfers: generateRandomAmount(1200),
+        totalCash: generateRandomAmount(600)
+      };
+    });
+
+    setSocietyName('හික්කඩුව සමූපකාර සමිතිය');
+    setDate('2023-10-15');
+    setRemainingBalance('45500.00');
     setReceipts(initialReceipts);
     setPayments(initialPayments);
   }, []);
@@ -107,6 +154,7 @@ export default function Form9E() {
       const payload = {
         societyName,
         date,
+        remainingBalance,
         items: [...receipts, ...payments].filter(item => item.description !== '')
       };
 
@@ -167,10 +215,113 @@ export default function Form9E() {
               <label className="text-xs font-semibold text-slate-600 uppercase flex items-center gap-1"><Calendar className="w-3 h-3"/> Date (දිනය)</label>
               <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="border border-slate-300 rounded px-3 py-1.5 text-sm w-full sm:w-40" />
             </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase flex items-center gap-1"><FileText className="w-3 h-3"/> Remaining Bal. (ඉතිරි මුදල)</label>
+              <input type="text" value={remainingBalance} onChange={(e) => setRemainingBalance(e.target.value)} className="border border-slate-300 rounded px-3 py-1.5 text-sm w-full sm:w-32" placeholder="0.00" />
+            </div>
             <div className="flex items-end">
               <button onClick={handleSave} disabled={isSaving} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-1.5 rounded text-sm font-semibold flex items-center gap-2 transition-colors disabled:opacity-50 h-[34px]">
                 {saveSuccess ? <CheckCircle2 className="w-4 h-4" /> : <Save className="w-4 h-4" />}
                 {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Book'}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Data Entry Form */}
+        <div className="bg-white rounded-xl shadow p-4 md:p-6">
+          <h2 className="text-lg font-bold text-slate-800 mb-4">දත්ත ඇතුළත් කිරීම (Data Entry)</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="col-span-1 lg:col-span-2 flex flex-col gap-1">
+               <label className="text-xs font-semibold text-slate-600 uppercase">Side (පැත්ත)</label>
+               <select id="form-side" className="border border-slate-300 rounded px-3 py-1.5 text-sm" onChange={(e) => {
+                 const side = e.target.value;
+                 const descSelect = document.getElementById('form-desc');
+                 descSelect.innerHTML = '';
+                 const options = side === 'RECEIPT' ? RECEIPT_DESCRIPTIONS : PAYMENT_DESCRIPTIONS;
+                 options.forEach((desc, i) => {
+                   if (desc !== "" && desc !== "මුළු එකතුව" && desc !== "පෙර දිනට ශේෂය" && desc !== "අද දිනට ශේෂය") {
+                     descSelect.add(new Option(desc, i));
+                   }
+                 });
+               }}>
+                 <option value="RECEIPT">ලැබීම් (Receipts)</option>
+                 <option value="PAYMENT">ගෙවීම් (Payments)</option>
+               </select>
+            </div>
+            
+            <div className="col-span-1 lg:col-span-2 flex flex-col gap-1">
+               <label className="text-xs font-semibold text-slate-600 uppercase">Description (විස්තරය)</label>
+               <select id="form-desc" className="border border-slate-300 rounded px-3 py-1.5 text-sm">
+                 {RECEIPT_DESCRIPTIONS.map((desc, i) => (
+                   desc !== "" && desc !== "මුළු එකතුව" && desc !== "පෙර දිනට ශේෂය" && desc !== "අද දිනට ශේෂය" ? 
+                   <option key={i} value={i}>{desc}</option> : null
+                 ))}
+               </select>
+            </div>
+
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase">Folio (ප/අ)</label>
+              <input id="form-folio" type="text" className="border border-slate-300 rounded px-3 py-1.5 text-sm" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase">Date (දිනය)</label>
+              <input id="form-date" type="text" className="border border-slate-300 rounded px-3 py-1.5 text-sm" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase">Ref No</label>
+              <input id="form-ref" type="text" className="border border-slate-300 rounded px-3 py-1.5 text-sm" />
+            </div>
+            
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase">B/F Transfers (පෙර දින - පැවරුම්)</label>
+              <input id="form-bf-t" type="number" step="0.01" className="border border-slate-300 rounded px-3 py-1.5 text-sm" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase">B/F Cash (පෙර දින - මුදල්)</label>
+              <input id="form-bf-c" type="number" step="0.01" className="border border-slate-300 rounded px-3 py-1.5 text-sm" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase">Today Transfers (අද දින - පැවරුම්)</label>
+              <input id="form-today-t" type="number" step="0.01" className="border border-slate-300 rounded px-3 py-1.5 text-sm" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold text-slate-600 uppercase">Today Cash (අද දින - මුදල්)</label>
+              <input id="form-today-c" type="number" step="0.01" className="border border-slate-300 rounded px-3 py-1.5 text-sm" />
+            </div>
+
+            <div className="col-span-1 md:col-span-2 lg:col-span-4 flex justify-end mt-2">
+              <button onClick={() => {
+                const side = document.getElementById('form-side').value;
+                const index = parseInt(document.getElementById('form-desc').value);
+                const setter = side === 'RECEIPT' ? setReceipts : setPayments;
+                
+                setter(prev => {
+                  const arr = [...prev];
+                  arr[index] = {
+                    ...arr[index],
+                    folio: document.getElementById('form-folio').value,
+                    itemDate: document.getElementById('form-date').value,
+                    refNo: document.getElementById('form-ref').value,
+                    broughtForwardTransfers: document.getElementById('form-bf-t').value,
+                    broughtForwardCash: document.getElementById('form-bf-c').value,
+                    todayTransfers: document.getElementById('form-today-t').value,
+                    todayCash: document.getElementById('form-today-c').value
+                  };
+                  return arr;
+                });
+                
+                // Clear inputs
+                document.getElementById('form-folio').value = '';
+                document.getElementById('form-date').value = '';
+                document.getElementById('form-ref').value = '';
+                document.getElementById('form-bf-t').value = '';
+                document.getElementById('form-bf-c').value = '';
+                document.getElementById('form-today-t').value = '';
+                document.getElementById('form-today-c').value = '';
+              }} className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-colors">
+                <CheckCircle2 className="w-4 h-4" />
+                ඇතුළත් කරන්න (Update Row)
               </button>
             </div>
           </div>
@@ -261,6 +412,25 @@ export default function Form9E() {
               </tbody>
             </table>
           </div>
+        </div>
+
+        {/* Sign-off Section */}
+        <div className="bg-white rounded-xl shadow p-4 md:p-8 mt-6">
+           <p className="text-sm md:text-base text-slate-800 leading-loose">
+             අද දින සියලුම ගනුදෙනු නිවැරදිව සටහන්ව ඇති බවත් අත ඉතිරි මුදල් වශයෙන් 
+             <input type="text" value={remainingBalance} onChange={(e) => setRemainingBalance(e.target.value)} className="border-b border-dashed border-slate-400 w-48 mx-2 px-2 text-center font-bold text-blue-800 outline-none focus:border-blue-500 bg-transparent" placeholder=".............................." />
+             මා අත නිවැරදිව තිබෙන බවත් මෙයින් සහතික කරමි.
+           </p>
+           <div className="mt-16 flex flex-col md:flex-row justify-between items-end gap-8 text-sm text-slate-600 px-4 md:px-12">
+             <div className="flex items-end gap-2">
+                <span className="mb-1">දිනය:</span>
+                <div className="w-48 border-b border-dashed border-slate-400"></div>
+             </div>
+             <div className="flex flex-col items-center">
+                <div className="w-64 border-b border-solid border-slate-800 mb-2"></div>
+                <span>ග්‍රාමීය බැංකු ශාඛා කළමනාකරු</span>
+             </div>
+           </div>
         </div>
         
       </div>

@@ -4,7 +4,7 @@ import { FileText, Settings, LayoutDashboard, X } from 'lucide-react';
 export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm }) {
   const btn = (key, label, sub = '') => (
     <button
-      onClick={() => setCurrentForm(key)}
+      onClick={() => { setCurrentForm(key); setIsOpen(false); }}
       className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === key ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
     >
       <FileText className="w-5 h-5 shrink-0" />
@@ -37,7 +37,22 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form4', 'Form 4', 'Form 4')}
         {btn('form9c', 'Form 9 C', 'ශාඛා / ගබඩා / දිය සත්ත්ව')}
         {btn('form9d', 'Form 9 D', 'ගොඩනැගිලිවලට ගෙවීම් ලේඛනය')}
-        {btn('form9e', 'Form 9 E', 'ශේෂය ගෙවීම් ශේෂ ලේඛනය')}
+        {btn('form9e', 'Form 9 E', 'ග්‍රාමීය බැංකුව')}
+        {btn('form9m', 'Form 9 M', 'කිරි සැපයුම්')}
+        {btn('form10', 'Form 10', 'මුදල් කුවිතාන්සිය')}
+        {btn('form10b', 'Form 10 B', 'තැන්පතු කුවිතාන්සිය')}
+        {btn('form11', 'Form 11', 'මුදල් සහතිකය')}
+        {btn('form11a', 'Form 11 A', 'දෛනික මුදල් එකතු කිරීමේ සටහන')}
+        {btn('form12', 'Form 12', 'බැංකුවට මුදල් යෙනකාමේ විස්තරය')}
+        {btn('form14', 'Form 14', 'මුදලට/ණයට වෙළදාම් පත (තොග)')}
+        {btn('form14a', 'Form 14 A', 'සැකසුම් පත්‍රය - වෙළඳාම')}
+        {btn('form14b', 'Form 14 B', 'වෙළඳාම් පත (පාරිභෝගික අංශය)')}
+        {btn('form14c', 'Form 14 C', 'වෙළඳාම් පත (සිල්ලර ශාඛා වලට)')}
+        {btn('form14d', 'Form 14 D', 'ගබඩා කුවිතාන්සිය')}
+        {btn('form14e', 'Form 14 E', 'ගෝනි පිළිබඳ විස්තරය')}
+        {btn('form15', 'Form 15', 'සුළු මුදල් සහතිකය / ඉතිරි බඩු සටහන')}
+        {btn('form15a', 'Form 15 A', 'ගබඩා කුවිතාන්සි සසඳුම් පත')}
+        {btn('form15b', 'Form 15 B', 'ඉතිරි ගෝනි පිළිබඳ සහතිකය')}
         {btn('form15c', 'Form 15 C', 'දිනට ප්‍රමාණය — ඉතිරි බඩු සටහන')}
         {btn('form15mMilk', 'Form 15 M', 'කිරි සංග්‍රහය')}
         {btn('form16a', 'Form 16 A', 'බඩු ලේජරය')}
@@ -53,7 +68,7 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('form21c', 'Form 21 C', 'දිනකට ඉතිරි බඩු තොග වාර්තාව')}
         {btn('form22', 'Form 22', 'ඉතිරි බඩු ගණන් ගැනීමේ ලැයිස්තුව')}
         {btn('form23', 'Form 23', 'මාසික මූල්‍ය බඩු ලැයිස්තුව')}
-        {btn('form23a', 'Form 23 A', 'ශේෂ ගෙවීමේ ලේඛනය')}
+        {btn('form23a', 'Form 23 A', 'බඩු ගැනුම්කරුගේ ඉල්ලීම')}
         {btn('form24', 'Form 24', 'ස්ථාවර වත්කම් ලේඛනය')}
         {btn('form25', 'Form 25', 'ශේෂ ගෙවීම් ලේඛනය')}
         {btn('form27', 'Form 27', 'ලේඛන ගෙවීම් ලේඛනය')}
@@ -75,7 +90,6 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('generalLedgerForm', 'General Ledger', 'සම ලේජරය')}
         {btn('transferRegisterForm', 'Transfer Register', 'පැවරැම් ලේඛනය')}
         {btn('multiColumnLedgerForm', 'Multi-Column Ledger', 'විස්තරාත්මක බෙදාහැරීමේ ජර්නලය')}
-
       </div>
 
       <div className="p-4 border-t border-slate-800">
