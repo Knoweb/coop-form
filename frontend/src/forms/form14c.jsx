@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Save, Printer, Plus, Trash2 } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function Form14C() {
   const [isSaving, setIsSaving] = useState(false);
@@ -69,20 +71,23 @@ export default function Form14C() {
 
   return (
     <div className="max-w-6xl mx-auto pb-12">
-      {/* Header controls */}
-      <div className="flex justify-between items-center mb-6 print:hidden">
-        <h1 className="text-2xl font-bold text-slate-800">Form 14 C: වෙළඳාම් පත (සිල්ලර ශාඛා වලට)</h1>
-        <div className="flex gap-3">
-          <button onClick={() => window.print()} className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg font-medium transition-colors">
+      {/* Header Section */}
+        <FormHeader 
+          title="වෙළඳාම් පත (සිල්ලර ශාඛා වලට)" 
+          subtitle="Trade Statement (For Retail Branches)" 
+          formNumber="Form 14 C" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden mb-6">
+          <div className="flex gap-3">
+            <button onClick={() => window.print()} className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg font-medium transition-colors">
             <Printer className="w-4 h-4" /> Print
           </button>
           <button onClick={handleSave} disabled={isSaving} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50">
             <Save className="w-4 h-4" /> {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save'}
           </button>
+          </div>
         </div>
-      </div>
-
-      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8">
         {/* ===== DATA ENTRY FORM ===== */}
         <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 print:hidden">
           <h2 className="text-lg font-semibold text-slate-800 mb-6 pb-2 border-b border-slate-200">Data Entry</h2>

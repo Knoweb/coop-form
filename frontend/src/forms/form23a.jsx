@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PlusCircle, FileText, Calendar, List, Save, LayoutList, Building2, User, Hash, Info } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 const INITIAL_ITEM_STATE = {
   serialNo: '',
@@ -104,19 +105,15 @@ export default function Form23A() {
       <div className="w-full mx-auto space-y-8 max-w-6xl">
         
         {/* Form Construction Area */}
+        <FormHeader 
+            title="බඩු ගැනුම්කරුගේ ඉල්ලීම" 
+            subtitle="Buyer's Request" 
+            formNumber="Form 23A" 
+          />
+
         <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
           
-          <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-                <LayoutList className="w-6 h-6 text-fuchsia-400" />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-white">බඩු ගැනුම්කරුගේ ඉල්ලීම</h2>
-                <p className="text-slate-400 text-sm">Form 23 A (Buyer's Request for Goods)</p>
-              </div>
-            </div>
-          </div>
+          
 
           {/* Document Headers */}
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">

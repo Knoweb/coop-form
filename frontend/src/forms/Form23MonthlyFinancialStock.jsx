@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function Form23MonthlyFinancialStock() {
   const [records, setRecords] = useState([]);
@@ -107,24 +109,21 @@ export default function Form23MonthlyFinancialStock() {
 
   return (
     <div className="max-w-[90rem] mx-auto space-y-6">
+      {/* Header Section */}
+        <FormHeader 
+          title="මාසික මූල්‍ය බඩු ලැයිස්තුව" 
+          subtitle="Monthly Financial Stock" 
+          formNumber="Form 23" 
+        />
+
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-              <FileText className="w-6 h-6 text-fuchsia-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">මාසික මූල්‍ය බඩු ලැයිස්තුව</h2>
-              <p className="text-slate-400 text-sm">Monthly Financial Stock Valuation List (Form 23)</p>
-            </div>
-          </div>
-        </div>
+        
 
         <form onSubmit={handleAddEntry} className="p-6">
           <div className="space-y-6">
             
-            {/* Header Metadata Group */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
+            
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ගබඩාව (Store Name)</label>
                   <input type="text" name="storeName" value={formData.storeName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />

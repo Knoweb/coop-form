@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function Form17SpoilagePriceChange() {
   const [records, setRecords] = useState([]);
@@ -89,24 +91,21 @@ export default function Form17SpoilagePriceChange() {
 
   return (
     <div className="max-w-[90rem] mx-auto space-y-6">
+      {/* Header Section */}
+        <FormHeader 
+          title="නරක්වීම්/මිල වෙනස්වීම්" 
+          subtitle="Spoilage / Price Changes" 
+          formNumber="Form 17" 
+        />
+
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-rose-500/20 p-2 rounded-lg">
-              <FileText className="w-6 h-6 text-rose-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">නරක්වීම් සහ මිල වෙනස්වීම් සටහන</h2>
-              <p className="text-slate-400 text-sm">Spoilages and Price Changes Record - Form 17</p>
-            </div>
-          </div>
-        </div>
+        
 
         <form onSubmit={handleAddEntry} className="p-6">
           <div className="space-y-6">
             
-            {/* Header */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
+            
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">දිනය (Date)</label>
                   <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText, ArrowLeftRight } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function Form21BBranchRegister() {
   const [records, setRecords] = useState([]);
@@ -85,24 +87,21 @@ export default function Form21BBranchRegister() {
 
   return (
     <div className="max-w-[95rem] mx-auto space-y-6">
+      {/* Header Section */}
+        <FormHeader 
+          title="ප්‍රාදේශිකයේ / අංශයේ නම" 
+          subtitle="Branch Register" 
+          formNumber="Form 21B" 
+        />
+
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-              <FileText className="w-6 h-6 text-fuchsia-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">ප්‍රාදේශිකයේ / අංශයේ නම</h2>
-              <p className="text-slate-400 text-sm">Regional / Branch Register (Form 21 B)</p>
-            </div>
-          </div>
-        </div>
+        
 
         <form onSubmit={handleAddEntry} className="p-6">
           <div className="space-y-6">
             
-            {/* Header Metadata Group */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
+            
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ප්‍රාදේශිකයේ/අංශයේ නම (Branch/Dept Name)</label>
                   <input type="text" name="branchOrDepartmentName" value={formData.branchOrDepartmentName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />

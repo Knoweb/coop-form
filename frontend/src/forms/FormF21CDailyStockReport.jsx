@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Save, LayoutGrid } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 const INITIAL_MATRIX = [
   { category: 'ලැබීම්', description: '1. මුලින්' },
@@ -119,19 +120,15 @@ export default function FormF21CDailyStockReport() {
   return (
     <div className="max-w-[120rem] mx-auto space-y-6">
 
+      <FormHeader 
+          title="දිනකට ඉතිරි බඩු තොග වාර්තාව" 
+          subtitle="Daily Stock Report" 
+          formNumber="Form 21C" 
+        />
+
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
 
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-slncc-blue/20 p-2 rounded-lg">
-              <LayoutGrid className="w-6 h-6 text-indigo-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">දිනකට ඉතිරි බඩු තොග වාර්තාව</h2>
-              <p className="text-slate-400 text-sm">Daily Forward Stock Report (Form F 21 C)</p>
-            </div>
-          </div>
-        </div>
+        
 
         <div className="overflow-x-auto p-4">
           <div className="mb-4 flex items-center space-x-4">

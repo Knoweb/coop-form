@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 export default function MilkCollectionSummary() {
   const [records, setRecords] = useState([]);
@@ -96,18 +97,14 @@ export default function MilkCollectionSummary() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
+      <FormHeader 
+          title="කිරි සංග්‍රහය" 
+          subtitle="Milk Collection Summary" 
+          formNumber="Form 15M" 
+        />
+
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-emerald-500/20 p-2 rounded-lg">
-              <FileText className="w-6 h-6 text-emerald-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">කිරි මධ්යස්ථානය දෛනික සටහන</h2>
-              <p className="text-slate-400 text-sm">Milk Center Daily Summary - Form 15 M</p>
-            </div>
-          </div>
-        </div>
+        
 
         <form onSubmit={handleAddEntry} className="p-6">
           <div className="space-y-6">

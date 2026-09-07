@@ -1,5 +1,6 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Save, Plus, Check, FileText, List, X } from "lucide-react";
+import FormHeader from '../components/FormHeader';
 
 const ROW_DEFS = [
   { key: "uparama", label: "උපරිම", type: "normal" },
@@ -135,7 +136,20 @@ export default function Form15C() {
   const thBorder = "border border-black p-2 font-normal text-center";
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-8 flex flex-col items-center gap-10">
+    <div className="max-w-[1400px] mx-auto pb-12 overflow-x-hidden">
+
+      <div className="w-full max-w-6xl">
+        <FormHeader 
+          title="දිනට ප්‍රමාණය — ඉතිරි බඩු සටහන" 
+          subtitle="Stock Balance Report" 
+          formNumber="Form 15C" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden mb-6 mt-4">
+          <button onClick={() => window.print()} className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-6 py-2 rounded text-sm font-semibold transition-colors">
+            Print
+          </button>
+        </div>
+      </div>
 
       {/* ═══ FORM ═══ */}
       <form onSubmit={handleSubmit} className="bg-white p-8 w-full max-w-6xl shadow-lg border border-gray-200 text-black font-sans">

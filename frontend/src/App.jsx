@@ -279,7 +279,7 @@ function App() {
       case 'form24':
         return 'Form 24';
       case 'form15c':
-        return 'ශාඛා ගිණුම් ලේඛනය — 15 C';
+        return 'Form 15 C';
       case 'schedule2':
         return 'Schedule No. 2';
       case 'rentJournal':

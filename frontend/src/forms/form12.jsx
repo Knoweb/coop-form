@@ -73,7 +73,7 @@ export default function Form12() {
 
   return (
     <div className="min-h-screen bg-slate-100 p-4 font-sans print:bg-white print:p-0">
-      <div className="max-w-3xl mx-auto space-y-6 print:space-y-0 print:max-w-none">
+      <div className="max-w-[1400px] mx-auto space-y-6 print:space-y-0 print:max-w-none">
 
         {/* Header Section */}
         <FormHeader 
