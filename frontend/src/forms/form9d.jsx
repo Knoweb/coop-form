@@ -83,6 +83,11 @@ export default function Form9D() {
       ledgerFolio: formData.ledgerFolio
     };
 
+    
+    // --- LOCAL STATE UPDATE ---
+    setRecords(prev => [...prev, { ...payload, id: Date.now() }]);
+    // setFormData(INITIAL_FORM_STATE);
+    // --------------------------
     try {
       const response = await fetch('http://localhost:8080/api/form9d-records', {
         method: 'POST',

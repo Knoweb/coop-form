@@ -80,6 +80,11 @@ export default function Form27() {
       chequesDataJson: JSON.stringify(chequeItems)
     };
 
+    
+    // --- LOCAL STATE UPDATE ---
+    setRecords(prev => [...prev, { ...payload, id: Date.now() }]);
+    // setFormData(INITIAL_FORM_STATE);
+    // --------------------------
     try {
       const response = await fetch('http://localhost:8080/api/form27-records', {
         method: 'POST',

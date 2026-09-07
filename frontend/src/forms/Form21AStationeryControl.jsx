@@ -60,6 +60,11 @@ export default function Form21AStationeryControl() {
       issValue
     };
 
+    
+    // --- LOCAL STATE UPDATE ---
+    setRecords(prev => [...prev, { ...payload, id: Date.now() }]);
+    // setFormData(INITIAL_FORM_STATE);
+    // --------------------------
     try {
       const res = await fetch('http://localhost:8080/api/form-21a', {
         method: 'POST',

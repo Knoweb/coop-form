@@ -60,6 +60,11 @@ export default function StoreTransferForm() {
       receivingSellingTotal: qty * (Number(formData.receivingSellingUnit) || 0)
     };
 
+    
+    // --- LOCAL STATE UPDATE ---
+    setRecords(prev => [...prev, { ...payload, id: Date.now() }]);
+    // setFormData(INITIAL_FORM_STATE);
+    // --------------------------
     try {
       const res = await fetch('http://localhost:8080/api/store-transfer', {
         method: 'POST',

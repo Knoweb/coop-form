@@ -48,6 +48,11 @@ export default function Form21BinCard() {
 
     const payload = { ...formData };
 
+    
+    // --- LOCAL STATE UPDATE ---
+    setRecords(prev => [...prev, { ...payload, id: Date.now() }]);
+    // setFormData(INITIAL_FORM_STATE);
+    // --------------------------
     try {
       const res = await fetch('http://localhost:8080/api/form-21', {
         method: 'POST',

@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import { FileText, PlusCircle, Trash2, Save } from 'lucide-react';
+import { FileText, PlusCircle, Trash2, Save, Plus } from 'lucide-react';
 
 export default function Form3() {
   const [formData, setFormData] = useState({
@@ -206,11 +206,11 @@ export default function Form3() {
             <tbody>
               {displayRecords.map((rec, idx) => (
                 <tr key={idx} className="h-10">
-                  <td className="border border-slate-900 p-2 text-center text-sm font-semibold">{rec.date}</td>
-                  <td className="border border-slate-900 p-2 text-left text-sm font-semibold">{rec.description}</td>
-                  <td className="border border-slate-900 p-2 text-center text-sm font-semibold">{rec.billNo}</td>
-                  <td className="border border-slate-900 p-2 text-right font-mono font-bold text-lg">{rec.rs}</td>
-                  <td className="border border-slate-900 p-2 text-center font-mono font-bold text-lg">{rec.cts}</td>
+                  <td className="border border-slate-900 p-2 text-center text-sm font-semibold"><input type="date" value={rec.date || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],date:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-sm text-center px-1" /></td>
+                  <td className="border border-slate-900 p-2 text-left text-sm font-semibold"><input type="text" value={rec.description || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],description:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-sm px-1" /></td>
+                  <td className="border border-slate-900 p-2 text-center text-sm font-semibold"><input type="text" value={rec.billNo || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],billNo:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-sm text-center px-1" /></td>
+                  <td className="border border-slate-900 p-2 text-right font-mono font-bold text-lg"><input type="number" value={rec.rs || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],rs:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 font-mono text-lg text-right px-1" /></td>
+                  <td className="border border-slate-900 p-2 text-center font-mono font-bold text-lg"><input type="number" value={rec.cts || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],cts:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 font-mono text-lg text-center px-1" /></td>
                 </tr>
               ))}
               {/* Empty rows to match paper style */}
@@ -232,6 +232,9 @@ export default function Form3() {
               </tr>
             </tbody>
           </table>
+              <button onClick={() => { const r=[...records]; r.push({ date:"", description:"", billNo:"", rs:"", cts:"" }); setRecords(r); }} className="mt-3 flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 font-medium text-sm transition-colors print:hidden">
+                <Plus className="w-4 h-4" /> Add Row
+              </button>
 
           {/* Bottom Section */}
           <div className="flex justify-between gap-12 mt-12 mb-4">

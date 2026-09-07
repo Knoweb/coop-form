@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import { FileText, Save } from 'lucide-react';
+import { FileText, Save, Plus } from 'lucide-react';
 
 export default function Form7A() {
   const [formData, setFormData] = useState({
@@ -32,7 +32,9 @@ export default function Form7A() {
   };
 
   // Hardcoded preview table data
-  const rows = [
+  
+    const [rows, setRows] = useState([
+
     { id: 1, name: "මහනුවර ශාඛාව", sales: "15,000.00", rice: "5,000.00", fert: "0.00", memDep: "2,500.00", nonMemDep: "0.00", memShare: "1,000.00", memLoan: "500.00", memInt: "50.00", other: "", recTotal: "24,050.00", depRef: "1,000.00", memRef: "0.00", balance: "23,050.00", payTotal: "24,050.00" },
     { id: 2, name: "පේරාදෙණිය ශාඛාව", sales: "25,000.00", rice: "8,500.00", fert: "1,500.00", memDep: "4,000.00", nonMemDep: "500.00", memShare: "1,500.00", memLoan: "1,200.00", memInt: "120.00", other: "100.00", recTotal: "42,420.00", depRef: "2,500.00", memRef: "500.00", balance: "39,420.00", payTotal: "42,420.00" },
     { id: 3, name: "කටුගස්තොට ශාඛාව", sales: "18,500.00", rice: "4,200.00", fert: "0.00", memDep: "3,200.00", nonMemDep: "0.00", memShare: "800.00", memLoan: "0.00", memInt: "0.00", other: "", recTotal: "26,700.00", depRef: "0.00", memRef: "0.00", balance: "26,700.00", payTotal: "26,700.00" },
@@ -43,7 +45,19 @@ export default function Form7A() {
     { id: 8, name: "", sales: "", rice: "", fert: "", memDep: "", nonMemDep: "", memShare: "", memLoan: "", memInt: "", other: "", recTotal: "", depRef: "", memRef: "", balance: "", payTotal: "" },
     { id: 9, name: "", sales: "", rice: "", fert: "", memDep: "", nonMemDep: "", memShare: "", memLoan: "", memInt: "", other: "", recTotal: "", depRef: "", memRef: "", balance: "", payTotal: "" },
     { id: 10, name: "", sales: "", rice: "", fert: "", memDep: "", nonMemDep: "", memShare: "", memLoan: "", memInt: "", other: "", recTotal: "", depRef: "", memRef: "", balance: "", payTotal: "" }
-  ];
+  
+    ]);
+
+    const handleTableChange = (index, field, value) => {
+        const newData = [...rows];
+        newData[index][field] = value;
+        setRows(newData);
+    };
+
+    const addRow = () => {
+        setRows([...rows, { id: rows.length + 1, name: "", sales: "", rice: "", fert: "", memDep: "", nonMemDep: "", memShare: "", memLoan: "", memInt: "", other: "", recTotal: "", depRef: "", memRef: "", balance: "", payTotal: "" }]);
+    };
+
 
   return (
     <div className="flex-1 bg-slate-50 min-h-screen font-sans overflow-x-hidden p-4 md:p-8 print:bg-white print:p-0">
@@ -200,25 +214,25 @@ export default function Form7A() {
                 </tr>
               </thead>
               <tbody>
-                {rows.map((row) => (
-                  <tr key={row.id} className="h-6">
-                    <td className="border border-slate-900 p-1 text-center font-bold">{row.id}.</td>
-                    <td className="border border-slate-900 p-1 truncate max-w-[120px]">{row.name}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.sales}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.rice}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.fert}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.memDep}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.nonMemDep}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.memShare}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.memLoan}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.memInt}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.other}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono font-bold text-[10px] sm:text-xs">{row.recTotal}</td>
+                {rows.map((row, idx) => (
+                  <tr key=<input type="text" value={row.id || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'id', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /> className="h-6">
+                    <td className="border border-slate-900 p-1 text-center font-bold"><input type="text" value={row.id || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'id', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" />.</td>
+                    <td className="border border-slate-900 p-1 truncate max-w-[120px]"><input type="text" value={row.name || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'name', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.sales || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'sales', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.rice || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'rice', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.fert || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'fert', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.memDep || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'memDep', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.nonMemDep || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'nonMemDep', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.memShare || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'memShare', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.memLoan || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'memLoan', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.memInt || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'memInt', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.other || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'other', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono font-bold text-[10px] sm:text-xs"><input type="text" value={row.recTotal || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'recTotal', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
                     
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.depRef}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.memRef}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs">{row.balance}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono font-bold text-[10px] sm:text-xs">{row.payTotal}</td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.depRef || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'depRef', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.memRef || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'memRef', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono text-[10px] sm:text-xs"><input type="text" value={row.balance || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'balance', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono font-bold text-[10px] sm:text-xs"><input type="text" value={row.payTotal || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'payTotal', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
                   </tr>
                 ))}
                 
@@ -265,6 +279,10 @@ export default function Form7A() {
                 </tr>
               </tbody>
             </table>
+                <button onClick={addRow} className="mt-4 flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 font-medium text-sm transition-colors print:hidden">
+                    <Plus className="w-4 h-4" /> Add Row
+                </button>
+        
           </div>
 
           <div className="flex justify-between items-end mt-16 px-8 text-sm">
