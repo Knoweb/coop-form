@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function Form32ASummary() {
   const [records, setRecords] = useState([]);
@@ -97,18 +99,13 @@ export default function Form32ASummary() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
-      <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-slncc-blue/20 p-2 rounded-lg">
-              <FileText className="w-6 h-6 text-indigo-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">මාසික ශාඛා බඩු අඩුවීම් ගිණුම</h2>
-              <p className="text-slate-400 text-sm">Monthly Branch Goods Shortage Account - Form 32 A</p>
-            </div>
-          </div>
-        </div>
+              <FormHeader 
+          title="ශේෂ 32 A" 
+          subtitle="Form 32 A Summary" 
+          formNumber="Form 32A" 
+        />
+<div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        
 
         <form onSubmit={handleAddEntry} className="p-6">
           <div className="space-y-6">

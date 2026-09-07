@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Save, Plus, Trash2 } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 const INITIAL_FORM_STATE = {
   serialNo: '',
@@ -113,11 +115,13 @@ export default function Schedule2() {
   return (
     <div className="space-y-6">
       {/* Top Section: Data Entry Form */}
-      <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="p-6 border-b border-slate-200">
-          <h2 className="text-xl font-bold text-slate-800">Monthly Salaries Register</h2>
-          <p className="text-slate-500 text-sm">මාසික වැටුප් ලේඛනය - දත්ත ඇතුලත් කිරීම</p>
-        </div>
+            <FormHeader 
+        title="මාසික වැටුප් ලේඛනය" 
+        subtitle="Monthly Salaries Register" 
+        formNumber="Schedule 2" 
+      />
+<div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        
 
         <form onSubmit={handleAddEntry} className="p-6 space-y-8">
           

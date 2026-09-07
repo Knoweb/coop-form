@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Save, CheckCircle2, AlertCircle, LayoutList, Truck, Calendar, PenTool, UserCheck, MessageSquare, ShieldCheck, Plus, X } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 export default function Form31() {
   const [globalData, setGlobalData] = useState({
@@ -97,30 +98,21 @@ export default function Form31() {
 
   return (
     <div className="max-w-7xl mx-auto pb-12 p-4 md:p-8">
-      {/* Header */}
-      <header className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-              <LayoutList className="w-6 h-6 text-fuchsia-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">රථවාහන අළුත්වැඩියා විස්තර</h2>
-              <p className="text-slate-400 text-sm">Form 31 (Vehicle Repair Details)</p>
-            </div>
-          </div>
-          <div className="w-full md:w-auto">
-            <button
-              onClick={handleSaveForm}
-              disabled={isSubmitting}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-gray-200 hover:shadow-lg hover:-translate-y-0.5"
-            >
-              <Save className="w-5 h-5" />
-              <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
-            </button>
-          </div>
-        </div>
-      </header>
+      <FormHeader 
+        title="රථවාහන අළුත්වැඩියා විස්තර" 
+        subtitle="Vehicle Repair Details" 
+        formNumber="Form 31" 
+      />
+      <div className="flex justify-end items-center gap-3 print:hidden mb-6">
+        <button
+          onClick={handleSaveForm}
+          disabled={isSubmitting}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded text-sm font-semibold flex items-center gap-2 h-[40px] disabled:opacity-50"
+        >
+          <Save className="w-4 h-4" />
+          <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
+        </button>
+      </div>
 
       {submitStatus && (
         <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 ${submitStatus.type === 'success' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-red-50 text-red-700 border border-red-200'

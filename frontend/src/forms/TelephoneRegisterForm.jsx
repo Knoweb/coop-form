@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, Phone } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function TelephoneRegisterForm() {
   const [records, setRecords] = useState([]);
@@ -75,18 +77,13 @@ export default function TelephoneRegisterForm() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
-      <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-slncc-blue/20 p-2 rounded-lg">
-              <Phone className="w-6 h-6 text-indigo-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">දුරකථන ලේඛනය</h2>
-              <p className="text-slate-400 text-sm">Telephone Register (Form 34)</p>
-            </div>
-          </div>
-        </div>
+            <FormHeader 
+        title="දූරකථන ලේඛනය" 
+        subtitle="Telephone Register Form" 
+        formNumber="Form 34" 
+      />
+<div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        
 
         <form onSubmit={handleAddEntry} className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">

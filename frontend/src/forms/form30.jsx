@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Save, FileText, CheckCircle2, AlertCircle, LayoutList, Building2, Calendar, Truck } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function Form30() {
   const [globalData, setGlobalData] = useState({
@@ -201,18 +203,13 @@ export default function Form30() {
       )}
 
       {/* Data Entry Section */}
-      <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-              <LayoutList className="w-6 h-6 text-fuchsia-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">ගබඩාවල ප්‍රවාහන ගාස්තු</h2>
-              <p className="text-slate-400 text-sm">Form 30 (Store Transport Charges)</p>
-            </div>
-          </div>
-        </div>
+              <FormHeader 
+          title="ගබඩාවල ප්‍රවාහන ගාස්තු" 
+          subtitle="Transport Charges" 
+          formNumber="Form 30" 
+        />
+<div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+        
         <div className="p-6 md:p-8 border-b border-slate-200">
           <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center"><FileText className="w-5 h-5 mr-2 text-slncc-blue" /> Form Details</h3>
           

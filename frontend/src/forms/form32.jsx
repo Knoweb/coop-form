@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Save, Plus, Trash2, CheckCircle2, AlertCircle, LayoutList } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 export default function Form32() {
   const emptyRow = {
@@ -151,41 +152,30 @@ export default function Form32() {
   return (
     <div className="max-w-[95vw] mx-auto p-4 md:p-8 space-y-6">
       
-      {/* Header Section */}
-      <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden">
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-              <LayoutList className="w-6 h-6 text-fuchsia-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">ශාඛා වෙළඳ ගිණුම්</h2>
-              <p className="text-slate-400 text-sm">Form 32 (Branch Trading Accounts)</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 bg-slate-700/60 px-3 py-2 rounded-xl border border-slate-600">
-              <span className="text-slate-300 text-sm font-semibold">දිනය:</span>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="bg-transparent border-0 text-white font-medium focus:ring-0 outline-none text-sm"
-              />
-            </div>
-            <button
-              onClick={handleSave}
-              disabled={isSubmitting}
-              className="flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl shadow-md shadow-indigo-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
-            >
-              <Save className="w-5 h-5" />
-              <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
-            </button>
-          </div>
+      <FormHeader 
+        title="ශාඛා වෙළඳ ගිණුම්" 
+        subtitle="Branch Trading Accounts" 
+        formNumber="Form 32" 
+      />
+      <div className="flex justify-end items-center gap-3 print:hidden mb-6">
+        <div className="flex items-center gap-2 bg-white px-3 py-2 rounded border border-slate-200">
+          <span className="text-slate-700 text-sm font-semibold">දිනය:</span>
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="bg-transparent border-0 text-slate-800 font-medium focus:ring-0 outline-none text-sm"
+          />
         </div>
+        <button
+          onClick={handleSave}
+          disabled={isSubmitting}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded text-sm font-semibold flex items-center gap-2 h-[40px] disabled:opacity-50"
+        >
+          <Save className="w-4 h-4" />
+          <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
+        </button>
       </div>
-
       {submitStatus && (
         <div className={`p-4 rounded-2xl flex items-center gap-3 shadow-sm border ${submitStatus.type === 'success' ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-red-50 text-red-800 border-red-200'}`}>
           {submitStatus.type === 'success' ? <CheckCircle2 className="w-6 h-6 text-emerald-500" /> : <AlertCircle className="w-6 h-6 text-red-500" />}

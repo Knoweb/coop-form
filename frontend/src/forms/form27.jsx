@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Save, FileText, Calendar, Building, CreditCard, PlusCircle } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 const INITIAL_SUMMARY_ROWS = [
   { id: 1, description: 'අයිරා ශේෂය (රතු පාටින්)', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
@@ -116,18 +118,13 @@ export default function Form27() {
       <div className="w-full mx-auto space-y-8 max-w-7xl">
         
         {/* Global Details */}
-        <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
-          <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-                <FileText className="w-6 h-6 text-fuchsia-400" />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-white">ලේඛන ගෙවීම් ලේඛනය</h2>
-                <p className="text-slate-400 text-sm">Form 27 (Daily Cash Report - Bank Balance)</p>
-              </div>
-            </div>
-          </div>
+                <FormHeader 
+          title="ලේඛන ගෙවීම් ලේඛනය" 
+          subtitle="Documents Payment Register" 
+          formNumber="Form 27" 
+        />
+<div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+          
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 

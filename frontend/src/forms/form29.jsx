@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { PlusCircle, FileText, Calendar, LayoutList, Building2, Save, Clock, Hash, Truck, User } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 const INITIAL_ITEM_STATE = {
   tripNo: '',
@@ -132,18 +134,13 @@ export default function Form29() {
       <div className="w-full mx-auto space-y-8 max-w-7xl">
 
         {/* Global Details Form */}
-        <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
-          <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-                <LayoutList className="w-6 h-6 text-fuchsia-400" />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-white">රථ වාහන වැඩ සටහන</h2>
-                <p className="text-slate-400 text-sm">Form 29 (Vehicle Work Schedule)</p>
-              </div>
-            </div>
-          </div>
+                <FormHeader 
+          title="ශේෂ ගෙවීම් ලේඛනය" 
+          subtitle="Balance Payments Register" 
+          formNumber="Form 29" 
+        />
+<div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+          
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
             <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center"><FileText className="w-5 h-5 mr-2 text-slncc-blue" /> Form Details</h3>
 

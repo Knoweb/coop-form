@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { PlusCircle, FileText, Calendar, LayoutList, Building2, Save } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 const INITIAL_ITEM_STATE = {
   cardNo: '',
@@ -111,18 +113,13 @@ export default function Form24() {
       <div className="w-full mx-auto space-y-8 max-w-6xl">
 
         {/* Form Construction Area */}
-        <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
-          <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="bg-fuchsia-500/20 p-2 rounded-lg">
-                <LayoutList className="w-6 h-6 text-fuchsia-400" />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-white">සැපයිය යුතු බඩු ලැයිස්තුව</h2>
-                <p className="text-slate-400 text-sm">Form 24 (List of Goods to be Supplied)</p>
-              </div>
-            </div>
-          </div>
+                <FormHeader 
+          title="ස්ථාවර වත්කම් ලේඛනය" 
+          subtitle="Fixed Assets Register" 
+          formNumber="Form 24" 
+        />
+<div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">
+          
 
           {/* Document Headers */}
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
