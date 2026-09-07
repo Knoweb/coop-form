@@ -142,7 +142,7 @@ export default function Form25() {
 
           {/* Document Headers */}
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
-            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><FileText className="w-5 h-5 mr-2 text-indigo-500" /> Form Details</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><FileText className="w-5 h-5 mr-2 text-slncc-blue" /> Form Details</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
 
@@ -151,7 +151,7 @@ export default function Form25() {
                   <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
                 </label>
                 <input type="date" name="globalDate" value={globalDate} onChange={handleHeaderChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-2">
@@ -159,7 +159,7 @@ export default function Form25() {
                   <Clock className="w-4 h-4 text-slate-400" /> Time (වේලාව පෙ.ව./ප.ව.)
                 </label>
                 <input type="time" name="globalTime" value={globalTime} onChange={handleHeaderChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-2">
@@ -167,7 +167,7 @@ export default function Form25() {
                   <Hash className="w-4 h-4 text-slate-400" /> Form No. (අංක)
                 </label>
                 <input type="text" name="globalFormNo" value={globalFormNo} onChange={handleHeaderChange} placeholder="e.g. 10234"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-2">
@@ -175,7 +175,7 @@ export default function Form25() {
                   <Building2 className="w-4 h-4 text-slate-400" /> Loaded Place (පැටවූ ස්ථානය)
                 </label>
                 <input type="text" name="loadedPlace" value={loadedPlace} onChange={handleHeaderChange} placeholder="Place loaded"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-2">
@@ -183,7 +183,7 @@ export default function Form25() {
                   <Building2 className="w-4 h-4 text-slate-400" /> Sending Place (යවන ස්ථානය)
                 </label>
                 <input type="text" name="sentPlace" value={sentPlace} onChange={handleHeaderChange} placeholder="Destination"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-2">
@@ -191,7 +191,7 @@ export default function Form25() {
                   <Truck className="w-4 h-4 text-slate-400" /> Vehicle No (රථයේ අංකය)
                 </label>
                 <input type="text" name="vehicleNo" value={vehicleNo} onChange={handleHeaderChange} placeholder="Vehicle No"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
             </div>
@@ -199,7 +199,7 @@ export default function Form25() {
 
           {/* Item Entry */}
           <div className="p-6 md:p-8">
-            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-indigo-500" /> Add Item</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-slncc-blue" /> Add Item</h3>
             <form onSubmit={handleAddItem} className="space-y-6">
 
               <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 items-end">
@@ -214,25 +214,25 @@ export default function Form25() {
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">බිල් අංකය (Bill No)</label>
                   <input type="text" name="billNo" value={itemData.billNo} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-2">
                   <label className="text-xs font-semibold text-slate-600">විස්තරය (Description) *</label>
                   <input required type="text" name="description" value={itemData.description} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">කෑලි ගණන</label>
                   <input type="number" step="0.01" name="packagesQty" value={itemData.packagesQty} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">ප්‍රමාණය (Quantity)</label>
                   <input type="number" step="0.01" name="itemQty" value={itemData.itemQty} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 {/* Row 2: Prices */}
@@ -241,31 +241,31 @@ export default function Form25() {
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">ඒකක මිල (Unit Cost)</label>
                   <input type="number" step="0.01" name="costUnitPrice" value={itemData.costUnitPrice} onChange={handleItemChange} placeholder="Rs."
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">තොග මිල (Total Cost)</label>
                   <input type="number" step="0.01" name="costTotalPrice" value={itemData.costTotalPrice} onChange={handleItemChange} placeholder="Rs."
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">භාරගත් ප්‍රමාණය (Received Qty)</label>
                   <input type="number" step="0.01" name="sellingPrice" value={itemData.sellingPrice} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">වෙනස - අඩු (Diff Less)</label>
                   <input type="number" step="0.01" name="diffLess" value={itemData.diffLess} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">වෙනස - වැඩි (Diff More)</label>
                   <input type="number" step="0.01" name="diffMore" value={itemData.diffMore} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="col-span-full border-t border-slate-100 mt-2 mb-1"></div>
@@ -274,19 +274,19 @@ export default function Form25() {
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">වටිනාකම - අඩු (Val Less)</label>
                   <input type="number" step="0.01" name="valLess" value={itemData.valLess} onChange={handleItemChange} placeholder="Rs."
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">වටිනාකම - වැඩි (Val More)</label>
                   <input type="number" step="0.01" name="valMore" value={itemData.valMore} onChange={handleItemChange} placeholder="Rs."
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">පත් මුදල (Net Amount)</label>
                   <input type="number" step="0.01" name="netAmount" value={itemData.netAmount} onChange={handleItemChange} placeholder="Rs."
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors text-indigo-900 font-bold" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors text-slncc-blue font-bold" />
                 </div>
 
                 <div className="lg:col-span-1">
@@ -361,23 +361,23 @@ export default function Form25() {
 
                     <th colSpan={2} className="px-2 py-2 text-[10px] font-bold text-slate-800 border border-slate-800 print:border-black text-center">වෙනස</th>
                     <th colSpan={2} className="px-2 py-2 text-[10px] font-bold text-slate-800 border border-slate-800 print:border-black text-center">වටිනාකම</th>
-                    <th className="px-2 py-2 text-[10px] font-bold text-slate-800 border border-slate-800 print:border-black text-center align-middle">පත් මුදල</th>
+                    <th className="px-2 py-2 text-[10px] font-bold bg-slncc-blue text-white border border-slate-800 print:border-black text-center align-middle">පත් මුදල</th>
                   </tr>
                   <tr>
                     {/* ගත් මිල */}
-                    <th className="px-1 py-2 text-[10px] font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[6%]">ඒකක<br />රු. ශ.</th>
-                    <th className="px-1 py-2 text-[10px] font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[6%]">තොග<br />රු. ශ.</th>
+                    <th className="px-1 py-2 text-[10px] font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[6%]">ඒකක<br />රු. ශ.</th>
+                    <th className="px-1 py-2 text-[10px] font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[6%]">තොග<br />රු. ශ.</th>
 
                     {/* වෙනස */}
-                    <th className="px-1 py-2 text-[10px] font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[5%]">අඩු</th>
-                    <th className="px-1 py-2 text-[10px] font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[5%]">වැඩි</th>
+                    <th className="px-1 py-2 text-[10px] font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[5%]">අඩු</th>
+                    <th className="px-1 py-2 text-[10px] font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[5%]">වැඩි</th>
 
                     {/* වටිනාකම */}
-                    <th className="px-1 py-2 text-[10px] font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[6%]">අඩු<br />රු. ශ.</th>
-                    <th className="px-1 py-2 text-[10px] font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[6%]">වැඩි<br />රු. ශ.</th>
+                    <th className="px-1 py-2 text-[10px] font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[6%]">අඩු<br />රු. ශ.</th>
+                    <th className="px-1 py-2 text-[10px] font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[6%]">වැඩි<br />රු. ශ.</th>
 
                     {/* පත් මුදල */}
-                    <th className="px-1 py-2 text-[10px] font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[6%]">රු. ශ.</th>
+                    <th className="px-1 py-2 text-[10px] font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[6%]">රු. ශ.</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -456,7 +456,7 @@ export default function Form25() {
             onClick={handleSaveForm}
             disabled={currentItems.length === 0 || isSubmitting}
             className={`flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 ${currentItems.length > 0 && !isSubmitting
-                ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-1'
+                ? 'bg-slncc-red hover:bg-opacity-90 text-white shadow-gray-200 hover:shadow-indigo-300 hover:-translate-y-1'
                 : 'bg-slate-300 text-slate-500 cursor-not-allowed'
               }`}>
             <Save className="w-6 h-6" />

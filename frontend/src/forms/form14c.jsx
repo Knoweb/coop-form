@@ -110,20 +110,20 @@ export default function Form14C() {
             <table className="w-full text-sm border-collapse min-w-[800px]">
               <thead>
                 <tr className="bg-slate-50 border-y border-slate-200">
-                  <th className="p-2 text-center font-medium text-slate-600 w-12" rowSpan={2}>අනු<br/>අංකය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-20" rowSpan={2}>හැඳින්වූ<br/>අංකය</th>
-                  <th className="p-2 text-left font-medium text-slate-600 min-w-[150px]" rowSpan={2}>විස්තරය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-20" rowSpan={2}>බින්<br/>ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-20" rowSpan={2}>ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>තොග ගබඩාවේ මිල</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>තොග ගබඩාවේ මිල</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-12" rowSpan={2}>අනු<br/>අංකය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-20" rowSpan={2}>හැඳින්වූ<br/>අංකය</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white min-w-[150px]" rowSpan={2}>විස්තරය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-20" rowSpan={2}>බින්<br/>ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-20" rowSpan={2}>ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>තොග ගබඩාවේ මිල</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>තොග ගබඩාවේ මිල</th>
                   <th className="p-2 w-10" rowSpan={2}></th>
                 </tr>
                 <tr className="bg-slate-50 border-b border-slate-200">
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-20">ඒකක</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-24">මුදල</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-20">ඒකක</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-24">මුදල</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-20">ඒකක</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-24">මුදල</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-20">ඒකක</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-24">මුදල</th>
                 </tr>
               </thead>
               <tbody>

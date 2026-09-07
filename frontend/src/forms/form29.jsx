@@ -145,7 +145,7 @@ export default function Form29() {
             </div>
           </div>
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
-            <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center"><FileText className="w-5 h-5 mr-2 text-indigo-500" /> Form Details</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center"><FileText className="w-5 h-5 mr-2 text-slncc-blue" /> Form Details</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
@@ -154,7 +154,7 @@ export default function Form29() {
                    වාහන අංකය (Vehicle No)
                 </label>
                 <input type="text" value={vehicleNo} onChange={e => setVehicleNo(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -162,7 +162,7 @@ export default function Form29() {
                    දිනය (Date)
                 </label>
                 <input type="date" value={date} onChange={e => setDate(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -170,7 +170,7 @@ export default function Form29() {
                    රියදුරුගේ නම (Driver Name)
                 </label>
                 <input type="text" value={driverName} onChange={e => setDriverName(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -178,7 +178,7 @@ export default function Form29() {
                    සහායකයාගේ නම (Assistant Name)
                 </label>
                 <input type="text" value={assistantName} onChange={e => setAssistantName(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -186,7 +186,7 @@ export default function Form29() {
                    වැඩ කළ පැය ගණන - රියදුරු
                 </label>
                 <input type="text" value={workedHoursDaily} onChange={e => setWorkedHoursDaily(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -194,7 +194,7 @@ export default function Form29() {
                    වැඩ කළ පැය ගණන - සේවක
                 </label>
                 <input type="text" value={workedHoursWeekly} onChange={e => setWorkedHoursWeekly(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
               
               <div className="space-y-2 lg:col-span-1">
@@ -202,7 +202,7 @@ export default function Form29() {
                    වැඩිපුර පැය ගණන (OT 1)
                 </label>
                 <input type="text" value={otHours1} onChange={e => setOtHours1(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -210,7 +210,7 @@ export default function Form29() {
                    වැඩිපුර පැය ගණන (OT 2)
                 </label>
                 <input type="text" value={otHours2} onChange={e => setOtHours2(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -218,7 +218,7 @@ export default function Form29() {
                    බලපත්‍ර අංකය (License No)
                 </label>
                 <input type="text" value={licenseNo} onChange={e => setLicenseNo(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -226,7 +226,7 @@ export default function Form29() {
                    මීටරය පටන් ගැනීම (Meter Start)
                 </label>
                 <input type="text" value={meterStart} onChange={e => setMeterStart(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -234,7 +234,7 @@ export default function Form29() {
                    මීටරය අවසානය (Meter End)
                 </label>
                 <input type="text" value={meterEnd} onChange={e => setMeterEnd(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -242,7 +242,7 @@ export default function Form29() {
                    ධාව: සැ: ගණන (Driven Miles)
                 </label>
                 <input type="text" value={drivenMiles} onChange={e => setDrivenMiles(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -250,7 +250,7 @@ export default function Form29() {
                    වැඩ ආරම්භ කළ වේලාව
                 </label>
                 <input type="time" value={workStartTime} onChange={e => setWorkStartTime(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -258,7 +258,7 @@ export default function Form29() {
                    වැඩ අවසන් කළ වේලාව
                 </label>
                 <input type="time" value={workEndTime} onChange={e => setWorkEndTime(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -266,7 +266,7 @@ export default function Form29() {
                    ලබාගත් පැට්‍රල්/ඩීසල්
                 </label>
                 <input type="text" value={obtainedFuel} onChange={e => setObtainedFuel(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 lg:col-span-1">
@@ -274,14 +274,14 @@ export default function Form29() {
                    ඉතිරි පැට්‍රල්/ඩීසල්
                 </label>
                 <input type="text" value={remainingFuel} onChange={e => setRemainingFuel(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
             </div>
           </div>
 
           {/* Item Entry */}
           <div className="p-6 md:p-8">
-            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-indigo-500" /> Add Item</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-slncc-blue" /> Add Item</h3>
             <form onSubmit={handleAddItem} className="space-y-6">
               
               <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 items-end">
@@ -289,52 +289,52 @@ export default function Form29() {
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">ගමන් වාරය</label>
                   <input type="text" name="tripNo" value={itemData.tripNo} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-2">
                   <label className="text-xs font-semibold text-slate-600">බඩුවල විස්තර *</label>
                   <input required type="text" name="goodsDetails" value={itemData.goodsDetails} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">ප්‍රමාණය</label>
                   <input type="text" name="qty" value={itemData.qty} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">පිටත්වූ වේලාව</label>
                   <input type="time" name="depTime" value={itemData.depTime} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">පිටත්වූ ස්ථානය</label>
                   <input type="text" name="depPlace" value={itemData.depPlace} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">පැමිණි වේලාව</label>
                   <input type="time" name="arrTime" value={itemData.arrTime} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">පැමිණි ස්ථානය</label>
                   <input type="text" name="arrPlace" value={itemData.arrPlace} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">කා වෙනුවෙන්ද</label>
                   <input type="text" name="drivenForWhom" value={itemData.drivenForWhom} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue" />
                 </div>
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">මුදල රු.</label>
                   <input type="number" step="0.01" name="amount" value={itemData.amount} onChange={handleItemChange}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 text-indigo-900 font-bold" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue text-slncc-blue font-bold" />
                 </div>
 
                 <div className="lg:col-span-1">
@@ -501,7 +501,7 @@ export default function Form29() {
             onClick={handleSaveForm}
             disabled={currentItems.length === 0 || isSubmitting}
             className={`flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 ${currentItems.length > 0 && !isSubmitting
-                ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-1'
+                ? 'bg-slncc-red hover:bg-opacity-90 text-white shadow-gray-200 hover:shadow-indigo-300 hover:-translate-y-1'
                 : 'bg-slate-300 text-slate-500 cursor-not-allowed'
               }`}>
             <Save className="w-6 h-6" />

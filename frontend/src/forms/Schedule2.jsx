@@ -30,7 +30,7 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors"
     />
   </div>
 );
@@ -123,7 +123,7 @@ export default function Schedule2() {
           
           {/* Group 1: Employee Details */}
           <div>
-            <h3 className="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-100 pb-2">Employee Details (සේවක විස්තර)</h3>
+            <h3 className="text-lg font-bold text-slncc-blue mb-4 border-b border-indigo-100 pb-2">Employee Details (සේවක විස්තර)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <InputField value={formData?.serialNo || ''} onChange={handleChange} label="Serial No." sinhalaLabel="අනු අංකය" name="serialNo" />
               <InputField value={formData?.noOfSection || ''} onChange={handleChange} label="No. of Section" sinhalaLabel="අංශයේ අංකය" name="noOfSection" />
@@ -136,7 +136,7 @@ export default function Schedule2() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Group 2: Earnings */}
             <div>
-              <h3 className="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-100 pb-2">Earnings (ඉපැයීම්)</h3>
+              <h3 className="text-lg font-bold text-slncc-blue mb-4 border-b border-indigo-100 pb-2">Earnings (ඉපැයීම්)</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <InputField value={formData?.initialSalary || ''} onChange={handleChange} label="Initials Salary" sinhalaLabel="මූලික වැටුප" name="initialSalary" type="number" />
                 <InputField value={formData?.allowances || ''} onChange={handleChange} label="Allowances" sinhalaLabel="දීමනා" name="allowances" type="number" />
@@ -148,7 +148,7 @@ export default function Schedule2() {
 
             {/* Group 3: Deductions */}
             <div>
-              <h3 className="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-100 pb-2">Deductions (අවකරණ)</h3>
+              <h3 className="text-lg font-bold text-slncc-blue mb-4 border-b border-indigo-100 pb-2">Deductions (අවකරණ)</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <InputField value={formData?.monthlyAdvances || ''} onChange={handleChange} label="Monthly Advances" sinhalaLabel="මාසික අත්තිකාරම්" name="monthlyAdvances" type="number" />
                 <InputField value={formData?.festivalAdvances || ''} onChange={handleChange} label="Festival Advances" sinhalaLabel="උත්සව අත්තිකාරම්" name="festivalAdvances" type="number" />
@@ -163,7 +163,7 @@ export default function Schedule2() {
           <div className="flex justify-end pt-4">
             <button 
               type="submit"
-              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-50 font-bold rounded-xl transition-colors"
+              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-slncc-blue hover:bg-slncc-gray font-bold rounded-xl transition-colors"
             >
               <Plus className="w-5 h-5" />
               <span>Add Entry</span>
@@ -203,7 +203,7 @@ export default function Schedule2() {
                 <th className="border border-slate-200 p-2 whitespace-nowrap font-medium">Special Allowances<br/><span className="text-[10px] font-normal normal-case">විශේෂ දීමනා</span></th>
                 <th className="border border-slate-200 p-2 whitespace-nowrap font-medium">Others<br/><span className="text-[10px] font-normal normal-case">වෙනත්</span></th>
                 
-                <th className="border border-slate-200 p-2 whitespace-nowrap font-medium text-indigo-700 bg-indigo-50/50">Approved<br/><span className="text-[10px] font-normal normal-case">අනුමත</span></th>
+                <th className="border border-slate-200 p-2 whitespace-nowrap font-medium text-slncc-blue bg-slncc-gray">Approved<br/><span className="text-[10px] font-normal normal-case">අනුමත</span></th>
                 <th className="border border-slate-200 p-2 whitespace-nowrap font-medium">Non Approved<br/><span className="text-[10px] font-normal normal-case">අනුමත නොකළ</span></th>
                 
                 <th className="border border-slate-200 p-2 whitespace-nowrap font-medium">Monthly Advances<br/><span className="text-[10px] font-normal normal-case">මාසික අත්තිකාරම්</span></th>
@@ -234,7 +234,7 @@ export default function Schedule2() {
                   <td className="border border-slate-200 px-2 py-1.5 text-right text-green-600 font-medium">{record.specialAllowances}</td>
                   <td className="border border-slate-200 px-2 py-1.5 text-right text-green-600 font-medium">{record.othersEarnings}</td>
                   
-                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-indigo-600 bg-indigo-50/20">{record.totalApproved?.toFixed(2)}</td>
+                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-slncc-red bg-slncc-gray/20">{record.totalApproved?.toFixed(2)}</td>
                   
                   <td className="border border-slate-200 px-2 py-1.5 text-right">{record.totalNonApproved}</td>
                   
@@ -246,7 +246,7 @@ export default function Schedule2() {
                   
                   <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-red-600 bg-red-50/20">{record.totalDeductions?.toFixed(2)}</td>
                   
-                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-indigo-600 bg-green-50/20">{record.balancePaid?.toFixed(2)}</td>
+                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-slncc-red bg-green-50/20">{record.balancePaid?.toFixed(2)}</td>
                   
                   <td className="border border-slate-200 px-2 py-1.5 text-right text-red-500 font-medium">{record.employeesEpf}</td>
                   

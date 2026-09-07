@@ -92,10 +92,10 @@ export default function Form14B() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-50 border-y border-slate-200">
-                  <th className="p-2 text-left font-medium text-slate-600 min-w-[200px]">විස්තර</th>
-                  <th className="p-2 text-left font-medium text-slate-600 w-24">ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-32">බැගින්<br/><span className="text-xs">රු. | ශත</span></th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-32">එකතුව<br/><span className="text-xs">රු. | ශත</span></th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white min-w-[200px]">විස්තර</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white w-24">ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-32">බැගින්<br/><span className="text-xs">රු. | ශත</span></th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-32">එකතුව<br/><span className="text-xs">රු. | ශත</span></th>
                   <th className="p-2 w-10"></th>
                 </tr>
               </thead>

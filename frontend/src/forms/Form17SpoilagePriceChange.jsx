@@ -109,11 +109,11 @@ export default function Form17SpoilagePriceChange() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">දිනය (Date)</label>
-                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ගබඩාව (Store Type)</label>
-                  <select name="storeType" value={formData.storeType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                  <select name="storeType" value={formData.storeType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none">
                     <option value="WHOLESALE">තොග ගබඩාව (Wholesale)</option>
                     <option value="RETAIL">සිල්ලර ගබඩාව (Retail)</option>
                   </select>
@@ -124,19 +124,19 @@ export default function Form17SpoilagePriceChange() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                 <div className="md:col-span-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">අනු අංකය (Serial No)</label>
-                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div className="md:col-span-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">බිල් අංකය (Bill No)</label>
-                  <input type="text" name="billNo" value={formData.billNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="billNo" value={formData.billNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div className="md:col-span-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ද්රව්ය විස්තර (Item Description)</label>
-                  <input type="text" name="itemDescription" value={formData.itemDescription} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="itemDescription" value={formData.itemDescription} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div className="md:col-span-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ප්‍රමාණය (Quantity)</label>
-                  <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
@@ -199,18 +199,18 @@ export default function Form17SpoilagePriceChange() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                 <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">පරීක්ෂක (Inspector Signature)</label>
-                    <input type="text" name="inspectorSignature" value={formData.inspectorSignature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                    <input type="text" name="inspectorSignature" value={formData.inspectorSignature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">කළමනාකරු (Manager Signature)</label>
-                    <input type="text" name="managerSignature" value={formData.managerSignature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                    <input type="text" name="managerSignature" value={formData.managerSignature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                 </div>
             </div>
 
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>

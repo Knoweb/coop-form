@@ -64,7 +64,7 @@ export default function Form7() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Enter Details (විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -77,19 +77,19 @@ export default function Form7() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Date (දිනය)</label>
-                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2 lg:col-span-3">
                 <label className="text-sm font-semibold text-slate-600">Society Name (සමූපකාර සමිතියේ නම)</label>
-                <input type="text" name="societyName" value={formData.societyName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="societyName" value={formData.societyName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2 lg:col-span-2">
                 <label className="text-sm font-semibold text-slate-600">Cash in Hand - Numbers (අතේ මුදල් රු.)</label>
-                <input type="text" name="cashInHandNumbers" value={formData.cashInHandNumbers} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="cashInHandNumbers" value={formData.cashInHandNumbers} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2 lg:col-span-2">
                 <label className="text-sm font-semibold text-slate-600">Cash in Hand - Words (මුදල් අකුරෙන්)</label>
-                <input type="text" name="cashInHandWords" value={formData.cashInHandWords} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="cashInHandWords" value={formData.cashInHandWords} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-4">
@@ -97,15 +97,15 @@ export default function Form7() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Prev. Date (පෙ: දිනට)</label>
-                <input type="number" name="tiPrev" value={formData.tiPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="tiPrev" value={formData.tiPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Today (දිනට)</label>
-                <input type="number" name="tiToday" value={formData.tiToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="tiToday" value={formData.tiToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Total (දිනට මුළු)</label>
-                <input type="number" name="tiTotal" value={formData.tiTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="tiTotal" value={formData.tiTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-4">
@@ -113,42 +113,42 @@ export default function Form7() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Prev. Date (පෙ: දිනට)</label>
-                <input type="number" name="atPrev" value={formData.atPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="atPrev" value={formData.atPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Approved No (අනුමත/ව: 5B අං:)</label>
-                <input type="text" name="atApprove" value={formData.atApprove} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="atApprove" value={formData.atApprove} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Today (දිනට)</label>
-                <input type="number" name="atToday" value={formData.atToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="atToday" value={formData.atToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Total (දිනට මුළු)</label>
-                <input type="number" name="atTotal" value={formData.atTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="atTotal" value={formData.atTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-4">
                 <h3 className="text-md font-bold text-slate-700 border-b pb-2">Store Income (තොග සිල්ලර ගබඩා වලින් ලැබුණු අය)</h3>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Prev. Date (පෙ: දිනට)</label>
-                <input type="number" name="siPrev" value={formData.siPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="siPrev" value={formData.siPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Store Name (ගබඩා: නම)</label>
-                <input type="text" name="siName" value={formData.siName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="siName" value={formData.siName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Receipt No (ලදුපත් අංකය)</label>
-                <input type="text" name="siReceipt" value={formData.siReceipt} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="siReceipt" value={formData.siReceipt} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Today (දිනට)</label>
-                <input type="number" name="siToday" value={formData.siToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="siToday" value={formData.siToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Total (දිනට මුළු)</label>
-                <input type="number" name="siTotal" value={formData.siTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="siTotal" value={formData.siTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-4">
@@ -156,19 +156,19 @@ export default function Form7() {
               </div>
               <div className="space-y-2 lg:col-span-2">
                 <label className="text-sm font-semibold text-slate-600">Description (විස්තරය)</label>
-                <input type="text" name="oiDesc" value={formData.oiDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="oiDesc" value={formData.oiDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Receipt No (ලදුපත් අංක)</label>
-                <input type="text" name="oiReceipt" value={formData.oiReceipt} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="oiReceipt" value={formData.oiReceipt} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Amount (මුදල)</label>
-                <input type="number" name="oiAmount" value={formData.oiAmount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="oiAmount" value={formData.oiAmount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Ledger Page (ලෙජර පිටු)</label>
-                <input type="text" name="oiLedger" value={formData.oiLedger} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="oiLedger" value={formData.oiLedger} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-4">
@@ -176,35 +176,35 @@ export default function Form7() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank Dep. Desc (බැංකු තැන්පත් විස්තර)</label>
-                <input type="text" name="bdDesc" value={formData.bdDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="bdDesc" value={formData.bdDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank Dep. Prev (පෙ: දිනට)</label>
-                <input type="number" name="bdPrev" value={formData.bdPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="bdPrev" value={formData.bdPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank Dep. Today (දිනට)</label>
-                <input type="number" name="bdToday" value={formData.bdToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="bdToday" value={formData.bdToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank Dep. Total (දිනට මුළු)</label>
-                <input type="number" name="bdTotal" value={formData.bdTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="bdTotal" value={formData.bdTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Rec. Acc. Desc (ලැබීම් ගිණුම විස්තර)</label>
-                <input type="text" name="raDesc" value={formData.raDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="raDesc" value={formData.raDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Rec. Acc. Prev (පෙ: දිනට)</label>
-                <input type="number" name="raPrev" value={formData.raPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="raPrev" value={formData.raPrev} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Rec. Acc. Today (දිනට)</label>
-                <input type="number" name="raToday" value={formData.raToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="raToday" value={formData.raToday} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Rec. Acc. Total (දිනට මුළු)</label>
-                <input type="number" name="raTotal" value={formData.raTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="raTotal" value={formData.raTotal} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-4">
@@ -212,23 +212,23 @@ export default function Form7() {
               </div>
               <div className="space-y-2 lg:col-span-4">
                 <label className="text-sm font-semibold text-slate-600">Description (විස්තර)</label>
-                <input type="text" name="sumDesc" value={formData.sumDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="sumDesc" value={formData.sumDesc} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Cash (මුදල්)</label>
-                <input type="number" name="sumCash" value={formData.sumCash} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="sumCash" value={formData.sumCash} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank 1 (බැංකු 1)</label>
-                <input type="number" name="sumBank1" value={formData.sumBank1} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="sumBank1" value={formData.sumBank1} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank 2 (බැංකු 2)</label>
-                <input type="number" name="sumBank2" value={formData.sumBank2} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="sumBank2" value={formData.sumBank2} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank 3 (බැංකු 3)</label>
-                <input type="number" name="sumBank3" value={formData.sumBank3} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="sumBank3" value={formData.sumBank3} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               
             </div>
@@ -248,7 +248,7 @@ export default function Form7() {
           <div className="flex justify-between items-center mb-2 mt-4 text-sm">
             <div className="flex items-end">
               <span className="font-bold mr-2">දිනය :</span>
-              <span className="w-32 border-b border-dotted border-slate-600 text-center font-mono text-indigo-900 print:text-black leading-none pb-1">{formData.date || '2026-09-12'}</span>
+              <span className="w-32 border-b border-dotted border-slate-600 text-center font-mono text-slncc-blue print:text-black leading-none pb-1">{formData.date || '2026-09-12'}</span>
             </div>
             <div className="font-bold text-lg underline decoration-1 underline-offset-4">
               මුදල් ලේඛනය
@@ -590,13 +590,13 @@ export default function Form7() {
           {/* Footer Text & Signatures */}
           <div className="mt-6 text-sm flex flex-col gap-6">
             <div className="flex flex-wrap gap-2 items-end leading-loose">
-              <span className="w-32 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black text-center">{formData.date || '2026-09-12'}</span>
+              <span className="w-32 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black text-center">{formData.date || '2026-09-12'}</span>
               <span>දිනට සීමාවිත</span>
-              <span className="w-64 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black text-center px-2">{formData.societyName || 'මහනුවර'}</span>
+              <span className="w-64 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black text-center px-2">{formData.societyName || 'මහනුවර'}</span>
               <span>සමූපකාර සමිතියේ අතේ මුදල් රු</span>
-              <span className="w-32 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black text-center">{formData.cashInHandNumbers || '18,500.00'}</span>
+              <span className="w-32 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black text-center">{formData.cashInHandNumbers || '18,500.00'}</span>
               <span>(රු</span>
-              <span className="w-64 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black text-center px-2">{formData.cashInHandWords || 'දහ අට දහස් පන්සියයක්'}</span>
+              <span className="w-64 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black text-center px-2">{formData.cashInHandWords || 'දහ අට දහස් පන්සියයක්'}</span>
               <span>) මා භාරයේ නිවැරදිව තිබෙන බවට සහතික කරමි.</span>
             </div>
 

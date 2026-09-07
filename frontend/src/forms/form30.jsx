@@ -152,7 +152,7 @@ export default function Form30() {
     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
       <div className="flex justify-between items-center mb-4">
         <h4 className="font-bold text-slate-800">{title}</h4>
-        <button onClick={() => handleAddRow(type)} className="text-sm bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-3 py-1.5 rounded-lg font-semibold transition-colors shadow-sm border border-indigo-200">
+        <button onClick={() => handleAddRow(type)} className="text-sm bg-slncc-gray hover:bg-indigo-200 text-slncc-blue px-3 py-1.5 rounded-lg font-semibold transition-colors shadow-sm border border-indigo-200">
           + Add Row
         </button>
       </div>
@@ -160,7 +160,7 @@ export default function Form30() {
         {rows.map((row, index) => (
           <div key={row.id} className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3 relative group">
             <div className="flex justify-between items-center">
-              <div className="font-bold text-indigo-600 text-sm">Row {index + 1}</div>
+              <div className="font-bold text-slncc-red text-sm">Row {index + 1}</div>
               {rows.length > 1 && (
                 <button onClick={() => handleRemoveRow(type, row.id)} className="text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-semibold">✕ Remove</button>
               )}
@@ -169,16 +169,16 @@ export default function Form30() {
             <div className="space-y-1">
               <label className="text-xs font-semibold text-slate-500">පෙර දිනය (Previous Date)</label>
               <div className="flex gap-2">
-                <input type="number" placeholder="රු." value={row.prevRs} onChange={(e) => updateRow(type, row.id, 'prevRs', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500" />
-                <input type="number" placeholder="ශ." value={row.prevCts} onChange={(e) => updateRow(type, row.id, 'prevCts', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500" />
+                <input type="number" placeholder="රු." value={row.prevRs} onChange={(e) => updateRow(type, row.id, 'prevRs', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-slncc-blue" />
+                <input type="number" placeholder="ශ." value={row.prevCts} onChange={(e) => updateRow(type, row.id, 'prevCts', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-slncc-blue" />
               </div>
             </div>
 
             <div className="space-y-1">
               <label className="text-xs font-semibold text-slate-500">දිනට (Today)</label>
               <div className="flex gap-2">
-                <input type="number" placeholder="රු." value={row.todayRs} onChange={(e) => updateRow(type, row.id, 'todayRs', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500" />
-                <input type="number" placeholder="ශ." value={row.todayCts} onChange={(e) => updateRow(type, row.id, 'todayCts', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-500" />
+                <input type="number" placeholder="රු." value={row.todayRs} onChange={(e) => updateRow(type, row.id, 'todayRs', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-slncc-blue" />
+                <input type="number" placeholder="ශ." value={row.todayCts} onChange={(e) => updateRow(type, row.id, 'todayCts', e.target.value)} className="w-full px-3 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-slncc-blue" />
               </div>
             </div>
             
@@ -214,7 +214,7 @@ export default function Form30() {
           </div>
         </div>
         <div className="p-6 md:p-8 border-b border-slate-200">
-          <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center"><FileText className="w-5 h-5 mr-2 text-indigo-500" /> Form Details</h3>
+          <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center"><FileText className="w-5 h-5 mr-2 text-slncc-blue" /> Form Details</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-2">
@@ -222,7 +222,7 @@ export default function Form30() {
                 <Building2 className="w-4 h-4 text-slate-400" /> Society Name (සමිතියේ නම)
               </label>
               <input type="text" name="societyName" value={globalData.societyName} onChange={handleGlobalChange}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500" />
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue" />
             </div>
 
             <div className="space-y-2">
@@ -230,7 +230,7 @@ export default function Form30() {
                 <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
               </label>
               <input type="date" name="date" value={globalData.date} onChange={handleGlobalChange}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500" />
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue" />
             </div>
 
             <div className="space-y-2">
@@ -238,7 +238,7 @@ export default function Form30() {
                 <Truck className="w-4 h-4 text-slate-400" /> Vehicle No (වාහන අංකය)
               </label>
               <input type="text" name="vehicleNo" value={globalData.vehicleNo} onChange={handleGlobalChange}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500" />
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-slncc-blue" />
             </div>
           </div>
         </div>
@@ -268,7 +268,7 @@ export default function Form30() {
           </div>
 
           <table className="w-full border-collapse border border-black mb-8">
-            <thead className="bg-indigo-50 text-indigo-900 print:bg-transparent print:text-black">
+            <thead className="bg-slncc-gray text-slncc-blue print:bg-transparent print:text-black">
               <tr>
                 <th colSpan="2" className="border border-black py-2 font-bold text-sm w-[22%]">පෙර දිනය</th>
                 <th rowSpan="2" className="border border-black py-2 font-bold text-sm w-[34%] text-center">විස්තර</th>
@@ -297,7 +297,7 @@ export default function Form30() {
                     <td className="border border-black">{row.prevRs}</td>
                     <td className="border border-black">{row.prevCts}</td>
                     {idx === 0 && (
-                      <td rowSpan={Math.max(1, wholesaleRows.length)} className="border border-black align-top p-0 relative bg-indigo-50/50 print:bg-transparent">
+                      <td rowSpan={Math.max(1, wholesaleRows.length)} className="border border-black align-top p-0 relative bg-slncc-gray print:bg-transparent">
                         <div className="absolute top-1.5 left-2 font-bold z-10">තොග</div>
                         <div className="absolute top-0 left-0 flex flex-col h-full w-full pl-16">
                           {Array.from({length: wholesaleRows.length}).map((_, n) => (
@@ -316,7 +316,7 @@ export default function Form30() {
                     );
                     })}
                     
-                    <tr className="text-center text-xs h-8 font-bold bg-indigo-100 text-indigo-900 print:bg-transparent print:text-black">
+                    <tr className="text-center text-xs h-8 font-bold bg-slncc-gray text-slncc-blue print:bg-transparent print:text-black">
                       <td className="border border-black border-y-[3px]">{wholesaleTotal.prevRs}</td>
                       <td className="border border-black border-y-[3px]">{wholesaleTotal.prevCts}</td>
                       <td className="border border-black border-y-[3px]">තොග එකතුව</td>
@@ -388,7 +388,7 @@ export default function Form30() {
         <button
           onClick={handleSaveForm}
           disabled={isSubmitting}
-          className="flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg bg-indigo-600 hover:bg-indigo-700 text-white shadow-xl shadow-indigo-200 transition-all duration-300 hover:-translate-y-1"
+          className="flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg bg-slncc-red hover:bg-opacity-90 text-white shadow-xl shadow-gray-200 transition-all duration-300 hover:-translate-y-1"
         >
           <Save className="w-6 h-6" />
           <span>{isSubmitting ? 'Saving...' : 'Save Entire Form'}</span>

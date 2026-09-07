@@ -23,7 +23,7 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors"
     />
   </div>
 );
@@ -120,8 +120,8 @@ export default function TransferRegisterForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-slate-100 pt-6">
             
             {/* Debit Side (Left Column) */}
-            <div className="space-y-4 p-5 rounded-xl border border-indigo-100 bg-indigo-50/30">
-              <h3 className="text-lg font-bold text-indigo-700 border-b border-indigo-200 pb-2">Accounts to be Debited (බැරවිය යුතු ගිණුම්)</h3>
+            <div className="space-y-4 p-5 rounded-xl border border-indigo-100 bg-slncc-gray/30">
+              <h3 className="text-lg font-bold text-slncc-blue border-b border-indigo-200 pb-2">Accounts to be Debited (බැරවිය යුතු ගිණුම්)</h3>
               <div className="grid grid-cols-1 gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <InputField value={formData?.debitAccountNo || ''} onChange={handleChange} label="Account/Voucher No." sinhalaLabel="ගිණුම්/වවුචර් අංකය" name="debitAccountNo" />
@@ -154,7 +154,7 @@ export default function TransferRegisterForm() {
           <div className="flex justify-end pt-4 border-t border-slate-100">
             <button 
               type="submit"
-              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-50 font-bold rounded-xl transition-colors"
+              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-slncc-blue hover:bg-slncc-gray font-bold rounded-xl transition-colors"
             >
               <Plus className="w-5 h-5" />
               <span>Add Entry</span>
@@ -174,15 +174,15 @@ export default function TransferRegisterForm() {
             <thead className="bg-slate-50 text-slate-700 text-xs uppercase text-center">
               <tr>
                 <th rowSpan="2" className="border border-slate-300 p-2 bg-slate-100">Date<br/><span className="text-[10px] font-normal normal-case">දිනය</span></th>
-                <th colSpan="4" className="border border-slate-300 p-2 bg-indigo-50/80 text-indigo-800 text-sm">Accounts to be Debited (බැරවිය යුතු ගිණුම්)</th>
+                <th colSpan="4" className="border border-slate-300 p-2 bg-slncc-gray/80 text-slncc-blue text-sm">Accounts to be Debited (බැරවිය යුතු ගිණුම්)</th>
                 <th colSpan="4" className="border border-slate-300 p-2 bg-teal-50/80 text-teal-800 text-sm">Accounts to be Credited (හරවිය යුතු ගිණුම්)</th>
                 <th rowSpan="2" className="border border-slate-300 p-2">Actions</th>
               </tr>
               <tr>
-                <th className="border border-slate-200 p-2 whitespace-nowrap bg-indigo-50/50">Acc/Voucher No.<br/><span className="text-[10px] font-normal normal-case">අංකය</span></th>
-                <th className="border border-slate-200 p-2 whitespace-nowrap bg-indigo-50/50">Description<br/><span className="text-[10px] font-normal normal-case">විස්තරය</span></th>
-                <th className="border border-slate-200 p-2 whitespace-nowrap bg-indigo-50/50">Sub Total<br/><span className="text-[10px] font-normal normal-case">උප එකතුව</span></th>
-                <th className="border border-slate-200 p-2 whitespace-nowrap bg-indigo-50/50">Balance<br/><span className="text-[10px] font-normal normal-case">ශේෂය</span></th>
+                <th className="border border-slate-200 p-2 whitespace-nowrap bg-slncc-gray">Acc/Voucher No.<br/><span className="text-[10px] font-normal normal-case">අංකය</span></th>
+                <th className="border border-slate-200 p-2 whitespace-nowrap bg-slncc-gray">Description<br/><span className="text-[10px] font-normal normal-case">විස්තරය</span></th>
+                <th className="border border-slate-200 p-2 whitespace-nowrap bg-slncc-gray">Sub Total<br/><span className="text-[10px] font-normal normal-case">උප එකතුව</span></th>
+                <th className="border border-slate-200 p-2 whitespace-nowrap bg-slncc-gray">Balance<br/><span className="text-[10px] font-normal normal-case">ශේෂය</span></th>
                 
                 <th className="border border-slate-200 p-2 whitespace-nowrap bg-teal-50/50">Acc/Voucher No.<br/><span className="text-[10px] font-normal normal-case">අංකය</span></th>
                 <th className="border border-slate-200 p-2 whitespace-nowrap bg-teal-50/50">Description<br/><span className="text-[10px] font-normal normal-case">විස්තරය</span></th>
@@ -206,7 +206,7 @@ export default function TransferRegisterForm() {
                   <td className="border border-slate-200 px-2 py-1.5 text-center">{record.debitAccountNo}</td>
                   <td className="border border-slate-200 px-2 py-1.5">{record.debitDescription}</td>
                   <td className="border border-slate-200 px-2 py-1.5 text-right font-medium text-slate-600">{record.debitSubTotal > 0 ? record.debitSubTotal.toFixed(2) : ''}</td>
-                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-indigo-600">{record.debitBalance > 0 ? record.debitBalance.toFixed(2) : ''}</td>
+                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-slncc-red">{record.debitBalance > 0 ? record.debitBalance.toFixed(2) : ''}</td>
                   
                   {/* Credit Side */}
                   <td className="border border-slate-200 px-2 py-1.5 text-center">{record.creditAccountNo}</td>
@@ -230,7 +230,7 @@ export default function TransferRegisterForm() {
               {records.length > 0 && (
                 <tr className="bg-slate-100 font-bold">
                   <td colSpan="4" className="border border-slate-300 px-4 py-2 text-right text-slate-700">Total Debit Balance:</td>
-                  <td className="border border-slate-300 px-2 py-2 text-right text-indigo-700 text-lg">{totalDebitBalance.toFixed(2)}</td>
+                  <td className="border border-slate-300 px-2 py-2 text-right text-slncc-blue text-lg">{totalDebitBalance.toFixed(2)}</td>
                   <td colSpan="3" className="border border-slate-300 px-4 py-2 text-right text-slate-700">Total Credit Balance:</td>
                   <td className="border border-slate-300 px-2 py-2 text-right text-teal-700 text-lg">{totalCreditBalance.toFixed(2)}</td>
                   <td className="border border-slate-300"></td>

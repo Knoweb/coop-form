@@ -217,7 +217,7 @@ export default function Form15C() {
                     </div>
                   ) : (
                     <button type="button" onClick={() => setAddingCol(true)}
-                      className="w-8 h-8 flex items-center justify-center mx-auto bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded-full transition-colors font-bold text-lg"
+                      className="w-8 h-8 flex items-center justify-center mx-auto bg-slncc-gray hover:bg-indigo-200 text-slncc-blue rounded-full transition-colors font-bold text-lg"
                       title="නව බඩු ප්‍රභේදයක් එකතු කරන්න">
                       +
                     </button>
@@ -291,7 +291,7 @@ export default function Form15C() {
         </div>
 
         {/* ── Helper hint ── */}
-        <p className="mt-3 text-xs text-indigo-500 text-right">
+        <p className="mt-3 text-xs text-slncc-blue text-right">
           💡 &nbsp;{cols.length === 0 ? "ඉහත" : "ඉහත +"} බොත්තම ඔබා නව බඩු ප්‍රභේදයක් (column) එකතු කරන්න &nbsp;|&nbsp; column header hover කර ✕ click කර ඉවත් කරන්න
         </p>
 
@@ -313,7 +313,7 @@ export default function Form15C() {
         {/* ── Submit ── */}
         <div className="flex justify-end mt-6 pt-4 border-t border-gray-200">
           <button type="submit"
-            className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-7 py-2.5 rounded-xl font-semibold shadow-lg shadow-indigo-200 transition-all duration-200 hover:-translate-y-0.5">
+            className="flex items-center gap-2 bg-slncc-red hover:bg-opacity-90 text-white px-7 py-2.5 rounded-xl font-semibold shadow-lg shadow-gray-200 transition-all duration-200 hover:-translate-y-0.5">
             <Save className="w-5 h-5" />
             <span>Submit Entry</span>
           </button>
@@ -324,11 +324,11 @@ export default function Form15C() {
       <div className="bg-white w-full max-w-6xl rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
         <div className="p-4 border-b border-gray-200 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <List className="w-5 h-5 text-indigo-500" />
+            <List className="w-5 h-5 text-slncc-blue" />
             <h2 className="text-lg font-bold text-slate-800">Form 15 C — ලේඛන වාර්තාව</h2>
           </div>
           <button onClick={() => { setManVals(buildBlank(cols)); setShowManual(v => !v); }}
-            className="flex items-center gap-1 px-3 py-1.5 bg-indigo-100 text-indigo-700 font-semibold rounded-lg hover:bg-indigo-200 transition-colors text-sm">
+            className="flex items-center gap-1 px-3 py-1.5 bg-slncc-gray text-slncc-blue font-semibold rounded-lg hover:bg-indigo-200 transition-colors text-sm">
             <Plus className="w-4 h-4" />
             <span>Add Row</span>
           </button>
@@ -338,12 +338,12 @@ export default function Form15C() {
           <table className="w-full border-collapse text-xs" style={{ minWidth: "600px" }}>
             <thead>
               <tr className="bg-slate-50">
-                <th className="border border-slate-300 p-2 font-bold text-slate-500 uppercase whitespace-nowrap">දිනය</th>
-                <th className="border border-slate-300 p-2 font-bold text-slate-500 uppercase whitespace-nowrap">ශාඛාව</th>
-                <th className="border border-slate-300 p-2 font-bold text-slate-500 uppercase whitespace-nowrap">සටහන් අංක</th>
+                <th className="border border-slate-300 p-2 font-bold bg-slncc-blue text-white uppercase whitespace-nowrap">දිනය</th>
+                <th className="border border-slate-300 p-2 font-bold bg-slncc-blue text-white uppercase whitespace-nowrap">ශාඛාව</th>
+                <th className="border border-slate-300 p-2 font-bold bg-slncc-blue text-white uppercase whitespace-nowrap">සටහන් අංක</th>
                 {ROW_DEFS.filter(r => r.type === "normal").map(r => (
                   <th key={r.key} colSpan={cols.length || 1}
-                    className="border border-slate-300 p-2 font-bold text-indigo-700 text-center bg-indigo-50/30 whitespace-nowrap">
+                    className="border border-slate-300 p-2 font-bold text-slncc-blue text-center bg-slncc-gray/30 whitespace-nowrap">
                     {r.label}
                   </th>
                 ))}

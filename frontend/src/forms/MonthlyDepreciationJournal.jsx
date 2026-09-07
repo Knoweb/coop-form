@@ -47,7 +47,7 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors"
     />
   </div>
 );
@@ -140,7 +140,7 @@ export default function MonthlyDepreciationJournal() {
           
           {/* Group 1: General Details */}
           <div>
-            <h3 className="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-100 pb-2">Property Details (දේපල විස්තර)</h3>
+            <h3 className="text-lg font-bold text-slncc-blue mb-4 border-b border-indigo-100 pb-2">Property Details (දේපල විස්තර)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
               <InputField value={formData?.serialNo || ''} onChange={handleChange} label="Serial No." sinhalaLabel="අනු අංකය" name="serialNo" />
               <InputField value={formData?.sectionNo || ''} onChange={handleChange} label="Section No." sinhalaLabel="සේවා අංශය" name="sectionNo" />
@@ -153,7 +153,7 @@ export default function MonthlyDepreciationJournal() {
 
           {/* Group 2: Monthly Expenditure */}
           <div>
-            <h3 className="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-100 pb-2">Monthly Depreciation (මාසික ක්ෂයවීම)</h3>
+            <h3 className="text-lg font-bold text-slncc-blue mb-4 border-b border-indigo-100 pb-2">Monthly Depreciation (මාසික ක්ෂයවීම)</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {MONTHS.map(month => (
                 <InputField 
@@ -172,7 +172,7 @@ export default function MonthlyDepreciationJournal() {
           <div className="flex justify-end pt-4">
             <button 
               type="submit"
-              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-50 font-bold rounded-xl transition-colors"
+              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-slncc-blue hover:bg-slncc-gray font-bold rounded-xl transition-colors"
             >
               <Plus className="w-5 h-5" />
               <span>Add Entry</span>
@@ -234,7 +234,7 @@ export default function MonthlyDepreciationJournal() {
                     </td>
                   ))}
                   
-                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-indigo-600 bg-indigo-50/20">{record.total?.toFixed(2)}</td>
+                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-slncc-red bg-slncc-gray/20">{record.total?.toFixed(2)}</td>
                   
                   <td className="border border-slate-200 p-2 text-center">
                     <button

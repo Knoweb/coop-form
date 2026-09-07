@@ -120,35 +120,35 @@ export default function Form23A() {
 
           {/* Document Headers */}
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
-            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><FileText className="w-5 h-5 mr-2 text-indigo-500" /> Form Details</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><FileText className="w-5 h-5 mr-2 text-slncc-blue" /> Form Details</h3>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <User className="w-4 h-4 text-slate-400" /> Name (නම)
                   </label>
                   <input type="text" name="globalName" value={globalName} onChange={handleHeaderChange} placeholder="Enter buyer's name..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-slate-400" /> Store (තොග ගබඩාවෙන්)
                   </label>
                   <input type="text" name="globalStoreName" value={globalStoreName} onChange={handleHeaderChange} placeholder="Enter store name..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
                   </label>
                   <input type="date" name="globalDate" value={globalDate} onChange={handleHeaderChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
              </div>
           </div>
 
           {/* Item Entry */}
           <div className="p-6 md:p-8">
-            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-indigo-500" /> Add Item</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-slncc-blue" /> Add Item</h3>
             <form onSubmit={handleAddItem} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
                 
@@ -165,7 +165,7 @@ export default function Form23A() {
                      Description (විස්තරය) *
                   </label>
                   <input required type="text" name="description" value={itemData.description} onChange={handleItemChange} placeholder="Item description"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
@@ -173,7 +173,7 @@ export default function Form23A() {
                     Requested (ඉල්ලන ප්‍රමාණය)
                   </label>
                   <input type="number" step="0.01" name="requestedQuantity" value={itemData.requestedQuantity} onChange={handleItemChange} placeholder="0.00"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
@@ -181,7 +181,7 @@ export default function Form23A() {
                     Issued (නිකුත් කළ යුතු ප්‍රමාණය)
                   </label>
                   <input type="number" step="0.01" name="issuedQuantity" value={itemData.issuedQuantity} onChange={handleItemChange} placeholder="0.00"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
                 </div>
                 
                 <div className="space-y-2 lg:col-span-4">
@@ -189,7 +189,7 @@ export default function Form23A() {
                      Other Details (වෙනත් කරුණු)
                   </label>
                   <input type="text" name="otherDetails" value={itemData.otherDetails} onChange={handleItemChange} placeholder="Optional details"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
                 </div>
 
                 <div className="lg:col-span-1">
@@ -218,15 +218,15 @@ export default function Form23A() {
              <div className="flex flex-col md:flex-row justify-between mb-8 gap-4 md:gap-8 font-medium text-slate-800 text-sm md:text-base border-b border-slate-200 pb-6">
                 <div className="flex items-end">
                    <span>නම</span>
-                   <span className="flex-1 border-b border-dashed border-slate-400 mx-3 min-w-[200px] inline-block text-center text-indigo-800 pb-1">{globalName}</span>
+                   <span className="flex-1 border-b border-dashed border-slate-400 mx-3 min-w-[200px] inline-block text-center text-slncc-blue pb-1">{globalName}</span>
                 </div>
                 <div className="flex items-end">
-                   <span className="flex-1 border-b border-dashed border-slate-400 mx-3 min-w-[200px] inline-block text-center text-indigo-800 pb-1">{globalStoreName}</span>
+                   <span className="flex-1 border-b border-dashed border-slate-400 mx-3 min-w-[200px] inline-block text-center text-slncc-blue pb-1">{globalStoreName}</span>
                    <span>තොග ගබඩාවෙන්</span>
                 </div>
                 <div className="flex items-end">
                    <span>දිනය</span>
-                   <span className="flex-1 border-b border-dashed border-slate-400 mx-3 min-w-[150px] inline-block text-center text-indigo-800 pb-1">{globalDate}</span>
+                   <span className="flex-1 border-b border-dashed border-slate-400 mx-3 min-w-[150px] inline-block text-center text-slncc-blue pb-1">{globalDate}</span>
                 </div>
              </div>
 
@@ -235,11 +235,11 @@ export default function Form23A() {
               <table className="w-full text-left border-collapse border border-slate-800 print:border-black">
                 <thead>
                 <tr>
-                  <th className="px-3 py-4 text-xs font-bold text-slate-800 border border-slate-800 print:border-black w-[10%] text-center">අනු අංකය</th>
-                  <th className="px-3 py-4 text-xs font-bold text-slate-800 border border-slate-800 print:border-black w-[40%] text-center">විස්තරය</th>
-                  <th className="px-3 py-4 text-xs font-bold text-slate-800 border border-slate-800 print:border-black w-[15%] text-center">ඉල්ලන ප්‍රමාණය</th>
-                  <th className="px-3 py-4 text-xs font-bold text-slate-800 border border-slate-800 print:border-black w-[15%] text-center">නිකුත් කළ යුතු ප්‍රමාණය</th>
-                  <th className="px-3 py-4 text-xs font-bold text-slate-800 border border-slate-800 print:border-black w-[20%] text-center">වෙනත් කරුණු</th>
+                  <th className="px-3 py-4 text-xs font-bold bg-slncc-blue text-white border border-slate-800 print:border-black w-[10%] text-center">අනු අංකය</th>
+                  <th className="px-3 py-4 text-xs font-bold bg-slncc-blue text-white border border-slate-800 print:border-black w-[40%] text-center">විස්තරය</th>
+                  <th className="px-3 py-4 text-xs font-bold bg-slncc-blue text-white border border-slate-800 print:border-black w-[15%] text-center">ඉල්ලන ප්‍රමාණය</th>
+                  <th className="px-3 py-4 text-xs font-bold bg-slncc-blue text-white border border-slate-800 print:border-black w-[15%] text-center">නිකුත් කළ යුතු ප්‍රමාණය</th>
+                  <th className="px-3 py-4 text-xs font-bold bg-slncc-blue text-white border border-slate-800 print:border-black w-[20%] text-center">වෙනත් කරුණු</th>
                 </tr>
               </thead>
               <tbody>
@@ -307,7 +307,7 @@ export default function Form23A() {
               disabled={currentItems.length === 0 || isSubmitting}
               className={`flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 ${
                 currentItems.length > 0 && !isSubmitting
-                  ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-1' 
+                  ? 'bg-slncc-red hover:bg-opacity-90 text-white shadow-gray-200 hover:shadow-indigo-300 hover:-translate-y-1' 
                   : 'bg-slate-300 text-slate-500 cursor-not-allowed'
               }`}>
               <Save className="w-6 h-6" />

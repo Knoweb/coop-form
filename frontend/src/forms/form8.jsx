@@ -67,7 +67,7 @@ export default function Form8() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Enter Details (විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -80,7 +80,7 @@ export default function Form8() {
               </div>
               <div className="space-y-2 lg:col-span-4">
                 <label className="text-sm font-semibold text-slate-600">Date (දිනය)</label>
-                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-2">
@@ -88,28 +88,28 @@ export default function Form8() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Voucher No (වවුචර අංකය)</label>
-                <input type="text" name="voucherNo" value={formData.voucherNo} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="voucherNo" value={formData.voucherNo} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Cheque No (චෙක්පත් අංකය)</label>
-                <input type="text" name="chequeNo" value={formData.chequeNo} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="chequeNo" value={formData.chequeNo} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2 lg:col-span-2">
                 <label className="text-sm font-semibold text-slate-600">Description (විස්තර)</label>
-                <input type="text" name="description" value={formData.description} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="description" value={formData.description} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Ledger Folio (ලෙ: පි: අංකය)</label>
-                <input type="text" name="ledgerFolio1" value={formData.ledgerFolio1} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="ledgerFolio1" value={formData.ledgerFolio1} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank Account 1 (බැංකු ගිණුම් අංක 1)</label>
-                <input type="number" name="bank1Amount" value={formData.bank1Amount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="bank1Amount" value={formData.bank1Amount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Bank Account 2 (බැංකු ගිණුම් අංක 2)</label>
-                <input type="number" name="bank2Amount" value={formData.bank2Amount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="bank2Amount" value={formData.bank2Amount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               <div className="col-span-1 md:col-span-2 lg:col-span-4 mt-2">
@@ -117,23 +117,23 @@ export default function Form8() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Analysis 1</label>
-                <input type="number" name="analysis1" value={formData.analysis1} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="analysis1" value={formData.analysis1} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Analysis 2</label>
-                <input type="number" name="analysis2" value={formData.analysis2} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="analysis2" value={formData.analysis2} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Analysis 3</label>
-                <input type="number" name="analysis3" value={formData.analysis3} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="analysis3" value={formData.analysis3} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Analysis 4</label>
-                <input type="number" name="analysis4" value={formData.analysis4} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="analysis4" value={formData.analysis4} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Other Ledger Folio (ලෙ: පි: අංකය)</label>
-                <input type="text" name="ledgerFolio2" value={formData.ledgerFolio2} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="ledgerFolio2" value={formData.ledgerFolio2} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               
             </div>
@@ -153,7 +153,7 @@ export default function Form8() {
           <div className="flex justify-between items-start mb-6">
             <div className="flex items-end">
               <span className="font-bold mr-2">දිනය :</span>
-              <span className="w-32 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black text-center pb-1">
+              <span className="w-32 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black text-center pb-1">
                 {formData.date || '2026-09-12'}
               </span>
             </div>

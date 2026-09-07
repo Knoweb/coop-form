@@ -126,7 +126,7 @@ export default function Form24() {
 
           {/* Document Headers */}
           <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200">
-            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><FileText className="w-5 h-5 mr-2 text-indigo-500" /> Form Details</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><FileText className="w-5 h-5 mr-2 text-slncc-blue" /> Form Details</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               <div className="space-y-2 md:col-span-1">
@@ -134,7 +134,7 @@ export default function Form24() {
                   <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
                 </label>
                 <input type="date" name="globalDate" value={globalDate} onChange={handleHeaderChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
               </div>
 
               <div className="space-y-2 md:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -143,28 +143,28 @@ export default function Form24() {
                     <Building2 className="w-4 h-4 text-slate-400" /> Store 1 (ගබඩාව 1)
                   </label>
                   <input type="text" name="store1Name" value={store1Name} onChange={handleHeaderChange} placeholder="Store 1"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-slate-400" /> Store 2 (ගබඩාව 2)
                   </label>
                   <input type="text" name="store2Name" value={store2Name} onChange={handleHeaderChange} placeholder="Store 2"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-slate-400" /> Store 3 (ගබඩාව 3)
                   </label>
                   <input type="text" name="store3Name" value={store3Name} onChange={handleHeaderChange} placeholder="Store 3"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-slate-400" /> Store 4 (ගබඩාව 4)
                   </label>
                   <input type="text" name="store4Name" value={store4Name} onChange={handleHeaderChange} placeholder="Store 4"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function Form24() {
 
           {/* Item Entry */}
           <div className="p-6 md:p-8">
-            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-indigo-500" /> Add Item</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center"><PlusCircle className="w-5 h-5 mr-2 text-slncc-blue" /> Add Item</h3>
             <form onSubmit={handleAddItem} className="space-y-6">
 
               <div className="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
@@ -186,13 +186,13 @@ export default function Form24() {
                 <div className="space-y-2 lg:col-span-1">
                   <label className="text-xs font-semibold text-slate-600">හැඳින්වූ අංකය (ID No)</label>
                   <input type="text" name="cardNo" value={itemData.cardNo} onChange={handleItemChange} placeholder="ID No"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-2">
                   <label className="text-xs font-semibold text-slate-600">ද්‍රව්‍ය (Item) *</label>
                   <input required type="text" name="item" value={itemData.item} onChange={handleItemChange} placeholder="Item Description"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 {/* Quantities */}
@@ -200,22 +200,22 @@ export default function Form24() {
                   <div className="space-y-2">
                     <label className="text-[10px] font-semibold text-slate-500 text-center block truncate">{store1Name || 'Store 1'}</label>
                     <input type="number" step="0.01" name="store1Qty" value={itemData.store1Qty} onChange={handleItemChange} placeholder="0"
-                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 text-center text-sm" />
+                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue text-center text-sm" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-semibold text-slate-500 text-center block truncate">{store2Name || 'Store 2'}</label>
                     <input type="number" step="0.01" name="store2Qty" value={itemData.store2Qty} onChange={handleItemChange} placeholder="0"
-                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 text-center text-sm" />
+                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue text-center text-sm" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-semibold text-slate-500 text-center block truncate">{store3Name || 'Store 3'}</label>
                     <input type="number" step="0.01" name="store3Qty" value={itemData.store3Qty} onChange={handleItemChange} placeholder="0"
-                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 text-center text-sm" />
+                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue text-center text-sm" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-semibold text-slate-500 text-center block truncate">{store4Name || 'Store 4'}</label>
                     <input type="number" step="0.01" name="store4Qty" value={itemData.store4Qty} onChange={handleItemChange} placeholder="0"
-                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 text-center text-sm" />
+                      className="w-full px-2 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue text-center text-sm" />
                   </div>
                 </div>
 
@@ -246,7 +246,7 @@ export default function Form24() {
               <div className="flex justify-end text-sm md:text-base font-semibold text-slate-800">
                 <div className="flex items-end">
                   <span className="mr-3">දිනය</span>
-                  <span className="border-b-2 border-dotted border-slate-400 min-w-[150px] inline-block text-center text-indigo-800 pb-1">{globalDate}</span>
+                  <span className="border-b-2 border-dotted border-slate-400 min-w-[150px] inline-block text-center text-slncc-blue pb-1">{globalDate}</span>
                 </div>
               </div>
             </div>
@@ -263,10 +263,10 @@ export default function Form24() {
                     <th rowSpan={2} className="px-2 py-3 text-xs font-bold text-slate-800 border border-slate-800 print:border-black w-[10%] text-center align-middle">එකතුව</th>
                   </tr>
                   <tr>
-                    <th className="px-1 py-2 text-xs font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[11%]">{store1Name || '1'}</th>
-                    <th className="px-1 py-2 text-xs font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[11%]">{store2Name || '2'}</th>
-                    <th className="px-1 py-2 text-xs font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[11%]">{store3Name || '3'}</th>
-                    <th className="px-1 py-2 text-xs font-semibold text-slate-700 border border-slate-800 print:border-black text-center w-[11%]">{store4Name || '4'}</th>
+                    <th className="px-1 py-2 text-xs font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[11%]">{store1Name || '1'}</th>
+                    <th className="px-1 py-2 text-xs font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[11%]">{store2Name || '2'}</th>
+                    <th className="px-1 py-2 text-xs font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[11%]">{store3Name || '3'}</th>
+                    <th className="px-1 py-2 text-xs font-semibold bg-slncc-blue text-white border border-slate-800 print:border-black text-center w-[11%]">{store4Name || '4'}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -313,7 +313,7 @@ export default function Form24() {
             onClick={handleSaveForm}
             disabled={currentItems.length === 0 || isSubmitting}
             className={`flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 ${currentItems.length > 0 && !isSubmitting
-                ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-1'
+                ? 'bg-slncc-red hover:bg-opacity-90 text-white shadow-gray-200 hover:shadow-indigo-300 hover:-translate-y-1'
                 : 'bg-slate-300 text-slate-500 cursor-not-allowed'
               }`}>
             <Save className="w-6 h-6" />

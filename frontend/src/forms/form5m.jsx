@@ -65,7 +65,7 @@ export default function Form5M() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Enter Details for Receipt 1 (අංක 1 රිසිට්පත සඳහා විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -74,31 +74,31 @@ export default function Form5M() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Date (දිනය)</label>
-                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Name (නම)</label>
-                <input type="text" name="name" value={formData.name} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="name" value={formData.name} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Member No (අංකය)</label>
-                <input type="text" name="no" value={formData.no} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="no" value={formData.no} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Ledger Page (ලැ. පි.)</label>
-                <input type="text" name="ledgerPage" value={formData.ledgerPage} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="ledgerPage" value={formData.ledgerPage} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Reason (කාරණය)</label>
-                <input type="text" name="reason" value={formData.reason} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="reason" value={formData.reason} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Amount (රු.)</label>
-                <input type="number" name="amount" value={formData.amount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="amount" value={formData.amount} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2 lg:col-span-3">
                 <label className="text-sm font-semibold text-slate-600">Paid By (මුදල් ගෙවූ බවට)</label>
-                <input type="text" name="paidBy" value={formData.paidBy} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="paidBy" value={formData.paidBy} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
             </div>
             <p className="text-sm text-amber-600 mt-4 bg-amber-50 p-3 rounded-lg border border-amber-200">
@@ -212,26 +212,26 @@ export default function Form5M() {
                   <div className="font-bold mb-2">අංක 1</div>
                   <div className="flex items-end mb-1">
                     <span className="w-10">දිනය</span>
-                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-indigo-900 print:text-black">{formData.date || '2026-09-08'}</span>
+                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-slncc-blue print:text-black">{formData.date || '2026-09-08'}</span>
                   </div>
                   <div className="flex items-end mb-1">
                     <span className="w-8">නම</span>
-                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-indigo-900 print:text-black">{formData.name || 'කේ. ඩී. සිරිසේන'}</span>
+                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-slncc-blue print:text-black">{formData.name || 'කේ. ඩී. සිරිසේන'}</span>
                   </div>
                   <div className="flex items-end mb-1">
                     <span className="w-10">අංකය</span>
-                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-indigo-900 print:text-black">{formData.no || '001'}</span>
+                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-slncc-blue print:text-black">{formData.no || '001'}</span>
                     <span className="w-10 text-center">ලැ. පි.</span>
-                    <span className="w-16 border-b border-dotted border-slate-600 px-1 font-mono text-indigo-900 print:text-black">{formData.ledgerPage || '15'}</span>
+                    <span className="w-16 border-b border-dotted border-slate-600 px-1 font-mono text-slncc-blue print:text-black">{formData.ledgerPage || '15'}</span>
                   </div>
                   <div className="flex items-end mb-1">
                     <span className="w-8">197</span>
-                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-indigo-900 print:text-black">{formData.reason || 'කිරි වෙනුවෙන්'}</span>
+                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-slncc-blue print:text-black">{formData.reason || 'කිරි වෙනුවෙන්'}</span>
                     <span className="ml-1">කාරණය</span>
                   </div>
                   <div className="flex items-end mb-4">
                     <span className="w-32">මට ගෙවිය යුතු රු.</span>
-                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-indigo-900 print:text-black">{formData.amount || '13500.00'}</span>
+                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-slncc-blue print:text-black">{formData.amount || '13500.00'}</span>
                   </div>
                   <div className="mb-8">භාරගතිමි.</div>
                 </div>
@@ -245,7 +245,7 @@ export default function Form5M() {
                   </div>
                   <div className="flex items-end">
                     <span className="w-32">මුදල් ගෙවූ බවට</span>
-                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-indigo-900 print:text-black">{formData.paidBy || 'කළමනාකරු'}</span>
+                    <span className="flex-1 border-b border-dotted border-slate-600 px-1 font-mono text-slncc-blue print:text-black">{formData.paidBy || 'කළමනාකරු'}</span>
                   </div>
                 </div>
               </div>

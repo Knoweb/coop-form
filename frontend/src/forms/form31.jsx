@@ -113,7 +113,7 @@ export default function Form31() {
             <button
               onClick={handleSaveForm}
               disabled={isSubmitting}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
+              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-slncc-red hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-gray-200 hover:shadow-lg hover:-translate-y-0.5"
             >
               <Save className="w-5 h-5" />
               <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
@@ -145,7 +145,7 @@ export default function Form31() {
                 value={globalData.vehicleNo} 
                 onChange={handleGlobalChange} 
                 placeholder="E.g., WP AB-1234"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm" 
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors shadow-sm" 
               />
             </div>
             <div className="space-y-2">
@@ -158,7 +158,7 @@ export default function Form31() {
                 value={globalData.date} 
                 onChange={handleGlobalChange}
                 placeholder="YYYY-MM-DD"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm" 
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors shadow-sm" 
               />
             </div>
           </div>
@@ -168,10 +168,10 @@ export default function Form31() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6 flex justify-between items-center">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <PenTool className="w-5 h-5 text-indigo-500" /> 
+              <PenTool className="w-5 h-5 text-slncc-blue" /> 
               අවශ්‍ය අළුත්වැඩියා කිරීම් ගැන රියදුරාගේ වාර්තාව (Driver's Report)
             </h2>
-            <button type="button" onClick={addDriverRepair} className="flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:bg-indigo-50 px-3 py-1.5 rounded-lg transition-colors">
+            <button type="button" onClick={addDriverRepair} className="flex items-center gap-1 text-sm font-semibold text-slncc-red hover:bg-slncc-gray px-3 py-1.5 rounded-lg transition-colors">
               <Plus className="w-4 h-4" /> Add Repair
             </button>
           </div>
@@ -187,7 +187,7 @@ export default function Form31() {
                     value={repair}
                     placeholder={`Repair item ${index + 1}`}
                     onChange={(e) => handleDriverRepairChange(index, e.target.value)}
-                    className="w-full px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                    className="w-full px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors"
                   />
                   {driverRepairs.length > 1 && (
                     <button type="button" onClick={() => removeDriverRepair(index)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
@@ -209,7 +209,7 @@ export default function Form31() {
                   value={globalData.driverSignature} 
                   onChange={handleGlobalChange}
                   placeholder="Enter name/signature"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors shadow-sm" 
                 />
               </div>
             </div>

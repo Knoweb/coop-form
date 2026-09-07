@@ -342,18 +342,18 @@ export default function Form9D() {
               <table className="w-full min-w-[1000px] text-left border-collapse table-fixed">
                 <thead>
                 <tr className="bg-slate-50">
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300 w-16">සා/අංක</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">නම</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300 w-20">රිසිට් පත</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300 w-16">සා/අංක</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300">නම</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300 w-20">රිසිට් පත</th>
                   
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">කොටස්</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">ණය</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">පොලී</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">තැන්පතු</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300">වෙනත්</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words bg-slate-50/50 border border-slate-300">කොටස්</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words bg-slate-50/50 border border-slate-300">ණය</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words bg-slate-50/50 border border-slate-300">පොලී</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words bg-slate-50/50 border border-slate-300">තැන්පතු</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words bg-slate-50/50 border border-slate-300">වෙනත්</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-teal-700 uppercase break-words bg-teal-50/50 border border-slate-300">එකතුව</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300 w-16">ලෙ/පි.</th>
-                  {showManualRow && <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-600 uppercase break-words bg-slate-50/50 border border-slate-300 w-12"></th>}
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300 w-16">ලෙ/පි.</th>
+                  {showManualRow && <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words bg-slate-50/50 border border-slate-300 w-12"></th>}
                 </tr>
               </thead>
               <tbody>

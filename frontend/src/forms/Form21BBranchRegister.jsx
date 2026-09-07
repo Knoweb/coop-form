@@ -105,11 +105,11 @@ export default function Form21BBranchRegister() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ප්‍රාදේශිකයේ/අංශයේ නම (Branch/Dept Name)</label>
-                  <input type="text" name="branchOrDepartmentName" value={formData.branchOrDepartmentName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="branchOrDepartmentName" value={formData.branchOrDepartmentName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">පොත් ආකාරයට (Book/Account Ref)</label>
-                  <input type="text" name="bookAccountRef" value={formData.bookAccountRef} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="bookAccountRef" value={formData.bookAccountRef} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
@@ -117,28 +117,28 @@ export default function Form21BBranchRegister() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 
                 {/* Main Entry Section */}
-                <div className="lg:col-span-7 bg-indigo-50 p-5 rounded-xl border border-indigo-200">
-                    <h4 className="text-sm font-bold text-indigo-800 mb-4 border-b border-indigo-200 pb-2">නිකුත් කිරීම් (Main Entry)</h4>
+                <div className="lg:col-span-7 bg-slncc-gray p-5 rounded-xl border border-indigo-200">
+                    <h4 className="text-sm font-bold text-slncc-blue mb-4 border-b border-indigo-200 pb-2">නිකුත් කිරීම් (Main Entry)</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-xs font-medium text-indigo-700 mb-1">දිනය (Date)</label>
-                            <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                            <label className="block text-xs font-medium text-slncc-blue mb-1">දිනය (Date)</label>
+                            <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-slncc-blue outline-none" required />
                         </div>
                         <div>
-                            <label className="block text-xs font-medium text-indigo-700 mb-1">අනු අංකය සිට දක්වා (Serial Range)</label>
-                            <input type="text" name="serialRangeFromTo" value={formData.serialRangeFromTo} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <label className="block text-xs font-medium text-slncc-blue mb-1">අනු අංකය සිට දක්වා (Serial Range)</label>
+                            <input type="text" name="serialRangeFromTo" value={formData.serialRangeFromTo} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-slncc-blue outline-none" />
                         </div>
                         <div className="md:col-span-2">
-                            <label className="block text-xs font-medium text-indigo-700 mb-1">බිල්පත හා විස්තර (Bill & Description)</label>
-                            <input type="text" name="billAndDescription" value={formData.billAndDescription} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <label className="block text-xs font-medium text-slncc-blue mb-1">බිල්පත හා විස්තර (Bill & Description)</label>
+                            <input type="text" name="billAndDescription" value={formData.billAndDescription} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-slncc-blue outline-none" />
                         </div>
                         <div>
-                            <label className="block text-xs font-medium text-indigo-700 mb-1">ප්‍රමාණය (Quantity)</label>
-                            <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <label className="block text-xs font-medium text-slncc-blue mb-1">ප්‍රමාණය (Quantity)</label>
+                            <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-slncc-blue outline-none" />
                         </div>
                         <div>
-                            <label className="block text-xs font-medium text-indigo-700 mb-1">වටිනාකම (Value)</label>
-                            <input type="number" step="0.01" name="value" value={formData.value} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <label className="block text-xs font-medium text-slncc-blue mb-1">වටිනාකම (Value)</label>
+                            <input type="number" step="0.01" name="value" value={formData.value} onChange={handleChange} className="w-full px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm focus:ring-2 focus:ring-slncc-blue outline-none" />
                         </div>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ export default function Form21BBranchRegister() {
           </div>
 
           <div className="mt-8 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>
@@ -211,7 +211,7 @@ export default function Form21BBranchRegister() {
                     <td className="px-3 py-2 border-r border-slate-100">{record.date}</td>
                     <td className="px-3 py-2 border-r border-slate-100">{record.billAndDescription}</td>
                     <td className="px-3 py-2 border-r border-slate-100">{record.serialRangeFromTo}</td>
-                    <td className="px-3 py-2 border-r border-slate-100 text-right font-medium text-indigo-700">{record.quantity?.toFixed(2) || '0.00'}</td>
+                    <td className="px-3 py-2 border-r border-slate-100 text-right font-medium text-slncc-blue">{record.quantity?.toFixed(2) || '0.00'}</td>
                     <td className="px-3 py-2 border-r-2 border-gray-400 text-right font-medium">{record.value?.toFixed(2) || '0.00'}</td>
                     
                     <td className="px-3 py-2 border-r border-emerald-50 bg-emerald-50/30">{record.returnDate}</td>

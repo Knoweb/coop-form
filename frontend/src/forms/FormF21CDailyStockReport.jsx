@@ -123,7 +123,7 @@ export default function FormF21CDailyStockReport() {
 
         <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="bg-indigo-500/20 p-2 rounded-lg">
+            <div className="bg-slncc-blue/20 p-2 rounded-lg">
               <LayoutGrid className="w-6 h-6 text-indigo-400" />
             </div>
             <div>
@@ -136,7 +136,7 @@ export default function FormF21CDailyStockReport() {
         <div className="overflow-x-auto p-4">
           <div className="mb-4 flex items-center space-x-4">
             <label className="text-sm font-semibold text-slate-700">දිනය (Date):</label>
-            <input type="date" value={reportDate} onChange={(e) => setReportDate(e.target.value)} className="px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" required />
+            <input type="date" value={reportDate} onChange={(e) => setReportDate(e.target.value)} className="px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-slncc-blue outline-none" required />
           </div>
 
           <table className="w-full text-xs text-left whitespace-nowrap border-collapse">
@@ -146,8 +146,8 @@ export default function FormF21CDailyStockReport() {
               <tr className="bg-slate-50 border-b border-slate-200">
                 <th colSpan="2" className="px-3 py-2 border-r border-slate-200"></th>
                 {[1, 2, 3, 4, 5].map(num => (
-                  <th key={`hdr-${num}`} colSpan="2" className="px-2 py-2 border-r border-slate-200 text-center bg-indigo-50/50">
-                    <input type="text" name={`item${num}Name`} value={headers[`item${num}Name`]} onChange={handleHeaderChange} className="w-full bg-transparent text-center font-bold text-indigo-800 outline-none border-b border-indigo-200 mb-1" />
+                  <th key={`hdr-${num}`} colSpan="2" className="px-2 py-2 border-r border-slate-200 text-center bg-slncc-gray">
+                    <input type="text" name={`item${num}Name`} value={headers[`item${num}Name`]} onChange={handleHeaderChange} className="w-full bg-transparent text-center font-bold text-slncc-blue outline-none border-b border-indigo-200 mb-1" />
                     <div className="flex items-center justify-center text-[10px]">
                       <span className="text-slate-500 mr-1 font-normal">ධාරිතාව:</span>
                       <input type="text" name={`item${num}Capacity`} value={capacities[`item${num}Capacity`]} onChange={handleCapacityChange} className="w-16 bg-transparent text-center font-normal text-slate-600 outline-none border-b border-dashed border-slate-300" placeholder="-" />
@@ -185,7 +185,7 @@ export default function FormF21CDailyStockReport() {
                         <td colSpan="13" className="px-3 py-1.5 font-bold text-slate-800 border-b border-slate-300">{row.category}</td>
                       </tr>
                     )}
-                    <tr className="hover:bg-slate-50 transition-colors text-slate-800 focus-within:bg-indigo-50/30">
+                    <tr className="hover:bg-slate-50 transition-colors text-slate-800 focus-within:bg-slncc-gray/30">
                       <td className="px-3 py-2 border-r border-slate-200 font-medium whitespace-normal leading-tight">{row.description}</td>
                       <td className="border-r border-slate-200 p-0">
                         <input type="text" value={row.refNo} onChange={(e) => handleCellChange(rowIndex, 'refNo', e.target.value)} className="w-full h-full bg-transparent outline-none px-3 py-2 text-slate-600 focus:bg-white" />
@@ -214,7 +214,7 @@ export default function FormF21CDailyStockReport() {
         </div>
 
         <div className="p-6 border-t border-slate-200 bg-slate-50 flex justify-end">
-          <button onClick={handleSaveReport} className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl transition-all shadow-md font-bold text-sm">
+          <button onClick={handleSaveReport} className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-8 py-3 rounded-xl transition-all shadow-md font-bold text-sm">
             <Save className="w-5 h-5" />
             <span>Save Daily Report (දෛනික වාර්තාව සුරකින්න)</span>
           </button>

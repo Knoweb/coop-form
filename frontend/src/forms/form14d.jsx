@@ -94,19 +94,19 @@ export default function Form14D() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-50 border-y border-slate-200">
-                  <th className="p-2 text-center font-medium text-slate-600 w-16" rowSpan={2}>ශ්‍රේණිය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24" rowSpan={2}>බැගින්</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>වටිනාකම</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>අත්තිකාරම්</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-16" rowSpan={2}>ශ්‍රේණිය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24" rowSpan={2}>බැගින්</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>වටිනාකම</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>අත්තිකාරම්</th>
                 </tr>
                 <tr className="bg-slate-50 border-b border-slate-200">
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-20">බු.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-20">සේ.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">රු.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-16">ශ.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">රු.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-16">ශ.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-20">බු.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-20">සේ.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">රු.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-16">ශ.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">රු.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-16">ශ.</th>
                 </tr>
               </thead>
               <tbody>

@@ -162,20 +162,20 @@ export default function Form15() {
             <table className="w-full text-sm border-collapse min-w-[800px]">
               <thead>
                 <tr className="bg-slate-50 border-y border-slate-200">
-                  <th className="p-2 text-left font-medium text-slate-600 w-1/3" rowSpan={2}>වෙළඳාම් බඩු සීමාව</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24" rowSpan={2}>අදාල බඩු<br/>ගත් අංකය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24" rowSpan={2}>ඉතිරි සහල්<br/>ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>පෙර දිනට</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>දිනට</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>අදට මුළු එකතුව</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white w-1/3" rowSpan={2}>වෙළඳාම් බඩු සීමාව</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24" rowSpan={2}>අදාල බඩු<br/>ගත් අංකය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24" rowSpan={2}>ඉතිරි සහල්<br/>ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>පෙර දිනට</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>දිනට</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>අදට මුළු එකතුව</th>
                 </tr>
                 <tr className="bg-slate-50 border-b border-slate-200">
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-20">රු.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-12">ශ.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-20">රු.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-12">ශ.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-20">රු.</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-12">ශ.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-20">රු.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-12">ශ.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-20">රු.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-12">ශ.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-20">රු.</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-12">ශ.</th>
                 </tr>
               </thead>
               <tbody>

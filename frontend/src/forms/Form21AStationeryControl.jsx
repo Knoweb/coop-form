@@ -121,15 +121,15 @@ export default function Form21AStationeryControl() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">එකක් ගත් මිල (Unit Cost)</label>
-                  <input type="number" step="0.01" name="unitCost" value={formData.unitCost} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="number" step="0.01" name="unitCost" value={formData.unitCost} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">වර්ගය (Item Type)</label>
-                  <input type="text" name="itemType" value={formData.itemType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="itemType" value={formData.itemType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">පොත් අංකයට (Book No)</label>
-                  <input type="text" name="bookNo" value={formData.bookNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="bookNo" value={formData.bookNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
@@ -208,7 +208,7 @@ export default function Form21AStationeryControl() {
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>
@@ -250,7 +250,7 @@ export default function Form21AStationeryControl() {
                 <th className="px-2 py-2 border-r border-slate-200 text-right text-red-700">ප්‍රමාණය<br/>(Qty)</th>
                 <th className="px-2 py-2 border-r border-slate-200 text-right text-red-700 font-bold">වටිනාකම<br/>(Value)</th>
                 <th className="px-2 py-2 border-r border-slate-200 text-center">අත්සන<br/>(Signature)</th>
-                <th className="px-2 py-2 text-right font-bold text-slate-800">ඉතිරිය<br/>(Balance)</th>
+                <th className="px-2 py-2 text-right font-bold bg-slncc-blue text-white">ඉතිරිය<br/>(Balance)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">

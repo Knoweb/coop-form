@@ -155,7 +155,7 @@ export default function F29() {
       </div>
       <button
         onClick={() => addRow(setter)}
-        className="print:hidden w-full py-1.5 text-xs font-semibold text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 flex items-center justify-center gap-1 transition-colors border-t-2 border-dashed border-slate-300 bg-slate-50/50"
+        className="print:hidden w-full py-1.5 text-xs font-semibold text-slate-500 hover:text-slncc-red hover:bg-slncc-gray flex items-center justify-center gap-1 transition-colors border-t-2 border-dashed border-slate-300 bg-slate-50/50"
       >
         <Plus className="w-4 h-4" /> Add Row
       </button>
@@ -180,7 +180,7 @@ export default function F29() {
             <button
               onClick={handleSaveForm}
               disabled={isSubmitting}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
+              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-slncc-red hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-gray-200 hover:shadow-lg hover:-translate-y-0.5"
             >
               <Save className="w-5 h-5" />
               <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
@@ -307,7 +307,7 @@ export default function F29() {
                     </tbody>
                   </table>
                 </div>
-                <button onClick={() => addRow(setOvertime)} className="print:hidden w-full py-1.5 text-xs font-semibold text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 flex items-center justify-center gap-1 transition-colors border-t-2 border-dashed border-slate-300 bg-slate-50/50">
+                <button onClick={() => addRow(setOvertime)} className="print:hidden w-full py-1.5 text-xs font-semibold text-slate-500 hover:text-slncc-red hover:bg-slncc-gray flex items-center justify-center gap-1 transition-colors border-t-2 border-dashed border-slate-300 bg-slate-50/50">
                   <Plus className="w-4 h-4" /> Add Row
                 </button>
               </div>

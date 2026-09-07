@@ -123,23 +123,23 @@ export default function Form20WholesaleAnalysis() {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">දිනය (Date)</label>
-                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">තොග ගබඩාව (Store Name)</label>
-                  <input type="text" name="storeName" value={formData.storeName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="storeName" value={formData.storeName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">වෙළඳ (Buyer/Trade)</label>
-                  <input type="text" name="buyerName" value={formData.buyerName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="buyerName" value={formData.buyerName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">බිල්පත් අංකය (Bill No)</label>
-                  <input type="text" name="billNo" value={formData.billNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="billNo" value={formData.billNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">පොතේ පිටුව (Ledger Page)</label>
-                  <input type="text" name="ledgerPage" value={formData.ledgerPage} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="ledgerPage" value={formData.ledgerPage} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
@@ -247,7 +247,7 @@ export default function Form20WholesaleAnalysis() {
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>

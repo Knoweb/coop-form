@@ -114,22 +114,22 @@ export default function Form19GoodsReturn() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ගබඩාවෙන් (From Store)</label>
-                  <input type="text" name="fromStore" value={formData.fromStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="fromStore" value={formData.fromStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ගබඩාවට (To Store)</label>
-                  <input type="text" name="toStore" value={formData.toStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="toStore" value={formData.toStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ආපසු යැවීම/එවීම (Type)</label>
-                  <select name="transactionType" value={formData.transactionType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                  <select name="transactionType" value={formData.transactionType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none">
                       <option value="ආපසු යැවීම (Return)">ආපසු යැවීම (Return)</option>
                       <option value="ආපසු එවීම (Dispatch)">ආපසු එවීම (Dispatch)</option>
                   </select>
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">දිනය (Date)</label>
-                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
@@ -137,19 +137,19 @@ export default function Form19GoodsReturn() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">අනු අංකය (Serial No)</label>
-                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ලැබුණු දින/ලිපිනය (Rec. Date/Ref)</label>
-                  <input type="text" name="receivedDateRef" value={formData.receivedDateRef} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="receivedDateRef" value={formData.receivedDateRef} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">විස්තරය (Description)</label>
-                  <input type="text" name="description" value={formData.description} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="description" value={formData.description} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ප්‍රමාණය (Quantity)</label>
-                  <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
             </div>
 
@@ -178,11 +178,11 @@ export default function Form19GoodsReturn() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-1">මාරුකළ අංකය (Transfer No)</label>
-                            <input type="text" name="transferNo" value={formData.transferNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <input type="text" name="transferNo" value={formData.transferNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-1">සටහන් කළ පිටුව (Page Noted)</label>
-                            <input type="text" name="pageNoted" value={formData.pageNoted} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                            <input type="text" name="pageNoted" value={formData.pageNoted} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@ export default function Form19GoodsReturn() {
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>

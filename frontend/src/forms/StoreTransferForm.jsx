@@ -120,11 +120,11 @@ export default function StoreTransferForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">මාරු කරන ගබඩාව (From Store)</label>
-                  <input type="text" name="fromStore" value={formData.fromStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="fromStore" value={formData.fromStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ලබන ගබඩාව (To Store)</label>
-                  <input type="text" name="toStore" value={formData.toStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="toStore" value={formData.toStore} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
             </div>
 
@@ -132,15 +132,15 @@ export default function StoreTransferForm() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                 <div className="md:col-span-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">අනු අංකය (Serial No)</label>
-                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div className="md:col-span-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">විස්තරය (Description)</label>
-                  <input type="text" name="description" value={formData.description} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="description" value={formData.description} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div className="md:col-span-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ප්‍රමාණය (Quantity)</label>
-                  <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="number" step="0.01" name="quantity" value={formData.quantity} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
             </div>
 
@@ -182,22 +182,22 @@ export default function StoreTransferForm() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                 <div className="md:col-span-1">
                     <label className="block text-sm font-semibold text-slate-700 mb-2">ලැබුම්කරු (Receiver Name)</label>
-                    <input type="text" name="receiverName" value={formData.receiverName} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                    <input type="text" name="receiverName" value={formData.receiverName} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                 </div>
                 <div className="md:col-span-1">
                     <label className="block text-sm font-medium text-slate-700 mb-1">බේරුම් අංකය (Settlement No)</label>
-                    <input type="text" name="settlementNo" value={formData.settlementNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                    <input type="text" name="settlementNo" value={formData.settlementNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                 </div>
                 <div className="md:col-span-1">
                     <label className="block text-sm font-medium text-slate-700 mb-1">ස්ථාන මාරු පිටුව (Transfer Page)</label>
-                    <input type="text" name="transferPage" value={formData.transferPage} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                    <input type="text" name="transferPage" value={formData.transferPage} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                 </div>
             </div>
 
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>

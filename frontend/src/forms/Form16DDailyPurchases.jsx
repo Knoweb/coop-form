@@ -103,18 +103,18 @@ export default function Form16DDailyPurchases() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">දිනය (Date)</label>
-                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">ගබඩාව (Store Type)</label>
-                  <select name="storeType" value={formData.storeType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                  <select name="storeType" value={formData.storeType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none">
                     <option value="WHOLESALE">තොග ගබඩාව (Wholesale)</option>
                     <option value="RETAIL">සිල්ලර ගබඩාව (Retail)</option>
                   </select>
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">වර්ගය (Transaction Type)</label>
-                  <select name="transactionType" value={formData.transactionType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                  <select name="transactionType" value={formData.transactionType} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none">
                     <option value="PURCHASE">ගැනුම් (Purchase)</option>
                     <option value="RETURN">ආපසු යැවීම් (Return)</option>
                   </select>
@@ -125,15 +125,15 @@ export default function Form16DDailyPurchases() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">අනු අංකය (Serial No)</label>
-                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">තොග භාරකරුගේ නම (Store Keeper)</label>
-                  <input type="text" name="storeKeeperName" value={formData.storeKeeperName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="storeKeeperName" value={formData.storeKeeperName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">බිල් අංකය (Bill No)</label>
-                  <input type="text" name="billNo" value={formData.billNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" name="billNo" value={formData.billNo} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
@@ -141,18 +141,18 @@ export default function Form16DDailyPurchases() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">තොගය ගත් මිල රු. (Buying Price)</label>
-                  <input type="number" step="0.01" name="buyingPrice" value={formData.buyingPrice} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="number" step="0.01" name="buyingPrice" value={formData.buyingPrice} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">තොගය විකුණුම් මිල රු. (Selling Price)</label>
-                  <input type="number" step="0.01" name="sellingPrice" value={formData.sellingPrice} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="number" step="0.01" name="sellingPrice" value={formData.sellingPrice} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>

@@ -91,7 +91,7 @@ export default function Form4() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Enter Details (විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -150,7 +150,7 @@ export default function Form4() {
                 </div>
               ))}
             </div>
-            <button onClick={addRecord} className="mt-4 flex items-center gap-2 text-sm text-indigo-600 font-semibold hover:text-indigo-700 p-2 hover:bg-indigo-50 rounded-lg transition-colors">
+            <button onClick={addRecord} className="mt-4 flex items-center gap-2 text-sm text-slncc-red font-semibold hover:text-slncc-blue p-2 hover:bg-slncc-gray rounded-lg transition-colors">
               <PlusCircle className="w-5 h-5" /> Add Row
             </button>
           </div>

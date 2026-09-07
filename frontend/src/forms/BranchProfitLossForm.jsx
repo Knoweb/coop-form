@@ -96,7 +96,7 @@ export default function BranchProfitLossForm() {
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="bg-indigo-500/20 p-2 rounded-lg">
+            <div className="bg-slncc-blue/20 p-2 rounded-lg">
               <FileText className="w-6 h-6 text-indigo-400" />
             </div>
             <div>
@@ -117,7 +117,7 @@ export default function BranchProfitLossForm() {
                   name="branchName"
                   value={formData.branchName}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none"
+                  className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-all outline-none"
                   required
                 />
               </div>
@@ -128,7 +128,7 @@ export default function BranchProfitLossForm() {
                   name="voucherNo"
                   value={formData.voucherNo}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none"
+                  className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-all outline-none"
                   required
                 />
               </div>
@@ -174,7 +174,7 @@ export default function BranchProfitLossForm() {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium"
+              className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium"
             >
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
@@ -201,7 +201,7 @@ export default function BranchProfitLossForm() {
                   <th key={`th-exp-${num}`} className="px-4 py-3 border-b border-slate-200 text-red-700 bg-red-50/50">Exp {num}</th>
                 ))}
                 <th className="px-4 py-3 border-b border-slate-200 text-red-800 bg-red-100 font-bold">Total Expense</th>
-                <th className="px-4 py-3 border-b border-slate-200 text-indigo-700 bg-indigo-50 font-bold">Net Profit</th>
+                <th className="px-4 py-3 border-b border-slate-200 text-slncc-blue bg-slncc-gray font-bold">Net Profit</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
@@ -228,7 +228,7 @@ export default function BranchProfitLossForm() {
                     {record.totalExpense?.toFixed(2) || '0.00'}
                   </td>
 
-                  <td className="px-4 py-3 font-bold text-indigo-700 bg-indigo-50/50 text-right whitespace-nowrap">
+                  <td className="px-4 py-3 font-bold text-slncc-blue bg-slncc-gray text-right whitespace-nowrap">
                     {record.netProfit?.toFixed(2) || '0.00'}
                   </td>
                 </tr>

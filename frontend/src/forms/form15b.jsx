@@ -132,11 +132,11 @@ export default function Form15B() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-50 border-t border-slate-200">
-                  <th className="p-2 text-left font-medium text-slate-600 w-48" rowSpan={2}>විස්තර</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24" rowSpan={2}>අදාල<br/>අංකය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l-2 border-slate-300" colSpan={10}>පෙර දිනට</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l-2 border-slate-300" colSpan={10}>දිනට</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l-2 border-slate-300" colSpan={10}>දිනට මුළු එකතුව</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white w-48" rowSpan={2}>විස්තර</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24" rowSpan={2}>අදාල<br/>අංකය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l-2 border-slate-300" colSpan={10}>පෙර දිනට</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l-2 border-slate-300" colSpan={10}>දිනට</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l-2 border-slate-300" colSpan={10}>දිනට මුළු එකතුව</th>
                 </tr>
                 <tr className="bg-slate-50 border-b border-slate-200">
                   {['prev', 'today', 'total'].map((section, si) => (

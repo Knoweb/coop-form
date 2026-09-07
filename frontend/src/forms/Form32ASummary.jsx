@@ -100,7 +100,7 @@ export default function Form32ASummary() {
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="bg-indigo-500/20 p-2 rounded-lg">
+            <div className="bg-slncc-blue/20 p-2 rounded-lg">
               <FileText className="w-6 h-6 text-indigo-400" />
             </div>
             <div>
@@ -116,11 +116,11 @@ export default function Form32ASummary() {
               <h3 className="text-sm font-semibold text-slate-700 border-b border-slate-200 pb-2 mb-4">Category Selection</h3>
               <div className="flex space-x-6">
                 <label className="flex items-center space-x-2 cursor-pointer">
-                  <input type="radio" name="recordCategory" value="WHOLESALE" checked={formData.recordCategory === 'WHOLESALE'} onChange={handleChange} className="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" />
+                  <input type="radio" name="recordCategory" value="WHOLESALE" checked={formData.recordCategory === 'WHOLESALE'} onChange={handleChange} className="w-4 h-4 text-slncc-red focus:ring-slncc-blue border-gray-300" />
                   <span className="text-sm font-medium text-slate-700">තොග (Wholesale)</span>
                 </label>
                 <label className="flex items-center space-x-2 cursor-pointer">
-                  <input type="radio" name="recordCategory" value="RETAIL" checked={formData.recordCategory === 'RETAIL'} onChange={handleChange} className="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" />
+                  <input type="radio" name="recordCategory" value="RETAIL" checked={formData.recordCategory === 'RETAIL'} onChange={handleChange} className="w-4 h-4 text-slncc-red focus:ring-slncc-blue border-gray-300" />
                   <span className="text-sm font-medium text-slate-700">සිල්ලර (Retail)</span>
                 </label>
               </div>
@@ -131,21 +131,21 @@ export default function Form32ASummary() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">Serial No.</label>
-                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="serialNo" value={formData.serialNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">අනුමත කල ද.අ. (Approved Ref)</label>
-                  <input type="text" name="ref1" value={formData.ref1} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="ref1" value={formData.ref1} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">ගිණුම් ද.අ. (Account Ref)</label>
-                  <input type="text" name="ref2" value={formData.ref2} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="ref2" value={formData.ref2} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                 </div>
               </div>
             </div>
 
-            <div className="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
-              <h3 className="text-sm font-semibold text-indigo-800 border-b border-indigo-200 pb-2 mb-4">Values</h3>
+            <div className="bg-slncc-gray p-4 rounded-xl border border-indigo-100">
+              <h3 className="text-sm font-semibold text-slncc-blue border-b border-indigo-200 pb-2 mb-4">Values</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 {[
                   "භාණ්ඩ ලැබුම් පත (Goods Receipt)",
@@ -162,14 +162,14 @@ export default function Form32ASummary() {
                   const num = index + 1;
                   return (
                     <div key={`val-${num}`}>
-                      <label className="block text-xs font-medium text-indigo-800 mb-1">{label}</label>
+                      <label className="block text-xs font-medium text-slncc-blue mb-1">{label}</label>
                       <input
                         type="number"
                         step="0.01"
                         name={`val${num}`}
                         value={formData[`val${num}`]}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                        className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none"
                       />
                     </div>
                   );
@@ -179,12 +179,12 @@ export default function Form32ASummary() {
             
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
                <h3 className="text-sm font-semibold text-slate-700 border-b border-slate-200 pb-2 mb-4">Remarks</h3>
-               <textarea name="remarks" value={formData.remarks} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" rows="2"></textarea>
+               <textarea name="remarks" value={formData.remarks} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" rows="2"></textarea>
             </div>
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>
@@ -195,7 +195,7 @@ export default function Form32ASummary() {
       {/* WHOLESALE TABLE */}
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center space-x-2">
-           <div className="w-3 h-3 rounded-full bg-indigo-500"></div>
+           <div className="w-3 h-3 rounded-full bg-slncc-blue"></div>
            <h3 className="font-bold text-slate-800">තොග (Wholesale) Records</h3>
         </div>
         <div className="overflow-x-auto">
@@ -218,9 +218,9 @@ export default function Form32ASummary() {
                   "ආපසු යැවීම් (Returns)",
                   "මිල අඩුවීම (Price Decrease)"
                 ].map((label, index) => (
-                  <th key={`th-val-${index + 1}`} className="px-4 py-3 whitespace-nowrap bg-indigo-50/50">{label}</th>
+                  <th key={`th-val-${index + 1}`} className="px-4 py-3 whitespace-nowrap bg-slncc-gray">{label}</th>
                 ))}
-                <th className="px-4 py-3 text-indigo-700 bg-indigo-100 font-bold whitespace-nowrap">Total</th>
+                <th className="px-4 py-3 text-slncc-blue bg-slncc-gray font-bold whitespace-nowrap">Total</th>
                 <th className="px-4 py-3">Remarks</th>
               </tr>
             </thead>
@@ -233,12 +233,12 @@ export default function Form32ASummary() {
                   <td className="px-4 py-3 text-slate-700 whitespace-nowrap">{record.ref2}</td>
                   
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
-                    <td key={`td-val-${num}`} className="px-4 py-3 text-slate-600 bg-indigo-50/10 text-right">
+                    <td key={`td-val-${num}`} className="px-4 py-3 text-slate-600 bg-slncc-gray/10 text-right">
                       {record[`val${num}`]?.toFixed(2) || '0.00'}
                     </td>
                   ))}
                   
-                  <td className="px-4 py-3 font-bold text-indigo-600 bg-indigo-50 text-right whitespace-nowrap">
+                  <td className="px-4 py-3 font-bold text-slncc-red bg-slncc-gray text-right whitespace-nowrap">
                     {record.total?.toFixed(2) || '0.00'}
                   </td>
                   <td className="px-4 py-3 text-slate-600 whitespace-nowrap">{record.remarks}</td>
@@ -282,9 +282,9 @@ export default function Form32ASummary() {
                   "ආපසු යැවීම් (Returns)",
                   "මිල අඩුවීම (Price Decrease)"
                 ].map((label, index) => (
-                  <th key={`th-val-${index + 1}`} className="px-4 py-3 whitespace-nowrap bg-indigo-50/50">{label}</th>
+                  <th key={`th-val-${index + 1}`} className="px-4 py-3 whitespace-nowrap bg-slncc-gray">{label}</th>
                 ))}
-                <th className="px-4 py-3 text-indigo-700 bg-indigo-100 font-bold whitespace-nowrap">Total</th>
+                <th className="px-4 py-3 text-slncc-blue bg-slncc-gray font-bold whitespace-nowrap">Total</th>
                 <th className="px-4 py-3">Remarks</th>
               </tr>
             </thead>
@@ -297,12 +297,12 @@ export default function Form32ASummary() {
                   <td className="px-4 py-3 text-slate-700 whitespace-nowrap">{record.ref2}</td>
                   
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
-                    <td key={`td-val-${num}`} className="px-4 py-3 text-slate-600 bg-indigo-50/10 text-right">
+                    <td key={`td-val-${num}`} className="px-4 py-3 text-slate-600 bg-slncc-gray/10 text-right">
                       {record[`val${num}`]?.toFixed(2) || '0.00'}
                     </td>
                   ))}
                   
-                  <td className="px-4 py-3 font-bold text-indigo-600 bg-indigo-50 text-right whitespace-nowrap">
+                  <td className="px-4 py-3 font-bold text-slncc-red bg-slncc-gray text-right whitespace-nowrap">
                     {record.total?.toFixed(2) || '0.00'}
                   </td>
                   <td className="px-4 py-3 text-slate-600 whitespace-nowrap">{record.remarks}</td>

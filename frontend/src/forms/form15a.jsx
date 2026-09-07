@@ -105,9 +105,9 @@ export default function Form15A() {
                   {['g1', 'g2', 'g3'].map((g, i) => (
                     <React.Fragment key={g}>
                       <th className={`p-2 text-center font-medium text-slate-600 ${i > 0 ? 'border-l-2 border-slate-300' : 'border-l border-slate-200'}`}>ග/කු<br/>අංකෙ<br/>ඉ/ගෙ</th>
-                      <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200">ප්‍රමාණය</th>
-                      <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200">වටිනාකම</th>
-                      <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200">අත්: කාරම්</th>
+                      <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200">ප්‍රමාණය</th>
+                      <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200">වටිනාකම</th>
+                      <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200">අත්: කාරම්</th>
                     </React.Fragment>
                   ))}
                 </tr>
@@ -145,19 +145,19 @@ export default function Form15A() {
             <table className="w-full text-sm border-collapse min-w-[800px]">
               <thead>
                 <tr className="bg-slate-50 border-y border-slate-200">
-                  <th className="p-2 text-left font-medium text-slate-600 w-1/4" rowSpan={2}>විස්තර</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-20" rowSpan={2}>කු:අංකය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>පෙර දිනට</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>දිනට</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200" colSpan={2}>දිනට මුළු එකතුව</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white w-1/4" rowSpan={2}>විස්තර</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-20" rowSpan={2}>කු:අංකය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>පෙර දිනට</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>දිනට</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200" colSpan={2}>දිනට මුළු එකතුව</th>
                 </tr>
                 <tr className="bg-slate-50 border-b border-slate-200">
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">වටිනාකම</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">වටිනාකම</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-l border-slate-200 w-24">වටිනාකම</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">වටිනාකම</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">වටිනාකම</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-l border-slate-200 w-24">වටිනාකම</th>
                 </tr>
               </thead>
               <tbody>

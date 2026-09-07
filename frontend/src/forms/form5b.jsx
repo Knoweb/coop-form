@@ -81,7 +81,7 @@ export default function Form5B() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Enter Details (විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -90,15 +90,15 @@ export default function Form5B() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Head (ශීර්ෂය)</label>
-                <input type="text" name="head" value={formData.head} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="head" value={formData.head} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Sub-head (උප ශීර්ෂය)</label>
-                <input type="text" name="subHead" value={formData.subHead} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="subHead" value={formData.subHead} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">No (අංක)</label>
-                <input type="text" name="no" value={formData.no} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="no" value={formData.no} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
             </div>
 
@@ -112,23 +112,23 @@ export default function Form5B() {
                   <div className="grid grid-cols-2 md:grid-cols-6 gap-4 w-full">
                     <div className="col-span-2 md:col-span-1 space-y-1">
                       <label className="text-xs font-semibold text-slate-500 uppercase">Date (දිනය)</label>
-                      <input type="date" value={rec.date} onChange={e => handleRecordChange(index, 'date', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+                      <input type="date" value={rec.date} onChange={e => handleRecordChange(index, 'date', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-slncc-blue focus:ring-1 focus:ring-slncc-blue" />
                     </div>
                     <div className="col-span-2 md:col-span-2 space-y-1">
                       <label className="text-xs font-semibold text-slate-500 uppercase">Description (විස්තර)</label>
-                      <input type="text" value={rec.description} onChange={e => handleRecordChange(index, 'description', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+                      <input type="text" value={rec.description} onChange={e => handleRecordChange(index, 'description', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-slncc-blue focus:ring-1 focus:ring-slncc-blue" />
                     </div>
                     <div className="col-span-2 md:col-span-1 space-y-1">
                       <label className="text-xs font-semibold text-slate-500 uppercase">Account (ගිණුම)</label>
-                      <input type="text" value={rec.account} onChange={e => handleRecordChange(index, 'account', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+                      <input type="text" value={rec.account} onChange={e => handleRecordChange(index, 'account', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-slncc-blue focus:ring-1 focus:ring-slncc-blue" />
                     </div>
                     <div className="col-span-1 space-y-1">
                       <label className="text-xs font-semibold text-slate-500 uppercase">Rs (රු)</label>
-                      <input type="number" value={rec.rs} onChange={e => handleRecordChange(index, 'rs', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 font-mono" />
+                      <input type="number" value={rec.rs} onChange={e => handleRecordChange(index, 'rs', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-slncc-blue focus:ring-1 focus:ring-slncc-blue font-mono" />
                     </div>
                     <div className="col-span-1 space-y-1">
                       <label className="text-xs font-semibold text-slate-500 uppercase">Cts (ශ)</label>
-                      <input type="number" value={rec.cts} onChange={e => handleRecordChange(index, 'cts', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 font-mono" />
+                      <input type="number" value={rec.cts} onChange={e => handleRecordChange(index, 'cts', e.target.value)} className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:border-slncc-blue focus:ring-1 focus:ring-slncc-blue font-mono" />
                     </div>
                   </div>
                   {records.length > 1 && (
@@ -140,18 +140,18 @@ export default function Form5B() {
               ))}
             </div>
             
-            <button onClick={addRecord} className="mt-4 flex items-center gap-2 text-sm text-indigo-600 font-semibold hover:text-indigo-700 p-2 hover:bg-indigo-50 rounded-lg transition-colors">
+            <button onClick={addRecord} className="mt-4 flex items-center gap-2 text-sm text-slncc-red font-semibold hover:text-slncc-blue p-2 hover:bg-slncc-gray rounded-lg transition-colors">
               <PlusCircle className="w-5 h-5" /> Add Row
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-8 border-t border-slate-100">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Approved By (අනුමත කළේ)</label>
-                <input type="text" name="approvedBy" value={formData.approvedBy} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="approvedBy" value={formData.approvedBy} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Prepared By (පිළියෙල කළේ)</label>
-                <input type="text" name="preparedBy" value={formData.preparedBy} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="preparedBy" value={formData.preparedBy} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
             </div>
           </div>
@@ -171,11 +171,11 @@ export default function Form5B() {
             <div className="w-1/3 space-y-1 mt-4">
               <div className="flex items-end">
                 <span className="w-24 font-bold">ශීර්ෂය</span>
-                <span className="flex-1 font-mono text-indigo-900 print:text-black leading-none">{formData.head }</span>
+                <span className="flex-1 font-mono text-slncc-blue print:text-black leading-none">{formData.head }</span>
               </div>
               <div className="flex items-end mt-2">
                 <span className="w-24 font-bold">උප ශීර්ෂය</span>
-                <span className="flex-1 font-mono text-indigo-900 print:text-black leading-none">{formData.subHead }</span>
+                <span className="flex-1 font-mono text-slncc-blue print:text-black leading-none">{formData.subHead }</span>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export default function Form5B() {
             <div className="w-1/3 flex justify-end mt-4">
               <div className="flex items-end">
                 <span className="font-bold mr-4">අංක</span>
-                <span className="w-24 border-b border-dotted border-slate-600 text-center font-mono text-indigo-900 print:text-black">{formData.no }</span>
+                <span className="w-24 border-b border-dotted border-slate-600 text-center font-mono text-slncc-blue print:text-black">{formData.no }</span>
               </div>
             </div>
           </div>

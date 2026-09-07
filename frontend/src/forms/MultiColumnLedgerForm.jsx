@@ -36,7 +36,7 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors"
     />
   </div>
 );
@@ -135,7 +135,7 @@ export default function MultiColumnLedgerForm() {
           
           {/* General Details */}
           <div>
-            <h3 className="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-100 pb-2">General Details (සාමාන්‍ය විස්තර)</h3>
+            <h3 className="text-lg font-bold text-slncc-blue mb-4 border-b border-indigo-100 pb-2">General Details (සාමාන්‍ය විස්තර)</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <InputField value={formData?.date || ''} onChange={handleChange} label="Date" sinhalaLabel="දිනය" name="date" type="date" />
               <InputField value={formData?.description || ''} onChange={handleChange} label="Description" sinhalaLabel="විස්තරය" name="description" />
@@ -145,7 +145,7 @@ export default function MultiColumnLedgerForm() {
 
           {/* Distribution Categories */}
           <div>
-            <h3 className="text-lg font-bold text-indigo-700 mb-4 border-b border-indigo-100 pb-2">Distribution Analysis (බෙදාහැරීමේ එකතුව)</h3>
+            <h3 className="text-lg font-bold text-slncc-blue mb-4 border-b border-indigo-100 pb-2">Distribution Analysis (බෙදාහැරීමේ එකතුව)</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {CATEGORIES.map(cat => (
                 <InputField 
@@ -163,7 +163,7 @@ export default function MultiColumnLedgerForm() {
           <div className="flex justify-end pt-4 border-t border-slate-100">
             <button 
               type="submit"
-              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-50 font-bold rounded-xl transition-colors"
+              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-slncc-blue hover:bg-slncc-gray font-bold rounded-xl transition-colors"
             >
               <Plus className="w-5 h-5" />
               <span>Add Entry</span>
@@ -186,14 +186,14 @@ export default function MultiColumnLedgerForm() {
                 <th rowSpan="2" className="border border-slate-200 p-2 whitespace-nowrap">Description<br/><span className="text-[10px] font-normal normal-case">විස්තරය</span></th>
                 <th rowSpan="2" className="border border-slate-200 p-2 whitespace-nowrap">Ref No.<br/><span className="text-[10px] font-normal normal-case">සඳහන් අංකය</span></th>
                 
-                <th colSpan="8" className="border border-slate-200 p-2 bg-indigo-50/50">Distribution Analysis (බෙදාහැරීමේ එකතුව)</th>
+                <th colSpan="8" className="border border-slate-200 p-2 bg-slncc-gray">Distribution Analysis (බෙදාහැරීමේ එකතුව)</th>
                 
-                <th rowSpan="2" className="border border-slate-200 p-2 whitespace-nowrap bg-indigo-50">Total<br/><span className="text-[10px] font-normal normal-case">එකතුව</span></th>
+                <th rowSpan="2" className="border border-slate-200 p-2 whitespace-nowrap bg-slncc-gray">Total<br/><span className="text-[10px] font-normal normal-case">එකතුව</span></th>
                 <th rowSpan="2" className="border border-slate-200 p-2">Actions</th>
               </tr>
               <tr>
                 {CATEGORIES.map(cat => (
-                  <th key={cat.key} className="border border-slate-200 p-2 whitespace-nowrap font-medium bg-indigo-50/20 text-[10px]">
+                  <th key={cat.key} className="border border-slate-200 p-2 whitespace-nowrap font-medium bg-slncc-gray/20 text-[10px]">
                     {cat.label}
                   </th>
                 ))}
@@ -219,7 +219,7 @@ export default function MultiColumnLedgerForm() {
                     </td>
                   ))}
                   
-                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-indigo-600 bg-indigo-50/30">{record.total?.toFixed(2)}</td>
+                  <td className="border border-slate-200 px-2 py-1.5 text-right font-bold text-slncc-red bg-slncc-gray/30">{record.total?.toFixed(2)}</td>
                   
                   <td className="border border-slate-200 p-2 text-center">
                     <button

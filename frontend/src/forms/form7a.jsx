@@ -67,7 +67,7 @@ export default function Form7A() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Enter Details (විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -76,7 +76,7 @@ export default function Form7A() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="space-y-2 lg:col-span-4">
                 <label className="text-sm font-semibold text-slate-600">Society Name (සමූපකාර සමිතියේ නම)</label>
-                <input type="text" name="societyName" value={formData.societyName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="societyName" value={formData.societyName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               
               {/* Receipts Group */}
@@ -85,43 +85,43 @@ export default function Form7A() {
               </div>
               <div className="space-y-2 lg:col-span-2">
                 <label className="text-sm font-semibold text-slate-600">Branch Name (සිල්ලර ප්‍රාදේශිකයේ නම)</label>
-                <input type="text" name="branchName" value={formData.branchName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="branchName" value={formData.branchName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Sales (විකුණුම්)</label>
-                <input type="number" name="sales" value={formData.sales} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="sales" value={formData.sales} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Rice Trade (හාල් වෙළඳාම)</label>
-                <input type="number" name="rice" value={formData.rice} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="rice" value={formData.rice} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Fertilizer (පොහොර වෙළඳාම)</label>
-                <input type="number" name="fert" value={formData.fert} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="fert" value={formData.fert} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Member Dep. (සාමාජික තැන්පත්)</label>
-                <input type="number" name="memDep" value={formData.memDep} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="memDep" value={formData.memDep} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Non-Mem Dep. (සාමාජික නොවන තැන්පත්)</label>
-                <input type="number" name="nonMemDep" value={formData.nonMemDep} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="nonMemDep" value={formData.nonMemDep} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Member Shares (සාමාජික කොටස්)</label>
-                <input type="number" name="memShare" value={formData.memShare} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="memShare" value={formData.memShare} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Member Loans (සාමාජික ණය)</label>
-                <input type="number" name="memLoan" value={formData.memLoan} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="memLoan" value={formData.memLoan} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Member Interest (සාමාජික පොලී)</label>
-                <input type="number" name="memInt" value={formData.memInt} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="memInt" value={formData.memInt} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Other (වෙනත්)</label>
-                <input type="number" name="other" value={formData.other} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="other" value={formData.other} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
               {/* Payments Group */}
@@ -130,15 +130,15 @@ export default function Form7A() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Dep. Refunds (ස: තැ: ආපසු ගෙවීම්)</label>
-                <input type="number" name="depRef" value={formData.depRef} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="depRef" value={formData.depRef} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Member Refunds (සාමාජික ආපසු ගෙවීම්)</label>
-                <input type="number" name="memRef" value={formData.memRef} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="memRef" value={formData.memRef} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Balance in Hand (අත ඉතිරි)</label>
-                <input type="number" name="balance" value={formData.balance} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="number" name="balance" value={formData.balance} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
 
             </div>
@@ -153,7 +153,7 @@ export default function Form7A() {
           <div className="flex justify-between items-start mb-6">
             <div className="flex-1 flex items-end">
               <span className="font-bold mr-2">සීමාසහිත</span>
-              <span className="flex-1 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black text-center pb-1">
+              <span className="flex-1 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black text-center pb-1">
                 {formData.societyName || 'මහනුවර'}
               </span>
               <span className="font-bold ml-2">විවිධ සේවා සමූපකාර සමිතිය</span>

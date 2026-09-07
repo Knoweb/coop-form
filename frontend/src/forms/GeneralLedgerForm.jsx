@@ -22,7 +22,7 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors"
     />
   </div>
 );
@@ -143,7 +143,7 @@ export default function GeneralLedgerForm() {
           <div className="flex justify-end pt-4 border-t border-slate-100">
             <button 
               type="submit"
-              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-50 font-bold rounded-xl transition-colors"
+              className="flex items-center space-x-2 px-6 py-2 border-2 border-indigo-600 text-slncc-blue hover:bg-slncc-gray font-bold rounded-xl transition-colors"
             >
               <Plus className="w-5 h-5" />
               <span>Add Entry</span>

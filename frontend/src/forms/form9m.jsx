@@ -293,9 +293,9 @@ export default function Form9M() {
             <tr>
               {Array(15).fill(null).map((_, i) => (
                 <React.Fragment key={i}>
-                  <th className="border border-slate-300 p-1 font-medium w-8 text-slate-500">උ</th>
-                  <th className="border border-slate-300 p-1 font-medium w-8 text-slate-500">ස</th>
-                  <th className="border border-slate-300 p-1 font-medium w-10 text-slate-700 leading-tight">ආ<br/>පසු</th>
+                  <th className="border border-slate-300 p-1 font-medium w-8 bg-slncc-blue text-white">උ</th>
+                  <th className="border border-slate-300 p-1 font-medium w-8 bg-slncc-blue text-white">ස</th>
+                  <th className="border border-slate-300 p-1 font-medium w-10 bg-slncc-blue text-white leading-tight">ආ<br/>පසු</th>
                 </React.Fragment>
               ))}
               <th className="border border-slate-300 p-1 font-bold bg-blue-50">උ</th>

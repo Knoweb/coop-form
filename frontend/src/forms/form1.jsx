@@ -129,7 +129,7 @@ export default function Form1() {
       <div className="w-full mx-auto space-y-8">
         
         <header className="flex items-center space-x-3 mb-8">
-          <div className="p-3 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-200">
+          <div className="p-3 bg-slncc-red rounded-xl shadow-lg shadow-gray-200">
             <LayoutList className="w-8 h-8 text-white" />
           </div>
           <div>
@@ -143,7 +143,7 @@ export default function Form1() {
           <div className="p-6 md:p-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-2">
-                <PlusCircle className="w-5 h-5 text-indigo-500" />
+                <PlusCircle className="w-5 h-5 text-slncc-blue" />
                 <h2 className="text-xl font-bold text-slate-800">New Entry (නව ඇතුළත් කිරීම)</h2>
               </div>
               <div className="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider border border-slate-200 shadow-sm">
@@ -161,14 +161,14 @@ export default function Form1() {
                     <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
                   </label>
                   <input required type="date" name="date" value={formData.date} onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <User className="w-4 h-4 text-slate-400" /> Signature (කෙටි අත්සන)
                   </label>
                   <input required type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="E.g., A.B.C."
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
 
                 <div className="space-y-2 xl:col-span-2">
@@ -176,7 +176,7 @@ export default function Form1() {
                     <FileText className="w-4 h-4 text-slate-400" /> Description / Details (විස්තරය)
                   </label>
                   <input required type="text" name="description" value={formData.description} onChange={handleInputChange} placeholder="E.g., Office Supplies"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -184,7 +184,7 @@ export default function Form1() {
                     <Tag className="w-4 h-4 text-slate-400" /> Voucher No (වවුචර අංකය)
                   </label>
                   <input type="text" name="voucherNo" value={formData.voucherNo} onChange={handleInputChange} placeholder="E.g., V-001"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -214,7 +214,7 @@ export default function Form1() {
                     <List className="w-4 h-4 text-slate-400" /> Ledger Folio (ලෙජර පිටුව)
                   </label>
                   <input type="text" name="ledgerFolio" value={formData.ledgerFolio} onChange={handleInputChange} placeholder="L.F."
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 shadow-sm" />
                 </div>
               </div>
 
@@ -226,14 +226,14 @@ export default function Form1() {
                     <div key={category.key} className="space-y-1.5">
                       <label className="text-xs font-semibold text-slate-500">{category.label}</label>
                       <input type="number" step="0.01" value={formData.analysis[category.key]} onChange={(e) => handleAnalysisChange(category.key, e.target.value)} placeholder="0.00"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 text-sm" />
+                        className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors duration-200 text-sm" />
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="pt-4 flex justify-end">
-                <button type="submit" className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+                <button type="submit" className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-gray-200 hover:shadow-indigo-300 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
               <Save className="w-5 h-5" />
                   <span>Submit Entry</span>
                 </button>
@@ -247,11 +247,11 @@ export default function Form1() {
         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
           <div className="p-4 md:p-6 border-b border-slate-100 flex items-center justify-between">
              <div className="flex items-center space-x-2">
-                <List className="w-5 h-5 text-indigo-500" />
+                <List className="w-5 h-5 text-slncc-blue" />
                 <h2 className="text-xl font-bold text-slate-800">Petty Cash Register</h2>
              </div>
-             <div className="bg-indigo-50 px-4 py-2 rounded-lg">
-                <span className="text-sm font-bold text-indigo-900">Current Balance: රු. {currentBalance.toFixed(2)}</span>
+             <div className="bg-slncc-gray px-4 py-2 rounded-lg">
+                <span className="text-sm font-bold text-slncc-blue">Current Balance: රු. {currentBalance.toFixed(2)}</span>
              </div>
           </div>
           
@@ -259,14 +259,14 @@ export default function Form1() {
             <table className="w-full min-w-[1000px] text-left border-collapse table-fixed border border-slate-300">
               <thead>
                 <tr className="bg-slate-50">
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Date (දිනය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Signature (කෙටි අත්සන)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Description / Details (විස්තරය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Voucher No (වවුචර අංකය)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words bg-slate-50 border border-slate-300">Date (දිනය)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300">Signature (කෙටි අත්සන)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300">Description / Details (විස්තරය)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300">Voucher No (වවුචර අංකය)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-emerald-600 uppercase break-words bg-emerald-50/50 border border-slate-300">Amount Received (ලැබුණු මුදල) (රු.)</th>
                   <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-rose-600 uppercase break-words bg-rose-50/50 border border-slate-300">Amount Paid (ගෙවූ මුදල) (රු.)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-indigo-600 uppercase break-words bg-indigo-50/50 border border-slate-300">Balance (ශේෂය) (රු.)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Ledger Folio (ලෙජර පිටුව)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slncc-red uppercase break-words bg-slncc-gray border border-slate-300">Balance (ශේෂය) (රු.)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold bg-slncc-blue text-white uppercase break-words border border-slate-300">Ledger Folio (ලෙජර පිටුව)</th>
                   {ANALYSIS_CATEGORIES.map(cat => (
                     <th key={cat.key} className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-400 uppercase break-words bg-slate-50/50 border border-slate-300">{cat.label}</th>
                   ))}
@@ -291,7 +291,7 @@ export default function Form1() {
                       <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300">{record.voucherNo || '-'}</td>
                       <td className="px-1 py-2 text-xs leading-tight font-semibold text-emerald-600 bg-emerald-50/10 break-words border border-slate-300">{record.received > 0 ? record.received.toFixed(2) : '-'}</td>
                       <td className="px-1 py-2 text-xs leading-tight font-semibold text-rose-600 bg-rose-50/10 break-words border border-slate-300">{record.paid > 0 ? record.paid.toFixed(2) : '-'}</td>
-                      <td className="px-1 py-2 text-xs leading-tight font-bold text-indigo-700 bg-indigo-50/10 break-words border border-slate-300">{record.balance.toFixed(2)}</td>
+                      <td className="px-1 py-2 text-xs leading-tight font-bold text-slncc-blue bg-slncc-gray/10 break-words border border-slate-300">{record.balance.toFixed(2)}</td>
                       <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300">{record.ledgerFolio || '-'}</td>
                       {ANALYSIS_CATEGORIES.map(cat => (
                         <td key={cat.key} className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">
@@ -308,7 +308,7 @@ export default function Form1() {
                     <td colSpan="4" className="px-1 py-3 text-xs leading-tight text-slate-800 text-right uppercase break-words bg-slate-100/80 border border-slate-300">Totals:</td>
                     <td className="px-1 py-3 text-xs leading-tight text-emerald-700 break-words border border-slate-300">{totals.received.toFixed(2)}</td>
                     <td className="px-1 py-3 text-xs leading-tight text-rose-700 break-words border border-slate-300">{totals.paid.toFixed(2)}</td>
-                    <td className="px-1 py-3 text-xs leading-tight text-indigo-800 break-words border border-slate-300">{currentBalance.toFixed(2)}</td>
+                    <td className="px-1 py-3 text-xs leading-tight text-slncc-blue break-words border border-slate-300">{currentBalance.toFixed(2)}</td>
                     <td className="px-1 py-3 text-xs leading-tight text-slate-500 break-words border border-slate-300"></td>
                     {ANALYSIS_CATEGORIES.map(cat => (
                       <td key={cat.key} className="px-1 py-3 text-xs leading-tight text-slate-700 break-words border border-slate-300">

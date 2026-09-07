@@ -76,10 +76,10 @@ export default function Form32() {
     <div className="mb-10 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
       <div className="flex justify-between items-center p-4 bg-slate-50 border-b border-slate-200">
         <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-          <div className={`w-2 h-6 rounded-full ${category === 'WHOLESALE' ? 'bg-indigo-500' : 'bg-emerald-500'}`}></div>
+          <div className={`w-2 h-6 rounded-full ${category === 'WHOLESALE' ? 'bg-slncc-blue' : 'bg-emerald-500'}`}></div>
           {title}
         </h3>
-        <button onClick={() => addRow(category)} className="flex items-center space-x-2 px-4 py-2 bg-white text-indigo-600 border border-indigo-100 rounded-lg hover:bg-indigo-50 hover:border-indigo-200 transition-all shadow-sm text-sm font-semibold">
+        <button onClick={() => addRow(category)} className="flex items-center space-x-2 px-4 py-2 bg-white text-slncc-red border border-indigo-100 rounded-lg hover:bg-slncc-gray hover:border-indigo-200 transition-all shadow-sm text-sm font-semibold">
           <Plus className="w-4 h-4" /> <span>නව පේළියක්</span>
         </button>
       </div>
@@ -88,22 +88,22 @@ export default function Form32() {
           <thead className="text-xs text-slate-700 uppercase whitespace-nowrap bg-slate-50 rounded-lg">
             <tr>
               <th className="px-3 py-4 rounded-tl-lg border-b border-slate-200 font-bold" rowSpan="2">ශාඛාවේ නම</th>
-              <th className="px-3 py-2 border-b border-slate-200 text-center bg-indigo-100/50 font-extrabold text-indigo-900 rounded-t-lg mx-1" colSpan="10">හර (Debit)</th>
+              <th className="px-3 py-2 border-b border-slate-200 text-center bg-slncc-gray/50 font-extrabold text-slncc-blue rounded-t-lg mx-1" colSpan="10">හර (Debit)</th>
               <th className="px-3 py-2 border-b border-slate-200 text-center bg-emerald-100/50 font-extrabold text-emerald-900 rounded-t-lg mx-1" colSpan="11">බැර (Credit)</th>
               <th className="px-2 py-4 rounded-tr-lg border-b border-slate-200 text-center" rowSpan="2">ඉවත් කරන්න</th>
             </tr>
             <tr className="text-[11px] font-semibold tracking-wide">
               {/* Debit Columns */}
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">ආරම්භක ඉතිරි</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">ගැනුම්</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">ප්‍රවාහන</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">කුලී</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">ගමන් ගාස්තු</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">වෙනත් 1</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">වෙනත් 2</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">වෙනත් 3</th>
-              <th className="px-2 py-3 border-b border-slate-200 bg-indigo-50/30 text-indigo-800">දළ ලාභය</th>
-              <th className="px-2 py-3 border-b border-slate-200 font-extrabold bg-indigo-100 text-indigo-900 shadow-sm">එකතුව</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">ආරම්භක ඉතිරි</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">ගැනුම්</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">ප්‍රවාහන</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">කුලී</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">ගමන් ගාස්තු</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">වෙනත් 1</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">වෙනත් 2</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">වෙනත් 3</th>
+              <th className="px-2 py-3 border-b border-slate-200 bg-slncc-gray/30 text-slncc-blue">දළ ලාභය</th>
+              <th className="px-2 py-3 border-b border-slate-200 font-extrabold bg-slncc-gray text-slncc-blue shadow-sm">එකතුව</th>
               
               {/* Credit Columns */}
               <th className="px-2 py-3 border-b border-slate-200 bg-emerald-50/30 text-emerald-800">වෙළදාම මුදලට</th>
@@ -123,11 +123,11 @@ export default function Form32() {
             {rows.map((row, index) => (
               <tr key={index} className="border-b border-slate-100 hover:bg-slate-50 transition-colors group">
                 <td className="px-2 py-3">
-                  <input type="text" placeholder="ශාඛාව..." value={row.branchName} onChange={(e) => handleRowChange(index, 'branchName', e.target.value, category)} className="w-32 px-3 py-1.5 text-sm border-0 rounded-lg bg-slate-100 group-hover:bg-white shadow-inner focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-all" />
+                  <input type="text" placeholder="ශාඛාව..." value={row.branchName} onChange={(e) => handleRowChange(index, 'branchName', e.target.value, category)} className="w-32 px-3 py-1.5 text-sm border-0 rounded-lg bg-slate-100 group-hover:bg-white shadow-inner focus:ring-2 focus:ring-inset focus:ring-slncc-blue transition-all" />
                 </td>
                 {['openingStock', 'purchases', 'transport', 'rent', 'traveling', 'customDb1', 'customDb2', 'customDb3', 'grossProfit', 'totalDebit'].map(field => (
-                  <td key={field} className={`px-1 py-3 ${field === 'totalDebit' ? 'bg-indigo-50/30' : ''}`}>
-                    <input type="number" placeholder="0.00" value={row[field]} onChange={(e) => handleRowChange(index, field, e.target.value, category)} className={`w-20 px-2 py-1.5 text-sm border-0 rounded-lg text-right shadow-inner focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-all ${field === 'totalDebit' ? 'font-bold bg-indigo-100 text-indigo-900 placeholder:text-indigo-300' : 'bg-slate-100 group-hover:bg-white text-slate-700'}`} />
+                  <td key={field} className={`px-1 py-3 ${field === 'totalDebit' ? 'bg-slncc-gray/30' : ''}`}>
+                    <input type="number" placeholder="0.00" value={row[field]} onChange={(e) => handleRowChange(index, field, e.target.value, category)} className={`w-20 px-2 py-1.5 text-sm border-0 rounded-lg text-right shadow-inner focus:ring-2 focus:ring-inset focus:ring-slncc-blue transition-all ${field === 'totalDebit' ? 'font-bold bg-slncc-gray text-slncc-blue placeholder:text-indigo-300' : 'bg-slate-100 group-hover:bg-white text-slate-700'}`} />
                   </td>
                 ))}
                 {['salesCash', 'salesCredit', 'transfers', 'transportIncome', 'rentIncome', 'customCr1', 'customCr2', 'customCr3', 'closingStock', 'grossLoss', 'totalCredit'].map(field => (
@@ -177,7 +177,7 @@ export default function Form32() {
             <button
               onClick={handleSave}
               disabled={isSubmitting}
-              className="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold rounded-2xl shadow-md shadow-indigo-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+              className="flex items-center gap-2 px-6 py-2.5 bg-slncc-red hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl shadow-md shadow-indigo-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
             >
               <Save className="w-5 h-5" />
               <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>

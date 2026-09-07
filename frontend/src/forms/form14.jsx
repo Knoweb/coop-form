@@ -112,13 +112,13 @@ export default function Form14() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-50 border-y border-slate-200">
-                  <th className="p-2 text-left font-medium text-slate-600 w-12">අනු අංකය</th>
-                  <th className="p-2 text-left font-medium text-slate-600 w-24">භාණ්ඩ අංකය</th>
-                  <th className="p-2 text-left font-medium text-slate-600 min-w-[200px]">විස්තරය</th>
-                  <th className="p-2 text-left font-medium text-slate-600 w-20">ප්‍රමාණය</th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-28">බැගින්<br/><span className="text-xs">රු. | ශත</span></th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-28">මුදල<br/><span className="text-xs">රු. | ශත</span></th>
-                  <th className="p-2 text-center font-medium text-slate-600 w-28">සිල්ලරට එකත් විකුණුම් මිල<br/><span className="text-xs">රු. | ශත</span></th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white w-12">අනු අංකය</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white w-24">භාණ්ඩ අංකය</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white min-w-[200px]">විස්තරය</th>
+                  <th className="p-2 text-left font-medium bg-slncc-blue text-white w-20">ප්‍රමාණය</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-28">බැගින්<br/><span className="text-xs">රු. | ශත</span></th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-28">මුදල<br/><span className="text-xs">රු. | ශත</span></th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white w-28">සිල්ලරට එකත් විකුණුම් මිල<br/><span className="text-xs">රු. | ශත</span></th>
                   <th className="p-2 w-10"></th>
                 </tr>
               </thead>

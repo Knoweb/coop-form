@@ -95,16 +95,16 @@ export default function Form14A() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-50 border-y border-slate-200">
-                  <th className="p-2 text-center font-medium text-slate-600 border-r border-slate-200" colSpan={3}>Group 1</th>
-                  <th className="p-2 text-center font-medium text-slate-600 border-r border-slate-200" colSpan={3}>Group 2</th>
-                  <th className="p-2 text-center font-medium text-slate-600" colSpan={3}>Group 3</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-r border-slate-200" colSpan={3}>Group 1</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white border-r border-slate-200" colSpan={3}>Group 2</th>
+                  <th className="p-2 text-center font-medium bg-slncc-blue text-white" colSpan={3}>Group 3</th>
                 </tr>
                 <tr className="bg-slate-50 border-b border-slate-200">
                   {['group1', 'group2', 'group3'].map(g => (
                     <React.Fragment key={g}>
-                      <th className="p-2 text-left font-medium text-slate-600 w-32">බිල් අංකය</th>
-                      <th className="p-2 text-center font-medium text-slate-600 w-24">රු.</th>
-                      <th className="p-2 text-center font-medium text-slate-600 w-16 border-r border-slate-200">ශත</th>
+                      <th className="p-2 text-left font-medium bg-slncc-blue text-white w-32">බිල් අංකය</th>
+                      <th className="p-2 text-center font-medium bg-slncc-blue text-white w-24">රු.</th>
+                      <th className="p-2 text-center font-medium bg-slncc-blue text-white w-16 border-r border-slate-200">ශත</th>
                     </React.Fragment>
                   ))}
                 </tr>

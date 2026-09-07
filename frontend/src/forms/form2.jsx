@@ -186,8 +186,8 @@ export default function Form2() {
             <p className="text-sm md:text-base text-slate-500 font-medium mt-1">සුළු මුදල් පොත (Petty Cash Book)</p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="bg-indigo-50 p-3 rounded-xl">
-              <FileText className="w-6 h-6 text-indigo-600" />
+            <div className="bg-slncc-gray p-3 rounded-xl">
+              <FileText className="w-6 h-6 text-slncc-red" />
             </div>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function Form2() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <PlusCircle className="w-5 h-5 text-indigo-500" /> 
+              <PlusCircle className="w-5 h-5 text-slncc-blue" /> 
               Add New Entry (නව ඇතුළත් කිරීම)
             </h2>
           </div>
@@ -205,27 +205,27 @@ export default function Form2() {
             <form onSubmit={handleSubmit} className="space-y-8">
               
               {/* Meta Fields Section */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-indigo-50/30 p-6 rounded-xl border border-indigo-100">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slncc-gray/30 p-6 rounded-xl border border-indigo-100">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-slate-400" /> Store Name (ගබඩාවේ නම)
                   </label>
                   <input type="text" name="storeName" value={formData.storeName} onChange={handleInputChange} placeholder="E.g., Colombo Branch"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors shadow-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-slate-400" /> From Date (සිට)
                   </label>
                   <input type="date" name="fromDate" value={formData.fromDate} onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors shadow-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-slate-400" /> To Date (දක්වා)
                   </label>
                   <input type="date" name="toDate" value={formData.toDate} onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors shadow-sm" />
                 </div>
               </div>
 
@@ -237,7 +237,7 @@ export default function Form2() {
                     <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
                   </label>
                   <input required type="date" name="date" value={formData.date} onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors shadow-sm" />
                 </div>
                 
                 <div className="space-y-2 lg:col-span-2">
@@ -245,7 +245,7 @@ export default function Form2() {
                     <FileText className="w-4 h-4 text-slate-400" /> Description (විස්තරය)
                   </label>
                   <input required type="text" name="description" value={formData.description} onChange={handleInputChange} placeholder="E.g., Office Supplies"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -253,7 +253,7 @@ export default function Form2() {
                     <Tag className="w-4 h-4 text-slate-400" /> Voucher No (වවුචර අංකය)
                   </label>
                   <input type="text" name="voucherNo" value={formData.voucherNo} onChange={handleInputChange} placeholder="E.g., V-001"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -283,7 +283,7 @@ export default function Form2() {
                     <FileText className="w-4 h-4 text-slate-400" /> Note (සටහන)
                   </label>
                   <input type="text" name="note" value={formData.note} onChange={handleInputChange} placeholder="Additional details..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors shadow-sm" />
                 </div>
               </div>
 
@@ -300,14 +300,14 @@ export default function Form2() {
                         {ANALYSIS_LABELS[category]}
                       </label>
                       <input type="number" step="0.01" value={formData.analysis[category]} onChange={(e) => handleAnalysisChange(category, e.target.value)} placeholder="0.00"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 transition-colors shadow-sm text-sm" />
+                        className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue transition-colors shadow-sm text-sm" />
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="pt-4 flex justify-end">
-                <button type="submit" className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-indigo-200 transition-all active:scale-95">
+                <button type="submit" className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-gray-200 transition-all active:scale-95">
               <Save className="w-5 h-5" /> Submit Entry
                 </button>
               </div>
@@ -319,11 +319,11 @@ export default function Form2() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <LayoutList className="w-5 h-5 text-indigo-500" /> 
+              <LayoutList className="w-5 h-5 text-slncc-blue" /> 
               Petty Cash Register
             </h2>
-            <div className="bg-indigo-50 px-4 py-2 rounded-lg">
-              <span className="text-sm font-bold text-indigo-900">Current Balance: රු. {grandTotalBalance.toFixed(2)}</span>
+            <div className="bg-slncc-gray px-4 py-2 rounded-lg">
+              <span className="text-sm font-bold text-slncc-blue">Current Balance: රු. {grandTotalBalance.toFixed(2)}</span>
             </div>
           </div>
           
@@ -358,16 +358,16 @@ export default function Form2() {
                 </tr>
                 <tr>
                   {/* Received Rs/Cts */}
-                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
-                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold bg-slncc-blue text-white border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold bg-slncc-blue text-white border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
                   
                   {/* Paid Rs/Cts */}
-                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
-                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold bg-slncc-blue text-white border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold bg-slncc-blue text-white border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
                   
                   {/* Balance Rs/Cts */}
-                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
-                  <th className="px-1 py-1 text-[10px] font-bold text-slate-600 border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold bg-slncc-blue text-white border border-slate-300 bg-slate-50 text-center w-12">රු.</th>
+                  <th className="px-1 py-1 text-[10px] font-bold bg-slncc-blue text-white border border-slate-300 bg-slate-50 text-center w-12">ශ.</th>
 
                   {/* Analysis Categories */}
                   {ANALYSIS_CATEGORIES.map(category => (
@@ -395,8 +395,8 @@ export default function Form2() {
                       <td className="px-1 py-2 text-xs leading-tight font-medium text-rose-600 border border-slate-300 text-right">{pParts[0]}</td>
                       <td className="px-1 py-2 text-[10px] leading-tight font-medium text-rose-600 border border-slate-300 text-center">{pParts[1]}</td>
                       
-                      <td className="px-1 py-2 text-xs leading-tight font-bold text-indigo-600 border border-slate-300 text-right">{bParts[0]}</td>
-                      <td className="px-1 py-2 text-[10px] leading-tight font-bold text-indigo-600 border border-slate-300 text-center">{bParts[1]}</td>
+                      <td className="px-1 py-2 text-xs leading-tight font-bold text-slncc-red border border-slate-300 text-right">{bParts[0]}</td>
+                      <td className="px-1 py-2 text-[10px] leading-tight font-bold text-slncc-red border border-slate-300 text-center">{bParts[1]}</td>
                       
                       {ANALYSIS_CATEGORIES.map(cat => (
                         <td key={cat} className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300 text-right">
@@ -421,8 +421,8 @@ export default function Form2() {
                   <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">{totals.paid.toFixed(2).split('.')[0]}</td>
                   <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{totals.paid.toFixed(2).split('.')[1]}</td>
                   
-                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{currentBalance.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{currentBalance.toFixed(2).split('.')[1]}</td>
+                  <td className="px-1 py-2 text-xs font-bold text-slncc-red border border-slate-300 text-right">{currentBalance.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-slncc-red border border-slate-300 text-center">{currentBalance.toFixed(2).split('.')[1]}</td>
                   
                   {ANALYSIS_CATEGORIES.map(cat => (
                     <td key={cat} className="px-1 py-2 text-xs font-bold text-slate-700 border border-slate-300 text-right">
@@ -446,7 +446,7 @@ export default function Form2() {
                     <input type="number" step="0.01" value={prevPaid > 0 ? prevPaid.toFixed(2) : ''} readOnly className="w-full text-right text-xs font-bold text-rose-600 bg-transparent outline-none" placeholder="0.00" />
                   </td>
                   
-                  <td colSpan="2" className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right bg-transparent">{prevBalance !== 0 ? prevBalance.toFixed(2) : ''}</td>
+                  <td colSpan="2" className="px-1 py-2 text-xs font-bold text-slncc-red border border-slate-300 text-right bg-transparent">{prevBalance !== 0 ? prevBalance.toFixed(2) : ''}</td>
                   
                   {ANALYSIS_CATEGORIES.map(cat => (
                     <td key={cat} className="px-1 py-1 border border-slate-300">
@@ -457,7 +457,7 @@ export default function Form2() {
                 </tr>
 
                 {/* Row 3: Grand total */}
-                <tr className="bg-indigo-50/30">
+                <tr className="bg-slncc-gray/30">
                   <td className="px-1 py-2 text-xs font-bold text-emerald-600 border border-slate-300 text-right">{grandTotalReceived.toFixed(2).split('.')[0]}</td>
                   <td className="px-1 py-2 text-[10px] font-bold text-emerald-600 border border-slate-300 text-center">{grandTotalReceived.toFixed(2).split('.')[1]}</td>
                   
@@ -468,8 +468,8 @@ export default function Form2() {
                   <td className="px-1 py-2 text-xs font-bold text-rose-600 border border-slate-300 text-right">{grandTotalPaid.toFixed(2).split('.')[0]}</td>
                   <td className="px-1 py-2 text-[10px] font-bold text-rose-600 border border-slate-300 text-center">{grandTotalPaid.toFixed(2).split('.')[1]}</td>
                   
-                  <td className="px-1 py-2 text-xs font-bold text-indigo-600 border border-slate-300 text-right">{grandTotalBalance.toFixed(2).split('.')[0]}</td>
-                  <td className="px-1 py-2 text-[10px] font-bold text-indigo-600 border border-slate-300 text-center">{grandTotalBalance.toFixed(2).split('.')[1]}</td>
+                  <td className="px-1 py-2 text-xs font-bold text-slncc-red border border-slate-300 text-right">{grandTotalBalance.toFixed(2).split('.')[0]}</td>
+                  <td className="px-1 py-2 text-[10px] font-bold text-slncc-red border border-slate-300 text-center">{grandTotalBalance.toFixed(2).split('.')[1]}</td>
                   
                   {ANALYSIS_CATEGORIES.map(cat => {
                     const grandCatTotal = (totals.analysis[cat] || 0) + (parseFloat(prevPageTotals.analysis[cat]) || 0);

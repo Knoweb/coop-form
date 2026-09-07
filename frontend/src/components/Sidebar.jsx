@@ -5,27 +5,27 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
   const btn = (key, label, sub = '') => (
     <button
       onClick={() => { setCurrentForm(key); }}
-      className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === key ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
+      className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === key ? 'bg-[#a31636] text-white font-semibold' : 'text-gray-200 hover:bg-white/10'}`}
     >
       <FileText className="w-5 h-5 shrink-0" />
       <div className="flex flex-col">
-        {sub && <span className="text-xs text-slate-400">{sub}</span>}
+        {sub && <span className="text-xs text-gray-400">{sub}</span>}
         <span>{label}</span>
       </div>
     </button>
   );
 
   return (
-    <div className={`bg-slate-900 text-slate-300 h-screen fixed left-0 top-0 flex flex-col shadow-2xl z-50 transition-all duration-300 ${isOpen ? 'w-64 translate-x-0' : 'w-64 -translate-x-full'}`}>
-      <div className="p-6 flex items-center justify-between border-b border-slate-800">
+    <div className={`bg-[#312783] text-white h-screen fixed left-0 top-0 flex flex-col shadow-2xl z-50 transition-all duration-300 ${isOpen ? 'w-64 translate-x-0' : 'w-64 -translate-x-full'}`}>
+      <div className="p-6 flex items-center justify-between border-b border-white/10">
         <div className="flex items-center space-x-3">
-          <div className="bg-indigo-500 p-2 rounded-lg">
+          <div className="bg-[#a31636] p-2 rounded-lg">
             <LayoutDashboard className="w-6 h-6 text-white" />
           </div>
           <h1 className="text-xl font-bold text-white">COOP Forms</h1>
         </div>
-        <button onClick={() => setIsOpen(false)} className="p-1 hover:bg-slate-800 rounded-lg md:hidden">
-          <X className="w-5 h-5 text-slate-400" />
+        <button onClick={() => setIsOpen(false)} className="p-1 hover:bg-white/10 rounded-lg md:hidden">
+          <X className="w-5 h-5 text-gray-300" />
         </button>
       </div>
 
@@ -102,12 +102,12 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
         {btn('multiColumnLedgerForm', 'Multi-Column Ledger', 'විස්තරාත්මක බෙදාහැරීමේ ජර්නලය')}
       </div>
 
-      <div className="p-4 border-t border-slate-800">
-        <a href="#" className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-slate-800 hover:text-white transition-colors">
+      {/* <div className="p-4 border-t border-white/10">
+        <a href="#" className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-colors">
           <Settings className="w-5 h-5" />
           <span>Settings</span>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }

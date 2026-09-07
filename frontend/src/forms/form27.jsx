@@ -131,7 +131,7 @@ export default function Form27() {
                     <Calendar className="w-4 h-4 text-slate-400" /> දිනය (Date)
                   </label>
                   <input type="date" value={globalDate} onChange={(e) => setGlobalDate(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
@@ -139,7 +139,7 @@ export default function Form27() {
                     <Building className="w-4 h-4 text-slate-400" /> ගිණුම් අංක 1 (Bank 1)
                   </label>
                   <input type="text" value={bank1AccNo} onChange={(e) => setBank1AccNo(e.target.value)} placeholder="Account No"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
@@ -147,7 +147,7 @@ export default function Form27() {
                     <Building className="w-4 h-4 text-slate-400" /> ගිණුම් අංක 2 (Bank 2)
                   </label>
                   <input type="text" value={bank2AccNo} onChange={(e) => setBank2AccNo(e.target.value)} placeholder="Account No"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
 
                 <div className="space-y-2 lg:col-span-1">
@@ -155,7 +155,7 @@ export default function Form27() {
                     <Building className="w-4 h-4 text-slate-400" /> ගිණුම් අංක 3 (Bank 3)
                   </label>
                   <input type="text" value={bank3AccNo} onChange={(e) => setBank3AccNo(e.target.value)} placeholder="Account No"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 transition-colors" />
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-slncc-blue transition-colors" />
                 </div>
              </div>
           </div>
@@ -168,12 +168,12 @@ export default function Form27() {
               <table className="w-full border-collapse min-w-[800px]">
                  <thead>
                     <tr className="bg-slate-50">
-                       <th className="px-3 py-3 text-left text-xs font-semibold text-slate-600 border border-slate-200">විස්තරය</th>
-                       <th className="px-3 py-3 text-left text-xs font-semibold text-slate-600 border border-slate-200 w-32">ගිණුම් 1 (රු.)</th>
-                       <th className="px-3 py-3 text-left text-xs font-semibold text-slate-600 border border-slate-200 w-32">ගිණුම් 2 (රු.)</th>
-                       <th className="px-3 py-3 text-left text-xs font-semibold text-slate-600 border border-slate-200 w-32">ගිණුම් 3 (රු.)</th>
-                       <th className="px-3 py-3 text-left text-xs font-semibold text-slate-600 border border-slate-200 w-32">මුදල් අත ඉතිරි</th>
-                       <th className="px-3 py-3 text-left text-xs font-semibold text-slate-600 border border-slate-200 w-32">වෙනත් කරුණු</th>
+                       <th className="px-3 py-3 text-left text-xs font-semibold bg-slncc-blue text-white border border-slate-200">විස්තරය</th>
+                       <th className="px-3 py-3 text-left text-xs font-semibold bg-slncc-blue text-white border border-slate-200 w-32">ගිණුම් 1 (රු.)</th>
+                       <th className="px-3 py-3 text-left text-xs font-semibold bg-slncc-blue text-white border border-slate-200 w-32">ගිණුම් 2 (රු.)</th>
+                       <th className="px-3 py-3 text-left text-xs font-semibold bg-slncc-blue text-white border border-slate-200 w-32">ගිණුම් 3 (රු.)</th>
+                       <th className="px-3 py-3 text-left text-xs font-semibold bg-slncc-blue text-white border border-slate-200 w-32">මුදල් අත ඉතිරි</th>
+                       <th className="px-3 py-3 text-left text-xs font-semibold bg-slncc-blue text-white border border-slate-200 w-32">වෙනත් කරුණු</th>
                     </tr>
                  </thead>
                  <tbody>
@@ -245,10 +245,10 @@ export default function Form27() {
               <table className="w-full border-collapse">
                  <thead>
                     <tr className="bg-slate-100 border-b-2 border-slate-200">
-                       <th className="px-3 py-2 text-left text-xs font-bold text-slate-700 w-10"></th>
-                       <th className="px-3 py-2 text-left text-xs font-bold text-slate-700">චෙක්පත් අංකය</th>
-                       <th className="px-3 py-2 text-left text-xs font-bold text-slate-700">නිකුත් කළ දිනය</th>
-                       <th className="px-3 py-2 text-right text-xs font-bold text-slate-700">උපරිම සීමාව රු.</th>
+                       <th className="px-3 py-2 text-left text-xs font-bold bg-slncc-blue text-white w-10"></th>
+                       <th className="px-3 py-2 text-left text-xs font-bold bg-slncc-blue text-white">චෙක්පත් අංකය</th>
+                       <th className="px-3 py-2 text-left text-xs font-bold bg-slncc-blue text-white">නිකුත් කළ දිනය</th>
+                       <th className="px-3 py-2 text-right text-xs font-bold bg-slncc-blue text-white">උපරිම සීමාව රු.</th>
                        <th className="px-3 py-2 w-10"></th>
                     </tr>
                  </thead>
@@ -383,7 +383,7 @@ export default function Form27() {
               disabled={isSubmitting}
               className={`flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 ${
                 !isSubmitting
-                  ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-1' 
+                  ? 'bg-slncc-red hover:bg-opacity-90 text-white shadow-gray-200 hover:shadow-indigo-300 hover:-translate-y-1' 
                   : 'bg-slate-300 text-slate-500 cursor-not-allowed'
               }`}>
               <Save className="w-6 h-6" />

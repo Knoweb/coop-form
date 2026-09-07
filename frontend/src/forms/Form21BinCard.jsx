@@ -105,15 +105,15 @@ export default function Form21BinCard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-5 rounded-xl border border-slate-200">
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">භාණ්ඩය (Item Name)</label>
-                  <input type="text" name="itemName" value={formData.itemName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" required />
+                  <input type="text" name="itemName" value={formData.itemName} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" required />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">දිනය (Date)</label>
-                  <input type="date" name="headerDate" value={formData.headerDate} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="date" name="headerDate" value={formData.headerDate} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
                <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">මිල (Price)</label>
-                  <input type="number" step="0.01" name="headerPrice" value={formData.headerPrice} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="number" step="0.01" name="headerPrice" value={formData.headerPrice} onChange={handleChange} className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue outline-none" />
                </div>
             </div>
 
@@ -180,7 +180,7 @@ export default function Form21BinCard() {
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>
@@ -209,13 +209,13 @@ export default function Form21BinCard() {
                 <th className="px-3 py-2 border-r border-slate-200 text-center">සඳහන<br/>(Ref)</th>
                 <th className="px-3 py-2 border-r border-slate-200 text-right text-blue-700">ලැබුම්<br/>(In)</th>
                 <th className="px-3 py-2 border-r border-slate-200 text-right text-red-700">නිකුත්<br/>(Out)</th>
-                <th className="px-3 py-2 border-r-2 border-gray-400 text-right font-bold text-slate-800">ශේෂය<br/>(Balance)</th>
+                <th className="px-3 py-2 border-r-2 border-gray-400 text-right font-bold bg-slncc-blue text-white">ශේෂය<br/>(Balance)</th>
 
                 <th className="px-3 py-2 border-r border-slate-200 text-center">දිනය<br/>(Date)</th>
                 <th className="px-3 py-2 border-r border-slate-200 text-center">සඳහන<br/>(Ref)</th>
                 <th className="px-3 py-2 border-r border-slate-200 text-right text-blue-700">ලැබුම්<br/>(In)</th>
                 <th className="px-3 py-2 border-r border-slate-200 text-right text-red-700">නිකුත්<br/>(Out)</th>
-                <th className="px-3 py-2 text-right font-bold text-slate-800">ශේෂය<br/>(Balance)</th>
+                <th className="px-3 py-2 text-right font-bold bg-slncc-blue text-white">ශේෂය<br/>(Balance)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">

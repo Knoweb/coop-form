@@ -78,7 +78,7 @@ export default function TelephoneRegisterForm() {
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="bg-indigo-500/20 p-2 rounded-lg">
+            <div className="bg-slncc-blue/20 p-2 rounded-lg">
               <Phone className="w-6 h-6 text-indigo-400" />
             </div>
             <div>
@@ -95,52 +95,52 @@ export default function TelephoneRegisterForm() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">Date (දිනය)</label>
-                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" required />
+                  <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none" required />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">Caller's Name (කතාකරන්නාගේ නම)</label>
-                  <input type="text" name="callerName" value={formData.callerName} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" required />
+                  <input type="text" name="callerName" value={formData.callerName} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none" required />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">Called No. & Area (කතා කළ නොම්මරය හා පළාත)</label>
-                  <input type="text" name="calledNumberArea" value={formData.calledNumberArea} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" required />
+                  <input type="text" name="calledNumberArea" value={formData.calledNumberArea} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none" required />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">Time Taken (ගතවූ කාලය විනාඩි)</label>
-                  <input type="text" name="timeTakenMinutes" value={formData.timeTakenMinutes} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" />
+                  <input type="text" name="timeTakenMinutes" value={formData.timeTakenMinutes} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none" />
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">Initials (කතාකරන්නාගේ කෙටි අත්සන)</label>
-                  <input type="text" name="signature" value={formData.signature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" />
+                  <input type="text" name="signature" value={formData.signature} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none" />
                 </div>
                 <div className="sm:col-span-2 lg:col-span-3">
                   <label className="block text-xs font-medium text-slate-600 mb-1">Summary (කතාවේ සාරාංශය)</label>
-                  <input type="text" name="callSummary" value={formData.callSummary} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" />
+                  <input type="text" name="callSummary" value={formData.callSummary} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none" />
                 </div>
               </div>
             </div>
 
-            <div className="space-y-4 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
-              <h3 className="text-sm font-semibold text-indigo-800 border-b border-indigo-200 pb-2">Cost & Billing</h3>
+            <div className="space-y-4 bg-slncc-gray p-4 rounded-xl border border-indigo-100">
+              <h3 className="text-sm font-semibold text-slncc-blue border-b border-indigo-200 pb-2">Cost & Billing</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-medium text-indigo-800 mb-1">Official Cost - Rs. (රාජකාරී රු. ශත)</label>
-                  <input type="number" step="0.01" name="officialCost" value={formData.officialCost} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-blue-700" />
+                  <label className="block text-xs font-medium text-slncc-blue mb-1">Official Cost - Rs. (රාජකාරී රු. ශත)</label>
+                  <input type="number" step="0.01" name="officialCost" value={formData.officialCost} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none text-blue-700" />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-indigo-800 mb-1">Private Cost - Rs. (පෞද්ගලික රු. ශත)</label>
-                  <input type="number" step="0.01" name="privateCost" value={formData.privateCost} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-orange-700" />
+                  <label className="block text-xs font-medium text-slncc-blue mb-1">Private Cost - Rs. (පෞද්ගලික රු. ශත)</label>
+                  <input type="number" step="0.01" name="privateCost" value={formData.privateCost} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none text-orange-700" />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-indigo-800 mb-1">Receipt No. (රිසිට්පතේ අංකය)</label>
-                  <input type="text" name="receiptNo" value={formData.receiptNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-700" />
+                  <label className="block text-xs font-medium text-slncc-blue mb-1">Receipt No. (රිසිට්පතේ අංකය)</label>
+                  <input type="text" name="receiptNo" value={formData.receiptNo} onChange={handleChange} className="w-full px-3 py-2 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue outline-none text-slate-700" />
                 </div>
               </div>
             </div>
           </div>
 
           <div className="flex justify-end">
-            <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
+            <button type="submit" className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-6 py-3 rounded-xl transition-all shadow-sm hover:shadow-md font-medium">
               <PlusCircle className="w-5 h-5" />
               <span>Add Record</span>
             </button>

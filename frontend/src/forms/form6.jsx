@@ -50,7 +50,7 @@ export default function Form6() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Enter Details (විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -59,15 +59,15 @@ export default function Form6() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Officer's Name (නිලධාරියාගේ නම)</label>
-                <input type="text" name="officerName" value={formData.officerName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="officerName" value={formData.officerName} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Date (දිනය)</label>
-                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2 md:col-span-2">
                 <label className="text-sm font-semibold text-slate-600">Goods Issue Notice No (බඩු නිකුත් කිරීමේ නිවේදන අංකය)</label>
-                <input type="text" name="noticeNo" value={formData.noticeNo} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="noticeNo" value={formData.noticeNo} onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
             </div>
             <p className="text-sm text-amber-600 mt-6 bg-amber-50 p-3 rounded-lg border border-amber-200">
@@ -94,12 +94,12 @@ export default function Form6() {
                 <span>නිලධාරියාගේ නම</span>
               </span>
               <span className="text-xl font-light mx-2">&#125;</span>
-              <span className="w-64 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black leading-none pb-1">{formData.officerName || 'එච්. ඩී. සිරිසේන'}</span>
+              <span className="w-64 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black leading-none pb-1">{formData.officerName || 'එච්. ඩී. සිරිසේන'}</span>
             </div>
             
             <div className="flex items-end mt-4">
               <span className="font-bold mr-2">දිනය</span>
-              <span className="w-48 border-b border-dotted border-slate-600 font-mono text-indigo-900 print:text-black text-center leading-none pb-1">{formData.date || '2026-09-10'}</span>
+              <span className="w-48 border-b border-dotted border-slate-600 font-mono text-slncc-blue print:text-black text-center leading-none pb-1">{formData.date || '2026-09-10'}</span>
             </div>
           </div>
 
@@ -195,7 +195,7 @@ export default function Form6() {
             <div className="flex gap-4">
               <span className="font-bold">2.</span>
               <p className="leading-relaxed text-justify">
-                ඉහතින් භාරගන්නා ලද චෙක්පත් යොදා කරන ලද වියදම් 5 වෙනි තීරුවේ නිවැරදිව සටහන්කර ඒ සඳහා ඉන්වොයිස් අංක 6 වෙනි තීරුවේ ඇතුළත්කර ඇත. අදාළ ඉන්වොයිස් මීට අමුණා ඇත. බඩු ගබඩාවට යැවීමේ විස්තර අංක <span className="inline-block w-48 border-b border-dotted border-slate-600 mx-2 text-center font-mono text-indigo-900 print:text-black">{formData.noticeNo || 'GN-7412'}</span> දරණ බඩු නිකුත් කිරීමේ නිවේදනයෙන් සටහන් කර ඇත.
+                ඉහතින් භාරගන්නා ලද චෙක්පත් යොදා කරන ලද වියදම් 5 වෙනි තීරුවේ නිවැරදිව සටහන්කර ඒ සඳහා ඉන්වොයිස් අංක 6 වෙනි තීරුවේ ඇතුළත්කර ඇත. අදාළ ඉන්වොයිස් මීට අමුණා ඇත. බඩු ගබඩාවට යැවීමේ විස්තර අංක <span className="inline-block w-48 border-b border-dotted border-slate-600 mx-2 text-center font-mono text-slncc-blue print:text-black">{formData.noticeNo || 'GN-7412'}</span> දරණ බඩු නිකුත් කිරීමේ නිවේදනයෙන් සටහන් කර ඇත.
               </p>
             </div>
 

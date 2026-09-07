@@ -84,7 +84,7 @@ export default function Form3() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-indigo-500" /> 
+              <FileText className="w-5 h-5 text-slncc-blue" /> 
               Voucher Details (වවුචරයේ විස්තර)
             </h2>
           </div>
@@ -93,19 +93,19 @@ export default function Form3() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Head (ශීර්ෂය)</label>
-                <input type="text" name="head" value={formData.head } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="head" value={formData.head } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Sub Head (උප ශීර්ෂය)</label>
-                <input type="text" name="subHead" value={formData.subHead } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="subHead" value={formData.subHead } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Name (නම)</label>
-                <input type="text" name="name" value={formData.name } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="name" value={formData.name } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Voucher No (වවුචර අංකය)</label>
-                <input type="text" name="voucherNo" value={formData.voucherNo } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="voucherNo" value={formData.voucherNo } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
             </div>
 
@@ -133,7 +133,7 @@ export default function Form3() {
                   </div>
                 ))}
               </div>
-              <button onClick={addRecord} className="mt-4 flex items-center gap-2 text-sm text-indigo-600 font-semibold hover:text-indigo-700 p-2 hover:bg-indigo-50 rounded-lg transition-colors">
+              <button onClick={addRecord} className="mt-4 flex items-center gap-2 text-sm text-slncc-red font-semibold hover:text-slncc-blue p-2 hover:bg-slncc-gray rounded-lg transition-colors">
                 <PlusCircle className="w-5 h-5" /> Add Row
               </button>
             </div>
@@ -141,11 +141,11 @@ export default function Form3() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-100">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Amount in Words (Rupees) - රුපියල් අකුරෙන්</label>
-                <input type="text" name="amountInWordsRs" value={formData.amountInWordsRs } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="amountInWordsRs" value={formData.amountInWordsRs } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-600">Amount in Words (Cents) - ශත අකුරෙන්</label>
-                <input type="text" name="amountInWordsCts" value={formData.amountInWordsCts } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                <input type="text" name="amountInWordsCts" value={formData.amountInWordsCts } onChange={handleInputChange} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-slncc-blue focus:border-slncc-blue transition-colors" />
               </div>
             </div>
           </div>
@@ -169,22 +169,22 @@ export default function Form3() {
             <div className="space-y-4 w-1/2">
               <div className="flex items-end">
                 <span className="w-24 font-bold">ශීර්ෂය</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-indigo-900 print:text-black text-lg">{formData.head }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-slncc-blue print:text-black text-lg">{formData.head }</span>
               </div>
               <div className="flex items-end">
                 <span className="w-24 font-bold">උප ශීර්ෂය</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-indigo-900 print:text-black text-lg">{formData.subHead }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-slncc-blue print:text-black text-lg">{formData.subHead }</span>
               </div>
               <div className="flex items-end">
                 <span className="w-24 font-bold">නම</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-indigo-900 print:text-black text-lg">{formData.name }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-slncc-blue print:text-black text-lg">{formData.name }</span>
               </div>
             </div>
             
             <div className="w-1/3 space-y-4">
               <div className="flex items-end">
                 <span className="w-28 font-bold">වවුචර අංක</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-indigo-900 print:text-black text-lg text-center">{formData.voucherNo }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-slncc-blue print:text-black text-lg text-center">{formData.voucherNo }</span>
               </div>
             </div>
           </div>
@@ -239,15 +239,15 @@ export default function Form3() {
             <div className="w-1/2 space-y-8">
               <div className="flex items-end">
                 <span className="w-32 font-bold">පිළියෙල කළේ</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-indigo-900 print:text-black">{formData.preparedBy }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-slncc-blue print:text-black">{formData.preparedBy }</span>
               </div>
               <div className="flex items-end">
                 <span className="w-32 font-bold">පරීක්ෂා කළේ</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-indigo-900 print:text-black">{formData.checkedBy }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-slncc-blue print:text-black">{formData.checkedBy }</span>
               </div>
               <div className="flex items-end">
                 <span className="w-32 font-bold">ගෙවීම් අනුමත කළේ</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-indigo-900 print:text-black">{formData.approvedBy }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 px-2 font-mono text-slncc-blue print:text-black">{formData.approvedBy }</span>
               </div>
             </div>
 
@@ -255,12 +255,12 @@ export default function Form3() {
             <div className="w-1/2 space-y-5 relative">
               <div className="flex items-end">
                 <span className="w-16 font-bold">රුපියල්</span>
-                <span className="flex-1 border-b-2 border-dotted border-slate-600 text-base px-2 text-indigo-900 print:text-black font-semibold">{formData.amountInWordsRs }</span>
+                <span className="flex-1 border-b-2 border-dotted border-slate-600 text-base px-2 text-slncc-blue print:text-black font-semibold">{formData.amountInWordsRs }</span>
               </div>
               <div className="flex items-end flex-wrap gap-y-2">
                 <div className="flex items-end flex-1 min-w-[150px]">
                   <span className="w-12 font-bold">ශත</span>
-                  <span className="flex-1 border-b-2 border-dotted border-slate-600 text-base px-2 text-indigo-900 print:text-black font-semibold">{formData.amountInWordsCts }</span>
+                  <span className="flex-1 border-b-2 border-dotted border-slate-600 text-base px-2 text-slncc-blue print:text-black font-semibold">{formData.amountInWordsCts }</span>
                 </div>
                 <span className="ml-2 font-bold">පමණක් භාරගතිමි.</span>
               </div>
