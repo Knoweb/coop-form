@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
-import { FileText, PlusCircle, Trash2, Save } from 'lucide-react';
 import FormHeader from '../components/FormHeader';
 
+import { FileText, PlusCircle, Trash2, Save, Plus } from 'lucide-react';
 
 export default function Form4() {
   const defaultRecords = [
@@ -42,17 +42,7 @@ export default function Form4() {
     setRecords(newRecords);
   };
 
-  const addRecord = () => {
-    setRecords([...records, { date: "", drawerName: "", relevantName: "", bankName: "", chequeNo: "", rs: "", cts: "", reason: "", actionTaken: "", finalSettlement: "" }]);
-  };
-
-  const removeRecord = (index) => {
-    const newRecords = records.filter((_, i) => i !== index);
-    setRecords(newRecords);
-  };
-
-  
-  const handleClear = () => {
+      const handleClear = () => {
     const emptyFormData = Object.keys(formData).reduce((acc, key) => ({ ...acc, [key]: "" }), {});
     setFormData(emptyFormData);
     const emptyRecord = Object.keys(records[0]).reduce((acc, key) => ({ ...acc, [key]: "" }), {});
@@ -65,6 +55,17 @@ export default function Form4() {
 
   
   const displayRecords = records;
+
+
+  const handleTableChange = (index, field, value) => {
+    const newRecs = [...records];
+    newRecs[index][field] = value;
+    setRecords(newRecs);
+  };
+
+  const addRow = () => {
+    setRecords(prev => [...prev, { date: "", description: "", billNo: "", rs: "", cts: "" }]);
+  };
 
   return (
     <div className="flex-1 bg-slate-50 min-h-screen font-sans overflow-x-hidden p-4 md:p-8 print:bg-white print:p-0">
@@ -90,7 +91,7 @@ export default function Form4() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print:hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-slncc-blue" /> 
+              <FileText className="w-5 h-5 text-indigo-500" /> 
               Enter Details (විස්තර ඇතුළත් කරන්න)
             </h2>
           </div>
@@ -149,7 +150,7 @@ export default function Form4() {
                 </div>
               ))}
             </div>
-            <button onClick={addRecord} className="mt-4 flex items-center gap-2 text-sm text-slncc-red font-semibold hover:text-slncc-blue p-2 hover:bg-slncc-gray rounded-lg transition-colors">
+            <button onClick={addRow} className="mt-4 flex items-center gap-2 text-sm text-indigo-600 font-semibold hover:text-indigo-700 p-2 hover:bg-indigo-50 rounded-lg transition-colors">
               <PlusCircle className="w-5 h-5" /> Add Row
             </button>
           </div>
@@ -191,13 +192,13 @@ export default function Form4() {
             <tbody>
               {displayRecords.map((rec, idx) => (
                 <tr key={idx} className="h-12">
-                  <td className="border border-slate-900 p-2 text-center text-sm">{rec.date}</td>
+                  <td className="border border-slate-900 p-2 text-center text-sm"><input type="date" value={rec.date || ""} onChange={(e) => handleTableChange(idx, "date", e.target.value)} className="w-full bg-transparent outline-none focus:bg-blue-50 text-sm text-center px-1" /></td>
                   <td className="border border-slate-900 p-2 text-center text-sm">{rec.drawerName}</td>
                   <td className="border border-slate-900 p-2 text-center text-sm">{rec.relevantName}</td>
                   <td className="border border-slate-900 p-2 text-center text-sm">{rec.bankName}</td>
                   <td className="border border-slate-900 p-2 text-center text-sm">{rec.chequeNo}</td>
-                  <td className="border border-slate-900 p-2 text-right font-mono text-sm">{rec.rs}</td>
-                  <td className="border border-slate-900 p-2 text-center font-mono text-sm">{rec.cts}</td>
+                  <td className="border border-slate-900 p-2 text-right font-mono text-sm"><input type="number" value={rec.rs || ""} onChange={(e) => handleTableChange(idx, "rs", e.target.value)} className="w-full bg-transparent outline-none focus:bg-blue-50 font-mono font-bold text-lg text-right px-1" /></td>
+                  <td className="border border-slate-900 p-2 text-center font-mono text-sm"><input type="number" value={rec.cts || ""} onChange={(e) => handleTableChange(idx, "cts", e.target.value)} className="w-full bg-transparent outline-none focus:bg-blue-50 font-mono font-bold text-lg text-center px-1" /></td>
                   <td className="border border-slate-900 p-2 text-center text-sm">{rec.reason}</td>
                   <td className="border border-slate-900 p-2 text-center text-sm">{rec.actionTaken}</td>
                   <td className="border border-slate-900 p-2 text-center text-sm">{rec.finalSettlement}</td>
@@ -220,6 +221,9 @@ export default function Form4() {
               ))}
             </tbody>
           </table>
+              <button onClick={addRow} className="mt-3 flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 font-medium text-sm transition-colors print:hidden">
+                <Plus className="w-4 h-4" /> Add Row
+              </button>
 
         </div>
       </div>

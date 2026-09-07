@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
-import { FileText, Save } from 'lucide-react';
 import FormHeader from '../components/FormHeader';
 
+import { FileText, Save, Plus } from 'lucide-react';
 
 export default function Form6() {
   const [formData, setFormData] = useState({
@@ -23,12 +23,26 @@ export default function Form6() {
   };
 
   // Hardcoded table data for the preview
-  const tableData = [
+  
+    const [tableData, setTableData] = useState([
+
     { chqDate: "2026-09-10", chqNo: "854125", payee: "කමල් ට්‍රේඩර්ස්", maxRs: "50000", maxCts: "00", amtRs: "45500", amtCts: "00", invNo: "INV-1024" },
     { chqDate: "2026-09-10", chqNo: "854126", payee: "සමූපකාර තොග වෙළඳසැල", maxRs: "100000", maxCts: "00", amtRs: "85000", amtCts: "50", invNo: "INV-1089" },
     { chqDate: "2026-09-11", chqNo: "854127", payee: "විජය හාඩ්වෙයාර්", maxRs: "25000", maxCts: "00", amtRs: "24000", amtCts: "00", invNo: "HW-455" },
     { chqDate: "2026-09-11", chqNo: "854128", payee: "ලංකා විදුලිබල මණ්ඩලය", maxRs: "15000", maxCts: "00", amtRs: "12450", amtCts: "00", invNo: "CEB-896" }
-  ];
+  
+    ]);
+
+    const handleTableChange = (index, field, value) => {
+        const newData = [...tableData];
+        newData[index][field] = value;
+        setTableData(newData);
+    };
+
+    const addRow = () => {
+        setTableData([...tableData, { chqDate: "", chqNo: "", payee: "", maxRs: "", maxCts: "", amtRs: "", amtCts: "", invNo: "" }]);
+    };
+
 
   return (
     <div className="flex-1 bg-slate-50 min-h-screen font-sans overflow-x-hidden p-4 md:p-8 print:bg-white print:p-0">
@@ -159,14 +173,14 @@ export default function Form6() {
             <tbody>
               {tableData.map((row, idx) => (
                 <tr key={idx} className="h-10">
-                  <td className="border border-slate-900 p-1 text-center font-mono">{row.chqDate}</td>
-                  <td className="border border-slate-900 p-1 text-center font-mono">{row.chqNo}</td>
-                  <td className="border border-slate-900 p-1 pl-2">{row.payee}</td>
-                  <td className="border border-slate-900 p-1 text-right font-mono">{row.maxRs}</td>
-                  <td className="border border-slate-900 p-1 text-center font-mono">{row.maxCts}</td>
-                  <td className="border border-slate-900 p-1 text-right font-mono">{row.amtRs}</td>
-                  <td className="border border-slate-900 p-1 text-center font-mono">{row.amtCts}</td>
-                  <td className="border border-slate-900 p-1 text-center font-mono">{row.invNo}</td>
+                  <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.chqDate || ''} onChange={(e) => handleTableChange(idx, 'chqDate', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                  <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.chqNo || ''} onChange={(e) => handleTableChange(idx, 'chqNo', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                  <td className="border border-slate-900 p-1 pl-2"><input type="text" value={row.payee || ''} onChange={(e) => handleTableChange(idx, 'payee', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                  <td className="border border-slate-900 p-1 text-right font-mono"><input type="text" value={row.maxRs || ''} onChange={(e) => handleTableChange(idx, 'maxRs', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                  <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.maxCts || ''} onChange={(e) => handleTableChange(idx, 'maxCts', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                  <td className="border border-slate-900 p-1 text-right font-mono"><input type="text" value={row.amtRs || ''} onChange={(e) => handleTableChange(idx, 'amtRs', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                  <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.amtCts || ''} onChange={(e) => handleTableChange(idx, 'amtCts', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                  <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.invNo || ''} onChange={(e) => handleTableChange(idx, 'invNo', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
                 </tr>
               ))}
               {/* Empty rows */}
@@ -184,6 +198,10 @@ export default function Form6() {
               ))}
             </tbody>
           </table>
+                <button onClick={addRow} className="mt-4 flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 font-medium text-sm transition-colors print:hidden">
+                    <Plus className="w-4 h-4" /> Add Row
+                </button>
+        
 
           {/* Footer Text */}
           <div className="mt-8 space-y-6 text-sm">

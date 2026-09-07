@@ -74,6 +74,11 @@ export default function Form9C() {
       prawahanaAmount: formData.prawahanaAmount ? parseFloat(formData.prawahanaAmount) : 0
     };
 
+    
+    // --- LOCAL STATE UPDATE ---
+    setRecords(prev => [...prev, { ...payload, id: Date.now() }]);
+    // setFormData(INITIAL_FORM_STATE);
+    // --------------------------
     try {
       const response = await fetch('http://localhost:8080/api/form9c-records', {
         method: 'POST',

@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
-import { FileText, Save } from 'lucide-react';
 import FormHeader from '../components/FormHeader';
 
+import { FileText, Save, Plus } from 'lucide-react';
 
 export default function Form8() {
   const [formData, setFormData] = useState({
@@ -32,7 +32,9 @@ export default function Form8() {
   };
 
   // Hardcoded preview table data
-  const rows = [
+  
+    const [rows, setRows] = useState([
+
     { id: 1, vNo: "V-1001", cNo: "154210", desc: "ලංකා විදුලිබල මණ්ඩලය", lf1: "15", b1: "5,400.00", b2: "", a1: "5,400.00", a2: "", a3: "", a4: "", lf2: "" },
     { id: 2, vNo: "V-1002", cNo: "154211", desc: "ජල සම්පාදන මණ්ඩලය", lf1: "18", b1: "1,200.00", b2: "", a1: "1,200.00", a2: "", a3: "", a4: "", lf2: "" },
     { id: 3, vNo: "V-1003", cNo: "154212", desc: "සේවක වැටුප්", lf1: "42", b1: "45,000.00", b2: "", a1: "", a2: "45,000.00", a3: "", a4: "", lf2: "" },
@@ -45,7 +47,19 @@ export default function Form8() {
     { id: 10, vNo: "", cNo: "", desc: "", lf1: "", b1: "", b2: "", a1: "", a2: "", a3: "", a4: "", lf2: "" },
     { id: 11, vNo: "", cNo: "", desc: "", lf1: "", b1: "", b2: "", a1: "", a2: "", a3: "", a4: "", lf2: "" },
     { id: 12, vNo: "", cNo: "", desc: "", lf1: "", b1: "", b2: "", a1: "", a2: "", a3: "", a4: "", lf2: "" }
-  ];
+  
+    ]);
+
+    const handleTableChange = (index, field, value) => {
+        const newData = [...rows];
+        newData[index][field] = value;
+        setRows(newData);
+    };
+
+    const addRow = () => {
+        setRows([...rows, { id: rows.length + 1, vNo: "", cNo: "", desc: "", lf1: "", b1: "", "400.00": "", b2: "", a1: "", a2: "", a3: "", a4: "", lf2: "" }]);
+    };
+
 
   return (
     <div className="flex-1 bg-slate-50 min-h-screen font-sans overflow-x-hidden p-4 md:p-8 print:bg-white print:p-0">
@@ -184,21 +198,21 @@ export default function Form8() {
                 </tr>
               </thead>
               <tbody>
-                {rows.map((row) => (
-                  <tr key={row.id} className="h-6">
-                    <td className="border border-slate-900 p-1 text-center font-mono">{row.vNo}</td>
-                    <td className="border border-slate-900 p-1 text-center font-mono">{row.cNo}</td>
-                    <td className="border border-slate-900 p-1">{row.desc}</td>
-                    <td className="border border-slate-900 p-1 text-center font-mono">{row.lf1}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono pr-4">{row.b1}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono pr-4">{row.b2}</td>
+                {rows.map((row, idx) => (
+                  <tr key=<input type="text" value={row.id || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'id', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /> className="h-6">
+                    <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.vNo || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'vNo', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.cNo || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'cNo', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                    <td className="border border-slate-900 p-1"><input type="text" value={row.desc || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'desc', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.lf1 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'lf1', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono pr-4"><input type="text" value={row.b1 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'b1', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono pr-4"><input type="text" value={row.b2 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'b2', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
                     
-                    <td className="border border-slate-900 p-1 text-right font-mono pr-4">{row.a1}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono pr-4">{row.a2}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono pr-4">{row.a3}</td>
-                    <td className="border border-slate-900 p-1 text-right font-mono pr-4">{row.a4}</td>
+                    <td className="border border-slate-900 p-1 text-right font-mono pr-4"><input type="text" value={row.a1 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'a1', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono pr-4"><input type="text" value={row.a2 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'a2', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono pr-4"><input type="text" value={row.a3 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'a3', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
+                    <td className="border border-slate-900 p-1 text-right font-mono pr-4"><input type="text" value={row.a4 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'a4', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
                     
-                    <td className="border border-slate-900 p-1 text-center font-mono">{row.lf2}</td>
+                    <td className="border border-slate-900 p-1 text-center font-mono"><input type="text" value={row.lf2 || ''} onChange={(e) => handleTableChange(row.id - 1 || idx, 'lf2', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-right px-1" /></td>
                   </tr>
                 ))}
                 
@@ -238,6 +252,10 @@ export default function Form8() {
                 </tr>
               </tbody>
             </table>
+                <button onClick={addRow} className="mt-4 flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 font-medium text-sm transition-colors print:hidden">
+                    <Plus className="w-4 h-4" /> Add Row
+                </button>
+        
           </div>
 
           <div className="flex justify-between items-end mt-16 px-16 text-sm">

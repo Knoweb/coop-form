@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import FormHeader from '../components/FormHeader';
-import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList, User, Plus } from 'lucide-react';
+﻿import React, { useState, useEffect } from 'react';
+import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList, User } from 'lucide-react';
 
 const INITIAL_FORM_STATE = {
   date: '',
@@ -20,11 +19,11 @@ const INITIAL_FORM_STATE = {
 };
 
 const ANALYSIS_CATEGORIES = [
-  { key: 'Transport', label: 'Transport (ගමන් වියදම්)' },
-  { key: 'Stationery', label: 'Stationery (ලිපි ද්රව්ය)' },
-  { key: 'Postage', label: 'Postage (තැපැල් ගාස්තු)' },
-  { key: 'Meals', label: 'Meals (ආහාර)' },
-  { key: 'Other', label: 'Other (වෙනත්)' }
+  { key: 'Transport', label: 'Transport (à¶œà¶¸à¶±à·Š à·€à·’à¶ºà¶¯à¶¸à·Š)' },
+  { key: 'Stationery', label: 'Stationery (à¶½à·’à¶´à·’ à¶¯à·Šà¶»à·€à·Šà¶º)' },
+  { key: 'Postage', label: 'Postage (à¶­à·à¶´à·à¶½à·Š à¶œà·à·ƒà·Šà¶­à·”)' },
+  { key: 'Meals', label: 'Meals (à¶†à·„à·à¶»)' },
+  { key: 'Other', label: 'Other (à·€à·™à¶±à¶­à·Š)' }
 ];
 
 export default function Form1() {
@@ -38,7 +37,11 @@ export default function Form1() {
       amountReceived: 5000,
       amountPaid: 1500,
       ledgerFolio: 'LF-01',
-      transport: 1500, stationery: 0, postage: 0, meals: 0, other: 0,
+      transport: 1500,
+      stationery: 0,
+      postage: 0,
+      meals: 0,
+      other: 0,
       analysis: { Transport: 1500, Stationery: '', Postage: '', Meals: '', Other: '' }
     },
     {
@@ -50,19 +53,27 @@ export default function Form1() {
       amountReceived: 0,
       amountPaid: 500,
       ledgerFolio: 'LF-02',
-      transport: 0, stationery: 500, postage: 0, meals: 0, other: 0,
+      transport: 0,
+      stationery: 500,
+      postage: 0,
+      meals: 0,
+      other: 0,
       analysis: { Transport: '', Stationery: 500, Postage: '', Meals: '', Other: '' }
     },
     {
       id: 3,
       date: '2026-09-03',
       name: 'Post Office',
-      description: 'Stamps & Postage',
+      description: 'Stamps',
       voucherNo: 'V-103',
       amountReceived: 0,
       amountPaid: 200,
       ledgerFolio: 'LF-03',
-      transport: 0, stationery: 0, postage: 200, meals: 0, other: 0,
+      transport: 0,
+      stationery: 0,
+      postage: 200,
+      meals: 0,
+      other: 0,
       analysis: { Transport: '', Stationery: '', Postage: 200, Meals: '', Other: '' }
     },
     {
@@ -74,7 +85,11 @@ export default function Form1() {
       amountReceived: 0,
       amountPaid: 1200,
       ledgerFolio: 'LF-04',
-      transport: 0, stationery: 0, postage: 0, meals: 1200, other: 0,
+      transport: 0,
+      stationery: 0,
+      postage: 0,
+      meals: 1200,
+      other: 0,
       analysis: { Transport: '', Stationery: '', Postage: '', Meals: 1200, Other: '' }
     }
   ]);
@@ -122,8 +137,10 @@ export default function Form1() {
     }));
   };
 
-    const handleSubmit = async (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
     const payload = {
       date: formData.date,
       name: formData.name,
@@ -138,8 +155,9 @@ export default function Form1() {
       meals: formData.analysis.Meals ? parseFloat(formData.analysis.Meals) : null,
       other: formData.analysis.Other ? parseFloat(formData.analysis.Other) : null
     };
-    // Add locally
-    setRecords(prev => [...prev, {
+
+    // --- MOCK DATA LOGIC ---
+    const newRecord = {
       ...payload,
       id: Date.now(),
       analysis: {
@@ -149,16 +167,26 @@ export default function Form1() {
         Meals: payload.meals || '',
         Other: payload.other || ''
       }
-    }]);
+    };
+    
+    setRecords(prev => [...prev, newRecord]);
     setFormData(INITIAL_FORM_STATE);
-    // Try backend
+    // -----------------------
+
     try {
-      await fetch('http://localhost:8080/api/records', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
+      const response = await fetch('http://localhost:8080/api/records', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-    } catch (error) { console.error("Backend not available:", error); }
+      if (response.ok) {
+        // fetchRecords();
+      }
+    } catch (error) {
+      console.error("Failed to submit record to backend API:", error);
+    }
   };
+
 
   // Calculate Balance dynamically
   let currentBalance = 0;
@@ -183,11 +211,15 @@ export default function Form1() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 text-slate-800 p-4 md:p-6 font-sans">
       <div className="w-full mx-auto space-y-8">
         
-        <FormHeader 
-          title="සුළු මුදල් පොත" 
-          subtitle="Petty Cash Book" 
-          formNumber="Form 1" 
-        />
+        <header className="flex items-center space-x-3 mb-8">
+          <div className="p-3 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-200">
+            <LayoutList className="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">Petty Cash Book (à·ƒà·”à·…à·” à¶¸à·”à¶¯à¶½à·Š à¶´à·œà¶­)</h1>
+            <p className="text-sm text-slate-500 font-medium mt-1">Manage and track minor expenses effortlessly</p>
+          </div>
+        </header>
 
         {/* Form Section */}
         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl">
@@ -195,7 +227,7 @@ export default function Form1() {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-2">
                 <PlusCircle className="w-5 h-5 text-indigo-500" />
-                <h2 className="text-xl font-bold text-slate-800">New Entry (නව ඇතුළත් කිරීම)</h2>
+                <h2 className="text-xl font-bold text-slate-800">New Entry (à¶±à·€ à¶‡à¶­à·”à·…à¶­à·Š à¶šà·’à¶»à·“à¶¸)</h2>
               </div>
               <div className="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider border border-slate-200 shadow-sm">
                 Form 1
@@ -209,14 +241,14 @@ export default function Form1() {
                 {/* Standard Fields */}
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-slate-400" /> Date (දිනය)
+                    <Calendar className="w-4 h-4 text-slate-400" /> Date (à¶¯à·’à¶±à¶º)
                   </label>
                   <input required type="date" name="date" value={formData.date} onChange={handleInputChange}
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <User className="w-4 h-4 text-slate-400" /> Signature (කෙටි අත්සන)
+                    <User className="w-4 h-4 text-slate-400" /> Signature (à¶šà·™à¶§à·’ à¶…à¶­à·Šà·ƒà¶±)
                   </label>
                   <input required type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="E.g., A.B.C."
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
@@ -224,7 +256,7 @@ export default function Form1() {
 
                 <div className="space-y-2 xl:col-span-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-slate-400" /> Description / Details (විස්තරය)
+                    <FileText className="w-4 h-4 text-slate-400" /> Description / Details (à·€à·’à·ƒà·Šà¶­à¶»à¶º)
                   </label>
                   <input required type="text" name="description" value={formData.description} onChange={handleInputChange} placeholder="E.g., Office Supplies"
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
@@ -232,7 +264,7 @@ export default function Form1() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <Tag className="w-4 h-4 text-slate-400" /> Voucher No (වවුචර අංකය)
+                    <Tag className="w-4 h-4 text-slate-400" /> Voucher No (à·€à·€à·”à¶ à¶» à¶…à¶‚à¶šà¶º)
                   </label>
                   <input type="text" name="voucherNo" value={formData.voucherNo} onChange={handleInputChange} placeholder="E.g., V-001"
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
@@ -240,10 +272,10 @@ export default function Form1() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <DollarSign className="w-4 h-4 text-emerald-500" /> Amount Received (ලැබුණු මුදල)
+                    <DollarSign className="w-4 h-4 text-emerald-500" /> Amount Received (à¶½à·à¶¶à·”à¶«à·” à¶¸à·”à¶¯à¶½)
                   </label>
                   <div className="relative">
-                    <span className="absolute left-4 top-3 text-slate-400">රු.</span>
+                    <span className="absolute left-4 top-3 text-slate-400">à¶»à·”.</span>
                     <input type="number" step="0.01" name="amountReceived" value={formData.amountReceived} onChange={handleInputChange} placeholder="0.00"
                       className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50/30 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 shadow-sm text-emerald-900 font-semibold" />
                   </div>
@@ -251,10 +283,10 @@ export default function Form1() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <DollarSign className="w-4 h-4 text-rose-400" /> Amount Paid (ගෙවූ මුදල)
+                    <DollarSign className="w-4 h-4 text-rose-400" /> Amount Paid (à¶œà·™à·€à·– à¶¸à·”à¶¯à¶½)
                   </label>
                   <div className="relative">
-                    <span className="absolute left-4 top-3 text-slate-400">රු.</span>
+                    <span className="absolute left-4 top-3 text-slate-400">à¶»à·”.</span>
                     <input type="number" step="0.01" name="amountPaid" value={formData.amountPaid} onChange={handleInputChange} placeholder="0.00"
                       className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-rose-200 bg-rose-50/30 focus:bg-white focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors duration-200 shadow-sm text-rose-900 font-semibold" />
                   </div>
@@ -262,7 +294,7 @@ export default function Form1() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-600 flex items-center gap-2">
-                    <List className="w-4 h-4 text-slate-400" /> Ledger Folio (ලෙජර පිටුව)
+                    <List className="w-4 h-4 text-slate-400" /> Ledger Folio (à¶½à·™à¶¢à¶» à¶´à·’à¶§à·”à·€)
                   </label>
                   <input type="text" name="ledgerFolio" value={formData.ledgerFolio} onChange={handleInputChange} placeholder="L.F."
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 shadow-sm" />
@@ -271,7 +303,7 @@ export default function Form1() {
 
               {/* Analysis Section */}
               <div className="pt-6 border-t border-slate-100">
-                <h3 className="text-sm font-bold text-slate-800 mb-4 uppercase tracking-wider">Analysis of Payments (ගෙවීම් විශ්ලේෂණය)</h3>
+                <h3 className="text-sm font-bold text-slate-800 mb-4 uppercase tracking-wider">Analysis of Payments (à¶œà·™à·€à·“à¶¸à·Š à·€à·’à·à·Šà¶½à·šà·‚à¶«à¶º)</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                   {ANALYSIS_CATEGORIES.map(category => (
                     <div key={category.key} className="space-y-1.5">
@@ -302,7 +334,7 @@ export default function Form1() {
                 <h2 className="text-xl font-bold text-slate-800">Petty Cash Register</h2>
              </div>
              <div className="bg-indigo-50 px-4 py-2 rounded-lg">
-                <span className="text-sm font-bold text-indigo-900">Current Balance: රු. {currentBalance.toFixed(2)}</span>
+                <span className="text-sm font-bold text-indigo-900">Current Balance: à¶»à·”. {currentBalance.toFixed(2)}</span>
              </div>
           </div>
           
@@ -310,14 +342,14 @@ export default function Form1() {
             <table className="w-full min-w-[1000px] text-left border-collapse table-fixed border border-slate-300">
               <thead>
                 <tr className="bg-slate-50">
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Date (දිනය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Signature (කෙටි අත්සන)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Description / Details (විස්තරය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Voucher No (වවුචර අංකය)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-emerald-600 uppercase break-words bg-emerald-50/50 border border-slate-300">Amount Received (ලැබුණු මුදල) (රු.)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-rose-600 uppercase break-words bg-rose-50/50 border border-slate-300">Amount Paid (ගෙවූ මුදල) (රු.)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-indigo-600 uppercase break-words bg-indigo-50/50 border border-slate-300">Balance (ශේෂය) (රු.)</th>
-                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Ledger Folio (ලෙජර පිටුව)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words bg-slate-50 border border-slate-300">Date (à¶¯à·’à¶±à¶º)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Signature (à¶šà·™à¶§à·’ à¶…à¶­à·Šà·ƒà¶±)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Description / Details (à·€à·’à·ƒà·Šà¶­à¶»à¶º)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Voucher No (à·€à·€à·”à¶ à¶» à¶…à¶‚à¶šà¶º)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-emerald-600 uppercase break-words bg-emerald-50/50 border border-slate-300">Amount Received (à¶½à·à¶¶à·”à¶«à·” à¶¸à·”à¶¯à¶½) (à¶»à·”.)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-rose-600 uppercase break-words bg-rose-50/50 border border-slate-300">Amount Paid (à¶œà·™à·€à·– à¶¸à·”à¶¯à¶½) (à¶»à·”.)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-indigo-600 uppercase break-words bg-indigo-50/50 border border-slate-300">Balance (à·à·šà·‚à¶º) (à¶»à·”.)</th>
+                  <th className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-500 uppercase break-words border border-slate-300">Ledger Folio (à¶½à·™à¶¢à¶» à¶´à·’à¶§à·”à·€)</th>
                   {ANALYSIS_CATEGORIES.map(cat => (
                     <th key={cat.key} className="px-1 py-2 text-[10px] md:text-xs leading-tight font-bold text-slate-400 uppercase break-words bg-slate-50/50 border border-slate-300">{cat.label}</th>
                   ))}
@@ -336,17 +368,17 @@ export default function Form1() {
                 ) : (
                   processedRecords.map((record, idx) => (
                     <tr key={record.id} className="hover:bg-slate-50/50 transition-colors group">
-                      <td className="px-1 py-2 text-xs leading-tight font-medium text-slate-900 break-words bg-white group-hover:bg-slate-50 transition-colors border border-slate-300"><input type="date" value={record.date || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],date:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1" /></td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300"><input type="text" value={record.name || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],name:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1" /></td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300"><input type="text" value={record.description || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],description:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1" /></td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300"><input type="text" value={record.voucherNo || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],voucherNo:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1 text-center" /></td>
-                      <td className="px-1 py-2 text-xs leading-tight font-semibold text-emerald-600 bg-emerald-50/10 break-words border border-slate-300"><input type="number" value={record.amountReceived || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],amountReceived:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1 text-right" /></td>
-                      <td className="px-1 py-2 text-xs leading-tight font-semibold text-rose-600 bg-rose-50/10 break-words border border-slate-300"><input type="number" value={record.amountPaid || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],amountPaid:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1 text-right" /></td>
+                      <td className="px-1 py-2 text-xs leading-tight font-medium text-slate-900 break-words bg-white group-hover:bg-slate-50 transition-colors border border-slate-300">{record.date}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.name}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-700 break-words border border-slate-300">{record.description}</td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300">{record.voucherNo || '-'}</td>
+                      <td className="px-1 py-2 text-xs leading-tight font-semibold text-emerald-600 bg-emerald-50/10 break-words border border-slate-300">{record.received > 0 ? record.received.toFixed(2) : '-'}</td>
+                      <td className="px-1 py-2 text-xs leading-tight font-semibold text-rose-600 bg-rose-50/10 break-words border border-slate-300">{record.paid > 0 ? record.paid.toFixed(2) : '-'}</td>
                       <td className="px-1 py-2 text-xs leading-tight font-bold text-indigo-700 bg-indigo-50/10 break-words border border-slate-300">{record.balance.toFixed(2)}</td>
-                      <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300"><input type="text" value={record.ledgerFolio || ""} onChange={(e) => { const r=[...records]; r[idx]={...r[idx],ledgerFolio:e.target.value}; setRecords(r); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1 text-center" /></td>
+                      <td className="px-1 py-2 text-xs leading-tight text-slate-500 break-words border border-slate-300">{record.ledgerFolio || '-'}</td>
                       {ANALYSIS_CATEGORIES.map(cat => (
                         <td key={cat.key} className="px-1 py-2 text-xs leading-tight text-slate-600 break-words border border-slate-300">
-                          <input type="number" value={record.analysis?.[cat.key] || ""} onChange={(e) => { const r=[...records]; if(!r[idx].analysis) r[idx].analysis={}; r[idx].analysis[cat.key]=e.target.value; setRecords([...r]); }} className="w-full bg-transparent outline-none focus:bg-blue-50 text-xs px-1 text-right" />
+                          {record.analysis[cat.key] ? parseFloat(record.analysis[cat.key]).toFixed(2) : '-'}
                         </td>
                       ))}
                     </tr>
@@ -370,9 +402,6 @@ export default function Form1() {
                 )}
               </tbody>
             </table>
-              <button onClick={() => setRecords(prev => [...prev, { id: Date.now(), date:'', name:'', description:'', voucherNo:'', amountReceived:'', amountPaid:'', ledgerFolio:'', analysis:{ Transport:'', Stationery:'', Postage:'', Meals:'', Other:'' }}])} className="mt-3 flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 font-medium text-sm transition-colors print:hidden">
-                <Plus className="w-4 h-4" /> Add Row
-              </button>
           </div>
         </div>
         
@@ -380,5 +409,6 @@ export default function Form1() {
     </div>
   );
 }
+
 
 

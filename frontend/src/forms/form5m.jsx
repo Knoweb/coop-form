@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
-import { FileText, PlusCircle, Trash2, Save } from 'lucide-react';
 import FormHeader from '../components/FormHeader';
 
+import { FileText, PlusCircle, Trash2, Save, Plus } from 'lucide-react';
 
 export default function Form5M() {
   const [formData, setFormData] = useState({
@@ -27,12 +27,26 @@ export default function Form5M() {
   };
 
   // Hardcoded table data for the preview
-  const tableData = [
+  
+    const [tableData, setTableData] = useState([
+
     { memberNo: "001", qty: "150", valRs: "15000", valCts: "00", adv: "1000", fert: "500", loan: "0", int: "0" },
     { memberNo: "002", qty: "200", valRs: "20000", valCts: "00", adv: "2000", fert: "1000", loan: "500", int: "50" },
     { memberNo: "003", qty: "120", valRs: "12000", valCts: "00", adv: "0", fert: "0", loan: "1000", int: "100" },
     { memberNo: "004", qty: "300", valRs: "30000", valCts: "00", adv: "5000", fert: "2000", loan: "0", int: "0" }
-  ];
+  
+    ]);
+
+    const handleTableChange = (index, field, value) => {
+        const newData = [...tableData];
+        newData[index][field] = value;
+        setTableData(newData);
+    };
+
+    const addRow = () => {
+        setTableData([...tableData, { memberNo: "", qty: "", valRs: "", valCts: "", adv: "", fert: "", loan: "", int: "" }]);
+    };
+
 
   const calculateRow = (row) => {
     const val = parseFloat(row.valRs || 0) + parseFloat(row.valCts || 0) / 100;
@@ -151,15 +165,15 @@ export default function Form5M() {
                     const { totDed, net } = calculateRow(row);
                     return (
                       <tr key={idx} className="h-8">
-                        <td className="border-2 border-slate-900 p-1 text-center">{row.memberNo}</td>
-                        <td className="border-2 border-slate-900 p-1 text-center">{row.qty}</td>
-                        <td className="border-2 border-slate-900 p-1 text-center">{row.days || "1"}</td>
-                        <td className="border-2 border-slate-900 p-1 text-right font-mono">{row.valRs}</td>
-                        <td className="border-2 border-slate-900 p-1 text-center font-mono">{row.valCts}</td>
-                        <td className="border-2 border-slate-900 p-1 text-right font-mono">{row.adv}</td>
-                        <td className="border-2 border-slate-900 p-1 text-right font-mono">{row.fert}</td>
-                        <td className="border-2 border-slate-900 p-1 text-right font-mono">{row.loan}</td>
-                        <td className="border-2 border-slate-900 p-1 text-right font-mono">{row.int}</td>
+                        <td className="border-2 border-slate-900 p-1 text-center"><input type="text" value={row.memberNo || ''} onChange={(e) => handleTableChange(idx, 'memberNo', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-center"><input type="text" value={row.qty || ''} onChange={(e) => handleTableChange(idx, 'qty', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-center"><input type="text" value={row.days || "1"} onChange={(e) => handleTableChange(idx, 'days', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-right font-mono"><input type="text" value={row.valRs || ''} onChange={(e) => handleTableChange(idx, 'valRs', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-center font-mono"><input type="text" value={row.valCts || ''} onChange={(e) => handleTableChange(idx, 'valCts', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-right font-mono"><input type="text" value={row.adv || ''} onChange={(e) => handleTableChange(idx, 'adv', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-right font-mono"><input type="text" value={row.fert || ''} onChange={(e) => handleTableChange(idx, 'fert', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-right font-mono"><input type="text" value={row.loan || ''} onChange={(e) => handleTableChange(idx, 'loan', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
+                        <td className="border-2 border-slate-900 p-1 text-right font-mono"><input type="text" value={row.int || ''} onChange={(e) => handleTableChange(idx, 'int', e.target.value)} className="w-full bg-transparent outline-none focus:bg-indigo-50 text-inherit font-inherit text-center px-1" /></td>
                         <td className="border-2 border-slate-900 p-1 text-right font-mono font-bold">{totDed}</td>
                         <td className="border-2 border-slate-900 p-1 text-right font-mono font-bold">{net}</td>
                       </tr>
@@ -201,6 +215,10 @@ export default function Form5M() {
                   </tr>
                 </tbody>
               </table>
+                <button onClick={addRow} className="mt-4 flex items-center gap-1 px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 font-medium text-sm transition-colors print:hidden">
+                    <Plus className="w-4 h-4" /> Add Row
+                </button>
+        
             </div>
 
             {/* Right Side: Receipt Slips */}

@@ -56,6 +56,11 @@ export default function Form19GoodsReturn() {
       sellingPriceTotal: qty * (Number(formData.sellingPriceUnit) || 0)
     };
 
+    
+    // --- LOCAL STATE UPDATE ---
+    setRecords(prev => [...prev, { ...payload, id: Date.now() }]);
+    // setFormData(INITIAL_FORM_STATE);
+    // --------------------------
     try {
       const res = await fetch('http://localhost:8080/api/form-19', {
         method: 'POST',

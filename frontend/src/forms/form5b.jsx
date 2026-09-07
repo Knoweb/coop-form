@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
-import { FileText, PlusCircle, Trash2, Save } from 'lucide-react';
 import FormHeader from '../components/FormHeader';
 
+import { FileText, PlusCircle, Trash2, Save, Plus } from 'lucide-react';
 
 export default function Form5B() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,23 @@ export default function Form5B() {
     { date: "2026-09-06", description: "ප්‍රධාන ගිණුමට මාරු කිරීම", account: "A/C 102", rs: "50000", cts: "00" },
     { date: "2026-09-06", description: "සුබසාධක අරමුදලට මාරු කිරීම", account: "A/C 450", rs: "15000", cts: "00" }
   ]);
+
+
+  const [tableRows, setTableRows] = useState([
+    { date: '2026-09-06', description: 'ප්‍රධාන ගිණුමට මාරු කිරීම', account: 'A/C 102', rs: '50000', cts: '00' },
+    { date: '2026-09-06', description: 'සුබසාධක අරමුදලට මාරු කිරීම', account: 'A/C 450', rs: '15000', cts: '00' },
+    { date: '', description: '', account: '', rs: '', cts: '' }
+  ]);
+
+  const handleRowChange = (idx, field, value) => {
+    const newRows = [...tableRows];
+    newRows[idx][field] = value;
+    setTableRows(newRows);
+  };
+
+  const addTableRow = () => {
+    setTableRows(prev => [...prev, { date: '', description: '', account: '', rs: '', cts: '' }]);
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
