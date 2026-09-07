@@ -113,7 +113,7 @@ export default function Form31() {
             <button
               onClick={handleSaveForm}
               disabled={isSubmitting}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-slncc-red hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-gray-200 hover:shadow-lg hover:-translate-y-0.5"
+              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl transition-all shadow-md shadow-gray-200 hover:shadow-lg hover:-translate-y-0.5"
             >
               <Save className="w-5 h-5" />
               <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>

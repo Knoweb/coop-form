@@ -320,7 +320,7 @@ export default function Form9E() {
                 document.getElementById('form-bf-c').value = '';
                 document.getElementById('form-today-t').value = '';
                 document.getElementById('form-today-c').value = '';
-              }} className="bg-slncc-red hover:bg-opacity-90 text-white px-6 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-colors">
+              }} className="bg-blue-600 hover:bg-opacity-90 text-white px-6 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-colors">
                 <CheckCircle2 className="w-4 h-4" />
                 ඇතුළත් කරන්න (Update Row)
               </button>

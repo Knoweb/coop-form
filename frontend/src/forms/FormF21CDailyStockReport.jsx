@@ -211,7 +211,7 @@ export default function FormF21CDailyStockReport() {
         </div>
 
         <div className="p-6 border-t border-slate-200 bg-slate-50 flex justify-end">
-          <button onClick={handleSaveReport} className="flex items-center space-x-2 bg-slncc-red hover:bg-opacity-90 text-white px-8 py-3 rounded-xl transition-all shadow-md font-bold text-sm">
+          <button onClick={handleSaveReport} className="flex items-center space-x-2 bg-blue-600 hover:bg-opacity-90 text-white px-8 py-3 rounded-xl transition-all shadow-md font-bold text-sm">
             <Save className="w-5 h-5" />
             <span>Save Daily Report (දෛනික වාර්තාව සුරකින්න)</span>
           </button>

@@ -388,7 +388,7 @@ export default function Form30() {
         <button
           onClick={handleSaveForm}
           disabled={isSubmitting}
-          className="flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg bg-slncc-red hover:bg-opacity-90 text-white shadow-xl shadow-gray-200 transition-all duration-300 hover:-translate-y-1"
+          className="flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg bg-blue-600 hover:bg-opacity-90 text-white shadow-xl shadow-gray-200 transition-all duration-300 hover:-translate-y-1"
         >
           <Save className="w-6 h-6" />
           <span>{isSubmitting ? 'Saving...' : 'Save Entire Form'}</span>

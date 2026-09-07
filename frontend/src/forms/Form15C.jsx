@@ -327,7 +327,7 @@ export default function Form15C() {
         {/* ── Submit ── */}
         <div className="flex justify-end mt-6 pt-4 border-t border-gray-200">
           <button type="submit"
-            className="flex items-center gap-2 bg-slncc-red hover:bg-opacity-90 text-white px-7 py-2.5 rounded-xl font-semibold shadow-lg shadow-gray-200 transition-all duration-200 hover:-translate-y-0.5">
+            className="flex items-center gap-2 bg-blue-600 hover:bg-opacity-90 text-white px-7 py-2.5 rounded-xl font-semibold shadow-lg shadow-gray-200 transition-all duration-200 hover:-translate-y-0.5">
             <Save className="w-5 h-5" />
             <span>Submit Entry</span>
           </button>

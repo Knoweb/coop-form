@@ -501,7 +501,7 @@ export default function Form29() {
             onClick={handleSaveForm}
             disabled={currentItems.length === 0 || isSubmitting}
             className={`flex items-center space-x-2 px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 ${currentItems.length > 0 && !isSubmitting
-                ? 'bg-slncc-red hover:bg-opacity-90 text-white shadow-gray-200 hover:shadow-indigo-300 hover:-translate-y-1'
+                ? 'bg-blue-600 hover:bg-opacity-90 text-white shadow-gray-200 hover:shadow-indigo-300 hover:-translate-y-1'
                 : 'bg-slate-300 text-slate-500 cursor-not-allowed'
               }`}>
             <Save className="w-6 h-6" />

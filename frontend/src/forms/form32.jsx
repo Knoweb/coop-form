@@ -177,7 +177,7 @@ export default function Form32() {
             <button
               onClick={handleSave}
               disabled={isSubmitting}
-              className="flex items-center gap-2 px-6 py-2.5 bg-slncc-red hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl shadow-md shadow-indigo-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+              className="flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-opacity-90 disabled:bg-indigo-400 text-white font-bold rounded-2xl shadow-md shadow-indigo-900/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
             >
               <Save className="w-5 h-5" />
               <span>{isSubmitting ? 'Saving...' : 'Save Record'}</span>
