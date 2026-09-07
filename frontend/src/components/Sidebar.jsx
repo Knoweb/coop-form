@@ -1,7 +1,20 @@
 import React from 'react';
-import { FileText, Settings, LayoutDashboard, X, Users } from 'lucide-react';
+import { FileText, Settings, LayoutDashboard, X } from 'lucide-react';
 
 export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm }) {
+  const btn = (key, label, sub = '') => (
+    <button
+      onClick={() => { setCurrentForm(key); }}
+      className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === key ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}
+    >
+      <FileText className="w-5 h-5 shrink-0" />
+      <div className="flex flex-col">
+        {sub && <span className="text-xs text-slate-400">{sub}</span>}
+        <span>{label}</span>
+      </div>
+    </button>
+  );
+
   return (
     <div className={`bg-slate-900 text-slate-300 h-screen fixed left-0 top-0 flex flex-col shadow-2xl z-50 transition-all duration-300 ${isOpen ? 'w-64 translate-x-0' : 'w-64 -translate-x-full'}`}>
       <div className="p-6 flex items-center justify-between border-b border-slate-800">
@@ -12,272 +25,88 @@ export default function Sidebar({ isOpen, setIsOpen, currentForm, setCurrentForm
           <h1 className="text-xl font-bold text-white">COOP Forms</h1>
         </div>
         <button onClick={() => setIsOpen(false)} className="p-1 hover:bg-slate-800 rounded-lg md:hidden">
-           <X className="w-5 h-5 text-slate-400" />
+          <X className="w-5 h-5 text-slate-400" />
         </button>
       </div>
-      
-      <div className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
-        <button 
-          onClick={() => { setCurrentForm('form1'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form1' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">සුළු මුදල් පොත</span>
-            <span>Form 1</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('form2'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">සුළු මුදල් පොත</span>
-            <span>Form 2</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('form9c'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form9c' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">මුදලට / ශාඛා / ණය වෙළඳාම</span>
-            <span>Form 9 C</span>
-          </div>
-        </button>
-        <button 
-            onClick={() => { setCurrentForm('form3'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form3' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">සුළු මුදල් වවුචරය</span>
-              <span>Form 3</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form4'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form4' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">බැංකුවෙන් ආපසු එවූ චෙක්පත්</span>
-              <span>Form 4</span>
-            </div>
 
-        </button>
-          <button 
-            onClick={() => { setCurrentForm('form5'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form5' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">වවුචරය</span>
-              <span>Form 5</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form5a'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form5a' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">විකුණුම් විස්තරය</span>
-              <span>Form 5A</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form5b'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form5b' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">අනුමත කළ මාරුකිරීම්</span>
-              <span>Form 5B</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form5m'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form5m' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">කිරි භාරගැනීම</span>
-              <span>Form 5M</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form6'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form6' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">චෙක්පත් නිකුත් කිරීමේ සටහන</span>
-              <span>Form 6</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form7'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form7' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">මුදල් ලේඛනය</span>
-              <span>Form 7</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form7a'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form7a' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">ප්‍රාදේශික ලැබීම් හා ගෙවීම්</span>
-              <span>Form 7A</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form8'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form8' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">ගෙවීම් මුදල් පොත</span>
-              <span>Form 8</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form9a'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form9a' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">ගබඩා වාර්තාව</span>
-              <span>Form 9A</span>
-            </div>
-          </button>
-          <button 
-            onClick={() => { setCurrentForm('form9b'); setIsOpen(false); }}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form9b' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-            <FileText className="w-5 h-5 shrink-0" />
-            <div className="flex flex-col">
-              <span className="text-xs text-slate-400">සිල්ලර ගබඩා වාර්තාව</span>
-              <span>Form 9B</span>
-            </div>
-          </button>
-        <button 
-          onClick={() => { setCurrentForm('form23a'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form23a' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'}`}>
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">බඩු ගැනුම්කරුගේ ඉල්ලීම</span>
-            <span>Form 23 A</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('schedule2'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'schedule2' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">No 2 උපලේඛනය</span>
-            <span>Schedule No. 2</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('rentJournal'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'rentJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">ගෙවල් කුලී ජර්නලය</span>
-            <span>Rent Journal (No. 04)</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('stationeryJournal'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'stationeryJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">ලිපි ද්‍රව්‍ය වැය ජර්නලය</span>
-            <span>Stationery Journal (Schedule No. 04)</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('annualInsuredJournal'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'annualInsuredJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">වාර්ෂික රක්ෂණ ජර්නලය</span>
-            <span>Annual Insured Journal (Schedule No. 5)</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('monthlyDepreciationJournal'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'monthlyDepreciationJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">මාසික ක්ෂයවීම් ජර්නලය</span>
-            <span>Monthly Depreciation Journal (Schedule No. 6)</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('investmentInterestJournal'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'investmentInterestJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">තැන්පත් පොළි ආදායම් ගණනය කිරීමේ ජර්නලය</span>
-            <span>Investment Interest Journal (Schedule No. 07)</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('rentIncomeJournal'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'rentIncomeJournal' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">ගෙවල් කුලී ආදායම් ගණනය කිරීමේ ජර්නලය</span>
-            <span>Rent Income Journal (Schedule No. 08)</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('generalLedgerForm'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'generalLedgerForm' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">මහ ලෙජරය</span>
-            <span>General Ledger</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('transferRegisterForm'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'transferRegisterForm' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">පැවරැම් පොත</span>
-            <span>Transfer Register</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('multiColumnLedgerForm'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'multiColumnLedgerForm' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}
-        >
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">විස්තරාත්මක බෙදාහැරීමේ ජර්නලය</span>
-            <span>Multi-Column Ledger</span>
-          </div>
-        </button>
-        <button 
-          onClick={() => { setCurrentForm('form24'); setIsOpen(false); }}
-          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors text-left leading-tight ${currentForm === 'form24' ? 'bg-indigo-600/10 text-indigo-400 font-semibold' : 'hover:bg-slate-800 hover:text-slate-200'}`}>
-          <FileText className="w-5 h-5 shrink-0" />
-          <div className="flex flex-col">
-            <span className="text-xs text-slate-400">Form 24</span>
-            <span>Form 24</span>
-          </div>
-        </button>
+
+      <div className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
+        {btn('form1', 'Form 1', 'කුඩා මුදල් පොත')}
+        {btn('form2', 'Form 2', 'ගෙවීම් ලේඛනය')}
+        {btn('form3', 'Form 3', 'Petty Cash Voucher')}
+        {btn('form4', 'Form 4', 'Form 4')}
+        {btn('form5', 'Form 5', 'ගබඩා වාර්තාව')}
+        {btn('form5a', 'Form 5A', 'ගබඩා වාර්තාව (කෘෂිකර්ම)')}
+        {btn('form5b', 'Form 5B', 'ගබඩා වාර්තාව (පොහොර)')}
+        {btn('form5m', 'Form 5M', 'කිරි පට්ටි දෛනික වාර්තාව')}
+        {btn('form6', 'Form 6', 'ගබඩා වාර්තාව')}
+        {btn('form7', 'Form 7', 'ගබඩා වාර්තාව')}
+        {btn('form7a', 'Form 7A', 'ප්‍රාදේශික ලැබීම් හා ගෙවීම්')}
+        {btn('form8', 'Form 8', 'ගෙවීම් මුදල් පොත')}
+        {btn('form9a', 'Form 9A', 'තොග ගබඩා වාර්තාව')}
+        {btn('form9b', 'Form 9B', 'සිල්ලර ගබඩා වාර්තාව')}
+        {btn('form9c', 'Form 9 C', 'ශාඛා / ගබඩා / දිය සත්ත්ව')}
+        {btn('form9d', 'Form 9 D', 'ගොඩනැගිලිවලට ගෙවීම් ලේඛනය')}
+        {btn('form9e', 'Form 9 E', 'ග්‍රාමීය බැංකුව')}
+        {btn('form9m', 'Form 9 M', 'කිරි සැපයුම්')}
+        {btn('form10', 'Form 10', 'මුදල් කුවිතාන්සිය')}
+        {btn('form10b', 'Form 10 B', 'තැන්පතු කුවිතාන්සිය')}
+        {btn('form11', 'Form 11', 'මුදල් සහතිකය')}
+        {btn('form11a', 'Form 11 A', 'දෛනික මුදල් එකතු කිරීමේ සටහන')}
+        {btn('form12', 'Form 12', 'බැංකුවට මුදල් යෙනකාමේ විස්තරය')}
+        {btn('form14', 'Form 14', 'මුදලට/ණයට වෙළදාම් පත (තොග)')}
+        {btn('form14a', 'Form 14 A', 'සැකසුම් පත්‍රය - වෙළඳාම')}
+        {btn('form14b', 'Form 14 B', 'වෙළඳාම් පත (පාරිභෝගික අංශය)')}
+        {btn('form14c', 'Form 14 C', 'වෙළඳාම් පත (සිල්ලර ශාඛා වලට)')}
+        {btn('form14d', 'Form 14 D', 'ගබඩා කුවිතාන්සිය')}
+        {btn('form14e', 'Form 14 E', 'ගෝනි පිළිබඳ විස්තරය')}
+        {btn('form15', 'Form 15', 'සුළු මුදල් සහතිකය / ඉතිරි බඩු සටහන')}
+        {btn('form15a', 'Form 15 A', 'ගබඩා කුවිතාන්සි සසඳුම් පත')}
+        {btn('form15b', 'Form 15 B', 'ඉතිරි ගෝනි පිළිබඳ සහතිකය')}
+        {btn('form15c', 'Form 15 C', 'දිනට ප්‍රමාණය — ඉතිරි බඩු සටහන')}
+        {btn('form15mMilk', 'Form 15 M', 'කිරි සංග්‍රහය')}
+        {btn('form16a', 'Form 16 A', 'බඩු ලේජරය')}
+        {btn('form16b', 'Form 16 B', 'බඩු භාර ගැනීමේ සටහන')}
+        {btn('form16d', 'Form 16 D', 'දෛනික ගැනුම් සටහන')}
+        {btn('form17', 'Form 17', 'නරක්වීම්/මිල වෙනස්වීම්')}
+        {btn('storeTransfer', 'Form 18', 'ගබඩාවෙන් ගබඩාවට මාරු කිරීම')}
+        {btn('form19', 'Form 19', 'බඩු ආපසු යැවීම/එවීම')}
+        {btn('form20', 'Form 20', 'තොග ගබඩාවේ බඩු විග්‍රහ කිරීම')}
+        {btn('form21', 'Form 21', 'බින් කාඩ්පත')}
+        {btn('form21a', 'Form 21 A', 'ලිපිද්‍රව්‍ය පාලනය')}
+        {btn('form21b', 'Form 21 B', 'ප්‍රාදේශිකයේ / අංශයේ නම')}
+        {btn('form21c', 'Form 21 C', 'දිනකට ඉතිරි බඩු තොග වාර්තාව')}
+        {btn('form22', 'Form 22', 'ඉතිරි බඩු ගණන් ගැනීමේ ලැයිස්තුව')}
+        {btn('form23', 'Form 23', 'මාසික මූල්‍ය බඩු ලැයිස්තුව')}
+        {btn('form23a', 'Form 23 A', 'බඩු ගැනුම්කරුගේ ඉල්ලීම')}
+        {btn('form24', 'Form 24', 'ස්ථාවර වත්කම් ලේඛනය')}
+        {btn('form25', 'Form 25', 'ශේෂ ගෙවීම් ලේඛනය')}
+        {btn('form27', 'Form 27', 'ලේඛන ගෙවීම් ලේඛනය')}
+        {btn('form29', 'Form 29', 'ශේෂ ගෙවීම් ලේඛනය')}
+        {btn('f29', 'Form 29', 'නිළවරයේ ළිය-ලේඛන')}
+        {btn('form30', 'Form 30', 'ගබඩාවල ප්‍රවාහන ගාස්තු')}
+        {btn('form31', 'Form 31', 'රථවාහන අළුත්වැඩියා විස්තර')}
+        {btn('form32', 'Form 32', 'ශාඛා වෙළඳ ගිණුම්')}
+        {btn('form32a', 'Form 32 A Summary', 'ශේෂ 32 A')}
+        {btn('branchProfitLoss', 'Form 33', 'ශාඛා ලාභ-ලා ලේඛනය')}
+        {btn('telephoneRegister', 'Form 34', 'දූරකථන ලේඛනය')}
+        {btn('schedule2', 'Schedule No. 2', 'No 2 සංශෝධනය')}
+        {btn('rentJournal', 'Rent Journal (No. 04)', 'ගෙවල් කුලී ගෙවීම් ජර්නලය')}
+        {btn('stationeryJournal', 'Stationery Journal (Schedule No. 04)', 'කාර්යාල දිය ජර්නලය')}
+        {btn('annualInsuredJournal', 'Annual Insured Journal (Schedule No. 5)', 'ජාතික රක්ෂිත ජර්නලය')}
+        {btn('monthlyDepreciationJournal', 'Monthly Depreciation Journal (Schedule No. 6)', 'සේවාය ඇකිළුම් ජර්නලය')}
+        {btn('investmentInterestJournal', 'Investment Interest Journal (Schedule No. 07)', 'ලාභදායී ලේඛන සෘජු ජර්නලය')}
+        {btn('rentIncomeJournal', 'Rent Income Journal (Schedule No. 08)', 'ගෙවල් කුලී ආදායම් ලේඛනය')}
+        {btn('generalLedgerForm', 'General Ledger', 'සම ලේජරය')}
+        {btn('transferRegisterForm', 'Transfer Register', 'පැවරැම් ලේඛනය')}
+        {btn('multiColumnLedgerForm', 'Multi-Column Ledger', 'විස්තරාත්මක බෙදාහැරීමේ ජර්නලය')}
       </div>
-      
+
       <div className="p-4 border-t border-slate-800">
-        <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-slate-800 hover:text-white transition-colors">
-          <Settings className="w-5 h-5 shrink-0" />
+        <a href="#" className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-slate-800 hover:text-white transition-colors">
+          <Settings className="w-5 h-5" />
           <span>Settings</span>
-        </button>
+        </a>
       </div>
     </div>
   );

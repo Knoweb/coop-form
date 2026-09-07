@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/form9c-records")
-@CrossOrigin(origins = "*") // Allow React frontend
+
 public class Form9CController {
 
     @Autowired

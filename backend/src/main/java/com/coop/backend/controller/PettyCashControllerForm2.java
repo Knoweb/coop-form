@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/form2/records")
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class PettyCashControllerForm2 {
 
     @Autowired
