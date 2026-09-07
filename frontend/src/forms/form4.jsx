@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import { FileText, PlusCircle, Trash2, Printer } from 'lucide-react';
+import { FileText, PlusCircle, Trash2, Save } from 'lucide-react';
 
 export default function Form4() {
   const defaultRecords = [
@@ -30,7 +30,8 @@ export default function Form4() {
   ];
 
   const [records, setRecords] = useState([
-    { date: "", drawerName: "", relevantName: "", bankName: "", chequeNo: "", rs: "", cts: "", reason: "", actionTaken: "", finalSettlement: "" }
+    { date: "2026-09-01", drawerName: "නිමල් පෙරේරා", relevantName: "ඒ. බී. සිල්වා", bankName: "ලංකා බැංකුව", chequeNo: "102456", rs: "15000", cts: "00", reason: "ගිණුමේ මුදල් නොමැති වීම", actionTaken: "දුරකථනයෙන් දැනුම් දුන්නා", finalSettlement: "මුදලින් ගෙව්වා" },
+    { date: "2026-09-03", drawerName: "සමන් කුමාර", relevantName: "කමල් ට්‍රේඩර්ස්", bankName: "මහජන බැංකුව", chequeNo: "985412", rs: "25500", cts: "50", reason: "අත්සන වෙනස් වීම", actionTaken: "ලිපියක් යැව්වා", finalSettlement: "නව චෙක්පතක් ලබා ගත්තා" }
   ]);
 
   const handleRecordChange = (index, field, value) => {
@@ -48,12 +49,20 @@ export default function Form4() {
     setRecords(newRecords);
   };
 
-  const handlePrint = () => {
-    window.print();
+  
+  const handleClear = () => {
+    const emptyFormData = Object.keys(formData).reduce((acc, key) => ({ ...acc, [key]: "" }), {});
+    setFormData(emptyFormData);
+    const emptyRecord = Object.keys(records[0]).reduce((acc, key) => ({ ...acc, [key]: "" }), {});
+    setRecords([emptyRecord]);
   };
 
-  const hasRecords = records.some(r => r.date || r.drawerName || r.relevantName || r.bankName || r.chequeNo || r.rs || r.cts || r.reason || r.actionTaken || r.finalSettlement);
-  const displayRecords = hasRecords ? records : defaultRecords;
+  const handleSubmit = () => {
+    alert('Form data submitted successfully!');
+  };
+
+  
+  const displayRecords = records;
 
   return (
     <div className="flex-1 bg-slate-50 min-h-screen font-sans overflow-x-hidden p-4 md:p-8 print:bg-white print:p-0">
@@ -66,8 +75,13 @@ export default function Form4() {
             <p className="text-sm md:text-base text-slate-500 font-medium mt-1">බැංකුවෙන් ආපසු එවූ චෙක්පත් (Dishonoured Cheques)</p>
           </div>
           <div className="flex items-center gap-3">
-            <button onClick={handlePrint} className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl transition-colors font-semibold shadow-sm">
-              <Printer className="w-5 h-5" />
+            
+            <button onClick={handleClear} className="flex items-center gap-2 bg-rose-50 hover:bg-rose-100 text-rose-600 px-5 py-2.5 rounded-xl transition-colors font-semibold shadow-sm border border-rose-200">
+              <Trash2 className="w-5 h-5" />
+              Clear Form
+            </button>
+<button onClick={handleSubmit} className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-xl transition-colors font-semibold shadow-sm">
+              <Save className="w-5 h-5" />
               Print Register
             </button>
           </div>

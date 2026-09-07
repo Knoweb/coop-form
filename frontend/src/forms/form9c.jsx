@@ -224,8 +224,8 @@ export default function Form9C() {
               </div>
 
               <div className="pt-4 flex justify-end">
-                <button type="submit" className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-                  <Save className="w-5 h-5" />
+                <button type="submit" className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+              <Save className="w-5 h-5" />
                   <span>Submit Entry</span>
                 </button>
               </div>
