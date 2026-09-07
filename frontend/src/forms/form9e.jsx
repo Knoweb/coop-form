@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Save, Building2, Calendar, FileText, CheckCircle2 } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 const RECEIPT_DESCRIPTIONS = [
   "ණය අයවීම",
@@ -199,13 +200,13 @@ export default function Form9E() {
     <div className="min-h-screen bg-slate-100 p-4 font-sans">
       <div className="max-w-[1900px] mx-auto space-y-4">
         
-        {/* Header */}
-        <div className="bg-white rounded-xl shadow p-4 md:p-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-800">Form 9 E (ගැලපීම් මුදල් පොත)</h1>
-            <p className="text-sm text-slate-500">Reconciliation Cash Book</p>
-          </div>
-          
+        {/* Header Section */}
+        <FormHeader 
+          title="ගැලපීම් මුදල් පොත" 
+          subtitle="Reconciliation Cash Book" 
+          formNumber="Form 9E" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden mb-6">
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
             <div className="flex flex-col gap-1">
               <label className="text-xs font-semibold text-slate-600 uppercase flex items-center gap-1"><Building2 className="w-3 h-3"/> Society Name (සමිතිය)</label>

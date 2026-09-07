@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Save, CheckCircle2, Printer } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 export default function Form11() {
   const [isSaving, setIsSaving] = useState(false);
@@ -118,24 +120,21 @@ export default function Form11() {
     <div className="min-h-screen bg-slate-100 p-4 font-sans print:bg-white print:p-0">
       <div className="max-w-5xl mx-auto space-y-6 print:space-y-0 print:max-w-none">
         
-        {/* Header Action Bar (Hidden in Print) */}
-        <div className="bg-white rounded-xl shadow p-4 md:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 print:hidden">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-800">Form 11</h1>
-            <p className="text-sm text-slate-500">මුදල් සහතිකය (Cash Certificate)</p>
-          </div>
-          
-          <div className="flex gap-3 w-full sm:w-auto">
-            <button onClick={() => window.print()} className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-6 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-colors h-[40px] flex-1 sm:flex-none justify-center">
+        {/* Header Section */}
+        <FormHeader 
+          title="මුදල් සහතිකය" 
+          subtitle="Cash Certificate" 
+          formNumber="Form 11" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden mb-6">
+          <button onClick={() => window.print()} className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-6 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-colors h-[40px] flex-1 sm:flex-none justify-center">
               <Printer className="w-4 h-4" /> Print
             </button>
             <button onClick={handleSave} disabled={isSaving} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-colors disabled:opacity-50 h-[40px] flex-1 sm:flex-none justify-center shadow-sm">
               {saveSuccess ? <CheckCircle2 className="w-4 h-4" /> : <Save className="w-4 h-4" />}
               {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Receipt'}
             </button>
-          </div>
         </div>
-
         {/* Data Entry Form (Hidden in Print) */}
         <div className="bg-white rounded-xl shadow p-6 border border-slate-200 print:hidden">
           <h2 className="text-lg font-bold text-slate-800 mb-4 border-b pb-2">Certificate Details</h2>

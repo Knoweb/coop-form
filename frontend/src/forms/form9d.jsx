@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText, Calendar, List, Tag, Save, LayoutList, Building2, Plus, Check, X, Hash } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
+
 
 const INITIAL_FORM_STATE = {
   date: '',
@@ -173,15 +175,13 @@ export default function Form9D() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 text-slate-800 p-4 md:p-6 font-sans">
       <div className="w-full mx-auto space-y-8">
         
-        <header className="flex items-center space-x-3 mb-8">
-          <div className="p-3 bg-teal-600 rounded-xl shadow-lg shadow-teal-200">
-            <LayoutList className="w-8 h-8 text-white" />
-          </div>
-          <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">Form 9 D (ගොවි අංශයේ දෛනික මුදල් එකතුකිරීමේ සටහන)</h1>
-            <p className="text-sm text-slate-500 font-medium mt-1">Daily Cash Collection Record - Agriculture Division</p>
-          </div>
-        </header>
+        {/* Header Section */}
+        <FormHeader 
+          title="ගොවි අංශයේ දෛනික මුදල් එකතුකිරීමේ සටහන" 
+          subtitle="Daily Cash Collection Record - Agriculture Division" 
+          formNumber="Form 9 D" 
+        />
+        
 
         {/* Global Header Section */}
         <div className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden mb-8">

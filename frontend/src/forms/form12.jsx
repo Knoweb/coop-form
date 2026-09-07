@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Save, CheckCircle2, Printer } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 export default function Form12() {
   const [isSaving, setIsSaving] = useState(false);
@@ -74,12 +75,13 @@ export default function Form12() {
     <div className="min-h-screen bg-slate-100 p-4 font-sans print:bg-white print:p-0">
       <div className="max-w-3xl mx-auto space-y-6 print:space-y-0 print:max-w-none">
 
-        {/* Action Bar */}
-        <div className="bg-white rounded-xl shadow p-4 flex justify-between items-center print:hidden">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-800">Form 12</h1>
-            <p className="text-sm text-slate-500">බැංකුවට මුදල් යෙනකාමේ විස්තරය (Bank Money Transfer Details)</p>
-          </div>
+        {/* Header Section */}
+        <FormHeader 
+          title="බැංකුවට මුදල් යෙනකාමේ විස්තරය" 
+          subtitle="Bank Money Transfer Details" 
+          formNumber="Form 12" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden mb-6">
           <div className="flex gap-3">
             <button onClick={() => window.print()} className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-5 py-2 rounded text-sm font-semibold flex items-center gap-2 h-[40px]">
               <Printer className="w-4 h-4" /> Print

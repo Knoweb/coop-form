@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Save, CheckCircle2, Printer, Plus, Trash2 } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 export default function Form11A() {
   const [isSaving, setIsSaving] = useState(false);
@@ -193,13 +194,13 @@ export default function Form11A() {
     <div className="min-h-screen bg-slate-100 p-4 font-sans print:bg-white print:p-0">
       <div className="max-w-[1400px] mx-auto space-y-6 print:space-y-0 print:max-w-none">
         
-        {/* Action Bar */}
-        <div className="bg-white rounded-xl shadow p-4 md:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 print:hidden">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-800">Form 11 A</h1>
-            <p className="text-sm text-slate-500">දෛනික මුදල් එකතු කිරීමේ සටහන (Daily Cash Collection Record)</p>
-          </div>
-          
+        {/* Header Section */}
+        <FormHeader 
+          title="දෛනික මුදල් එකතු කිරීමේ සටහන" 
+          subtitle="Daily Cash Collection Record" 
+          formNumber="Form 11A" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden mb-6">
           <div className="flex gap-3 w-full sm:w-auto">
             <button onClick={() => window.print()} className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-6 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-colors h-[40px]">
               <Printer className="w-4 h-4" /> Print

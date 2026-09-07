@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Save, Building2, Calendar, CheckCircle2 } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 export default function Form9M() {
   const [isSaving, setIsSaving] = useState(false);
@@ -331,13 +332,13 @@ export default function Form9M() {
     <div className="min-h-screen bg-slate-100 p-4 font-sans">
       <div className="max-w-[1900px] mx-auto space-y-4">
         
-        {/* Header */}
-        <div className="bg-white rounded-xl shadow p-4 md:p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-800">Form 9 M</h1>
-            <p className="text-sm text-slate-500">Milk Supply Records</p>
-          </div>
-          
+        {/* Header Section */}
+        <FormHeader 
+          title="කිරි සැපයුම් වාර්තා" 
+          subtitle="Milk Supply Records" 
+          formNumber="Form 9M" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden mb-6">
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto flex-wrap">
             <div className="flex flex-col gap-1 flex-1 min-w-[200px]">
               <label className="text-xs font-semibold text-slate-600 uppercase flex items-center gap-1"><Building2 className="w-3 h-3"/> Society Name (සමිතිය)</label>
@@ -358,7 +359,7 @@ export default function Form9M() {
             <div className="flex items-end">
               <button onClick={handleSave} disabled={isSaving} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-1.5 rounded text-sm font-semibold flex items-center gap-2 transition-colors disabled:opacity-50 h-[34px] w-full sm:w-auto justify-center">
                 {saveSuccess ? <CheckCircle2 className="w-4 h-4" /> : <Save className="w-4 h-4" />}
-                {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save'}
+                {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Records'}
               </button>
             </div>
           </div>
