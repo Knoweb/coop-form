@@ -91,6 +91,17 @@ function App() {
         return <Form3 />;
       case 'form4':
         return <Form4 />;
+      case 'form5': return <Form5 />;
+      case 'form5a': return <Form5A />;
+      case 'form5b': return <Form5B />;
+      case 'form5m': return <Form5M />;
+      case 'form6': return <Form6 />;
+      case 'form7': return <Form7 />;
+      case 'form7a': return <Form7A />;
+      case 'form8': return <Form8 />;
+      case 'form9a': return <Form9A />;
+      case 'form9b': return <Form9B />;
+
       case 'form9c':
         return <Form9C />;
       case 'form9d':
@@ -216,6 +227,17 @@ function App() {
         return 'Form 3';
       case 'form4':
         return 'Form 4';
+      case 'form5': return 'Form 5';
+      case 'form5a': return 'Form 5A';
+      case 'form5b': return 'Form 5B';
+      case 'form5m': return 'Form 5M';
+      case 'form6': return 'Form 6';
+      case 'form7': return 'Form 7';
+      case 'form7a': return 'Form 7A';
+      case 'form8': return 'Form 8';
+      case 'form9a': return 'Form 9A';
+      case 'form9b': return 'Form 9B';
+
       case 'form9c':
         return 'Form 9 C';
       case 'form9d':
