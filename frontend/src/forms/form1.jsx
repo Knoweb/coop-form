@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList, User } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 const INITIAL_FORM_STATE = {
   date: '',
@@ -128,15 +129,11 @@ export default function Form1() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 text-slate-800 p-4 md:p-6 font-sans">
       <div className="w-full mx-auto space-y-8">
         
-        <header className="flex items-center space-x-3 mb-8">
-          <div className="p-3 bg-slncc-red rounded-xl shadow-lg shadow-gray-200">
-            <LayoutList className="w-8 h-8 text-white" />
-          </div>
-          <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">Petty Cash Book (සුළු මුදල් පොත)</h1>
-            <p className="text-sm text-slate-500 font-medium mt-1">Manage and track minor expenses effortlessly</p>
-          </div>
-        </header>
+        <FormHeader 
+          title="සුළු මුදල් පොත" 
+          subtitle="Petty Cash Book" 
+          formNumber="Form 1" 
+        />
 
         {/* Form Section */}
         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 hover:shadow-2xl">

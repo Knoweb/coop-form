@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, FileText, DollarSign, Calendar, List, Tag, Save, LayoutList, Building2 } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 const ANALYSIS_CATEGORIES = ['Transport', 'Stationery', 'Postage', 'Meals', 'Other'];
 
@@ -180,18 +181,11 @@ export default function Form2() {
       <div className="max-w-7xl mx-auto space-y-6 md:space-y-8">
         
         {/* Header Section */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Form 2</h1>
-            <p className="text-sm md:text-base text-slate-500 font-medium mt-1">සුළු මුදල් පොත (Petty Cash Book)</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="bg-slncc-gray p-3 rounded-xl">
-              <FileText className="w-6 h-6 text-slncc-red" />
-            </div>
-          </div>
-        </div>
-
+        <FormHeader 
+          title="සුළු මුදල් පොත" 
+          subtitle="Petty Cash Book" 
+          formNumber="Form 2" 
+        />
         {/* Form Section */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="border-b border-slate-100 bg-slate-50/50 p-6">
@@ -485,7 +479,7 @@ export default function Form2() {
             </table>
           </div>
           
-          <div className="p-8 border-t border-slate-200 mt-8 flex flex-col md:flex-row justify-between items-end">
+           <div className="p-8 border-t border-slate-200 mt-8 flex flex-col md:flex-row justify-between items-end">
             <div className="text-sm text-slate-500 italic">
               ඉහත සඳහන් වියදම් මා විසින් දරණ ලදී. වියදම් සඳහා කුවිතාන්සි අමුණා ඇත.
             </div>

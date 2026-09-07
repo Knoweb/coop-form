@@ -1,5 +1,6 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { FileText, PlusCircle, Trash2, Save } from 'lucide-react';
+import FormHeader from '../components/FormHeader';
 
 export default function Form3() {
   const [formData, setFormData] = useState({
@@ -62,22 +63,20 @@ export default function Form3() {
       <div className="max-w-5xl mx-auto space-y-6 md:space-y-8 pb-12 print:pb-0 print:space-y-0">
         
         {/* Header Section */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col md:flex-row justify-between items-center gap-4 print:hidden">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Form 3</h1>
-            <p className="text-sm md:text-base text-slate-500 font-medium mt-1">සුළු මුදල් වවුචරය (Petty Cash Voucher)</p>
-          </div>
-          <div className="flex items-center gap-3">
-            
-            <button onClick={handleClear} className="flex items-center gap-2 bg-rose-50 hover:bg-rose-100 text-rose-600 px-5 py-2.5 rounded-xl transition-colors font-semibold shadow-sm border border-rose-200">
-              <Trash2 className="w-5 h-5" />
-              Clear Form
-            </button>
-<button onClick={handleSubmit} className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-xl transition-colors font-semibold shadow-sm">
-              <Save className="w-5 h-5" />
-              Print Voucher
-            </button>
-          </div>
+        <FormHeader 
+          title="සුළු මුදල් වවුචරය" 
+          subtitle="Petty Cash Voucher" 
+          formNumber="Form 3" 
+        />
+        <div className="flex justify-end items-center gap-3 print:hidden">
+          <button onClick={handleClear} className="flex items-center gap-2 bg-rose-50 hover:bg-rose-100 text-rose-600 px-5 py-2.5 rounded-xl transition-colors font-semibold shadow-sm border border-rose-200">
+            <Trash2 className="w-5 h-5" />
+            Clear Form
+          </button>
+          <button onClick={handleSubmit} className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-xl transition-colors font-semibold shadow-sm">
+            <Save className="w-5 h-5" />
+            Print Voucher
+          </button>
         </div>
 
         {/* Input Form Section */}
