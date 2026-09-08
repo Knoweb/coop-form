@@ -38,7 +38,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function Schedule2() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, serialNo: 01, noOfSection: 'Sec-A', placeOfWork: 'HQ', name: 'J. Doe', post: 'Manager', initialSalary: 50000, allowances: 5000, specialAllowances: 1000, othersEarnings: 0, totalApproved: 56000, totalNonApproved: 0, monthlyAdvances: 2000, festivalAdvances: 0, loans: 5000, othersDeductions: 0, epfEmployee: 4000, totalDeductions: 11000, balancePaid: 45000, employeesEpf: 6000 },
+    { id: 2, serialNo: 02, noOfSection: 'Sec-B', placeOfWork: 'Branch 1', name: 'M. Smith', post: 'Clerk', initialSalary: 30000, allowances: 2000, specialAllowances: 500, othersEarnings: 0, totalApproved: 32500, totalNonApproved: 0, monthlyAdvances: 1000, festivalAdvances: 0, loans: 0, othersDeductions: 0, epfEmployee: 2400, totalDeductions: 3400, balancePaid: 29100, employeesEpf: 3600 },
+    { id: 3, serialNo: 03, noOfSection: 'Sec-C', placeOfWork: 'Branch 2', name: 'K. Lee', post: 'Driver', initialSalary: 25000, allowances: 1500, specialAllowances: 0, othersEarnings: 0, totalApproved: 26500, totalNonApproved: 0, monthlyAdvances: 0, festivalAdvances: 0, loans: 2000, othersDeductions: 0, epfEmployee: 2000, totalDeductions: 4000, balancePaid: 22500, employeesEpf: 3000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

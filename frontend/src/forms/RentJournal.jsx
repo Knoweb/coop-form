@@ -54,7 +54,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function RentJournal() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, serialNo: 01, noOfSection: 'Sec-1', place: 'Colombo', owner: 'Mr. Silva', annualRent: 120000, total: 120000 },
+    { id: 2, serialNo: 02, noOfSection: 'Sec-2', place: 'Kandy', owner: 'Mrs. Perera', annualRent: 84000, total: 84000 },
+    { id: 3, serialNo: 03, noOfSection: 'Sec-3', place: 'Galle', owner: 'Mr. Fernando', annualRent: 60000, total: 60000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

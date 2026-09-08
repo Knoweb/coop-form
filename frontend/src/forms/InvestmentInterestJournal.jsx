@@ -54,7 +54,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function InvestmentInterestJournal() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, sectionNo: 'Sec-1', natureOfInvestment: 'Fixed Deposit', amountInvested: 1000000, rateOfInt: '8%', annualEstimate: 80000, total: 80000 },
+    { id: 2, sectionNo: 'Sec-2', natureOfInvestment: 'Treasury Bills', amountInvested: 500000, rateOfInt: '6%', annualEstimate: 30000, total: 30000 },
+    { id: 3, sectionNo: 'Sec-3', natureOfInvestment: 'Bonds', amountInvested: 200000, rateOfInt: '7%', annualEstimate: 14000, total: 14000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

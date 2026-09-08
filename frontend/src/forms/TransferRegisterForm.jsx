@@ -31,7 +31,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function TransferRegisterForm() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, debitBalance: 10000, creditBalance: 0, date: '2026-09-01', debitAccountNo: 'A/C 101', debitDescription: 'Transfer In', debitSubTotal: 10000, creditAccountNo: 'A/C 201', creditDescription: 'Transfer Out', creditSubTotal: 10000 },
+    { id: 2, debitBalance: 0, creditBalance: 5000, date: '2026-09-02', debitAccountNo: 'A/C 102', debitDescription: 'Payment Reversal', debitSubTotal: 5000, creditAccountNo: 'A/C 202', creditDescription: 'Adjustment', creditSubTotal: 5000 },
+    { id: 3, debitBalance: 15000, creditBalance: 0, date: '2026-09-03', debitAccountNo: 'A/C 103', debitDescription: 'Inter-branch', debitSubTotal: 15000, creditAccountNo: 'A/C 203', creditDescription: 'Inter-branch Out', creditSubTotal: 15000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

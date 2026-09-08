@@ -13,7 +13,11 @@ const INITIAL_ITEM_STATE = {
 };
 
 export default function Form24() {
-  const [currentItems, setCurrentItems] = useState([]);
+  const [currentItems, setCurrentItems] = useState([
+    { id: 1, serialNo: '01', cardNo: 'C-101', item: 'Rice (kg)', store1Qty: 50, store2Qty: 30, store3Qty: 20, store4Qty: 0, totalQty: 100 },
+    { id: 2, serialNo: '02', cardNo: 'C-102', item: 'Sugar (kg)', store1Qty: 20, store2Qty: 20, store3Qty: 20, store4Qty: 10, totalQty: 70 },
+    { id: 3, serialNo: '03', cardNo: 'C-103', item: 'Dhal (kg)', store1Qty: 100, store2Qty: 50, store3Qty: 0, store4Qty: 0, totalQty: 150 }
+  ]);
   const [itemData, setItemData] = useState(INITIAL_ITEM_STATE);
 
   const [globalDate, setGlobalDate] = useState('');

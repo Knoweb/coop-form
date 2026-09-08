@@ -4,7 +4,11 @@ import FormHeader from '../components/FormHeader';
 
 
 export default function Form22StockTaking() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, serialNo: '01', itemCode: 'ITEM-101', description: 'Item A', ledgerBalance: 100, countedQtyPhysical: 105, differenceQty: 5, excessValue: 250, shortageValue: 0, unitPrice: 50.0, remarks: 'Excess found' },
+    { id: 2, serialNo: '02', itemCode: 'ITEM-102', description: 'Item B', ledgerBalance: 200, countedQtyPhysical: 190, differenceQty: -10, excessValue: 0, shortageValue: 300, unitPrice: 30.0, remarks: 'Shortage due to damage' },
+    { id: 3, serialNo: '03', itemCode: 'ITEM-103', description: 'Item C', ledgerBalance: 150, countedQtyPhysical: 150, differenceQty: 0, excessValue: 0, shortageValue: 0, unitPrice: 100.0, remarks: 'Matches ledger' }
+  ]);
   
   const [formData, setFormData] = useState({
     branchOrStore: '',

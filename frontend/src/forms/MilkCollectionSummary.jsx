@@ -3,7 +3,11 @@ import { PlusCircle, FileText } from 'lucide-react';
 import FormHeader from '../components/FormHeader';
 
 export default function MilkCollectionSummary() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, date: '2026-09-01', receivedMorning: 150.5, receivedEvening: 120.0, excess: 0, grandTotalReceived: 270.5, issuedMorning: 140.0, issuedEvening: 110.0, spoiledReturned: 5.0, shortage: 15.5, grandTotalIssued: 270.5 },
+    { id: 2, date: '2026-09-02', receivedMorning: 160.0, receivedEvening: 130.0, excess: 5.0, grandTotalReceived: 295.0, issuedMorning: 155.0, issuedEvening: 125.0, spoiledReturned: 10.0, shortage: 5.0, grandTotalIssued: 295.0 },
+    { id: 3, date: '2026-09-03', receivedMorning: 145.0, receivedEvening: 115.0, excess: 0, grandTotalReceived: 260.0, issuedMorning: 145.0, issuedEvening: 110.0, spoiledReturned: 2.0, shortage: 3.0, grandTotalIssued: 260.0 }
+  ]);
   const [formData, setFormData] = useState({
     date: '',
     receivedMorning: 0,

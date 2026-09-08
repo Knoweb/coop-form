@@ -30,7 +30,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function GeneralLedgerForm() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, receiptsAmount: 50000, paymentsAmount: 0, date: '2026-09-01', descriptionReceipts: 'Sales Income', voucherNoReceipts: 'R-001', descriptionPayments: '', voucherNoPayments: '', folio: 'F-01' },
+    { id: 2, receiptsAmount: 0, paymentsAmount: 20000, date: '2026-09-02', descriptionReceipts: '', voucherNoReceipts: '', descriptionPayments: 'Supplier Payment', voucherNoPayments: 'P-001', folio: 'F-02' },
+    { id: 3, receiptsAmount: 30000, paymentsAmount: 0, date: '2026-09-03', descriptionReceipts: 'Service Income', voucherNoReceipts: 'R-002', descriptionPayments: '', voucherNoPayments: '', folio: 'F-03' }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

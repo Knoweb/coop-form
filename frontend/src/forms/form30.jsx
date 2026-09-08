@@ -11,11 +11,15 @@ export default function Form30() {
   });
 
   const [wholesaleRows, setWholesaleRows] = useState([
-    { id: 1, prevRs: '', prevCts: '', todayRs: '', todayCts: '' }
+    { id: 1, prevRs: '1000', prevCts: '50', todayRs: '500', todayCts: '25' },
+    { id: 2, prevRs: '2500', prevCts: '00', todayRs: '1200', todayCts: '75' },
+    { id: 3, prevRs: '3400', prevCts: '20', todayRs: '1800', todayCts: '50' }
   ]);
 
   const [retailRows, setRetailRows] = useState([
-    { id: 1, prevRs: '', prevCts: '', todayRs: '', todayCts: '' }
+    { id: 1, prevRs: '500', prevCts: '00', todayRs: '200', todayCts: '50' },
+    { id: 2, prevRs: '800', prevCts: '25', todayRs: '350', todayCts: '75' },
+    { id: 3, prevRs: '1200', prevCts: '50', todayRs: '600', todayCts: '00' }
   ]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);

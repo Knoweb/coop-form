@@ -4,7 +4,11 @@ import FormHeader from '../components/FormHeader';
 
 
 export default function Form23MonthlyFinancialStock() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, serialNo: '01', itemCode: 'ITM-001', itemDescription: 'Item A', closingBalanceQty: 100, unitPrice: 50.0, stockTotalValue: 5000.0, writtenOffValue: 0, approvedQty: 100, remarks: 'Verified' },
+    { id: 2, serialNo: '02', itemCode: 'ITM-002', itemDescription: 'Item B', closingBalanceQty: 50, unitPrice: 200.0, stockTotalValue: 10000.0, writtenOffValue: 400.0, approvedQty: 48, remarks: '2 items damaged' },
+    { id: 3, serialNo: '03', itemCode: 'ITM-003', itemDescription: 'Item C', closingBalanceQty: 200, unitPrice: 25.0, stockTotalValue: 5000.0, writtenOffValue: 0, approvedQty: 200, remarks: 'Verified' }
+  ]);
   
   const [formData, setFormData] = useState({
     storeName: '',

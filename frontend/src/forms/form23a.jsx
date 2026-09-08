@@ -11,7 +11,11 @@ const INITIAL_ITEM_STATE = {
 };
 
 export default function Form23A() {
-  const [currentItems, setCurrentItems] = useState([]);
+  const [currentItems, setCurrentItems] = useState([
+    { id: 1, serialNo: '01', description: 'Office Chairs', requestedQuantity: 10, issuedQuantity: 10, otherDetails: 'Received in good condition' },
+    { id: 2, serialNo: '02', description: 'Tables', requestedQuantity: 5, issuedQuantity: 5, otherDetails: 'Received' },
+    { id: 3, serialNo: '03', description: 'Computers', requestedQuantity: 3, issuedQuantity: 2, otherDetails: '1 item short' }
+  ]);
   const [itemData, setItemData] = useState(INITIAL_ITEM_STATE);
   const [globalName, setGlobalName] = useState('');
   const [globalStoreName, setGlobalStoreName] = useState('');

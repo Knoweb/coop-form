@@ -44,7 +44,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function MultiColumnLedgerForm() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, date: '2026-09-01', description: 'Opening Balance', referenceNo: 'REF-001', total: 100000 },
+    { id: 2, date: '2026-09-02', description: 'Cash Deposit', referenceNo: 'REF-002', total: 25000 },
+    { id: 3, date: '2026-09-03', description: 'Supplier Payment', referenceNo: 'REF-003', total: 15000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

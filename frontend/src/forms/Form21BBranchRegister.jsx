@@ -4,7 +4,11 @@ import FormHeader from '../components/FormHeader';
 
 
 export default function Form21BBranchRegister() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, date: '2026-09-01', billAndDescription: 'Stock Issue B-100', serialRangeFromTo: '1001-1050', quantity: 50, value: 5000.0, returnDate: '', returnBalance: 0, returnSerialRange: '', returnOfficerSignature: 'A. Perera' },
+    { id: 2, date: '2026-09-02', billAndDescription: 'Stock Issue B-101', serialRangeFromTo: '1051-1100', quantity: 50, value: 5000.0, returnDate: '2026-09-05', returnBalance: 10, returnSerialRange: '1091-1100', returnOfficerSignature: 'B. Silva' },
+    { id: 3, date: '2026-09-03', billAndDescription: 'Stock Issue B-102', serialRangeFromTo: '1101-1200', quantity: 100, value: 10000.0, returnDate: '', returnBalance: 0, returnSerialRange: '', returnOfficerSignature: 'C. Fernando' }
+  ]);
   
   const [formData, setFormData] = useState({
     branchOrDepartmentName: '',

@@ -4,14 +4,13 @@ import FormHeader from '../components/FormHeader';
 
 
 const INITIAL_SUMMARY_ROWS = [
-  { id: 1, description: 'අයිරා ශේෂය (රතු පාටින්)', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
-  { id: 2, description: 'ශේෂය ඉදිරියට ගෙනඑන', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
-  { id: 3, description: 'ලැබීම් : තැන්පත් කිරීම්', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
-  { id: 4, description: '           ශේෂය', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
-  { id: 5, description: '           ගෙවීම්', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
-  { id: 6, description: '           ශේෂය', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
-  { id: 7, description: 'උපරිම සීමාව ඉක්මකර නිකුත්\nකරන ලද චෙක්පත්', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
-  { id: 8, description: '           එකතුව', bank1: '', bank2: '', bank3: '', cash: '', other: '' },
+  { id: 1, description: 'අයිරා ශේෂය (රතු පාටින්)', bank1: '1000', bank2: '2000', bank3: '0', cash: '0', other: '0' },
+  { id: 2, description: 'ශේෂය ඉදිරියට ගෙනඑන', bank1: '5000', bank2: '10000', bank3: '1500', cash: '20000', other: '0' },
+  { id: 3, description: 'ලැබීම් : තැන්පත් කිරීම්', bank1: '15000', bank2: '5000', bank3: '3000', cash: '10000', other: '1000' },
+  { id: 4, description: '           ශේෂය', bank1: '19000', bank2: '13000', bank3: '4500', cash: '30000', other: '1000' },
+  { id: 5, description: '           ගෙවීම්', bank1: '2000', bank2: '3000', bank3: '500', cash: '5000', other: '0' },
+  { id: 6, description: 'අයිරා ශේෂය', bank1: '0', bank2: '0', bank3: '0', cash: '0', other: '0' },
+  { id: 7, description: 'දිනට ශේෂය (2 - 5)', bank1: '17000', bank2: '10000', bank3: '4000', cash: '25000', other: '1000' }
 ];
 
 const INITIAL_CHEQUE_STATE = {
@@ -27,7 +26,11 @@ export default function Form27() {
   const [bank3AccNo, setBank3AccNo] = useState('');
   
   const [summaryRows, setSummaryRows] = useState(INITIAL_SUMMARY_ROWS);
-  const [chequeItems, setChequeItems] = useState([]);
+  const [chequeItems, setChequeItems] = useState([
+    { id: 1, serialNo: '01', chequeNo: 'CHQ-1001', date: '2026-09-01', maxLimit: 50000 },
+    { id: 2, serialNo: '02', chequeNo: 'CHQ-1002', date: '2026-09-02', maxLimit: 25000 },
+    { id: 3, serialNo: '03', chequeNo: 'CHQ-1003', date: '2026-09-03', maxLimit: 10000 }
+  ]);
   const [chequeData, setChequeData] = useState(INITIAL_CHEQUE_STATE);
   
   const [isSubmitting, setIsSubmitting] = useState(false);

@@ -52,7 +52,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function RentIncomeJournal() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, sectionNo: 'Sec-A', description: 'Shop 1 Rent', annualRates: 120000, total: 120000 },
+    { id: 2, sectionNo: 'Sec-B', description: 'Shop 2 Rent', annualRates: 150000, total: 150000 },
+    { id: 3, sectionNo: 'Sec-C', description: 'Warehouse Rent', annualRates: 300000, total: 300000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

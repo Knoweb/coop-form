@@ -55,7 +55,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function MonthlyDepreciationJournal() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, serialNo: 01, sectionNo: 'Sec-1', description: 'Computers', originalCost: 500000, annualDepreciation: 50000, inventoryFolio: 'IF-10', total: 50000 },
+    { id: 2, serialNo: 02, sectionNo: 'Sec-2', description: 'Furniture', originalCost: 300000, annualDepreciation: 15000, inventoryFolio: 'IF-12', total: 15000 },
+    { id: 3, serialNo: 03, sectionNo: 'Sec-3', description: 'Vehicles', originalCost: 2000000, annualDepreciation: 200000, inventoryFolio: 'IF-15', total: 200000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

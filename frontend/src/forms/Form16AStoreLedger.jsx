@@ -3,7 +3,11 @@ import { PlusCircle, FileText } from 'lucide-react';
 import FormHeader from '../components/FormHeader';
 
 export default function Form16AStoreLedger() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, date: '2026-09-01', itemDescription: 'Item A', billNo: 'B-101', buyingPriceUnit: 50.0, buyingPriceTotal: 5000.0, qtyIssued: 0, qtyReceived: 100, valueIssued: 0, valueReceived: 5000.0, previousBalance: 0, dailyRequirement: 10, qtyBalance: 100, sellingPriceUnit: 60.0, sellingPriceTotal: 6000.0, handedOverRef: 'Ref-1', remarks: 'New Stock' },
+    { id: 2, date: '2026-09-02', itemDescription: 'Item A', billNo: 'B-102', buyingPriceUnit: 50.0, buyingPriceTotal: 0, qtyIssued: 20, qtyReceived: 0, valueIssued: 1200.0, valueReceived: 0, previousBalance: 100, dailyRequirement: 10, qtyBalance: 80, sellingPriceUnit: 60.0, sellingPriceTotal: 4800.0, handedOverRef: 'Ref-2', remarks: 'Issued to branch' },
+    { id: 3, date: '2026-09-03', itemDescription: 'Item A', billNo: 'B-103', buyingPriceUnit: 50.0, buyingPriceTotal: 0, qtyIssued: 10, qtyReceived: 0, valueIssued: 600.0, valueReceived: 0, previousBalance: 80, dailyRequirement: 10, qtyBalance: 70, sellingPriceUnit: 60.0, sellingPriceTotal: 4200.0, handedOverRef: 'Ref-3', remarks: 'Sales' }
+  ]);
   const [formData, setFormData] = useState({
     date: '',
     itemDescription: '',

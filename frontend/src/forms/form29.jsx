@@ -18,7 +18,11 @@ const INITIAL_ITEM_STATE = {
 };
 
 export default function Form29() {
-  const [currentItems, setCurrentItems] = useState([]);
+  const [currentItems, setCurrentItems] = useState([
+    { id: 1, tripNo: 'TR-101', goodsDetails: 'Rice Bags', qty: 50, depTime: '08:00', depPlace: 'Colombo', authOfficerSigItem: 'Manager A', arrTime: '12:00', arrPlace: 'Kandy', receivingOfficerSig: 'Officer B', drivenForWhom: 'Branch 1', amount: 5000.0 },
+    { id: 2, tripNo: 'TR-102', goodsDetails: 'Sugar Bags', qty: 20, depTime: '13:00', depPlace: 'Kandy', authOfficerSigItem: 'Officer B', arrTime: '16:00', arrPlace: 'Galle', receivingOfficerSig: 'Officer C', drivenForWhom: 'Branch 2', amount: 3500.0 },
+    { id: 3, tripNo: 'TR-103', goodsDetails: 'Flour Sacks', qty: 30, depTime: '09:00', depPlace: 'Galle', authOfficerSigItem: 'Officer C', arrTime: '11:30', arrPlace: 'Matara', receivingOfficerSig: 'Officer D', drivenForWhom: 'Branch 3', amount: 2000.0 }
+  ]);
   const [itemData, setItemData] = useState(INITIAL_ITEM_STATE);
 
   // Global States

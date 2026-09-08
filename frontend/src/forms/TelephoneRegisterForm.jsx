@@ -4,7 +4,11 @@ import FormHeader from '../components/FormHeader';
 
 
 export default function TelephoneRegisterForm() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, date: '2026-09-01', callerName: 'A. Perera', calledNumberArea: 'Colombo', timeTakenMinutes: 5, callSummary: 'Business inquiry', signature: 'A.P.', officialCost: 50.00, privateCost: 0, receiptNo: 'R-100' },
+    { id: 2, date: '2026-09-02', callerName: 'B. Silva', calledNumberArea: 'Kandy', timeTakenMinutes: 10, callSummary: 'Follow up', signature: 'B.S.', officialCost: 100.00, privateCost: 0, receiptNo: 'R-101' },
+    { id: 3, date: '2026-09-03', callerName: 'C. Fernando', calledNumberArea: 'Galle', timeTakenMinutes: 3, callSummary: 'Personal', signature: 'C.F.', officialCost: 0, privateCost: 30.00, receiptNo: 'R-102' }
+  ]);
   const [formData, setFormData] = useState({
     date: '',
     callerName: '',

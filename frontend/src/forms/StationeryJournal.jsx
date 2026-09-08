@@ -54,7 +54,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function StationeryJournal() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, serialNo: 01, noOfSection: 'Admin', sectionAndUnit: 'HQ-Admin', annualEstimate: 50000, pageNo21B: 12, total: 50000 },
+    { id: 2, serialNo: 02, noOfSection: 'HR', sectionAndUnit: 'HQ-HR', annualEstimate: 30000, pageNo21B: 14, total: 30000 },
+    { id: 3, serialNo: 03, noOfSection: 'Finance', sectionAndUnit: 'HQ-Finance', annualEstimate: 45000, pageNo21B: 16, total: 45000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {

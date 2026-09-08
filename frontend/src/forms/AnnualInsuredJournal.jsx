@@ -55,7 +55,11 @@ const InputField = ({ label, sinhalaLabel, name, type = "text", value, onChange 
 );
 
 export default function AnnualInsuredJournal() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([
+    { id: 1, sectionNo: 'Sec-A', property: 'Main Building', policyNo: 'POL-1001', insuredAmount: 5000000, insuredPeriod: '2026-2027', annualPremium: 50000, total: 50000 },
+    { id: 2, sectionNo: 'Sec-B', property: 'Vehicles', policyNo: 'POL-1002', insuredAmount: 2000000, insuredPeriod: '2026-2027', annualPremium: 25000, total: 25000 },
+    { id: 3, sectionNo: 'Sec-C', property: 'Equipment', policyNo: 'POL-1003', insuredAmount: 1000000, insuredPeriod: '2026-2027', annualPremium: 10000, total: 10000 }
+  ]);
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {
